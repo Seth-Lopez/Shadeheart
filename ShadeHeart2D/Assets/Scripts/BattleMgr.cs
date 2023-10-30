@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public enum BattleState { BattleStart, PlayerTurn, EnemyTurn, Win, Lose}
 
 public class BattleMgr : MonoBehaviour
 {
     public BattleState state;
+
+    public TextMeshProUGUI playerName;
+    public TextMeshProUGUI enemyName;
+    public TextMeshProUGUI dialougeBox;
 
     public GameObject player;
     public GameObject enemy;
@@ -18,22 +24,45 @@ public class BattleMgr : MonoBehaviour
     void Start()
     {
         state = BattleState.BattleStart;
-        SetupBattle();
+        StartCoroutine(SetupBattle());
     }
     
-    void SetupBattle()
+    IEnumerator SetupBattle()
     {
         Debug.Log("Setup Battle");
-        Instantiate(player, playerPosition);
-        Instantiate(enemy, enemyPosition);
+        GameObject playerGO = Instantiate(player, playerPosition);
+        GameObject enemyGO = Instantiate(enemy, enemyPosition);
+
+        playerName.text = "Player";
+        enemyName.text = "Enemy";
+        dialougeBox.text = "The Battle Begins...";
+
+        yield return new WaitForSeconds(1f);
 
         state = BattleState.PlayerTurn;
-        PlayerTurn();
+        StartCoroutine(PlayerTurn());
     }
 
-    void PlayerTurn()
+    IEnumerator PlayerTurn()
     {
         Debug.Log("Player Turn");
+        dialougeBox.text = "Player's turn";
+        
+        yield return new WaitForSeconds(1f);
+
+        state = BattleState.EnemyTurn;
+        StartCoroutine(EnemyTurn());
+    }
+
+    IEnumerator EnemyTurn()
+    {
+        Debug.Log("Enemy Turn");
+        dialougeBox.text = "Enemy's turn";
+
+        yield return new WaitForSeconds(1f);
+
+        state = BattleState.PlayerTurn;
+        StartCoroutine(PlayerTurn());
     }
 
     public void EndBattle()
