@@ -48,10 +48,7 @@ public class BattleMgr : MonoBehaviour
         Debug.Log("Player Turn");
         dialougeBox.text = "Player's turn";
         
-        yield return new WaitForSeconds(1f);
-
-        state = BattleState.EnemyTurn;
-        StartCoroutine(EnemyTurn());
+        yield return null;
     }
 
     IEnumerator EnemyTurn()
@@ -68,5 +65,11 @@ public class BattleMgr : MonoBehaviour
     public void EndBattle()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void StartEnemyTurn()
+    {
+        state = BattleState.EnemyTurn;
+        StartCoroutine(EnemyTurn());
     }
 }
