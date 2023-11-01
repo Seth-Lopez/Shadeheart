@@ -5,14 +5,40 @@ using UnityEngine.SceneManagement;
 
 public class Title : MonoBehaviour
 {
+    string sceneName = "Battle";
+
+    public int battleLocation = 0;
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        sceneName = "OverWorld";
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ExitGame()
     {
         Application.Quit();
         Debug.Log("Exit Game");
+    }
+
+    public void StartBattle()
+    {
+        sceneName = "Battle";
+        PlayerPrefs.SetInt("battleLocation", battleLocation);
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void ForrestSelect()
+    {
+        battleLocation = 0;
+    }
+
+    public void DesertSelect()
+    {
+        battleLocation = 1;
+    }
+
+    public void SnowSelect()
+    {
+        battleLocation = 2;
     }
 }

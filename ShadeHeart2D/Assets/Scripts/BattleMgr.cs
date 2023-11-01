@@ -9,6 +9,8 @@ public enum BattleState { BattleStart, PlayerTurn, EnemyTurn, Win, Lose}
 
 public class BattleMgr : MonoBehaviour
 {
+    string sceneName;
+
     public BattleState state;
 
     public TextMeshProUGUI playerName;
@@ -17,6 +19,7 @@ public class BattleMgr : MonoBehaviour
 
     public GameObject player;
     public GameObject enemy;
+    public GameObject[] backgrounds;
 
     public Transform playerPosition;
     public Transform enemyPosition;
@@ -30,6 +33,10 @@ public class BattleMgr : MonoBehaviour
     IEnumerator SetupBattle()
     {
         Debug.Log("Setup Battle");
+
+        int battleLocation = PlayerPrefs.GetInt("battleLocation");
+        backgrounds[battleLocation].SetActive(true);
+
         GameObject playerGO = Instantiate(player, playerPosition);
         GameObject enemyGO = Instantiate(enemy, enemyPosition);
 
@@ -62,14 +69,25 @@ public class BattleMgr : MonoBehaviour
         StartCoroutine(PlayerTurn());
     }
 
-    public void EndBattle()
+    void BattleWin()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        dialougeBox.text = "Enemy [name] was defeated";
+    }
+
+    void BattleLoss()
+    {
+        dialougeBox.text = "You were defeated";
     }
 
     public void StartEnemyTurn()
     {
         state = BattleState.EnemyTurn;
         StartCoroutine(EnemyTurn());
+    }
+
+    public void EndBattle()
+    {
+        sceneName = "OverWorld";
+        SceneManager.LoadScene(sceneName);
     }
 }
