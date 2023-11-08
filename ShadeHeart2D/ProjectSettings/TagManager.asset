@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HealthBar
   - EnergyBar
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Walkable
+    uniqueID: 636786053
+    locked: 0
+  - name: Assets
+    uniqueID: 2567898661
+    locked: 0
+  - name: NPC/Friendly
+    uniqueID: 2425944359
+    locked: 0
+  - name: NPC/Enemy
+    uniqueID: 818061581
+    locked: 0
+  - name: Player
+    uniqueID: 125542481
     locked: 0
