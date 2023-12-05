@@ -10,7 +10,7 @@ public class Title : MonoBehaviour
     public int battleLocation = 0;
     public void StartGame()
     {
-        sceneName = "OverWorld";
+        sceneName = "Seth_Testing";
         SceneManager.LoadScene(sceneName);
     }
 

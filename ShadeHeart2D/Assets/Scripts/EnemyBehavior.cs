@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 public class EnemyBehavior : MonoBehaviour
 {
     // For Movement: 
@@ -23,6 +24,9 @@ public class EnemyBehavior : MonoBehaviour
     private GameObject player;
     private bool hasLOS = false;
     [SerializeField] private float LOSDist;
+
+    //for loading into battle scene
+    public int battleLocation = 0;
     private void Start()
     {
         //Set RigidBody:
@@ -98,6 +102,20 @@ public class EnemyBehavior : MonoBehaviour
             renderer.color = color;
         }
         for (int i = 0; i < parent.childCount; i++) SetOpacityToZeroRecursive(parent.GetChild(i));       
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Replace "fadeToBlack" with the name of your scene
+            //UnityEngine.SceneManagement.SceneManager.LoadScene("fadeToBlack");
+            
+            PlayerPrefs.SetInt("battleLocation", battleLocation);
+            int sceneLoadedFrom = SceneManager.GetActiveScene().buildIndex;
+            PlayerPrefs.SetInt("sceneLoadedFrom", sceneLoadedFrom);
+            SceneManager.LoadScene("Battle");
+        }
     }
 }
 
