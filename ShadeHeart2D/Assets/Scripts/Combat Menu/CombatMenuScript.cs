@@ -80,6 +80,33 @@ public class CombatMenu : MonoBehaviour
         }
     }
 
+    public void EnemyAttack()
+    {
+        Debug.Log("Enemy Attacks");
+
+        enemyCreature.defending = false;
+
+        dialougeBox.text = enemyCreature.name + " attacks!";
+
+        int damage = 0;
+        if (enemyCreature.charged)
+        {
+            damage = Random.Range(12, 21);
+            enemyCreature.charged = false;
+        }
+        else
+        {
+            damage = Random.Range(8, 14);
+            if (playerCreature.defending)
+            {
+                damage /= 2;
+            }
+        }
+
+        playerCreature.UpdateHealth(damage);
+        enemyCreature.UpdateEnergy(5);
+    }
+
     public void Defend()
     {
         Debug.Log("Defend selected.");
@@ -99,6 +126,16 @@ public class CombatMenu : MonoBehaviour
         combatMenu.SetActive(true);
 
         battle.StartEnemyTurn();
+    }
+
+    public void EnemyDefend()
+    {
+        Debug.Log("Enemy Defends.");
+
+        dialougeBox.text = enemyCreature.name + " guards itself";
+
+        enemyCreature.defending = true;
+        playerCreature.UpdateEnergy(-3);
     }
 
     public void UseItem()
@@ -175,33 +212,6 @@ public class CombatMenu : MonoBehaviour
         }
     }
 
-    public void EnemyAttack()
-    {
-        Debug.Log("Enemy Attacks");
-
-        enemyCreature.defending = false;
-
-        dialougeBox.text = enemyCreature.name + " attacks!";
-
-        int damage = 0;
-        if (enemyCreature.charged)
-        {
-            damage = Random.Range(12, 21);
-            enemyCreature.charged = false;
-        }
-        else
-        {
-            damage = Random.Range(8, 14);
-            if (playerCreature.defending)
-            {
-                damage /= 2;
-            }
-        }
-
-        playerCreature.UpdateHealth(damage);
-        enemyCreature.UpdateEnergy(5);
-    }
-
     public void EnemyCharge()
     {
         Debug.Log("Enemy Charging");
@@ -211,15 +221,5 @@ public class CombatMenu : MonoBehaviour
         dialougeBox.text = enemyCreature.name + " is charging its power";
         enemyCreature.charged = true;
         enemyCreature.UpdateEnergy(10);
-    }
-
-    public void EnemyDefend()
-    {
-        Debug.Log("Enemy Defends.");
-
-        dialougeBox.text = enemyCreature.name + " guards itself";
-
-        enemyCreature.defending = true;
-        playerCreature.UpdateEnergy(-3);
     }
 }

@@ -24,6 +24,8 @@ public class Title : MonoBehaviour
     {
         sceneName = "Battle";
         PlayerPrefs.SetInt("battleLocation", battleLocation);
+        int sceneLoadedFrom = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("sceneLoadedFrom", sceneLoadedFrom);
         SceneManager.LoadScene(sceneName);
     }
 
@@ -40,5 +42,10 @@ public class Title : MonoBehaviour
     public void SnowSelect()
     {
         battleLocation = 2;
+    }
+
+    public void NightSelect()
+    {
+        battleLocation = 3;
     }
 }

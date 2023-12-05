@@ -26,7 +26,6 @@ public class Shade : MonoBehaviour
     public void UpdateHealth(float damage)
     {
         health -= damage;
-        hpBar.SetValue(health, maxHealth);
         if (health > maxHealth)
         {
             health = maxHealth;
@@ -35,12 +34,12 @@ public class Shade : MonoBehaviour
         {
             health = 0;
         }
+        hpBar.SetValue(health, maxHealth);
     }
 
     public void UpdateEnergy(float energyUsed)
     {
         energy -= energyUsed;
-        energyBar.SetValue(energy, maxEnergy);
         if (energy > maxEnergy)
         {
             energy = maxEnergy;
@@ -49,22 +48,6 @@ public class Shade : MonoBehaviour
         {
             energy = 0;
         }
+        energyBar.SetValue(energy, maxEnergy);
     }
-    /*
-    public void keepUnderMaxHealth()
-    {
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-        }
-    }
-
-    public void keepUnderMaxEnergy()
-    {
-        if (energy > maxEnergy)
-        {
-            energy = maxEnergy;
-        }
-    }
-    */
 }

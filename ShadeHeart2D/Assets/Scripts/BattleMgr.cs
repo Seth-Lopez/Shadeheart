@@ -9,7 +9,7 @@ public enum BattleState { BattleStart, PlayerTurn, EnemyTurn, Win, Lose}
 
 public class BattleMgr : MonoBehaviour
 {
-    string sceneName;
+    int lastScene;
 
     public GameObject[] enemies;
     public int enemyShade;
@@ -158,7 +158,7 @@ public class BattleMgr : MonoBehaviour
 
     public void EndBattle()
     {
-        sceneName = "OverWorld";
-        SceneManager.LoadScene(sceneName);
+        lastScene = PlayerPrefs.GetInt("sceneLoadedFrom");
+        SceneManager.LoadScene(lastScene);
     }
 }
