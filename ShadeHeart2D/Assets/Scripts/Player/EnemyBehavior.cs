@@ -141,14 +141,14 @@ public class EnemyBehavior : MonoBehaviour
         for (int i = 0; i < parent.childCount; i++) SetOpacityToZeroRecursive(parent.GetChild(i));
             
     }
-    /*
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             // Replace "fadeToBlack" with the name of your scene
-            UnityEngine.SceneManagement.SceneManager.LoadScene("fadeToBlack");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Battle");
         }
-    }*/
+    }
 }
 
