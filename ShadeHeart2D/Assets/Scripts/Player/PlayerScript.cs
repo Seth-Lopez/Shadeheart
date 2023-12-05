@@ -69,7 +69,10 @@ public class PlayerScript : MonoBehaviour
     }
     private void updatingHealthAndEnergy()
     {
-        healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 100);
-        energyBar.fillAmount = Mathf.Clamp(currentEnergy / maxEnergy, 0, 50);
+        if(healthBar != null && energyBar != null)
+        {
+            healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 100);
+            energyBar.fillAmount = Mathf.Clamp(currentEnergy / maxEnergy, 0, 50);
+        }
     }
 }
