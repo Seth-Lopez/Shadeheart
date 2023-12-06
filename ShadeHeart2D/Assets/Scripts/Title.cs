@@ -8,6 +8,16 @@ public class Title : MonoBehaviour
     string sceneName = "Battle";
 
     public int battleLocation = 0;
+
+    public GameObject title, options, battleSelect;
+
+    public void Start()
+    {
+        title.SetActive(true);
+        options.SetActive(false);
+        battleSelect.SetActive(false);
+    }
+
     public void StartGame()
     {
         sceneName = "Seth_Testing";

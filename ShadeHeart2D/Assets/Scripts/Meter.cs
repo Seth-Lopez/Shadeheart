@@ -18,6 +18,7 @@ public class Meter : MonoBehaviour
 
     public void SetMaxValue(float maxValue)
     {
+        //meter.GetComponent<Slider>().maxValue = maxValue;
         meter.maxValue = maxValue;
         meter.value = maxValue;
         meterText.text = maxValue.ToString() + '/' + maxValue.ToString();

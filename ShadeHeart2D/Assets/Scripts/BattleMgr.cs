@@ -25,20 +25,23 @@ public class BattleMgr : MonoBehaviour
     public Meter playerHealth, playerEnergy, enemyHealth, enemyEnergy;
     public GameObject enemy;
     public GameObject[] backgrounds;
+    public GameObject playerHUD, enemyHUD;
 
     public Transform playerPosition;
     public Transform enemyPosition;
 
-    public string nameOfEnemy;
+    //public string nameOfEnemy;
     public bool playerTurn = false;
 
     public CombatMenu combatMenu;
 
-    
-    void Start()
+    private void Awake()
     {
-        enemyShade = Random.Range(0, 3);
+        playerHUD.SetActive(false);
+        enemyHUD.SetActive(false);
+        enemyShade = Random.Range(0, 7);
         Debug.Log(enemyShade.ToString());
+        enemy = enemies[enemyShade];
         enemies[enemyShade].SetActive(true);
         enemyCreature = enemies[enemyShade].GetComponent<Shade>();
         state = BattleState.BattleStart;
@@ -69,13 +72,22 @@ public class BattleMgr : MonoBehaviour
         GameObject playerGO = Instantiate(player, playerPosition);
         GameObject enemyGO = Instantiate(enemy, enemyPosition);
 
+
+        dialougeBox.text = "Enemy " + enemyCreature.name + " appears!";
         playerName.text = playerCreature.name;
         enemyName.text = enemyCreature.name;
+
+        yield return new WaitForSeconds(1f);
+        dialougeBox.text = "The Battle Begins...";
+        //yield return new WaitForSeconds(1f);
+
         combatMenu.playerCreature.SetupHealthBar();
         combatMenu.playerCreature.SetupEnergyBar();
         combatMenu.enemyCreature.SetupHealthBar();
         combatMenu.enemyCreature.SetupEnergyBar();
-        dialougeBox.text = "The Battle Begins...";
+
+        playerHUD.SetActive(true);
+        enemyHUD.SetActive(true);
 
         yield return new WaitForSeconds(1f);
 
