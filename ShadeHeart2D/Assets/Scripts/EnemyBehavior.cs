@@ -27,6 +27,7 @@ public class EnemyBehavior : MonoBehaviour
 
     //for loading into battle scene
     public int battleLocation = 0;
+    public SceneLoader loader;
     private void Start()
     {
         //Set RigidBody:
@@ -112,9 +113,10 @@ public class EnemyBehavior : MonoBehaviour
             //UnityEngine.SceneManagement.SceneManager.LoadScene("fadeToBlack");
             
             PlayerPrefs.SetInt("battleLocation", battleLocation);
-            int sceneLoadedFrom = SceneManager.GetActiveScene().buildIndex;
-            PlayerPrefs.SetInt("sceneLoadedFrom", sceneLoadedFrom);
-            SceneManager.LoadScene("Battle");
+            string sceneLoadedFrom = SceneManager.GetActiveScene().name;
+            PlayerPrefs.SetString("sceneLoadedFrom", sceneLoadedFrom);
+            loader.LoadBattle("Battle");
+            //SceneManager.LoadScene("Battle");
         }
     }
 }

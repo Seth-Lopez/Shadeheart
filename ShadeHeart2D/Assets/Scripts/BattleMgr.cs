@@ -9,7 +9,7 @@ public enum BattleState { BattleStart, PlayerTurn, EnemyTurn, Win, Lose}
 
 public class BattleMgr : MonoBehaviour
 {
-    int lastScene;
+    string lastScene;
 
     public GameObject[] enemies;
     public int enemyShade;
@@ -34,6 +34,8 @@ public class BattleMgr : MonoBehaviour
     public bool playerTurn = false;
 
     public CombatMenu combatMenu;
+
+    public SceneLoader loader;
 
     private void Awake()
     {
@@ -170,7 +172,8 @@ public class BattleMgr : MonoBehaviour
 
     public void EndBattle()
     {
-        lastScene = PlayerPrefs.GetInt("sceneLoadedFrom");
-        SceneManager.LoadScene(lastScene);
+        lastScene = PlayerPrefs.GetString("sceneLoadedFrom");
+        loader.LoadScene(lastScene);
+        //SceneManager.LoadScene(lastScene);
     }
 }

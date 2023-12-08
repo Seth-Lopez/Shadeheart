@@ -11,6 +11,8 @@ public class Title : MonoBehaviour
 
     public GameObject title, options, battleSelect;
 
+    public SceneLoader loader;
+
     public void Start()
     {
         title.SetActive(true);
@@ -34,9 +36,10 @@ public class Title : MonoBehaviour
     {
         sceneName = "Battle";
         PlayerPrefs.SetInt("battleLocation", battleLocation);
-        int sceneLoadedFrom = SceneManager.GetActiveScene().buildIndex;
-        PlayerPrefs.SetInt("sceneLoadedFrom", sceneLoadedFrom);
-        SceneManager.LoadScene(sceneName);
+        string sceneLoadedFrom = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetString("sceneLoadedFrom", sceneLoadedFrom);
+        loader.LoadBattle(sceneName);
+        //SceneManager.LoadScene(sceneName);
     }
 
     public void ForrestSelect()

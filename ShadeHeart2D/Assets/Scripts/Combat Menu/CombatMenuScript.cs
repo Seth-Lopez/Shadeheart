@@ -177,7 +177,8 @@ public class CombatMenu : MonoBehaviour
         }
         else
         {
-            yield return null;
+            dialougeBox.text = "You escaped!";
+            yield return new WaitForSeconds(1f);
             battle.EndBattle();
         }
     }
