@@ -30,10 +30,12 @@ public class PlayerScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //Get Health Bar Component:
         healthBarGameObject = GameObject.FindWithTag("HealthBar");
-        healthBar = healthBarGameObject.GetComponent<Image>();
+        if(healthBarGameObject != null)
+            healthBar = healthBarGameObject.GetComponent<Image>();
         //Get Energy Bar Component:
         energyBarGameObject = GameObject.FindWithTag("EnergyBar");
-        energyBar = energyBarGameObject.GetComponent<Image>();
+        if(energyBarGameObject != null)
+            energyBar = energyBarGameObject.GetComponent<Image>();
         //Set Variables:
         currentMovementSpeed = walkingSpeed;
         currentHealth =  maxHealth;
@@ -73,6 +75,25 @@ public class PlayerScript : MonoBehaviour
         {
             healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 100);
             energyBar.fillAmount = Mathf.Clamp(currentEnergy / maxEnergy, 0, 50);
+        }
+    }
+    
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (collision.gameObject.name.Substring(0,4) == "Door" && collision.gameObject.CompareTag("Interactable"))
+            {
+                collision.gameObject.GetComponent<Animator>().SetBool("IsCollided", true);
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Substring(0,4) == "Door" && collision.gameObject.CompareTag("Interactable"))
+        {
+            collision.gameObject.GetComponent<Animator>().SetBool("IsCollided", false);
         }
     }
 }

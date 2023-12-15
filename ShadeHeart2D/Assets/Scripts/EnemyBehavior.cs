@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+
+//Complex Class for movement within Overworld
 public class EnemyBehavior : MonoBehaviour
 {
     // For Movement: 
@@ -25,9 +27,10 @@ public class EnemyBehavior : MonoBehaviour
     private bool hasLOS = false;
     [SerializeField] private float LOSDist;
 
-    //for loading into battle scene
+    //For loading into battle scene
     public int battleLocation = 0;
     public SceneLoader loader;
+
     private void Start()
     {
         //Set RigidBody:
@@ -40,17 +43,18 @@ public class EnemyBehavior : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
-
+    // Check Input
     private void Update()
     {
         updatingMovement();
     }
+    // Check for Line Of Sight
     private void FixedUpdate()
     {
         
         lineOfSight();
     }
-    
+    // Checks if they have line of sight they move towards the player
     private void updatingMovement() 
     { 
         float x = Mathf.Abs(player.transform.position.x - transform.position.x);
@@ -77,14 +81,17 @@ public class EnemyBehavior : MonoBehaviour
         }
         
     }
+    // Setters
     public void setWalkingSpeed(float newWalkingSpeed) { walkingSpeed = newWalkingSpeed; }
     public void setSprintSpeed(float newSprintSpeed) { sprintSpeed = newSprintSpeed; }
     public void setLineOfSightDistance(float newLOSDist) { LOSDist = newLOSDist; }
+    // Raycast for line of sight
     private void lineOfSight()
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
         if(ray.collider != null) hasLOS = ray.collider.CompareTag("Player");
     }
+    //Checks for a valid place to move within World.
     private void searchForDest()
     {
         float x = UnityEngine.Random.Range(-rangePos, rangePos);
@@ -104,7 +111,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         for (int i = 0; i < parent.childCount; i++) SetOpacityToZeroRecursive(parent.GetChild(i));       
     }
-
+    // To load into battle
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

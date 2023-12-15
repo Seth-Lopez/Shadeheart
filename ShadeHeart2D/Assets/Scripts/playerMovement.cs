@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Extremely basic movement script for player
 public class playerMovement : MonoBehaviour
 {
-    float currentMovementSpeed = 5f;
+    //Global Variables for movement
+    private float currentMovementSpeed = 5f;
     private Vector2 movementDirection;
-    Rigidbody2D rb; 
+    private Rigidbody2D rb; 
 
-    // Start is called before the first frame update
+    //Set variables
     void Start()
     {   
         rb = GetComponent<Rigidbody2D>();
     }
-
+    // Check for input
     private void Update()
     {
         updatingMovement();
     }
+    //Update Movement
     private void FixedUpdate()
     {
         rb.velocity = movementDirection * currentMovementSpeed;
     }
-
+    // Input Management
     private void updatingMovement()
     {
         
