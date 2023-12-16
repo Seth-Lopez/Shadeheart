@@ -9,47 +9,52 @@ public enum BattleState { BattleStart, PlayerTurn, EnemyTurn, Win, Lose}
 
 public class BattleMgr : MonoBehaviour
 {
+    //For loading scenes
     string lastScene;
+    public SceneLoader loader;
 
+    //Array of GameObjects with a Shade component and the index of the enemy that should be used
     public GameObject[] enemies;
     public int enemyShade;
 
     public BattleState state;
+    //public bool playerTurn = false;
 
+    //UI variables
     public TextMeshProUGUI playerName;
     public TextMeshProUGUI enemyName;
     public TextMeshProUGUI dialougeBox;
-
-    public GameObject player;
+    public GameObject player, enemy;
     public Shade playerCreature, enemyCreature;
     public Meter playerHealth, playerEnergy, enemyHealth, enemyEnergy;
-    public GameObject enemy;
-    public GameObject[] backgrounds;
     public GameObject playerHUD, enemyHUD;
 
+    //Araay of background sprites
+    public GameObject[] backgrounds;
+
+    //Position of Player and Enemy on screen
     public Transform playerPosition;
     public Transform enemyPosition;
 
-    //public string nameOfEnemy;
-    public bool playerTurn = false;
-
     public CombatMenu combatMenu;
-
-    public SceneLoader loader;
 
     private void Awake()
     {
+        //Start with HUDs disabled
         playerHUD.SetActive(false);
         enemyHUD.SetActive(false);
+        //Randomly select enemy
         enemyShade = Random.Range(0, 7);
         Debug.Log(enemyShade.ToString());
         enemy = enemies[enemyShade];
         enemies[enemyShade].SetActive(true);
         enemyCreature = enemies[enemyShade].GetComponent<Shade>();
+        //Start Battle
         state = BattleState.BattleStart;
         StartCoroutine(SetupBattle());
     }
 
+    //checks if the battle is over
     private void Update()
     {
         if(playerCreature.health <= 0)
@@ -68,21 +73,22 @@ public class BattleMgr : MonoBehaviour
     {
         Debug.Log("Setup Battle");
 
+        //Sets the correct background
         int battleLocation = PlayerPrefs.GetInt("battleLocation");
         backgrounds[battleLocation].SetActive(true);
 
         GameObject playerGO = Instantiate(player, playerPosition);
         GameObject enemyGO = Instantiate(enemy, enemyPosition);
 
-
+        
         dialougeBox.text = "Enemy " + enemyCreature.name + " appears!";
+        yield return new WaitForSeconds(1f);
+
+        dialougeBox.text = "The Battle Begins...";
+
+        //Seting up HUDs
         playerName.text = playerCreature.name;
         enemyName.text = enemyCreature.name;
-
-        yield return new WaitForSeconds(1f);
-        dialougeBox.text = "The Battle Begins...";
-        //yield return new WaitForSeconds(1f);
-
         combatMenu.playerCreature.SetupHealthBar();
         combatMenu.playerCreature.SetupEnergyBar();
         combatMenu.enemyCreature.SetupHealthBar();
@@ -93,12 +99,37 @@ public class BattleMgr : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+        //Determines who acts first
+        /*
+         * if (playerCreature.speed > enemyCreature.speed)
+         * {
+         *      state = BattleState.PlayerTurn;
+         *      StartCoroutine(PlayerTurn());
+         * }
+         * else if (playerCreature.speed < enemyCreature.speed)
+         * {
+         *      StartEnemyTurn()
+         * }
+         * else
+         * {
+         *      if ((Random.Range(0, 2)) == 0)
+         *      {
+         *          state = BattleState.PlayerTurn;
+         *          StartCoroutine(PlayerTurn());
+         *      }
+         *      else
+         *      {
+         *          StartEnemyTurn()
+         *      }
+         * }
+         */
         state = BattleState.PlayerTurn;
         StartCoroutine(PlayerTurn());
     }
 
     IEnumerator PlayerTurn()
     {
+        //activates player's buttons
         combatMenu.actionButton.gameObject.SetActive(true);
         combatMenu.useItemButton.gameObject.SetActive(true);
         combatMenu.fleeButton.gameObject.SetActive(true);
@@ -109,10 +140,10 @@ public class BattleMgr : MonoBehaviour
         yield return null;
     }
 
+    //Determines enemy behavior
     IEnumerator EnemyTurn()
     {
         Debug.Log("Enemy Turn");
-        //yield return new WaitForSeconds(1f);
         dialougeBox.text = "Enemy's turn";
 
         yield return new WaitForSeconds(1f);
@@ -165,6 +196,7 @@ public class BattleMgr : MonoBehaviour
     {
         state = BattleState.EnemyTurn;
         StartCoroutine(EnemyTurn());
+        //deactivates player's buttons
         combatMenu.actionButton.gameObject.SetActive(false);
         combatMenu.useItemButton.gameObject.SetActive(false);
         combatMenu.fleeButton.gameObject.SetActive(false);
@@ -174,6 +206,5 @@ public class BattleMgr : MonoBehaviour
     {
         lastScene = PlayerPrefs.GetString("sceneLoadedFrom");
         loader.LoadScene(lastScene);
-        //SceneManager.LoadScene(lastScene);
     }
 }
