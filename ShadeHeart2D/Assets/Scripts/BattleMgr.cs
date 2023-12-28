@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public enum BattleState { BattleStart, PlayerTurn, EnemyTurn, Win, Lose}
 
@@ -29,6 +30,8 @@ public class BattleMgr : MonoBehaviour
     public Meter playerHealth, playerEnergy, enemyHealth, enemyEnergy;
     public GameObject playerHUD, enemyHUD;
 
+    public GameObject combatSelectedButton, actionSelectedButton;
+
     //Araay of background sprites
     public GameObject[] backgrounds;
 
@@ -52,6 +55,12 @@ public class BattleMgr : MonoBehaviour
         //Start Battle
         state = BattleState.BattleStart;
         StartCoroutine(SetupBattle());
+    }
+
+    public void Start()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(combatSelectedButton);
     }
 
     //checks if the battle is over
@@ -133,6 +142,7 @@ public class BattleMgr : MonoBehaviour
         combatMenu.actionButton.gameObject.SetActive(true);
         combatMenu.useItemButton.gameObject.SetActive(true);
         combatMenu.fleeButton.gameObject.SetActive(true);
+        OpenCombatMenu();
 
         Debug.Log("Player Turn");
         dialougeBox.text = "Player's turn";
@@ -206,5 +216,17 @@ public class BattleMgr : MonoBehaviour
     {
         lastScene = PlayerPrefs.GetString("sceneLoadedFrom");
         loader.LoadScene(lastScene);
+    }
+
+    public void OpenCombatMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(combatSelectedButton);
+    }
+
+    public void OpenAcionMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(actionSelectedButton);
     }
 }

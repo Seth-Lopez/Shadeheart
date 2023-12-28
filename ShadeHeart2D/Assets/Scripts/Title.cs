@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Title : MonoBehaviour
 {
-    string sceneName = "Battle";
+    string battleSceneName = "Battle";
+    string overworldSceneName = "Seth_Testing";
 
     public int battleLocation = 0;
 
@@ -13,17 +15,19 @@ public class Title : MonoBehaviour
 
     public SceneLoader loader;
 
+    public GameObject titleOpenButton, optionsOpenButton, optionsCloseButton, locationOpenButton, locationCloseButton;
+
     public void Start()
     {
         title.SetActive(true);
         options.SetActive(false);
         battleSelect.SetActive(false);
+        OpenTitleMenu();
     }
 
     public void StartGame()
     {
-        sceneName = "Seth_Testing";
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(overworldSceneName);
     }
 
     public void ExitGame()
@@ -34,11 +38,10 @@ public class Title : MonoBehaviour
 
     public void StartBattle()
     {
-        sceneName = "Battle";
         PlayerPrefs.SetInt("battleLocation", battleLocation);
         string sceneLoadedFrom = SceneManager.GetActiveScene().name;
         PlayerPrefs.SetString("sceneLoadedFrom", sceneLoadedFrom);
-        loader.LoadBattle(sceneName);
+        loader.LoadBattle(battleSceneName);
         //SceneManager.LoadScene(sceneName);
     }
 
@@ -60,5 +63,35 @@ public class Title : MonoBehaviour
     public void NightSelect()
     {
         battleLocation = 3;
+    }
+
+    public void OpenTitleMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(titleOpenButton);
+    }
+
+    public void OpenOptionsMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(optionsOpenButton);
+    }
+
+    public void ClsoeOptionsMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(optionsCloseButton);
+    }
+
+    public void OpenLocationSelect()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(locationOpenButton);
+    }
+
+    public void CloseLocationSelect()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(locationCloseButton);
     }
 }
