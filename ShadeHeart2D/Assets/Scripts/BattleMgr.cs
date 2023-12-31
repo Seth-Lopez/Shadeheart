@@ -16,7 +16,12 @@ public class BattleMgr : MonoBehaviour
 
     //Array of GameObjects with a Shade component and the index of the enemy that should be used
     public GameObject[] enemies;
-    public int enemyShade;
+    public int enemyIndex;
+
+    public bool randomizeNumEnemies;
+
+    int numEnemies = 1;
+    int previousEnemy = -1;
 
     public BattleState state;
     //public bool playerTurn = false;
@@ -46,12 +51,21 @@ public class BattleMgr : MonoBehaviour
         //Start with HUDs disabled
         playerHUD.SetActive(false);
         enemyHUD.SetActive(false);
+
+        combatMenu.actionButton.gameObject.SetActive(false);
+        combatMenu.useItemButton.gameObject.SetActive(false);
+        combatMenu.fleeButton.gameObject.SetActive(false);
+
+        //randomly adds a second enemy to some battles
+        if (randomizeNumEnemies)
+        {
+            numEnemies = Random.Range(1, 3);
+            Debug.Log("numEnemies: " + numEnemies.ToString());
+        }
+
         //Randomly select enemy
-        enemyShade = Random.Range(0, 7);
-        Debug.Log(enemyShade.ToString());
-        enemy = enemies[enemyShade];
-        enemies[enemyShade].SetActive(true);
-        enemyCreature = enemies[enemyShade].GetComponent<Shade>();
+        RandomizeEnemy();
+        combatMenu.SetEnemy();
         //Start Battle
         state = BattleState.BattleStart;
         StartCoroutine(SetupBattle());
@@ -63,21 +77,6 @@ public class BattleMgr : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(combatSelectedButton);
     }
 
-    //checks if the battle is over
-    private void Update()
-    {
-        if(playerCreature.health <= 0)
-        {
-            state = BattleState.Lose;
-            StartCoroutine(BattleLoss());
-        }
-        if(enemyCreature.health <= 0)
-        {
-            state = BattleState.Win;
-            StartCoroutine(BattleWin());
-        }
-    }
-
     IEnumerator SetupBattle()
     {
         Debug.Log("Setup Battle");
@@ -86,54 +85,26 @@ public class BattleMgr : MonoBehaviour
         int battleLocation = PlayerPrefs.GetInt("battleLocation");
         backgrounds[battleLocation].SetActive(true);
 
-        GameObject playerGO = Instantiate(player, playerPosition);
-        GameObject enemyGO = Instantiate(enemy, enemyPosition);
+        //GameObject playerGO = Instantiate(player, playerPosition);
+        //GameObject enemyGO = Instantiate(enemy, enemyPosition);
 
         
         dialougeBox.text = "Enemy " + enemyCreature.name + " appears!";
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         dialougeBox.text = "The Battle Begins...";
 
         //Seting up HUDs
         playerName.text = playerCreature.name;
-        enemyName.text = enemyCreature.name;
         combatMenu.playerCreature.SetupHealthBar();
         combatMenu.playerCreature.SetupEnergyBar();
-        combatMenu.enemyCreature.SetupHealthBar();
-        combatMenu.enemyCreature.SetupEnergyBar();
+        SetupEnemy();
 
         playerHUD.SetActive(true);
-        enemyHUD.SetActive(true);
 
         yield return new WaitForSeconds(1f);
 
-        //Determines who acts first
-        /*
-         * if (playerCreature.speed > enemyCreature.speed)
-         * {
-         *      state = BattleState.PlayerTurn;
-         *      StartCoroutine(PlayerTurn());
-         * }
-         * else if (playerCreature.speed < enemyCreature.speed)
-         * {
-         *      StartEnemyTurn()
-         * }
-         * else
-         * {
-         *      if ((Random.Range(0, 2)) == 0)
-         *      {
-         *          state = BattleState.PlayerTurn;
-         *          StartCoroutine(PlayerTurn());
-         *      }
-         *      else
-         *      {
-         *          StartEnemyTurn()
-         *      }
-         * }
-         */
-        state = BattleState.PlayerTurn;
-        StartCoroutine(PlayerTurn());
+        TurnOrder();
     }
 
     IEnumerator PlayerTurn()
@@ -153,39 +124,77 @@ public class BattleMgr : MonoBehaviour
     //Determines enemy behavior
     IEnumerator EnemyTurn()
     {
-        Debug.Log("Enemy Turn");
-        dialougeBox.text = "Enemy's turn";
-
-        yield return new WaitForSeconds(1f);
-
-        int enemyAction = Random.Range(1, 4);
-        if (enemyCreature.charged)
+        //checks if enemy was defeted
+        if (enemyCreature.health <= 0)
         {
-            enemyAction = 3;
-        }
-        if (enemyCreature.energy < 10)
-        {
-            enemyAction = 1;
-        }
-        switch (enemyAction)
-        {
-            case 1:
-                combatMenu.EnemyDefend();
-                break;
-            case 2:
-                combatMenu.EnemyCharge();
-                break;
-            case 3:
-                combatMenu.EnemyAttack();
-                break;
-            default:
-                Debug.Log("Error: invalid value for: enemyAction");
-                break;
-        }
+            if (numEnemies > 1)
+            {
+                dialougeBox.text = "Enemy " + enemyCreature.name + " was defeated";
+                yield return new WaitForSeconds(1f);
 
-        yield return new WaitForSeconds(1f);
-        state = BattleState.PlayerTurn;
-        StartCoroutine(PlayerTurn());
+                enemies[enemyIndex].SetActive(false);
+                RandomizeEnemy();
+                combatMenu.SetEnemy();
+                SetupEnemy();
+
+                dialougeBox.text = "Enemy " + enemyCreature.name + " appears!";
+                yield return new WaitForSeconds(1f);
+
+                numEnemies -= 1;
+                Debug.Log("Enemies remaining: " + numEnemies.ToString());
+                TurnOrder();
+                yield return new WaitForSeconds(1f);
+            }
+            else
+            {
+                yield return null;
+                state = BattleState.Win;
+                StartCoroutine(BattleWin());
+            }
+        }
+        else
+        {
+            Debug.Log("Enemy Turn");
+            dialougeBox.text = "Enemy's turn";
+
+            yield return new WaitForSeconds(1f);
+
+            int enemyAction = Random.Range(1, 4);
+            if (enemyCreature.charged)
+            {
+                enemyAction = 3;
+            }
+            if (enemyCreature.energy < combatMenu.chargeCost)
+            {
+                enemyAction = 1;
+            }
+            switch (enemyAction)
+            {
+                case 1:
+                    combatMenu.EnemyDefend();
+                    break;
+                case 2:
+                    combatMenu.EnemyCharge();
+                    break;
+                case 3:
+                    combatMenu.EnemyAttack();
+                    break;
+                default:
+                    Debug.Log("Error: invalid value for: enemyAction");
+                    break;
+            }
+            //checks if player was defeted
+            if (playerCreature.health <= 0)
+            {
+                yield return null;
+                state = BattleState.Lose;
+                StartCoroutine(BattleLoss());
+            }
+
+            yield return new WaitForSeconds(1f);
+            state = BattleState.PlayerTurn;
+            StartCoroutine(PlayerTurn());
+        }
     }
 
     IEnumerator BattleWin()
@@ -204,18 +213,68 @@ public class BattleMgr : MonoBehaviour
 
     public void StartEnemyTurn()
     {
-        state = BattleState.EnemyTurn;
-        StartCoroutine(EnemyTurn());
         //deactivates player's buttons
         combatMenu.actionButton.gameObject.SetActive(false);
         combatMenu.useItemButton.gameObject.SetActive(false);
         combatMenu.fleeButton.gameObject.SetActive(false);
+
+        state = BattleState.EnemyTurn;
+        StartCoroutine(EnemyTurn());
+    }
+
+    //Determines who acts first
+    public void TurnOrder()
+    {
+        if (playerCreature.speed > enemyCreature.speed)
+        {
+            state = BattleState.PlayerTurn;
+            StartCoroutine(PlayerTurn());
+        }
+
+        else if (playerCreature.speed < enemyCreature.speed)
+        {
+            StartEnemyTurn();
+        }
+        else
+        {
+            if ((Random.Range(0, 2)) == 0)
+            {
+                state = BattleState.PlayerTurn;
+                StartCoroutine(PlayerTurn());
+            }
+            else
+            {
+                StartEnemyTurn();
+            }
+        }
     }
 
     public void EndBattle()
     {
         lastScene = PlayerPrefs.GetString("sceneLoadedFrom");
         loader.LoadScene(lastScene);
+    }
+
+    public void RandomizeEnemy()
+    {
+        do
+        {
+            enemyIndex = Random.Range(0, 7);
+        }
+        while (enemyIndex == previousEnemy);
+        previousEnemy = enemyIndex;
+        Debug.Log("Enemy index: " + enemyIndex.ToString());
+        enemy = enemies[enemyIndex];
+        enemies[enemyIndex].SetActive(true);
+        enemyCreature = enemies[enemyIndex].GetComponent<Shade>();
+    }
+
+    public void SetupEnemy()
+    {
+        enemyName.text = enemyCreature.name;
+        combatMenu.enemyCreature.SetupHealthBar();
+        combatMenu.enemyCreature.SetupEnergyBar();
+        enemyHUD.SetActive(true);
     }
 
     public void OpenCombatMenu()

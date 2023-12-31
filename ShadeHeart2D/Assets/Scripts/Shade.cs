@@ -6,9 +6,10 @@ using TMPro;
 
 public class Shade : MonoBehaviour
 {
+    public string name;
     public Meter hpBar, energyBar;
     public float health, maxHealth, energy, maxEnergy;
-    public string name;
+    public int speed;
     public bool charged = false;
     public bool defending = false;
 

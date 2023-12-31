@@ -20,6 +20,10 @@ public class CombatMenu : MonoBehaviour
     public GameObject combatMenu;
     public GameObject actionMenu;
 
+    public int attackCost, defendCost, chargeCost;
+
+    public Animator playerAttackingAnim, enemyAttackingAnim;
+
     void Start()
     {
         // Register the buttons with their respective methods
@@ -29,7 +33,6 @@ public class CombatMenu : MonoBehaviour
         useItemButton.onClick.AddListener(UseItem);
         fleeButton.onClick.AddListener(Flee);
         */
-        enemyCreature = battle.enemies[battle.enemyShade].GetComponent<Shade>();
     }
 
     public void Attack()
@@ -43,17 +46,20 @@ public class CombatMenu : MonoBehaviour
     {
         playerCreature.defending = false;
 
-        if (playerCreature.energy < 5)
+        if (playerCreature.energy < attackCost)
         {
             dialougeBox.text = playerCreature.name + " doesn't have enough energy.";
             yield return new WaitForSeconds(2f);
             combatMenu.SetActive(true);
+            battle.OpenCombatMenu();
             dialougeBox.text = "Player's turn";
         }
 
         else
         {
             dialougeBox.text = playerCreature.name + " attacks!";
+
+            playerAttackingAnim.SetBool("isAttacking", true);
 
             int damage = 0;
             if (playerCreature.charged)
@@ -69,12 +75,14 @@ public class CombatMenu : MonoBehaviour
                     damage /= 2;
                 }
             }
-            Debug.Log(damage.ToString());
+            Debug.Log("Damage: " + damage.ToString());
             enemyCreature.UpdateHealth(damage);
-            playerCreature.UpdateEnergy(5);
+            playerCreature.UpdateEnergy(attackCost);
             yield return new WaitForSeconds(1f);
             actionMenu.SetActive(false);
             combatMenu.SetActive(true);
+
+            playerAttackingAnim.SetBool("isAttacking", false);
 
             battle.StartEnemyTurn();
         }
@@ -87,6 +95,8 @@ public class CombatMenu : MonoBehaviour
         enemyCreature.defending = false;
 
         dialougeBox.text = enemyCreature.name + " attacks!";
+
+        enemyAttackingAnim.SetBool("isAttacking", true);
 
         int damage = 0;
         if (enemyCreature.charged)
@@ -102,9 +112,12 @@ public class CombatMenu : MonoBehaviour
                 damage /= 2;
             }
         }
+        Debug.Log("Enemy Damage: " + damage.ToString());
 
         playerCreature.UpdateHealth(damage);
-        enemyCreature.UpdateEnergy(5);
+        enemyCreature.UpdateEnergy(attackCost);
+
+        playerAttackingAnim.SetBool("isAttacking", false);
     }
 
     public void Defend()
@@ -120,7 +133,7 @@ public class CombatMenu : MonoBehaviour
 
         playerCreature.defending = true;
 
-        playerCreature.UpdateEnergy(-3);
+        playerCreature.UpdateEnergy(defendCost);
         yield return new WaitForSeconds(1f);
         actionMenu.SetActive(false);
         combatMenu.SetActive(true);
@@ -135,7 +148,7 @@ public class CombatMenu : MonoBehaviour
         dialougeBox.text = enemyCreature.name + " guards itself";
 
         enemyCreature.defending = true;
-        playerCreature.UpdateEnergy(-3);
+        playerCreature.UpdateEnergy(defendCost);
     }
 
     public void UseItem()
@@ -192,18 +205,19 @@ public class CombatMenu : MonoBehaviour
     {
         playerCreature.defending = false;
 
-        if (playerCreature.energy < 10)
+        if (playerCreature.energy < chargeCost)
         {
             dialougeBox.text = playerCreature.name + " doesn't have enough energy.";
             yield return new WaitForSeconds(2f);
             combatMenu.SetActive(true);
+            battle.OpenCombatMenu();
             dialougeBox.text = "Player's turn";
         }
         else
         {
             dialougeBox.text = playerCreature.name + " is charging its power";
             playerCreature.charged = true;
-            playerCreature.UpdateEnergy(10);
+            playerCreature.UpdateEnergy(chargeCost);
             yield return new WaitForSeconds(1f);
 
             actionMenu.SetActive(false);
@@ -221,6 +235,11 @@ public class CombatMenu : MonoBehaviour
 
         dialougeBox.text = enemyCreature.name + " is charging its power";
         enemyCreature.charged = true;
-        enemyCreature.UpdateEnergy(10);
+        enemyCreature.UpdateEnergy(chargeCost);
+    }
+
+    public void SetEnemy()
+    {
+        enemyCreature = battle.enemies[battle.enemyIndex].GetComponent<Shade>();
     }
 }
