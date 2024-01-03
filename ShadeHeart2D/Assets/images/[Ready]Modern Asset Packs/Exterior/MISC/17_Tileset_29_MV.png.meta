@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 624
+        width: 87
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497e19f008ddff64483db17e099c2b38
+      internalID: -663427744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 546
+        width: 87
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f009d8cac068cf4f9dd6fc2e163a494
+      internalID: 515179695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 675
+        width: 240
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3608d1b9bb923b045a09b859d671dc37
+      internalID: -746706824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 438
+        width: 87
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ade37396239e642b8de49031fa6839
+      internalID: 245065801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 531
+        width: 240
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81c7a954f0f04c458cadfe71829c1ea
+      internalID: 403713982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_5
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 432
+        width: 87
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48010ea77191f36488467a2403042ba6
+      internalID: -2138161229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_6
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 348
+        width: 75
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3ce776fa9594b4f8dc8eeb198264a2
+      internalID: 384269674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_7
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 348
+        width: 153
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9642010570ea8854eb074b31bbe2b2b2
+      internalID: -2136955201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_8
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 252
+        width: 153
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b80727ab117e3a429406b968af7e6aa
+      internalID: -38578447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_9
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 252
+        width: 75
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8206d07b473bc13459536b3513f113f5
+      internalID: 707412916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_10
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 147
+        width: 207
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d5a6d1efe7dad4bb02ce3a1c543df1
+      internalID: -2070430998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_11
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 51
+        width: 207
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6df658387b638d4d88703c427af9e3e
+      internalID: 1203305240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_Tileset_29_MV_12
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 219
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8906b61dcc2cf9428c817d394f811e7
+      internalID: 1415909338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +392,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      17_Tileset_29_MV_0: -663427744
+      17_Tileset_29_MV_1: 515179695
+      17_Tileset_29_MV_10: -2070430998
+      17_Tileset_29_MV_11: 1203305240
+      17_Tileset_29_MV_12: 1415909338
+      17_Tileset_29_MV_2: -746706824
+      17_Tileset_29_MV_3: 245065801
+      17_Tileset_29_MV_4: 403713982
+      17_Tileset_29_MV_5: -2138161229
+      17_Tileset_29_MV_6: 384269674
+      17_Tileset_29_MV_7: -2136955201
+      17_Tileset_29_MV_8: -38578447
+      17_Tileset_29_MV_9: 707412916
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

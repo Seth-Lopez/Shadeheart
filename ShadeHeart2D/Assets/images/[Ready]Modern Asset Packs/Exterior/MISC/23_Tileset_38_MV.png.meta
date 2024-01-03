@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 23_Tileset_38_MV_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 570
+        height: 762
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911f19fae7268b64d85be0ad949b2c4f
+      internalID: -602884477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 23_Tileset_38_MV_1
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 699
+        width: 189
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 393b3d28b8f492847b79bd379bedfbc8
+      internalID: -1761120890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 23_Tileset_38_MV_2
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 644
+        width: 192
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e443203e1bbcb4bb7efd13c022cc56
+      internalID: 896196116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 23_Tileset_38_MV_3
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 591
+        width: 189
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88bee9a818b9c34c84bca262865e685
+      internalID: 1569440575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 23_Tileset_38_MV_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 444
+        width: 192
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8aa5e92d07b7ed4bb66e17a8a9278fe
+      internalID: -2108562128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 23_Tileset_38_MV_5
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 285
+        width: 192
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1969565e73ab3cc4483cf7959ff10370
+      internalID: 1334380759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 23_Tileset_38_MV_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 144
+        width: 189
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ee06a82027d2146ab2bb487fb7fde5
+      internalID: 55974300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 23_Tileset_38_MV_7
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 99
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d887b0199239604bab1b78b741cb654
+      internalID: 434214529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 23_Tileset_38_MV_8
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 96
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6efa33e9178dc7642b8159facecfed90
+      internalID: 1978369665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 23_Tileset_38_MV_9
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 96
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aac2a4383afbe9468df1a29db39be5f
+      internalID: -2047581616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +329,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      23_Tileset_38_MV_0: -602884477
+      23_Tileset_38_MV_1: -1761120890
+      23_Tileset_38_MV_2: 896196116
+      23_Tileset_38_MV_3: 1569440575
+      23_Tileset_38_MV_4: -2108562128
+      23_Tileset_38_MV_5: 1334380759
+      23_Tileset_38_MV_6: 55974300
+      23_Tileset_38_MV_7: 434214529
+      23_Tileset_38_MV_8: 1978369665
+      23_Tileset_38_MV_9: -2047581616
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

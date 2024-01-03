@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,763 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 720
+        width: 111
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 840e0edc2956b4c43800ea6cfbd9a1df
+      internalID: 1473278850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 480
+        width: 123
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8ad33290e94c4459d6c20ec77900db
+      internalID: 1799490029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_2
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 684
+        width: 33
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c4d999a540c3e4b80f137db5b9e012
+      internalID: 1314875137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 672
+        width: 135
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6f4aa629748cb41807449036799d1e
+      internalID: -1356561083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_4
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 672
+        width: 135
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93c437d1ec04cb49acfdb4d82aeb29b
+      internalID: -1503334232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_5
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 672
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee95a348ea7c6a49bbe74f325a2d7cb
+      internalID: 1655526474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_6
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 480
+        width: 123
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02edef5f1009dc24eb90e7ad1990333d
+      internalID: 1185791974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_7
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 576
+        width: 84
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19caa574d4f4d754b9ad8610ac5c4f47
+      internalID: -519482619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_8
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 526
+        width: 132
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d7a9e19c2cf9748b7b5fd4b7b2695e
+      internalID: -1343552137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_9
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 526
+        width: 138
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e42fa23f4d1764d9ff9e99ca6ef2b8
+      internalID: 1362501754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_10
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 574
+        width: 87
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37af38b9382b59e4a8691dfae24d36aa
+      internalID: -282542888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_11
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 480
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9064167a2c1930b4b99e0ce446031302
+      internalID: 1602181364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_12
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 492
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b148150c7f7778647ac42271ff923a06
+      internalID: -1155669348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_13
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 430
+        width: 45
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59fb42bfe4f34294990d1b284a0fae6a
+      internalID: -577307162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_14
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 430
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa8daeb997419345af61446b5f06894
+      internalID: 1314588607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_15
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 430
+        width: 45
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119b9f8cfd28e6f4b91da7280e19ff0f
+      internalID: 512805229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_16
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 477
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982f8c15499801d4fa2c4c34e816f193
+      internalID: -127858988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 306
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884e58c25d46341479cf6f4c4fa3c17c
+      internalID: -1413352638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_18
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 430
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a031b59900d50a42bf419869cd46425
+      internalID: 1244939259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_19
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 430
+        width: 45
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9377fcff914c3141a59b1800a2809fe
+      internalID: -339785757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_20
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 368
+        width: 90
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5772f5446e9294aaf96c23bc9ea37b
+      internalID: 1380732432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_21
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 348
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ea4e11eb659044a9aaea4833e7a8dd
+      internalID: 1699250385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_22
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 348
+        width: 45
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54bae59f27f04d74aa2181255959daa6
+      internalID: -1423560500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_23
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 348
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b01f1a9499db7848a9a1187d014ef85
+      internalID: 1740872591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_24
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 348
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcfede2bf431fd74cb8c56f1a07ec30c
+      internalID: -1027083616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_25
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 348
+        width: 45
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24472107772fb8647b594eabb1c40b76
+      internalID: -796956803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_26
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 28
+        width: 132
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 609d29ce5d31696488f5d3fc46a105af
+      internalID: -282193649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_27
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 28
+        width: 133
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3c557b5f93fa14cb9662e38c902688
+      internalID: -1388894737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_28
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 105
+        width: 96
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a60c78b3d7707f4680250d3a2c9c6b7
+      internalID: 1153880759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_29
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 132
+        width: 315
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 277a3358691c57f43aa8425cdf02ba07
+      internalID: -613455426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_30
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 52
+        width: 132
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74787dc2e368a374d8f8dc7aebeab56e
+      internalID: 1061825090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_31
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 14
+        width: 45
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d0e815c39d60e4f92da24fa866c38b
+      internalID: -1328343808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_32
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 14
+        width: 45
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb224c4672f8134dbf8bb8337740efb
+      internalID: -1231284666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_33
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 12
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c963692b6e715e438542052c342b0db
+      internalID: 2147107456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_34
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 0
+        width: 132
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f9691d9df5f154390935b09eb1e40a
+      internalID: 1027829292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 19_Tileset_31_MV_35
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 672
+        width: 42
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b4f9a16df4f1524fa4abebabdcca727
+      internalID: 2090039027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +875,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      19_Tileset_31_MV_0: 1473278850
+      19_Tileset_31_MV_1: 1799490029
+      19_Tileset_31_MV_10: -282542888
+      19_Tileset_31_MV_11: 1602181364
+      19_Tileset_31_MV_12: -1155669348
+      19_Tileset_31_MV_13: -577307162
+      19_Tileset_31_MV_14: 1314588607
+      19_Tileset_31_MV_15: 512805229
+      19_Tileset_31_MV_16: -127858988
+      19_Tileset_31_MV_17: -1413352638
+      19_Tileset_31_MV_18: 1244939259
+      19_Tileset_31_MV_19: -339785757
+      19_Tileset_31_MV_2: 1314875137
+      19_Tileset_31_MV_20: 1380732432
+      19_Tileset_31_MV_21: 1699250385
+      19_Tileset_31_MV_22: -1423560500
+      19_Tileset_31_MV_23: 1740872591
+      19_Tileset_31_MV_24: -1027083616
+      19_Tileset_31_MV_25: -796956803
+      19_Tileset_31_MV_26: -282193649
+      19_Tileset_31_MV_27: -1388894737
+      19_Tileset_31_MV_28: 1153880759
+      19_Tileset_31_MV_29: -613455426
+      19_Tileset_31_MV_3: -1356561083
+      19_Tileset_31_MV_30: 1061825090
+      19_Tileset_31_MV_31: -1328343808
+      19_Tileset_31_MV_32: -1231284666
+      19_Tileset_31_MV_33: 2147107456
+      19_Tileset_31_MV_34: 1027829292
+      19_Tileset_31_MV_35: 2090039027
+      19_Tileset_31_MV_4: -1503334232
+      19_Tileset_31_MV_5: 1655526474
+      19_Tileset_31_MV_6: 1185791974
+      19_Tileset_31_MV_7: -519482619
+      19_Tileset_31_MV_8: -1343552137
+      19_Tileset_31_MV_9: 1362501754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
