@@ -186,14 +186,16 @@ public class BattleMgr : MonoBehaviour
             //checks if player was defeted
             if (playerCreature.health <= 0)
             {
-                yield return null;
+                yield return new WaitForSeconds(1f);
                 state = BattleState.Lose;
                 StartCoroutine(BattleLoss());
             }
-
-            yield return new WaitForSeconds(1f);
-            state = BattleState.PlayerTurn;
-            StartCoroutine(PlayerTurn());
+            else
+            {
+                yield return new WaitForSeconds(1f);
+                state = BattleState.PlayerTurn;
+                StartCoroutine(PlayerTurn());
+            }
         }
     }
 
@@ -259,7 +261,8 @@ public class BattleMgr : MonoBehaviour
     {
         do
         {
-            enemyIndex = Random.Range(0, 7);
+            Debug.Log("enemies.Length: " + (enemies.Length).ToString());
+            enemyIndex = Random.Range(0, enemies.Length);
         }
         while (enemyIndex == previousEnemy);
         previousEnemy = enemyIndex;

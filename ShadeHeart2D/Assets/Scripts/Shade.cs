@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+public enum DamageType { Strike, Slash, Fire, Electric, Ice, Light, Dark }
 
 public class Shade : MonoBehaviour
 {
     public string name;
     public Meter hpBar, energyBar;
     public float health, maxHealth, energy, maxEnergy;
+    public float attack, defense;
     public int speed;
+    public DamageType basicAttackType, weakness;
     public bool charged = false;
-    public bool defending = false;
+    public bool isDefending = false;
 
     public void SetupHealthBar()
     {

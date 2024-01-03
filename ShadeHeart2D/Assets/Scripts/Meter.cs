@@ -13,7 +13,7 @@ public class Meter : MonoBehaviour
     public void SetValue(float currentValue, float maxValue)
     {
         meter.value = currentValue;
-        meterText.text = currentValue.ToString() + '/' + maxValue.ToString();
+        meterText.text = currentValue.ToString("F0") + '/' + maxValue.ToString();
     }
 
     public void SetMaxValue(float maxValue)

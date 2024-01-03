@@ -20,7 +20,10 @@ public class CombatMenu : MonoBehaviour
     public GameObject combatMenu;
     public GameObject actionMenu;
 
-    public int attackCost, defendCost, chargeCost;
+    float basicAtkPower = 25;
+    float randDamageMin = 80;
+    float randDamageMax = 100;
+    public int basicAttackCost, defendCost, chargeCost;
 
     public Animator playerAttackingAnim, enemyAttackingAnim;
 
@@ -44,9 +47,9 @@ public class CombatMenu : MonoBehaviour
     }
     IEnumerator PlayerAttack()
     {
-        playerCreature.defending = false;
+        playerCreature.isDefending = false;
 
-        if (playerCreature.energy < attackCost)
+        if (playerCreature.energy < basicAttackCost)
         {
             dialougeBox.text = playerCreature.name + " doesn't have enough energy.";
             yield return new WaitForSeconds(2f);
@@ -61,23 +64,10 @@ public class CombatMenu : MonoBehaviour
 
             playerAttackingAnim.SetBool("isAttacking", true);
 
-            int damage = 0;
-            if (playerCreature.charged)
-            {
-                damage = Random.Range(12, 21);
-                playerCreature.charged = false;
-            }
-            else
-            {
-                damage = Random.Range(8, 14);
-                if (enemyCreature.defending)
-                {
-                    damage /= 2;
-                }
-            }
+            float damage = DamageCalc(playerCreature, enemyCreature, basicAtkPower, playerCreature.basicAttackType);
             Debug.Log("Damage: " + damage.ToString());
             enemyCreature.UpdateHealth(damage);
-            playerCreature.UpdateEnergy(attackCost);
+            playerCreature.UpdateEnergy(basicAttackCost);
             yield return new WaitForSeconds(1f);
             actionMenu.SetActive(false);
             combatMenu.SetActive(true);
@@ -92,30 +82,17 @@ public class CombatMenu : MonoBehaviour
     {
         Debug.Log("Enemy Attacks");
 
-        enemyCreature.defending = false;
+        enemyCreature.isDefending = false;
 
         dialougeBox.text = enemyCreature.name + " attacks!";
 
         enemyAttackingAnim.SetBool("isAttacking", true);
 
-        int damage = 0;
-        if (enemyCreature.charged)
-        {
-            damage = Random.Range(12, 21);
-            enemyCreature.charged = false;
-        }
-        else
-        {
-            damage = Random.Range(8, 14);
-            if (playerCreature.defending)
-            {
-                damage /= 2;
-            }
-        }
+        float damage = DamageCalc(enemyCreature, playerCreature, basicAtkPower, enemyCreature.basicAttackType);
         Debug.Log("Enemy Damage: " + damage.ToString());
 
         playerCreature.UpdateHealth(damage);
-        enemyCreature.UpdateEnergy(attackCost);
+        enemyCreature.UpdateEnergy(basicAttackCost);
 
         playerAttackingAnim.SetBool("isAttacking", false);
     }
@@ -131,7 +108,7 @@ public class CombatMenu : MonoBehaviour
     {
         dialougeBox.text = playerCreature.name + " guards itself";
 
-        playerCreature.defending = true;
+        playerCreature.isDefending = true;
 
         playerCreature.UpdateEnergy(defendCost);
         yield return new WaitForSeconds(1f);
@@ -147,7 +124,7 @@ public class CombatMenu : MonoBehaviour
 
         dialougeBox.text = enemyCreature.name + " guards itself";
 
-        enemyCreature.defending = true;
+        enemyCreature.isDefending = true;
         playerCreature.UpdateEnergy(defendCost);
     }
 
@@ -160,7 +137,7 @@ public class CombatMenu : MonoBehaviour
     }
     IEnumerator Item()
     {
-        playerCreature.defending = false;
+        playerCreature.isDefending = false;
 
         dialougeBox.text = "No items to use...";
 
@@ -178,7 +155,7 @@ public class CombatMenu : MonoBehaviour
         Debug.Log("Flee selected.");
         // Add your flee logic here
 
-        playerCreature.defending = false;
+        playerCreature.isDefending = false;
 
         int fleeResult = Random.Range(1, 21);
         Debug.Log(fleeResult.ToString());
@@ -203,7 +180,7 @@ public class CombatMenu : MonoBehaviour
     }
     IEnumerator PlayerCharge()
     {
-        playerCreature.defending = false;
+        playerCreature.isDefending = false;
 
         if (playerCreature.energy < chargeCost)
         {
@@ -231,11 +208,31 @@ public class CombatMenu : MonoBehaviour
     {
         Debug.Log("Enemy Charging");
 
-        enemyCreature.defending = false;
+        enemyCreature.isDefending = false;
 
         dialougeBox.text = enemyCreature.name + " is charging its power";
         enemyCreature.charged = true;
         enemyCreature.UpdateEnergy(chargeCost);
+    }
+
+    public float DamageCalc(Shade attackingCreature, Shade defendingCreature, float power, DamageType damageType)
+    {
+        float damage = ((Random.Range(randDamageMin, randDamageMax)/100) * ((power / 100) * attackingCreature.attack / ((defendingCreature.defense) / 100)));
+        if (attackingCreature.charged)
+        {
+            damage += damage/2;
+            attackingCreature.charged = false;
+        }
+        else if (defendingCreature.isDefending)
+        {
+            damage /= 2;
+        }
+        if (defendingCreature.weakness == damageType)
+        {
+            damage *= 2;
+        }
+        damage = Mathf.Round(damage);
+        return damage;
     }
 
     public void SetEnemy()
