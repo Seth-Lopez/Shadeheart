@@ -20,10 +20,10 @@ public class CombatMenu : MonoBehaviour
     public GameObject combatMenu;
     public GameObject actionMenu;
 
-    float basicAtkPower = 25;
+    float basicAtkPower = 20;
     float randDamageMin = 80;
     float randDamageMax = 100;
-    public int basicAttackCost, defendCost, chargeCost;
+    public int basicAttackCost;//, defendCost, chargeCost;
 
     public Animator playerAttackingAnim, enemyAttackingAnim;
 
@@ -97,37 +97,6 @@ public class CombatMenu : MonoBehaviour
         playerAttackingAnim.SetBool("isAttacking", false);
     }
 
-    public void Defend()
-    {
-        Debug.Log("Defend selected.");
-        // Add your defend logic here
-
-        StartCoroutine(PlayerDefend());
-    }
-    IEnumerator PlayerDefend()
-    {
-        dialougeBox.text = playerCreature.name + " guards itself";
-
-        playerCreature.isDefending = true;
-
-        playerCreature.UpdateEnergy(defendCost);
-        yield return new WaitForSeconds(1f);
-        actionMenu.SetActive(false);
-        combatMenu.SetActive(true);
-
-        battle.StartEnemyTurn();
-    }
-
-    public void EnemyDefend()
-    {
-        Debug.Log("Enemy Defends.");
-
-        dialougeBox.text = enemyCreature.name + " guards itself";
-
-        enemyCreature.isDefending = true;
-        playerCreature.UpdateEnergy(defendCost);
-    }
-
     public void UseItem()
     {
         Debug.Log("Use Item selected.");
@@ -173,55 +142,13 @@ public class CombatMenu : MonoBehaviour
         }
     }
 
-    public void Charge()
-    {
-        Debug.Log("Charge selected.");
-        StartCoroutine(PlayerCharge());
-    }
-    IEnumerator PlayerCharge()
-    {
-        playerCreature.isDefending = false;
-
-        if (playerCreature.energy < chargeCost)
-        {
-            dialougeBox.text = playerCreature.name + " doesn't have enough energy.";
-            yield return new WaitForSeconds(2f);
-            combatMenu.SetActive(true);
-            battle.OpenCombatMenu();
-            dialougeBox.text = "Player's turn";
-        }
-        else
-        {
-            dialougeBox.text = playerCreature.name + " is charging its power";
-            playerCreature.charged = true;
-            playerCreature.UpdateEnergy(chargeCost);
-            yield return new WaitForSeconds(1f);
-
-            actionMenu.SetActive(false);
-            combatMenu.SetActive(true);
-
-            battle.StartEnemyTurn();
-        }
-    }
-
-    public void EnemyCharge()
-    {
-        Debug.Log("Enemy Charging");
-
-        enemyCreature.isDefending = false;
-
-        dialougeBox.text = enemyCreature.name + " is charging its power";
-        enemyCreature.charged = true;
-        enemyCreature.UpdateEnergy(chargeCost);
-    }
-
     public float DamageCalc(Shade attackingCreature, Shade defendingCreature, float power, DamageType damageType)
     {
         float damage = ((Random.Range(randDamageMin, randDamageMax)/100) * ((power / 100) * attackingCreature.attack / ((defendingCreature.defense) / 100)));
-        if (attackingCreature.charged)
+        if (attackingCreature.isCharged)
         {
             damage += damage/2;
-            attackingCreature.charged = false;
+            attackingCreature.isCharged = false;
         }
         else if (defendingCreature.isDefending)
         {
@@ -235,8 +162,66 @@ public class CombatMenu : MonoBehaviour
         return damage;
     }
 
+    public void SetPlayer()
+    {
+        playerCreature = battle.playerShades[battle.playerIndex].GetComponent<Shade>();
+    }
+
     public void SetEnemy()
     {
         enemyCreature = battle.enemies[battle.enemyIndex].GetComponent<Shade>();
+    }
+
+    public bool UseSkill(Skill skill)
+    {
+        if (skill.cost > skill.user.energy)
+        {
+            if (battle.state == BattleState.PlayerTurn)
+            {
+                dialougeBox.text = skill.user.ToString() + "doesn't have enough energy...";
+                battle.skillMenu.SetActive(true);
+                battle.OpenSkillMenu();
+            }
+
+            return false;
+        }
+
+        if (skill.name == "")
+        {
+            return false;
+        }
+
+        skill.user.isDefending = false;
+
+        float damage = DamageCalc(skill.user, skill.target, skill.power, skill.damageType);
+        skill.target.UpdateHealth(damage);
+        skill.user.UpdateEnergy(skill.cost);
+
+        switch (skill.effect)
+        {
+            case Effect.Shock:
+            case Effect.Burn:
+            case Effect.Blind:
+            case Effect.Freeze:
+                break;
+            case Effect.Charge:
+                skill.effectTarget.isCharged = true;
+                break;
+            case Effect.Defend:
+                skill.effectTarget.isDefending = true;
+                break;
+            case Effect.None:
+            default:
+                break;
+        }
+
+        dialougeBox.text = skill.user.name.ToString() + " used " + skill.name.ToString();
+
+        if (battle.state == BattleState.PlayerTurn)
+        {
+            battle.StartEnemyTurn();
+        }
+
+        return true;
     }
 }

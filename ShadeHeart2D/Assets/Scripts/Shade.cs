@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public enum DamageType { Strike, Slash, Fire, Electric, Ice, Light, Dark }
+public enum DamageType { None, Strike, Slash, Fire, Electric, Ice, Light, Dark , Heal }
+public enum Effect { None, Defend, Charge, Shock, Burn, Blind, Freeze }
 
 public class Shade : MonoBehaviour
 {
@@ -13,8 +14,9 @@ public class Shade : MonoBehaviour
     public float attack, defense;
     public int speed;
     public DamageType basicAttackType, weakness;
-    public bool charged = false;
+    public bool isCharged = false;
     public bool isDefending = false;
+    public Skill[] activeSkills;
 
     public void SetupHealthBar()
     {

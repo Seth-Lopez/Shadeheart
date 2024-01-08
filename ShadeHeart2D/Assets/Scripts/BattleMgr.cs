@@ -6,13 +6,16 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public enum BattleState { BattleStart, PlayerTurn, EnemyTurn, Win, Lose}
+public enum BattleState { BattleStart, PlayerTurn, EnemyTurn, Win, Lose }
 
 public class BattleMgr : MonoBehaviour
 {
     //For loading scenes
     string lastScene;
     public SceneLoader loader;
+
+    public GameObject[] playerShades;
+    public int playerIndex;
 
     //Array of GameObjects with a Shade component and the index of the enemy that should be used
     public GameObject[] enemies;
@@ -27,15 +30,15 @@ public class BattleMgr : MonoBehaviour
     //public bool playerTurn = false;
 
     //UI variables
-    public TextMeshProUGUI playerName;
-    public TextMeshProUGUI enemyName;
-    public TextMeshProUGUI dialougeBox;
+    public TextMeshProUGUI playerName, enemyName, dialougeBox;
     public GameObject player, enemy;
     public Shade playerCreature, enemyCreature;
     public Meter playerHealth, playerEnergy, enemyHealth, enemyEnergy;
     public GameObject playerHUD, enemyHUD;
 
-    public GameObject combatSelectedButton, actionSelectedButton;
+    public Button skill0, skill1, skill2;
+
+    public GameObject combatSelectedButton, actionSelectedButton, skillSelectedButton, skillMenu, combatMenu;
 
     //Araay of background sprites
     public GameObject[] backgrounds;
@@ -44,7 +47,7 @@ public class BattleMgr : MonoBehaviour
     public Transform playerPosition;
     public Transform enemyPosition;
 
-    public CombatMenu combatMenu;
+    public CombatMenu combatMenuScript;
 
     private void Awake()
     {
@@ -52,9 +55,15 @@ public class BattleMgr : MonoBehaviour
         playerHUD.SetActive(false);
         enemyHUD.SetActive(false);
 
-        combatMenu.actionButton.gameObject.SetActive(false);
-        combatMenu.useItemButton.gameObject.SetActive(false);
-        combatMenu.fleeButton.gameObject.SetActive(false);
+        combatMenuScript.actionButton.gameObject.SetActive(false);
+        combatMenuScript.useItemButton.gameObject.SetActive(false);
+        combatMenuScript.fleeButton.gameObject.SetActive(false);
+
+        playerIndex = PlayerPrefs.GetInt("playerShadeIndex");
+        Debug.Log("playerIndex: " + playerIndex.ToString());
+
+        SetShade(ref player, playerShades, playerIndex, ref playerCreature);
+        combatMenuScript.SetPlayer();
 
         //randomly adds a second enemy to some battles
         if (randomizeNumEnemies)
@@ -65,7 +74,8 @@ public class BattleMgr : MonoBehaviour
 
         //Randomly select enemy
         RandomizeEnemy();
-        combatMenu.SetEnemy();
+        SetSkills(ref playerCreature, true);//set player skills after enemy is randomized to the skills target properly
+        combatMenuScript.SetEnemy();
         //Start Battle
         state = BattleState.BattleStart;
         StartCoroutine(SetupBattle());
@@ -96,8 +106,8 @@ public class BattleMgr : MonoBehaviour
 
         //Seting up HUDs
         playerName.text = playerCreature.name;
-        combatMenu.playerCreature.SetupHealthBar();
-        combatMenu.playerCreature.SetupEnergyBar();
+        combatMenuScript.playerCreature.SetupHealthBar();
+        combatMenuScript.playerCreature.SetupEnergyBar();
         SetupEnemy();
 
         playerHUD.SetActive(true);
@@ -110,9 +120,10 @@ public class BattleMgr : MonoBehaviour
     IEnumerator PlayerTurn()
     {
         //activates player's buttons
-        combatMenu.actionButton.gameObject.SetActive(true);
-        combatMenu.useItemButton.gameObject.SetActive(true);
-        combatMenu.fleeButton.gameObject.SetActive(true);
+        combatMenu.SetActive(true);
+        combatMenuScript.actionButton.gameObject.SetActive(true);
+        combatMenuScript.useItemButton.gameObject.SetActive(true);
+        combatMenuScript.fleeButton.gameObject.SetActive(true);
         OpenCombatMenu();
 
         Debug.Log("Player Turn");
@@ -124,6 +135,7 @@ public class BattleMgr : MonoBehaviour
     //Determines enemy behavior
     IEnumerator EnemyTurn()
     {
+        yield return new WaitForSeconds(1f);
         //checks if enemy was defeted
         if (enemyCreature.health <= 0)
         {
@@ -134,7 +146,8 @@ public class BattleMgr : MonoBehaviour
 
                 enemies[enemyIndex].SetActive(false);
                 RandomizeEnemy();
-                combatMenu.SetEnemy();
+                SetSkills(ref playerCreature, true);//set player skills after enemy is randomized to the skills target properly
+                combatMenuScript.SetEnemy();
                 SetupEnemy();
 
                 dialougeBox.text = "Enemy " + enemyCreature.name + " appears!";
@@ -159,30 +172,54 @@ public class BattleMgr : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
 
+            int enemyAction;
+            bool acted = false;
+            int i = 0;
+            do
+            {
+                enemyAction = Random.Range(0, 4);
+                switch (enemyAction)
+                {
+                    case 0:
+                    case 1:
+                    case 2:
+                        acted = combatMenuScript.UseSkill(enemyCreature.activeSkills[enemyAction]);
+                        break;
+                    default:
+                        combatMenuScript.EnemyAttack();
+                        acted = true;
+                        break;
+                }
+                i++;
+            } while (!acted && i < 20);
+
+            /*
             int enemyAction = Random.Range(1, 4);
-            if (enemyCreature.charged)
+            if (enemyCreature.isCharged)
             {
                 enemyAction = 3;
             }
-            if (enemyCreature.energy < combatMenu.chargeCost)
+            if (enemyCreature.energy < combatMenuScript.chargeCost)
             {
                 enemyAction = 1;
             }
             switch (enemyAction)
             {
                 case 1:
-                    combatMenu.EnemyDefend();
+                    combatMenuScript.EnemyDefend();
                     break;
                 case 2:
-                    combatMenu.EnemyCharge();
+                    combatMenuScript.EnemyCharge();
                     break;
                 case 3:
-                    combatMenu.EnemyAttack();
+                    combatMenuScript.EnemyAttack();
                     break;
                 default:
                     Debug.Log("Error: invalid value for: enemyAction");
                     break;
             }
+            */
+
             //checks if player was defeted
             if (playerCreature.health <= 0)
             {
@@ -216,9 +253,9 @@ public class BattleMgr : MonoBehaviour
     public void StartEnemyTurn()
     {
         //deactivates player's buttons
-        combatMenu.actionButton.gameObject.SetActive(false);
-        combatMenu.useItemButton.gameObject.SetActive(false);
-        combatMenu.fleeButton.gameObject.SetActive(false);
+        combatMenuScript.actionButton.gameObject.SetActive(false);
+        combatMenuScript.useItemButton.gameObject.SetActive(false);
+        combatMenuScript.fleeButton.gameObject.SetActive(false);
 
         state = BattleState.EnemyTurn;
         StartCoroutine(EnemyTurn());
@@ -267,16 +304,85 @@ public class BattleMgr : MonoBehaviour
         while (enemyIndex == previousEnemy);
         previousEnemy = enemyIndex;
         Debug.Log("Enemy index: " + enemyIndex.ToString());
-        enemy = enemies[enemyIndex];
-        enemies[enemyIndex].SetActive(true);
-        enemyCreature = enemies[enemyIndex].GetComponent<Shade>();
+        SetShade(ref enemy, enemies, enemyIndex, ref enemyCreature);
+        SetSkills(ref enemyCreature, false);
+    }
+
+    public void SetShade(ref GameObject shadeLocation, GameObject[]shades, int shadeIndex, ref Shade activeShade)
+    {   
+        shadeLocation = shades[shadeIndex];
+        shades[shadeIndex].SetActive(true);
+        activeShade = shades[shadeIndex].GetComponent<Shade>();
+    }
+
+    public void SetSkills(ref Shade activeShade, bool isPlayer)
+    {
+        SetupSkill(ref activeShade.activeSkills[0], isPlayer, activeShade);
+        SetupSkill(ref activeShade.activeSkills[1], isPlayer, activeShade);
+        SetupSkill(ref activeShade.activeSkills[2], isPlayer, activeShade);
+
+        if (isPlayer)
+        {
+            SetupSkillButton(ref skill0, 0, activeShade);
+            SetupSkillButton(ref skill1, 1, activeShade);
+            SetupSkillButton(ref skill2, 2, activeShade);
+        }
+    }
+
+    public void SetupSkillButton(ref Button skillButton, int skillIndex, Shade activeShade)
+    {
+        Debug.Log("Setup skill button");
+        skillButton.GetComponentInChildren<TextMeshProUGUI>().text = activeShade.activeSkills[skillIndex].name;
+        if (skillButton.GetComponentInChildren<TextMeshProUGUI>().text == "")
+        {
+            skillButton.interactable = false;
+        }
+        else
+        {
+            skillButton.interactable = true;
+            skillButton.onClick.AddListener(delegate { skillMenu.SetActive(false); });
+            skillButton.onClick.AddListener(delegate { combatMenuScript.UseSkill(activeShade.activeSkills[skillIndex]); });
+
+
+        }
+    }
+// figure out how to setup targeting for skills
+    public void SetupSkill(ref Skill skill, bool isPlayer, Shade user)
+    {
+        Debug.Log("setup skill");
+        skill.user = user;
+        if (skill.isTargetSelf)
+        {
+            skill.target = skill.user;
+        }
+        else if (isPlayer)
+        {
+            skill.target = enemyCreature;
+        }
+        else
+        {
+            skill.target = playerCreature;
+        }
+
+        if (skill.effectTargetSelf)
+        {
+            skill.effectTarget = skill.user;
+        }
+        else if (isPlayer)
+        {
+            skill.effectTarget = enemyCreature;
+        }
+        else
+        {
+            skill.effectTarget = playerCreature;
+        }
     }
 
     public void SetupEnemy()
     {
         enemyName.text = enemyCreature.name;
-        combatMenu.enemyCreature.SetupHealthBar();
-        combatMenu.enemyCreature.SetupEnergyBar();
+        combatMenuScript.enemyCreature.SetupHealthBar();
+        combatMenuScript.enemyCreature.SetupEnergyBar();
         enemyHUD.SetActive(true);
     }
 
@@ -290,5 +396,11 @@ public class BattleMgr : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(actionSelectedButton);
+    }
+
+    public void OpenSkillMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(skillSelectedButton);
     }
 }

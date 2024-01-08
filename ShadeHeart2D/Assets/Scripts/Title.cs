@@ -11,15 +11,16 @@ public class Title : MonoBehaviour
 
     public int battleLocation = 0;
 
-    public GameObject title, options, battleSelect;
+    public GameObject title, shadeSelect, options, battleSelect;
 
     public SceneLoader loader;
 
-    public GameObject titleOpenButton, optionsOpenButton, optionsCloseButton, locationOpenButton, locationCloseButton;
+    public GameObject titleOpenButton, selectOpenButton, selectCloseButton, optionsOpenButton, optionsCloseButton, locationOpenButton, locationCloseButton;
 
     public void Start()
     {
         title.SetActive(true);
+        shadeSelect.SetActive(false);
         options.SetActive(false);
         battleSelect.SetActive(false);
         OpenTitleMenu();
@@ -71,13 +72,25 @@ public class Title : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(titleOpenButton);
     }
 
+    public void OpenShadeSelect()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(selectOpenButton);
+    }
+
+    public void CloseShadeSelect()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(selectCloseButton);
+    }
+
     public void OpenOptionsMenu()
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionsOpenButton);
     }
 
-    public void ClsoeOptionsMenu()
+    public void CloseOptionsMenu()
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionsCloseButton);
@@ -93,5 +106,11 @@ public class Title : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(locationCloseButton);
+    }
+
+    public void SelectShade(int shadeIndex)
+    {
+        PlayerPrefs.SetInt("playerShadeIndex", shadeIndex);
+        Debug.Log("shadeIndex: " + shadeIndex.ToString());
     }
 }
