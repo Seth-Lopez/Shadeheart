@@ -64,6 +64,8 @@ public class CombatMenu : MonoBehaviour
 
             playerAttackingAnim.SetBool("isAttacking", true);
 
+            yield return new WaitForSeconds(1f);
+
             float damage = DamageCalc(playerCreature, enemyCreature, basicAtkPower, playerCreature.basicAttackType);
             Debug.Log("Damage: " + damage.ToString());
             enemyCreature.UpdateHealth(damage);
@@ -80,6 +82,11 @@ public class CombatMenu : MonoBehaviour
 
     public void EnemyAttack()
     {
+        StartCoroutine(EnemyAttacking());
+    }
+
+    IEnumerator EnemyAttacking()
+    {
         Debug.Log("Enemy Attacks");
 
         enemyCreature.isDefending = false;
@@ -87,6 +94,7 @@ public class CombatMenu : MonoBehaviour
         dialougeBox.text = enemyCreature.name + " attacks!";
 
         enemyAttackingAnim.SetBool("isAttacking", true);
+        yield return new WaitForSeconds(1f);
 
         float damage = DamageCalc(enemyCreature, playerCreature, basicAtkPower, enemyCreature.basicAttackType);
         Debug.Log("Enemy Damage: " + damage.ToString());
@@ -95,6 +103,7 @@ public class CombatMenu : MonoBehaviour
         enemyCreature.UpdateEnergy(basicAttackCost);
 
         playerAttackingAnim.SetBool("isAttacking", false);
+        yield return null;
     }
 
     public void UseItem()
@@ -174,7 +183,11 @@ public class CombatMenu : MonoBehaviour
 
     public bool UseSkill(Skill skill)
     {
-        if (skill.cost > skill.user.energy)
+        if (skill.name == "")
+        {
+            return false;
+        }
+        else if (skill.cost > skill.user.energy)
         {
             if (battle.state == BattleState.PlayerTurn)
             {
@@ -185,43 +198,68 @@ public class CombatMenu : MonoBehaviour
 
             return false;
         }
-
-        if (skill.name == "")
+        else
         {
-            return false;
+            Animator animator;
+            if (battle.state == BattleState.PlayerTurn)
+            {
+                animator = playerAttackingAnim;
+            }
+            else
+            {
+                animator = enemyAttackingAnim;
+            }
+
+            skill.user.isDefending = false;
+
+            float damage = DamageCalc(skill.user, skill.target, skill.power, skill.damageType);
+            skill.target.UpdateHealth(damage);
+            skill.user.UpdateEnergy(skill.cost);
+
+            switch (skill.effect)
+            {
+                case Effect.Shock:
+                case Effect.Burn:
+                case Effect.Blind:
+                case Effect.Freeze:
+                    break;
+                case Effect.Charge:
+                    skill.effectTarget.isCharged = true;
+                    break;
+                case Effect.Defend:
+                    skill.effectTarget.isDefending = true;
+                    break;
+                case Effect.None:
+                default:
+                    break;
+            }
+
+            dialougeBox.text = skill.user.name.ToString() + " used " + skill.name.ToString();
+
+            StartCoroutine(Animate(skill.animationType, animator));
+
+            if (battle.state == BattleState.PlayerTurn)
+            {
+                battle.StartEnemyTurn();
+            }
+
+            return true;
         }
+    }
 
-        skill.user.isDefending = false;
-
-        float damage = DamageCalc(skill.user, skill.target, skill.power, skill.damageType);
-        skill.target.UpdateHealth(damage);
-        skill.user.UpdateEnergy(skill.cost);
-
-        switch (skill.effect)
+    IEnumerator Animate(AnimationType animation, Animator animator)
+    {
+        switch (animation)
         {
-            case Effect.Shock:
-            case Effect.Burn:
-            case Effect.Blind:
-            case Effect.Freeze:
+            case AnimationType.None:
+                yield return null;
                 break;
-            case Effect.Charge:
-                skill.effectTarget.isCharged = true;
-                break;
-            case Effect.Defend:
-                skill.effectTarget.isDefending = true;
-                break;
-            case Effect.None:
             default:
+                animator.SetBool(animation.ToString(), true);
+                yield return new WaitForSeconds(1f);
+                animator.SetBool(animation.ToString(), false);
+                yield return null;
                 break;
         }
-
-        dialougeBox.text = skill.user.name.ToString() + " used " + skill.name.ToString();
-
-        if (battle.state == BattleState.PlayerTurn)
-        {
-            battle.StartEnemyTurn();
-        }
-
-        return true;
     }
 }

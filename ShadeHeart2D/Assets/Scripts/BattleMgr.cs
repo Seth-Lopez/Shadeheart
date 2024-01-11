@@ -174,10 +174,9 @@ public class BattleMgr : MonoBehaviour
 
             int enemyAction;
             bool acted = false;
-            int i = 0;
             do
             {
-                enemyAction = Random.Range(0, 4);
+                enemyAction = Random.Range(0, 5);
                 switch (enemyAction)
                 {
                     case 0:
@@ -190,8 +189,7 @@ public class BattleMgr : MonoBehaviour
                         acted = true;
                         break;
                 }
-                i++;
-            } while (!acted && i < 20);
+            } while (!acted);
 
             /*
             int enemyAction = Random.Range(1, 4);
