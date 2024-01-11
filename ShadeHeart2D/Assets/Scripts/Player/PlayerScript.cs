@@ -24,10 +24,14 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private float currentEnergy = 50;
     private float maxEnergy = 50;
 
+    private Animator animator;
+
     private void Start()
     {
         // Set RigidBody:
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
         //Get Health Bar Component:
         healthBarGameObject = GameObject.FindWithTag("HealthBar");
         if(healthBarGameObject != null)
@@ -59,6 +63,12 @@ public class PlayerScript : MonoBehaviour
     {
         
         movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (movementDirection != Vector2.zero)
+        {
+            animator.SetFloat("horizontal", movementDirection.x);
+            animator.SetFloat("vertical", movementDirection.y);
+            animator.SetFloat("speed", movementDirection.sqrMagnitude);
+        }
         sprintSpeed = walkingSpeed + 5f;
         if (Input.GetKey(KeyCode.LeftShift))
         {
