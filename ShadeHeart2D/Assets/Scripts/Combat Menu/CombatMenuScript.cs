@@ -6,7 +6,7 @@ using System.Collections;
 public class CombatMenu : MonoBehaviour
 {
     // Buttons on the UI
-    public Button actionButton;
+    //public Button actionButton;
     public Button useItemButton;
     public Button fleeButton;
     public Button attackButton;
@@ -18,14 +18,15 @@ public class CombatMenu : MonoBehaviour
     public Shade playerCreature, enemyCreature;
 
     public GameObject combatMenu;
-    public GameObject actionMenu;
+    //public GameObject actionMenu;
+    public GameObject skillMenu;
 
     float basicAtkPower = 20;
     float randDamageMin = 80;
     float randDamageMax = 100;
-    public int basicAttackCost;//, defendCost, chargeCost;
+    public int basicAttackCost;
 
-    public Animator playerAttackingAnim, enemyAttackingAnim;
+    public Animator playerAttackingAnim, enemyAttackingAnim, playerSelfAnim, enemySelfAnim;
 
     void Start()
     {
@@ -71,8 +72,6 @@ public class CombatMenu : MonoBehaviour
             enemyCreature.UpdateHealth(damage);
             playerCreature.UpdateEnergy(basicAttackCost);
             yield return new WaitForSeconds(1f);
-            actionMenu.SetActive(false);
-            combatMenu.SetActive(true);
 
             playerAttackingAnim.SetBool("isAttacking", false);
 
@@ -203,11 +202,25 @@ public class CombatMenu : MonoBehaviour
             Animator animator;
             if (battle.state == BattleState.PlayerTurn)
             {
-                animator = playerAttackingAnim;
+                if (skill.isTargetSelf)
+                {
+                    animator = playerSelfAnim;
+                }
+                else
+                {
+                    animator = playerAttackingAnim;
+                }
             }
             else
             {
-                animator = enemyAttackingAnim;
+                if (skill.isTargetSelf)
+                {
+                    animator = enemySelfAnim;
+                }
+                else
+                {
+                    animator = enemyAttackingAnim;
+                }
             }
 
             skill.user.isDefending = false;
@@ -247,17 +260,17 @@ public class CombatMenu : MonoBehaviour
         }
     }
 
-    IEnumerator Animate(AnimationType animation, Animator animator)
+    IEnumerator Animate(AnimationType animationType, Animator animator)
     {
-        switch (animation)
+        switch (animationType)
         {
             case AnimationType.None:
                 yield return null;
                 break;
             default:
-                animator.SetBool(animation.ToString(), true);
+                animator.SetBool(animationType.ToString(), true);
                 yield return new WaitForSeconds(1f);
-                animator.SetBool(animation.ToString(), false);
+                animator.SetBool(animationType.ToString(), false);
                 yield return null;
                 break;
         }

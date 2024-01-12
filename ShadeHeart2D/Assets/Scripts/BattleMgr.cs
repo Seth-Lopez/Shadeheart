@@ -14,6 +14,7 @@ public class BattleMgr : MonoBehaviour
     string lastScene;
     public SceneLoader loader;
 
+    //Array of GameObjects with a Shade component and the index of the player that should be used
     public GameObject[] playerShades;
     public int playerIndex;
 
@@ -38,9 +39,9 @@ public class BattleMgr : MonoBehaviour
 
     public Button skill0, skill1, skill2;
 
-    public GameObject combatSelectedButton, actionSelectedButton, skillSelectedButton, skillMenu, combatMenu;
+    public GameObject combatSelectedButton, skillSelectedButton, skillCloseButton, skillMenu, combatMenu;
 
-    //Araay of background sprites
+    //Array of background sprites
     public GameObject[] backgrounds;
 
     //Position of Player and Enemy on screen
@@ -55,9 +56,8 @@ public class BattleMgr : MonoBehaviour
         playerHUD.SetActive(false);
         enemyHUD.SetActive(false);
 
-        combatMenuScript.actionButton.gameObject.SetActive(false);
-        combatMenuScript.useItemButton.gameObject.SetActive(false);
-        combatMenuScript.fleeButton.gameObject.SetActive(false);
+        combatMenu.SetActive(false);
+        skillMenu.SetActive(false);
 
         playerIndex = PlayerPrefs.GetInt("playerShadeIndex");
         Debug.Log("playerIndex: " + playerIndex.ToString());
@@ -121,9 +121,6 @@ public class BattleMgr : MonoBehaviour
     {
         //activates player's buttons
         combatMenu.SetActive(true);
-        combatMenuScript.actionButton.gameObject.SetActive(true);
-        combatMenuScript.useItemButton.gameObject.SetActive(true);
-        combatMenuScript.fleeButton.gameObject.SetActive(true);
         OpenCombatMenu();
 
         Debug.Log("Player Turn");
@@ -191,33 +188,6 @@ public class BattleMgr : MonoBehaviour
                 }
             } while (!acted);
 
-            /*
-            int enemyAction = Random.Range(1, 4);
-            if (enemyCreature.isCharged)
-            {
-                enemyAction = 3;
-            }
-            if (enemyCreature.energy < combatMenuScript.chargeCost)
-            {
-                enemyAction = 1;
-            }
-            switch (enemyAction)
-            {
-                case 1:
-                    combatMenuScript.EnemyDefend();
-                    break;
-                case 2:
-                    combatMenuScript.EnemyCharge();
-                    break;
-                case 3:
-                    combatMenuScript.EnemyAttack();
-                    break;
-                default:
-                    Debug.Log("Error: invalid value for: enemyAction");
-                    break;
-            }
-            */
-
             //checks if player was defeted
             if (playerCreature.health <= 0)
             {
@@ -251,9 +221,7 @@ public class BattleMgr : MonoBehaviour
     public void StartEnemyTurn()
     {
         //deactivates player's buttons
-        combatMenuScript.actionButton.gameObject.SetActive(false);
-        combatMenuScript.useItemButton.gameObject.SetActive(false);
-        combatMenuScript.fleeButton.gameObject.SetActive(false);
+        combatMenu.SetActive(false);
 
         state = BattleState.EnemyTurn;
         StartCoroutine(EnemyTurn());
@@ -390,15 +358,15 @@ public class BattleMgr : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(combatSelectedButton);
     }
 
-    public void OpenAcionMenu()
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(actionSelectedButton);
-    }
-
     public void OpenSkillMenu()
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(skillSelectedButton);
+    }
+
+    public void CloseSkillMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(skillCloseButton);
     }
 }

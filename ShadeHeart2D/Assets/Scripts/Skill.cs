@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AnimationType { None, Slash, Electric, Icicle, Flame }
+public enum AnimationType { None, Slash, Electric, Icicle, Flame, Charge }
 
 public class Skill : MonoBehaviour
 {

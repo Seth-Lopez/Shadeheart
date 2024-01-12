@@ -66,6 +66,11 @@ public class Title : MonoBehaviour
         battleLocation = 3;
     }
 
+    public void LocationSelect(int locationIndex)
+    {
+        battleLocation = locationIndex;
+    }
+
     public void OpenTitleMenu()
     {
         EventSystem.current.SetSelectedGameObject(null);
