@@ -306,10 +306,9 @@ public class BattleMgr : MonoBehaviour
         else
         {
             skillButton.interactable = true;
+            skillButton.onClick.RemoveAllListeners();
             skillButton.onClick.AddListener(delegate { skillMenu.SetActive(false); });
             skillButton.onClick.AddListener(delegate { combatMenuScript.UseSkill(activeShade.activeSkills[skillIndex]); });
-
-
         }
     }
 // figure out how to setup targeting for skills

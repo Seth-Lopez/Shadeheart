@@ -12,11 +12,17 @@ public class Meter : MonoBehaviour
 
     public void SetValue(float currentValue)
     {
+        meter.value = currentValue;
+        meterText.text = meter.value.ToString("F0") + "/" + meter.maxValue.ToString();        
+    }
+
+    public void ChangeValue(float currentValue)
+    {
         /*
         meter.value = currentValue;
         meterText.text = meter.value.ToString("F0");
         */
-        StartCoroutine(ChangeValue(currentValue));
+        StartCoroutine(ChangeingValue(currentValue));
     }
 
     public void SetMaxValue(float maxValue)
@@ -39,7 +45,7 @@ public class Meter : MonoBehaviour
         meterText.text = meter.value.ToString("F0");
     }
 
-    IEnumerator ChangeValue(float currentValue)
+    IEnumerator ChangeingValue(float currentValue)
     {
         float incrementor = meter.maxValue / 150;
 

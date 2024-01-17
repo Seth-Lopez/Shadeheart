@@ -71,6 +71,9 @@ public class PartyMenu : MonoBehaviour
     {
         //turn off active shade
         battle.playerShades[activeIndex].SetActive(false);
+        //set activeIndex to newIndex
+        activeIndex = newIndex;
+        battle.playerIndex = newIndex;
         //set new active shade
         battle.SetShade(ref battle.player, battle.playerShades, newIndex, ref battle.playerCreature);
         combatMenuScript.SetPlayer();
@@ -78,8 +81,5 @@ public class PartyMenu : MonoBehaviour
         //call SetSkills function so skills target the correct shades
         battle.SetSkills(ref battle.enemyCreature, false);
         battle.SetSkills(ref battle.playerCreature, true);
-        //set activeIndex to newIndex
-        activeIndex = newIndex;
-        battle.playerIndex = newIndex;
     }
 }

@@ -21,11 +21,13 @@ public class Shade : MonoBehaviour
     public void SetupHealthBar()
     {
         hpBar.SetMaxValue(maxHealth);
+        hpBar.SetValue(health);
     }
 
     public void SetupEnergyBar()
     {
         energyBar.SetMaxValue(maxEnergy);
+        energyBar.SetValue(energy);
     }
 
     public void UpdateHealth(float damage)
@@ -39,7 +41,7 @@ public class Shade : MonoBehaviour
         {
             health = 0;
         }
-        hpBar.SetValue(health);
+        hpBar.ChangeValue(health);
     }
 
     public void UpdateEnergy(float energyUsed)
@@ -53,6 +55,6 @@ public class Shade : MonoBehaviour
         {
             energy = 0;
         }
-        energyBar.SetValue(energy);
+        energyBar.ChangeValue(energy);
     }
 }
