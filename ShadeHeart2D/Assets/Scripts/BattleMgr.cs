@@ -37,9 +37,9 @@ public class BattleMgr : MonoBehaviour
     public Meter playerHealth, playerEnergy, enemyHealth, enemyEnergy;
     public GameObject playerHUD, enemyHUD;
 
-    public Button skill0, skill1, skill2;
+    public Button[] skillButtons;
 
-    public GameObject combatSelectedButton, skillSelectedButton, skillCloseButton, skillMenu, combatMenu;
+    public GameObject combatSelectedButton, skillSelectedButton, skillCloseButton, partyOpenButton, partyCloseButton, skillMenu, combatMenu;
 
     //Array of background sprites
     public GameObject[] backgrounds;
@@ -49,6 +49,7 @@ public class BattleMgr : MonoBehaviour
     public Transform enemyPosition;
 
     public CombatMenu combatMenuScript;
+    public PartyMenu partyMenuScript;
 
     private void Awake()
     {
@@ -105,12 +106,8 @@ public class BattleMgr : MonoBehaviour
         dialougeBox.text = "The Battle Begins...";
 
         //Seting up HUDs
-        playerName.text = playerCreature.name;
-        combatMenuScript.playerCreature.SetupHealthBar();
-        combatMenuScript.playerCreature.SetupEnergyBar();
+        SetupPlayer();
         SetupEnemy();
-
-        playerHUD.SetActive(true);
 
         yield return new WaitForSeconds(1f);
 
@@ -173,12 +170,13 @@ public class BattleMgr : MonoBehaviour
             bool acted = false;
             do
             {
-                enemyAction = Random.Range(0, 5);
+                enemyAction = Random.Range(0, skillButtons.Length +2);//2 is added to give a higher chance of enemies doing a basic attack
                 switch (enemyAction)
                 {
                     case 0:
                     case 1:
                     case 2:
+                    case 3:
                         acted = combatMenuScript.UseSkill(enemyCreature.activeSkills[enemyAction]);
                         break;
                     default:
@@ -283,15 +281,13 @@ public class BattleMgr : MonoBehaviour
 
     public void SetSkills(ref Shade activeShade, bool isPlayer)
     {
-        SetupSkill(ref activeShade.activeSkills[0], isPlayer, activeShade);
-        SetupSkill(ref activeShade.activeSkills[1], isPlayer, activeShade);
-        SetupSkill(ref activeShade.activeSkills[2], isPlayer, activeShade);
-
-        if (isPlayer)
+        for (int i = 0; i < skillButtons.Length; i++)
         {
-            SetupSkillButton(ref skill0, 0, activeShade);
-            SetupSkillButton(ref skill1, 1, activeShade);
-            SetupSkillButton(ref skill2, 2, activeShade);
+            SetupSkill(ref activeShade.activeSkills[i], isPlayer, activeShade);
+            if (isPlayer)
+            {
+                SetupSkillButton(ref skillButtons[i], i, activeShade);
+            }
         }
     }
 
@@ -344,8 +340,18 @@ public class BattleMgr : MonoBehaviour
         }
     }
 
+    public void SetupPlayer()
+    {
+        playerHUD.SetActive(false);
+        playerName.text = playerCreature.name;
+        combatMenuScript.playerCreature.SetupHealthBar();
+        combatMenuScript.playerCreature.SetupEnergyBar();
+        playerHUD.SetActive(true);
+    }
+
     public void SetupEnemy()
     {
+        enemyHUD.SetActive(false);
         enemyName.text = enemyCreature.name;
         combatMenuScript.enemyCreature.SetupHealthBar();
         combatMenuScript.enemyCreature.SetupEnergyBar();
@@ -368,5 +374,16 @@ public class BattleMgr : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(skillCloseButton);
+    }
+
+    public void OpenParty()
+    {
+        partyMenuScript.OpenPartyMenu();
+    }
+
+    public void ClosePartyMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(partyCloseButton);
     }
 }

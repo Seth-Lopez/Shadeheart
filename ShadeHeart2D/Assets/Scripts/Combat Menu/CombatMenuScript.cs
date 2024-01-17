@@ -65,12 +65,11 @@ public class CombatMenu : MonoBehaviour
 
             playerAttackingAnim.SetBool("isAttacking", true);
 
-            yield return new WaitForSeconds(1f);
-
             float damage = DamageCalc(playerCreature, enemyCreature, basicAtkPower, playerCreature.basicAttackType);
             Debug.Log("Damage: " + damage.ToString());
             enemyCreature.UpdateHealth(damage);
             playerCreature.UpdateEnergy(basicAttackCost);
+
             yield return new WaitForSeconds(1f);
 
             playerAttackingAnim.SetBool("isAttacking", false);
@@ -105,6 +104,27 @@ public class CombatMenu : MonoBehaviour
         yield return null;
     }
 
+    public void OpenPartyMenu()
+    {
+        Debug.Log("Open Party Menu");
+
+        //battle.OpenParty();
+        StartCoroutine(Party());
+    }
+
+    IEnumerator Party()
+    {
+        playerCreature.isDefending = false;
+
+        dialougeBox.text = "No party...";
+
+        yield return new WaitForSeconds(1f);
+
+        dialougeBox.text = "Player's turn";
+
+        yield return null;
+    }
+
     public void UseItem()
     {
         Debug.Log("Use Item selected.");
@@ -121,6 +141,7 @@ public class CombatMenu : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         dialougeBox.text = "Player's turn";
+        yield return null;
     }
 
     public void Flee()

@@ -10,33 +10,63 @@ public class Meter : MonoBehaviour
     public Slider meter;
     public TMP_Text meterText;
 
-    public void SetValue(float currentValue, float maxValue)
+    public void SetValue(float currentValue)
     {
+        /*
         meter.value = currentValue;
-        meterText.text = meter.value.ToString("F0") + '/' + maxValue.ToString();
+        meterText.text = meter.value.ToString("F0");
+        */
+        StartCoroutine(ChangeValue(currentValue));
     }
 
     public void SetMaxValue(float maxValue)
     {
         meter.maxValue = maxValue;
         meter.value = maxValue;
-        meterText.text = maxValue.ToString() + '/' + maxValue.ToString();
+        meterText.text = maxValue.ToString("F0") + "/" + maxValue.ToString();
     }
 
-    IEnumerator ChangeValue(float currentValue, float maxValue)
+    public void SetValueMenu(float currentValue)
     {
-        float incrementor = 0.5f;
+        meter.value = currentValue;
+        meterText.text = meter.value.ToString("F0");
+    }
+
+    public void SetMaxValueMenu(float maxValue)
+    {
+        meter.maxValue = maxValue;
+        meter.value = maxValue;
+        meterText.text = meter.value.ToString("F0");
+    }
+
+    IEnumerator ChangeValue(float currentValue)
+    {
+        float incrementor = meter.maxValue / 150;
 
         if (meter.value > currentValue)
         {
-            incrementor = -incrementor;
+            while (meter.value > currentValue)
+            {
+                meter.value -= incrementor;
+                yield return null;
+
+                meterText.text = meter.value.ToString("F0") + "/" + meter.maxValue.ToString();
+            }
+            meter.value = currentValue;
         }
-        while (meter.value != currentValue)
+        else
         {
-            meter.value += incrementor;
-            meterText.text = meter.value.ToString("F0") + '/' + maxValue.ToString();
-            yield return null;
+            while (meter.value < currentValue)
+            {
+                meter.value += incrementor;
+                yield return null;
+
+                meterText.text = meter.value.ToString("F0") + "/" + meter.maxValue.ToString();
+            }
+            meter.value = currentValue;
         }
+        
+        meterText.text = meter.value.ToString("F0") + "/" + meter.maxValue.ToString();
         yield return null;
     }
 }
