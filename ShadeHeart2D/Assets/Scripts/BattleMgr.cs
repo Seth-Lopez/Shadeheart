@@ -51,6 +51,8 @@ public class BattleMgr : MonoBehaviour
     public CombatMenu combatMenuScript;
     public PartyMenu partyMenuScript;
 
+    public GameObject combatMenuMgr;
+
     private void Awake()
     {
         //Start with HUDs disabled
@@ -80,6 +82,8 @@ public class BattleMgr : MonoBehaviour
         //Start Battle
         state = BattleState.BattleStart;
         StartCoroutine(SetupBattle());
+
+        combatMenuMgr.SetActive(true);
     }
 
     public void Start()

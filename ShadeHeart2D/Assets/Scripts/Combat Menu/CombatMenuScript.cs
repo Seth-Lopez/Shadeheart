@@ -20,6 +20,7 @@ public class CombatMenu : MonoBehaviour
     public GameObject combatMenu;
     //public GameObject actionMenu;
     public GameObject skillMenu;
+    public GameObject partyMenuMgr;
 
     float basicAtkPower = 20;
     float randDamageMin = 80;
@@ -37,6 +38,7 @@ public class CombatMenu : MonoBehaviour
         useItemButton.onClick.AddListener(UseItem);
         fleeButton.onClick.AddListener(Flee);
         */
+        partyMenuMgr.SetActive(true);
     }
 
     public void Attack()
@@ -108,8 +110,8 @@ public class CombatMenu : MonoBehaviour
     {
         Debug.Log("Open Party Menu");
 
-        //battle.OpenParty();
-        StartCoroutine(Party());
+        battle.OpenParty();
+        //StartCoroutine(Party());
     }
 
     IEnumerator Party()

@@ -9,6 +9,9 @@ public class PartyMenu : MonoBehaviour
 {
     public GameObject[] party;
 
+    public GameObject[] partyImages;
+    public GameObject[] partyMenuHUDs;
+
     public Button[] partyButtons;
 
 
@@ -27,26 +30,23 @@ public class PartyMenu : MonoBehaviour
         activeIndex = PlayerPrefs.GetInt("playerShadeIndex");
         Debug.Log("Test1");
 
-        for (int i = 0; i < battle.playerShades.Length; i++)
+        for (int i = 0; i < partyMenuHUDs.Length; i++)
         {
             Debug.Log("Test A-"+i.ToString());
             partyButtons[i].interactable = false;
-            Debug.Log("GetDomponents Length: " + party[i].GetComponents<GameObject>().Length.ToString());
-            for (int j = 0; j < party[i].GetComponents<GameObject>().Length; j++)
-            {
-                party[i].GetComponents<GameObject>()[j].SetActive(false);
-            }
+            Debug.Log("inteactable " + i.ToString() + ": " + partyButtons[i].interactable.ToString());
+            Debug.Log("PartyMenuHUDs Length: " + partyMenuHUDs.Length.ToString());
+
+            partyMenuHUDs[i].SetActive(false);
         }
         Debug.Log("Test2");
 
         for (int i = 0; i < battle.playerShades.Length; i++)
         {
+            Debug.Log("inteactable " + i.ToString() + ": " + partyButtons[i].interactable.ToString());
             partyButtons[i].interactable = true;
-            for (int j = 0; j < battle.playerShades.Length; j++)
-            {
-                party[i].GetComponents<GameObject>()[j].SetActive(false);
-            }
-            party[i].GetComponent<Image>().sprite = battle.playerShades[i].GetComponent<Sprite>();
+            partyMenuHUDs[i].SetActive(true);
+            partyImages[i].GetComponent<Image>().sprite = battle.playerShades[i].GetComponent<SpriteRenderer>().sprite;
             names[i].text = battle.playerShades[i].name;
             healthMeters[i].SetMaxValueMenu(battle.playerShades[i].GetComponent<Shade>().maxHealth);
             energyMeters[i].SetMaxValueMenu(battle.playerShades[i].GetComponent<Shade>().maxEnergy);
@@ -74,6 +74,7 @@ public class PartyMenu : MonoBehaviour
         //set new active shade
         battle.SetShade(ref battle.player, battle.playerShades, newIndex, ref battle.playerCreature);
         combatMenuScript.SetPlayer();
+        battle.SetupPlayer();
         //call SetSkills function so skills target the correct shades
         battle.SetSkills(ref battle.enemyCreature, false);
         battle.SetSkills(ref battle.playerCreature, true);
