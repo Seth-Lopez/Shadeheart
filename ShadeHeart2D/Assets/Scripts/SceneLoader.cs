@@ -16,7 +16,7 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadBattle(string _sceneName)
     {
-        transitionIndex = Random.Range(0, 3);
+        transitionIndex = Random.Range(0, transitions.Length);
         TransitionManager.Instance().Transition(_sceneName, transitions[transitionIndex], loadDelay);
     }
 }

@@ -7,7 +7,7 @@ public class CombatMenu : MonoBehaviour
 {
     // Buttons on the UI
     //public Button actionButton;
-    public Button useItemButton;
+    [SerializeField] private Button useItemButton;
     public Button fleeButton;
     public Button attackButton;
     public Button defendButton;

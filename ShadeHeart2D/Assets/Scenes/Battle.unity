@@ -734,10 +734,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &44810440
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -850,10 +850,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &76077856
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1944,10 +1944,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &174113403
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4931,61 +4931,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &395258568
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 395258569}
-  - component: {fileID: 395258570}
-  m_Layer: 0
-  m_Name: Empty
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &395258569
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395258568}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1850188200}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &395258570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395258568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c689ae8fd2183ea4fa955f5b0debc2ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  power: 0
-  cost: 0
-  damageType: 0
-  target: {fileID: 0}
-  user: {fileID: 0}
-  effectTarget: {fileID: 0}
-  isTargetSelf: 0
-  effectTargetSelf: 0
-  effect: 0
-  animationType: 0
 --- !u!1 &412137513
 GameObject:
   m_ObjectHideFlags: 0
@@ -5205,10 +5150,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &422595068
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5308,7 +5253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 434224994}
   m_Layer: 0
-  m_Name: Player Skills
+  m_Name: Skills
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5953,10 +5898,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &525316832
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7167,10 +7112,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &598058586
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7783,10 +7728,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &649882544
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8509,10 +8454,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &697275619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9283,10 +9228,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!1 &734269600
 GameObject:
   m_ObjectHideFlags: 0
@@ -9497,10 +9442,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &776190911
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11964,10 +11909,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &972741245
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12080,10 +12025,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &972968311
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13003,10 +12948,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1046949935
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13059,61 +13004,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1049465392
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1049465393}
-  - component: {fileID: 1049465394}
-  m_Layer: 0
-  m_Name: Charge
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1049465393
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049465392}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1850188200}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1049465394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049465392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c689ae8fd2183ea4fa955f5b0debc2ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Charge
-  power: 0
-  cost: 10
-  damageType: 0
-  target: {fileID: 0}
-  user: {fileID: 0}
-  effectTarget: {fileID: 0}
-  isTargetSelf: 1
-  effectTargetSelf: 1
-  effect: 2
-  animationType: 5
 --- !u!1 &1072857294
 GameObject:
   m_ObjectHideFlags: 0
@@ -13517,10 +13407,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1079749643
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14840,10 +14730,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1198598561
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15270,10 +15160,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1229357736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16120,10 +16010,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1281596590
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16646,10 +16536,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1335011849
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17056,10 +16946,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1360640833
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17813,10 +17703,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1425428195
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18536,10 +18426,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1471742349
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18786,10 +18676,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1502821288
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19298,61 +19188,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1555965451
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1555965452}
-  - component: {fileID: 1555965453}
-  m_Layer: 0
-  m_Name: Defend
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1555965452
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555965451}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1850188200}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1555965453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555965451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c689ae8fd2183ea4fa955f5b0debc2ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Defend
-  power: 0
-  cost: 3
-  damageType: 0
-  target: {fileID: 0}
-  user: {fileID: 0}
-  effectTarget: {fileID: 0}
-  isTargetSelf: 1
-  effectTargetSelf: 1
-  effect: 1
-  animationType: 0
 --- !u!1 &1557421406
 GameObject:
   m_ObjectHideFlags: 0
@@ -19518,10 +19353,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1557963882
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21401,10 +21236,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1734055919
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22397,10 +22232,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1814761785
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22851,40 +22686,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847935788}
   m_CullTransparentMesh: 1
---- !u!1 &1850188199
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1850188200}
-  m_Layer: 0
-  m_Name: Enemy Skills
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1850188200
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850188199}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.3, y: -0.13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 395258569}
-  - {fileID: 1555965452}
-  - {fileID: 1049465393}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1850565074
 GameObject:
   m_ObjectHideFlags: 0
@@ -23784,10 +23585,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1894950435
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24111,10 +23912,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1925470659
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25257,10 +25058,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1946153405
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25523,10 +25324,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &1973805543
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25864,10 +25665,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &2000700879
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26222,10 +26023,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &2019570051
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26495,10 +26296,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &2044314561
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26611,10 +26412,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &2053389300
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26802,10 +26603,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &2072293478
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27052,10 +26853,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &2076055746
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27168,10 +26969,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &2082748393
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27636,10 +27437,10 @@ MonoBehaviour:
   isCharged: 0
   isDefending: 0
   activeSkills:
-  - {fileID: 1555965453}
-  - {fileID: 1049465394}
-  - {fileID: 395258570}
-  - {fileID: 395258570}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 1738642957}
+  - {fileID: 1738642957}
 --- !u!212 &2116998269
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28073,4 +27874,3 @@ SceneRoots:
   - {fileID: 270071100}
   - {fileID: 1526022249}
   - {fileID: 434224994}
-  - {fileID: 1850188200}
