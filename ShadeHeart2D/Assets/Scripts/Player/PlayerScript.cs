@@ -63,12 +63,12 @@ public class PlayerScript : MonoBehaviour
     {
         
         movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        if (movementDirection != Vector2.zero)
+        /*if (movementDirection != Vector2.zero)
         {
             animator.SetFloat("horizontal", movementDirection.x);
             animator.SetFloat("vertical", movementDirection.y);
             animator.SetFloat("speed", movementDirection.sqrMagnitude);
-        }
+        }*/
         sprintSpeed = walkingSpeed + 5f;
         if (Input.GetKey(KeyCode.LeftShift))
         {
