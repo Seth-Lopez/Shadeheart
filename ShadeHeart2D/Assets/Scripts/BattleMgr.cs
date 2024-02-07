@@ -76,7 +76,12 @@ public class BattleMgr : MonoBehaviour
         }
 
         //Randomly select enemy
-        RandomizeEnemy();
+        //RandomizeEnemy();
+        
+        enemyIndex = 1;
+        SetShade(ref enemy, enemies, enemyIndex, ref enemyCreature);
+        SetSkills(ref enemyCreature, false);
+
         SetSkills(ref playerCreature, true);//set player skills after enemy is randomized to the skills target properly
         combatMenuScript.SetEnemy();
         //Start Battle

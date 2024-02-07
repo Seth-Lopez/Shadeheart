@@ -121,7 +121,7 @@ public class NPCStats : MonoBehaviour
         }
         else
         {
-            return "Error - No dialogue options available.";
+            return "I got to go it was nice chatting with you.";
         }
     }
 }

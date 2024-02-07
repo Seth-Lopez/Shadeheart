@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class Title : MonoBehaviour
 {
     string battleSceneName = "Battle";
-    string overworldSceneName = "Seth_Testing";
+    string overworldSceneName = "City";
 
     public int battleLocation = 0;
 
