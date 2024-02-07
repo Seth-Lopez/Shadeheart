@@ -7,7 +7,7 @@ public class DialogueMngr : MonoBehaviour
 {
     // The list that stores the dialogue data:
     private List<(string, List<string>)> dialogueList = new List<(string, List<string>)>();
-    private string filePath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Assets/Scripts/Managers/DialogueOptions.txt");
+    private string filePath = Path.Combine(Application.dataPath, "Scripts/Managers/DialogueOptions.txt");
 
     void Awake()
     {

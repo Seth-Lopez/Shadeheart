@@ -15,7 +15,7 @@ public class NPCMngr: MonoBehaviour
     protected List<string> dialogueOptions;*/
     [SerializeField] private GameObject npcPrefab;
     private List<string> npcNames = new List<string>();
-    private string filePath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Assets/Scripts/Managers/NPCNames.txt");
+    private string filePath = Path.Combine(Application.dataPath, "Scripts/Managers/NPCNames.txt");
     /*public NPCMngr(string npcName, int occupation, List<string> dialogueOptions)
     {
         this.npcName = npcName;
@@ -29,7 +29,6 @@ public class NPCMngr: MonoBehaviour
     }*/
     void Start()
     {
-        Debug.Log(filePath);
         setnpcNames();
         GameObject npc;
         Transform parent;

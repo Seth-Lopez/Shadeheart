@@ -7,7 +7,7 @@ using System.Text;
 public class GameState : MonoBehaviour
 {
     //File Path
-    private string filePath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Assets/Scripts/Managers/GameState.txt");
+    private string filePath = Path.Combine(Application.dataPath, "Scripts/Managers/GameState.txt");
     //Allows all other scripts to know what quests have been completed
     List<(int, bool)> GameStateVar = new List<(int, bool)>();
     //Allows Modders / Us to know what name a given quest id in the GameState.txt 
