@@ -48,8 +48,8 @@ public class PartyMenu : MonoBehaviour
             partyMenuHUDs[i].SetActive(true);
             partyImages[i].GetComponent<Image>().sprite = battle.playerShades[i].GetComponent<SpriteRenderer>().sprite;
             names[i].text = battle.playerShades[i].name;
-            healthMeters[i].SetMaxValueMenu(battle.playerShades[i].GetComponent<Shade>().maxHealth);
-            energyMeters[i].SetMaxValueMenu(battle.playerShades[i].GetComponent<Shade>().maxEnergy);
+            healthMeters[i].SetMaxValueMenu(battle.playerShades[i].GetComponent<Shade>().MaxHealth);
+            energyMeters[i].SetMaxValueMenu(battle.playerShades[i].GetComponent<Shade>().MaxEnergy);
         }
         Debug.Log("Test3");
     }

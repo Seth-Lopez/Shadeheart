@@ -487,6 +487,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14358161}
   m_CullTransparentMesh: 1
+--- !u!1 &15239103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15239104}
+  - component: {fileID: 15239106}
+  - component: {fileID: 15239105}
+  m_Layer: 5
+  m_Name: Description
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &15239104
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15239103}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2071269071}
+  m_Father: {fileID: 914185910}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 299.85, y: 45}
+  m_SizeDelta: {x: 200.3, y: 90}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &15239105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15239103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 415f47e567b53254d89b2a71143dd6a6, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &15239106
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15239103}
+  m_CullTransparentMesh: 1
 --- !u!1 &33331487
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,10 +798,11 @@ MonoBehaviour:
   name: Cerberus
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 53
+  level: 0
   maxHealth: 53
-  energy: 23
   maxEnergy: 23
+  health: 53
+  energy: 23
   attack: 25
   defense: 33
   speed: 25
@@ -733,6 +810,8 @@ MonoBehaviour:
   weakness: 5
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -838,10 +917,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -849,6 +929,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -1553,6 +1635,62 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &145704809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 145704810}
+  - component: {fileID: 145704811}
+  m_Layer: 0
+  m_Name: Stun Burst
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &145704810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145704809}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 434224994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &145704811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145704809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c689ae8fd2183ea4fa955f5b0debc2ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Stun Burst
+  power: 20
+  cost: 7
+  damageType: 4
+  target: {fileID: 0}
+  user: {fileID: 0}
+  effectTarget: {fileID: 0}
+  isTargetSelf: 0
+  effectTargetSelf: 0
+  effect: 3
+  animationType: 4
+  description: Shoots an electric blast that Stuns the target.
 --- !u!1 &148998953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,6 +1797,142 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &152073918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152073919}
+  - component: {fileID: 152073921}
+  - component: {fileID: 152073920}
+  m_Layer: 5
+  m_Name: Level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &152073919
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152073918}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1305409780}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 64.7, y: 20}
+  m_SizeDelta: {x: -139.4, y: -49}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &152073920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152073918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'LV: 000
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 18
+  m_fontSizeBase: 18
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0.24440953, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &152073921
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152073918}
+  m_CullTransparentMesh: 1
 --- !u!1 &164962451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,10 +2206,11 @@ MonoBehaviour:
   name: Wulf
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 57
+  level: 0
   maxHealth: 57
-  energy: 34
   maxEnergy: 34
+  health: 57
+  energy: 34
   attack: 25
   defense: 27
   speed: 25
@@ -1943,6 +2218,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -2000,6 +2277,142 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &179524451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 179524452}
+  - component: {fileID: 179524454}
+  - component: {fileID: 179524453}
+  m_Layer: 5
+  m_Name: Level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &179524452
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179524451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1142287439}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 64.7, y: 20}
+  m_SizeDelta: {x: -139.4, y: -49}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &179524453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179524451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'LV: 000
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 18
+  m_fontSizeBase: 18
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0.24440953, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &179524454
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179524451}
+  m_CullTransparentMesh: 1
 --- !u!1 &198801473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,6 +2552,7 @@ MonoBehaviour:
   effectTargetSelf: 0
   effect: 0
   animationType: 4
+  description: A fire attack.
 --- !u!1 &215744776
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,7 +3183,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270071098}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2887,6 +3301,7 @@ MonoBehaviour:
   effectTargetSelf: 1
   effect: 1
   animationType: 0
+  description: Reduces damage taken from next attack.
 --- !u!1 &276367738
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,6 +3774,7 @@ RectTransform:
   - {fileID: 852202405}
   - {fileID: 1603343055}
   - {fileID: 640153853}
+  - {fileID: 1859519435}
   m_Father: {fileID: 566798565}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3800,6 +4216,8 @@ MonoBehaviour:
   state: 0
   playerName: {fileID: 1908336787}
   enemyName: {fileID: 840498122}
+  playerLevel: {fileID: 152073920}
+  enemyLevel: {fileID: 179524453}
   dialougeBox: {fileID: 839381185}
   player: {fileID: 1931494242}
   enemy: {fileID: 2019570048}
@@ -3824,7 +4242,7 @@ MonoBehaviour:
   skillMenu: {fileID: 945891608}
   combatMenu: {fileID: 14358161}
   backgrounds:
-  - {fileID: 139674624}
+  - {fileID: 1859519434}
   - {fileID: 1366307055}
   - {fileID: 1934316915}
   - {fileID: 852202404}
@@ -4244,16 +4662,16 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1241858219}
+    m_SelectOnUp: {fileID: 814827941}
     m_SelectOnDown: {fileID: 993739866}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -4403,10 +4821,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -4536,10 +4954,11 @@ MonoBehaviour:
   name: Scram
   hpBar: {fileID: 1114623174}
   energyBar: {fileID: 563342891}
-  health: 53
+  level: 9
   maxHealth: 53
-  energy: 34
   maxEnergy: 34
+  health: 53
+  energy: 34
   attack: 25
   defense: 20
   speed: 30
@@ -4547,11 +4966,13 @@ MonoBehaviour:
   weakness: 3
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 882513353}
   - {fileID: 199916028}
   - {fileID: 576685916}
-  - {fileID: 1738642957}
+  - {fileID: 145704811}
 --- !u!212 &374237068
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4661,6 +5082,13 @@ MonoBehaviour:
   dialougeBox: {fileID: 839381185}
   playerCreature: {fileID: 1931494246}
   enemyCreature: {fileID: 730161651}
+  descriptionBox: {fileID: 2071269072}
+  descriptionObject: {fileID: 15239103}
+  skillButtonObjects:
+  - {fileID: 364715955}
+  - {fileID: 993739864}
+  - {fileID: 1241858217}
+  - {fileID: 688346741}
   combatMenu: {fileID: 14358161}
   skillMenu: {fileID: 945891608}
   partyMenuMgr: {fileID: 1881271606}
@@ -5285,10 +5713,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -5296,6 +5725,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -5424,6 +5855,7 @@ Transform:
   - {fileID: 576685915}
   - {fileID: 882513352}
   - {fileID: 608773818}
+  - {fileID: 145704810}
   - {fileID: 199916027}
   - {fileID: 1041862501}
   m_Father: {fileID: 0}
@@ -6033,10 +6465,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -6044,6 +6477,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -6959,7 +7394,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
@@ -7356,6 +7791,7 @@ MonoBehaviour:
   effectTargetSelf: 1
   effect: 2
   animationType: 5
+  description: Charges power to make the next skill used more powerfull.
 --- !u!1 &598058583
 GameObject:
   m_ObjectHideFlags: 0
@@ -7404,10 +7840,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -7415,6 +7852,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -7602,6 +8041,7 @@ MonoBehaviour:
   effectTargetSelf: 0
   effect: 0
   animationType: 2
+  description: An electric attack.
 --- !u!1 &609816048
 GameObject:
   m_ObjectHideFlags: 0
@@ -8020,10 +8460,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -8031,6 +8472,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -8232,10 +8675,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -8292,6 +8735,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1414918933}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 15239103}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -8568,16 +9023,16 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 993739866}
+    m_SelectOnUp: {fileID: 1241858219}
     m_SelectOnDown: {fileID: 814827941}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -8770,10 +9225,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -8781,6 +9237,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -9144,7 +9602,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
@@ -9386,7 +9844,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
@@ -9858,10 +10316,11 @@ MonoBehaviour:
   name: Whisp
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 42
+  level: 0
   maxHealth: 42
-  energy: 27
   maxEnergy: 27
+  health: 42
+  energy: 27
   attack: 27
   defense: 15
   speed: 22
@@ -9869,6 +10328,8 @@ MonoBehaviour:
   weakness: 4
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -10072,10 +10533,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -10083,6 +10545,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -10400,7 +10864,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
@@ -10833,16 +11297,16 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1241858219}
+    m_SelectOnUp: {fileID: 688346743}
     m_SelectOnDown: {fileID: 364715956}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -10899,6 +11363,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1414918933}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 15239103}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -11956,6 +12432,7 @@ MonoBehaviour:
   effectTargetSelf: 0
   effect: 0
   animationType: 1
+  description: A slashing attack.
 --- !u!1 &885525383
 GameObject:
   m_ObjectHideFlags: 0
@@ -12348,6 +12825,7 @@ RectTransform:
   - {fileID: 1305409780}
   - {fileID: 1142287439}
   - {fileID: 2011361871}
+  - {fileID: 15239104}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -12708,10 +13186,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -12719,6 +13198,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -12824,10 +13305,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -12835,6 +13317,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -13064,10 +13548,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -13711,6 +14195,7 @@ MonoBehaviour:
   effectTargetSelf: 0
   effect: 0
   animationType: 3
+  description: An attack with an icicle.
 --- !u!1 &1046949932
 GameObject:
   m_ObjectHideFlags: 0
@@ -13759,10 +14244,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -13770,6 +14256,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -14218,10 +14706,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -14229,6 +14718,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -14820,6 +15311,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 840498121}
+  - {fileID: 179524452}
   - {fileID: 1834046083}
   - {fileID: 715998071}
   m_Father: {fileID: 914185910}
@@ -15541,10 +16033,11 @@ MonoBehaviour:
   name: Ooze
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 60
+  level: 0
   maxHealth: 60
-  energy: 20
   maxEnergy: 20
+  health: 60
+  energy: 20
   attack: 15
   defense: 35
   speed: 10
@@ -15552,6 +16045,8 @@ MonoBehaviour:
   weakness: 4
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -15971,10 +16466,11 @@ MonoBehaviour:
   name: Dark Wyrm
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 60
+  level: 0
   maxHealth: 60
-  energy: 32
   maxEnergy: 32
+  health: 60
+  energy: 32
   attack: 19
   defense: 21
   speed: 20
@@ -15982,6 +16478,8 @@ MonoBehaviour:
   weakness: 5
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -16169,15 +16667,15 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 993739866}
-    m_SelectOnDown: {fileID: 814827941}
+    m_SelectOnDown: {fileID: 688346743}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -16457,10 +16955,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -16833,10 +17331,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -16844,6 +17343,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -16932,6 +17433,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1908336786}
+  - {fileID: 152073919}
   - {fileID: 1114623172}
   - {fileID: 563342889}
   m_Father: {fileID: 914185910}
@@ -17493,10 +17995,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -17504,6 +18007,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -17990,7 +18495,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -62.42888, w: 0}
+  m_margin: {x: 0, y: 0, z: -38.208183, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -18037,10 +18542,11 @@ MonoBehaviour:
   name: Spyder
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 36
+  level: 0
   maxHealth: 36
-  energy: 32
   maxEnergy: 32
+  health: 36
+  energy: 32
   attack: 22
   defense: 13
   speed: 23
@@ -18048,6 +18554,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -18336,7 +18844,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
@@ -19002,10 +19510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5405f188fd2fbfe4e9ebf54741da66da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  maxDistance: 1
-  targetPosition: {x: 0, y: 0, z: 0}
-  oldPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1415550641
 GameObject:
   m_ObjectHideFlags: 0
@@ -19129,10 +19633,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -19140,6 +19645,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -19852,10 +20359,11 @@ MonoBehaviour:
   name: Doubleye
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 40
+  level: 5
   maxHealth: 40
-  energy: 25
   maxEnergy: 25
+  health: 40
+  energy: 25
   attack: 25
   defense: 25
   speed: 25
@@ -19863,6 +20371,8 @@ MonoBehaviour:
   weakness: 5
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -20102,10 +20612,11 @@ MonoBehaviour:
   name: Rat
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 28
+  level: 0
   maxHealth: 28
-  energy: 24
   maxEnergy: 24
+  health: 28
+  energy: 24
   attack: 18
   defense: 18
   speed: 30
@@ -20113,6 +20624,8 @@ MonoBehaviour:
   weakness: 3
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -20269,7 +20782,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526022247}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -20779,10 +21292,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -20790,6 +21304,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -21501,6 +22017,90 @@ Transform:
   - {fileID: 1170357099}
   m_Father: {fileID: 323351192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1613735367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1613735368}
+  - component: {fileID: 1613735369}
+  m_Layer: 0
+  m_Name: background_city_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1613735368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613735367}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -400.00003, y: -147.67, z: 0}
+  m_LocalScale: {x: 3.7174196, y: 3.7174196, z: 3.7174196}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1859519435}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1613735369
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613735367}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -10
+  m_Sprite: {fileID: 21300000, guid: 0d65bec331a53394fb8fab67d7affb17, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 7.04, y: 9.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1622524827
 GameObject:
   m_ObjectHideFlags: 0
@@ -22228,10 +22828,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -22796,10 +23396,11 @@ MonoBehaviour:
   name: Stalker
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 40
+  level: 7
   maxHealth: 40
-  energy: 25
   maxEnergy: 25
+  health: 40
+  energy: 25
   attack: 25
   defense: 25
   speed: 25
@@ -22807,6 +23408,8 @@ MonoBehaviour:
   weakness: 1
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -23003,6 +23606,7 @@ MonoBehaviour:
   effectTargetSelf: 0
   effect: 0
   animationType: 0
+  description: 
 --- !u!1 &1743139810
 GameObject:
   m_ObjectHideFlags: 0
@@ -23792,10 +24396,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -23803,6 +24408,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -24637,6 +25244,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855126448}
   m_CullTransparentMesh: 1
+--- !u!1 &1859519434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1859519435}
+  m_Layer: 0
+  m_Name: City
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1859519435
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859519434}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1613735368}
+  m_Father: {fileID: 323351192}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1861795894
 GameObject:
   m_ObjectHideFlags: 0
@@ -25279,10 +25922,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -25290,6 +25934,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -25606,10 +26252,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -25617,6 +26264,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -25973,10 +26622,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -26146,10 +26795,11 @@ MonoBehaviour:
   name: Grabit
   hpBar: {fileID: 1114623174}
   energyBar: {fileID: 563342891}
-  health: 50
+  level: 10
   maxHealth: 50
-  energy: 34
   maxEnergy: 34
+  health: 50
+  energy: 34
   attack: 25
   defense: 24
   speed: 25
@@ -26157,11 +26807,13 @@ MonoBehaviour:
   weakness: 5
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 882513353}
   - {fileID: 608773819}
   - {fileID: 1041862502}
-  - {fileID: 1738642957}
+  - {fileID: 145704811}
 --- !u!1 &1934316915
 GameObject:
   m_ObjectHideFlags: 0
@@ -26752,10 +27404,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -26763,6 +27416,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -27018,10 +27673,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -27029,6 +27685,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -27359,10 +28017,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -27370,6 +28029,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -27717,10 +28378,11 @@ MonoBehaviour:
   name: Eycelime
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 40
+  level: 6
   maxHealth: 40
-  energy: 25
   maxEnergy: 25
+  health: 40
+  energy: 25
   attack: 25
   defense: 25
   speed: 25
@@ -27728,6 +28390,8 @@ MonoBehaviour:
   weakness: 2
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -27990,10 +28654,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -28001,6 +28666,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -28106,10 +28773,11 @@ MonoBehaviour:
   name: Oculink
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 40
+  level: 4
   maxHealth: 40
-  energy: 25
   maxEnergy: 25
+  health: 40
+  energy: 25
   attack: 25
   defense: 25
   speed: 25
@@ -28117,10 +28785,12 @@ MonoBehaviour:
   weakness: 4
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
-  - {fileID: 1738642957}
+  - {fileID: 145704811}
   - {fileID: 1738642957}
 --- !u!212 &2053389300
 SpriteRenderer:
@@ -28249,6 +28919,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055516738}
   m_CullTransparentMesh: 1
+--- !u!1 &2071269070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2071269071}
+  - component: {fileID: 2071269073}
+  - component: {fileID: 2071269072}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2071269071
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071269070}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15239104}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -14}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2071269072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071269070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Text Here
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 18
+  m_fontSizeBase: 18
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &2071269073
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071269070}
+  m_CullTransparentMesh: 1
 --- !u!1 &2072293475
 GameObject:
   m_ObjectHideFlags: 0
@@ -28297,10 +29101,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -28308,6 +29113,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -28547,10 +29354,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -28558,6 +29366,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -28663,10 +29473,11 @@ MonoBehaviour:
   name: Unnamed
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 10
+  level: 0
   maxHealth: 10
-  energy: 10
   maxEnergy: 10
+  health: 10
+  energy: 10
   attack: 10
   defense: 10
   speed: 10
@@ -28674,6 +29485,8 @@ MonoBehaviour:
   weakness: 0
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -29131,10 +29944,11 @@ MonoBehaviour:
   name: Scorpio
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  health: 34
+  level: 0
   maxHealth: 34
-  energy: 40
   maxEnergy: 40
+  health: 34
+  energy: 40
   attack: 23
   defense: 17
   speed: 27
@@ -29142,6 +29956,8 @@ MonoBehaviour:
   weakness: 2
   isCharged: 0
   isDefending: 0
+  isStunned: 0
+  wasStunned: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}

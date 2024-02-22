@@ -31,7 +31,7 @@ public class BattleMgr : MonoBehaviour
     //public bool playerTurn = false;
 
     //UI variables
-    public TextMeshProUGUI playerName, enemyName, dialougeBox;
+    public TextMeshProUGUI playerName, enemyName, playerLevel, enemyLevel, dialougeBox;
     public GameObject player, enemy;
     public Shade playerCreature, enemyCreature;
     public Meter playerHealth, playerEnergy, enemyHealth, enemyEnergy;
@@ -120,20 +120,46 @@ public class BattleMgr : MonoBehaviour
 
     IEnumerator PlayerTurn()
     {
-        //activates player's buttons
-        combatMenu.SetActive(true);
-        OpenCombatMenu();
+        //checks if enemy can be stunned
+        if (playerCreature.wasStunned)
+        {
+            playerCreature.wasStunned = false;
+        }
 
-        Debug.Log("Player Turn");
-        dialougeBox.text = "Player's turn";
-        
-        yield return null;
+        //checks if enemy is stunned
+        if (enemyCreature.isStunned)
+        {
+            enemyCreature.isStunned = false;
+            enemyCreature.wasStunned = true;
+
+            Debug.Log("Player Turn");
+            dialougeBox.text = playerCreature.name + " is stunned...";
+            yield return new WaitForSeconds(1f);
+
+            state = BattleState.EnemyTurn;
+            StartEnemyTurn();
+            yield return null;
+        }
+        else
+        {
+            //activates player's buttons
+            combatMenu.SetActive(true);
+            OpenCombatMenu();
+
+            Debug.Log("Player Turn");
+            dialougeBox.text = "Player's turn";
+
+            yield return null;
+        }
     }
 
     //Determines enemy behavior
     IEnumerator EnemyTurn()
     {
         yield return new WaitForSeconds(1f);
+        
+        combatMenuScript.descriptionObject.SetActive(false);
+
         //checks if enemy was defeted
         if (enemyCreature.health <= 0)
         {
@@ -172,7 +198,24 @@ public class BattleMgr : MonoBehaviour
 
             int enemyAction;
             bool acted = false;
-            do
+
+            //checks if enemy can be stunned
+            if (enemyCreature.wasStunned)
+            {
+                enemyCreature.wasStunned = false;
+            }
+
+            //checks if enemy is stunned
+            if (enemyCreature.isStunned)
+            {
+                acted = true;
+                enemyCreature.isStunned = false;
+                enemyCreature.wasStunned = true;
+
+                dialougeBox.text = enemyCreature.name + " is stunned...";
+            }
+
+            while (!acted) 
             {
                 enemyAction = Random.Range(0, skillButtons.Length +2);//2 is added to give a higher chance of enemies doing a basic attack
                 switch (enemyAction)
@@ -188,7 +231,7 @@ public class BattleMgr : MonoBehaviour
                         acted = true;
                         break;
                 }
-            } while (!acted);
+            }
 
             //checks if player was defeted
             if (playerCreature.health <= 0)
@@ -232,13 +275,13 @@ public class BattleMgr : MonoBehaviour
     //Determines who acts first
     public void TurnOrder()
     {
-        if (playerCreature.speed > enemyCreature.speed)
+        if (playerCreature.Speed > enemyCreature.Speed)
         {
             state = BattleState.PlayerTurn;
             StartCoroutine(PlayerTurn());
         }
 
-        else if (playerCreature.speed < enemyCreature.speed)
+        else if (playerCreature.Speed < enemyCreature.Speed)
         {
             StartEnemyTurn();
         }
@@ -309,6 +352,9 @@ public class BattleMgr : MonoBehaviour
             skillButton.onClick.RemoveAllListeners();
             skillButton.onClick.AddListener(delegate { skillMenu.SetActive(false); });
             skillButton.onClick.AddListener(delegate { combatMenuScript.UseSkill(activeShade.activeSkills[skillIndex]); });
+
+            skillButton.onClick.AddListener(delegate { combatMenuScript.ChangeDescription(activeShade.activeSkills[skillIndex].description); });
+            skillButton.onClick.AddListener(delegate { combatMenuScript.descriptionObject.SetActive(false); });
         }
     }
 // figure out how to setup targeting for skills
@@ -347,6 +393,7 @@ public class BattleMgr : MonoBehaviour
     {
         playerHUD.SetActive(false);
         playerName.text = playerCreature.name;
+        playerLevel.text = "LV: " + playerCreature.Level.ToString();
         combatMenuScript.playerCreature.SetupHealthBar();
         combatMenuScript.playerCreature.SetupEnergyBar();
         playerHUD.SetActive(true);
@@ -356,6 +403,7 @@ public class BattleMgr : MonoBehaviour
     {
         enemyHUD.SetActive(false);
         enemyName.text = enemyCreature.name;
+        enemyLevel.text = "LV: " + enemyCreature.Level.ToString();
         combatMenuScript.enemyCreature.SetupHealthBar();
         combatMenuScript.enemyCreature.SetupEnergyBar();
         enemyHUD.SetActive(true);

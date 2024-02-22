@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class CombatMenu : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class CombatMenu : MonoBehaviour
     public BattleMgr battle;
     public TextMeshProUGUI dialougeBox;
     public Shade playerCreature, enemyCreature;
+    public TextMeshProUGUI descriptionBox;
+    public GameObject descriptionObject;
+    public GameObject[] skillButtonObjects;
 
     public GameObject combatMenu;
     //public GameObject actionMenu;
@@ -39,6 +43,31 @@ public class CombatMenu : MonoBehaviour
         fleeButton.onClick.AddListener(Flee);
         */
         partyMenuMgr.SetActive(true);
+    }
+    
+    private void Update()
+    {
+        for(int i = 0; i < playerCreature.activeSkills.Length; i++)
+        {
+            Debug.Log(playerCreature.activeSkills.Length.ToString());
+            Debug.Log(EventSystem.current.currentSelectedGameObject);
+            if (EventSystem.current.currentSelectedGameObject == skillButtonObjects[i])
+            {
+                ChangeDescription(playerCreature.activeSkills[i].description);
+                Debug.Log("Changed Description");
+                break;
+            }
+            else
+            {
+                ChangeDescription("");
+            }
+        }
+    }
+    
+
+    public void ChangeDescription(string description)
+    {
+        descriptionBox.text = description;
     }
 
     public void Attack()
@@ -175,7 +204,7 @@ public class CombatMenu : MonoBehaviour
 
     public float DamageCalc(Shade attackingCreature, Shade defendingCreature, float power, DamageType damageType)
     {
-        float damage = ((Random.Range(randDamageMin, randDamageMax)/100) * ((power / 100) * attackingCreature.attack / ((defendingCreature.defense) / 100)));
+        float damage = ((Random.Range(randDamageMin, randDamageMax)/100) * ((power / 100) * attackingCreature.Attack / ((defendingCreature.Defense) / 100)));
         if (attackingCreature.isCharged)
         {
             damage += damage/2;
@@ -254,7 +283,12 @@ public class CombatMenu : MonoBehaviour
 
             switch (skill.effect)
             {
-                case Effect.Shock:
+                case Effect.Stun:
+                    if (!skill.effectTarget.wasStunned)
+                    {
+                        skill.effectTarget.isStunned = true;
+                    }
+                    break;
                 case Effect.Burn:
                 case Effect.Blind:
                 case Effect.Freeze:
