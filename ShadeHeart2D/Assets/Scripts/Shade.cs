@@ -10,11 +10,7 @@ public class Shade : MonoBehaviour
 {
     public string name;
     public Meter hpBar, energyBar;
-    [SerializeField] int level;
-    public int Level
-    {
-        get { return level; }
-    }
+    public int level;
 
     [SerializeField] float maxHealth, maxEnergy;
     public float MaxHealth

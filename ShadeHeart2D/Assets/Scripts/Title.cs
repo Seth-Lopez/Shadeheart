@@ -6,10 +6,10 @@ using UnityEngine.EventSystems;
 
 public class Title : MonoBehaviour
 {
-    string battleSceneName = "Battle";
-    string overworldSceneName = "City";
+    [SerializeField] string battleSceneName = "Battle";
+    [SerializeField] string overworldSceneName = "City";
 
-    public int battleLocation = 0;
+    [SerializeField] int battleLocation = 0;
 
     public GameObject title, shadeSelect, options, battleSelect;
 

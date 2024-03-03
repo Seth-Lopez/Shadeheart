@@ -7,23 +7,25 @@ using TMPro;
 
 public class PartyMenu : MonoBehaviour
 {
-    public GameObject[] party;
+    [SerializeField] GameObject[] party;
 
-    public GameObject[] partyImages;
-    public GameObject[] partyMenuHUDs;
+    [SerializeField] GameObject[] partyImages;
+    [SerializeField] GameObject[] partyMenuHUDs;
 
-    public Button[] partyButtons;
+    [SerializeField] Button[] partyButtons;
 
 
-    public Meter[] healthMeters;
-    public Meter[] energyMeters;
+    [SerializeField] Meter[] healthMeters;
+    [SerializeField] Meter[] energyMeters;
 
-    public TextMeshProUGUI[] names;
+    [SerializeField] TextMeshProUGUI[] names;
 
-    public BattleMgr battle;
-    public CombatMenu combatMenuScript;
+    [SerializeField] GameObject[] suggested; //icons that appear if a shade has a skill that the current enemy is vulnerable to
 
-    public int activeIndex;
+    [SerializeField] BattleMgr battle;
+    [SerializeField] CombatMenu combatMenuScript;
+
+    [SerializeField] int activeIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,8 @@ public class PartyMenu : MonoBehaviour
             Debug.Log("PartyMenuHUDs Length: " + partyMenuHUDs.Length.ToString());
 
             partyMenuHUDs[i].SetActive(false);
+
+            suggested[i].SetActive(false);
         }
         Debug.Log("Test2");
 
@@ -50,6 +54,15 @@ public class PartyMenu : MonoBehaviour
             names[i].text = battle.playerShades[i].name;
             healthMeters[i].SetMaxValueMenu(battle.playerShades[i].GetComponent<Shade>().MaxHealth);
             energyMeters[i].SetMaxValueMenu(battle.playerShades[i].GetComponent<Shade>().MaxEnergy);
+
+            for (int j = 0; j < battle.playerShades[i].GetComponent<Shade>().activeSkills.Length; j++)
+            {
+                if (battle.playerShades[i].GetComponent<Shade>().activeSkills[j].damageType == battle.enemyCreature.weakness)
+                {
+                    suggested[i].SetActive(true);
+                    break;
+                }
+            }
         }
         Debug.Log("Test3");
     }

@@ -9,22 +9,24 @@ public class CombatMenu : MonoBehaviour
     // Buttons on the UI
     //public Button actionButton;
     [SerializeField] private Button useItemButton;
-    public Button fleeButton;
-    public Button attackButton;
-    public Button defendButton;
-    public Button chargeButton;
+    [SerializeField] Button fleeButton;
+    [SerializeField] Button attackButton;
+    [SerializeField] Button defendButton;
+    [SerializeField] Button chargeButton;
 
-    public BattleMgr battle;
-    public TextMeshProUGUI dialougeBox;
+    [SerializeField] BattleMgr battle;
+    [SerializeField] TextMeshProUGUI dialougeBox;
     public Shade playerCreature, enemyCreature;
-    public TextMeshProUGUI descriptionBox;
+    [SerializeField] TextMeshProUGUI descriptionBox;
     public GameObject descriptionObject;
-    public GameObject[] skillButtonObjects;
+    [SerializeField] GameObject[] skillButtonObjects;
+    [SerializeField] GameObject vulnerable;
+    [SerializeField] TextMeshProUGUI skill_power;
 
     public GameObject combatMenu;
-    //public GameObject actionMenu;
-    public GameObject skillMenu;
-    public GameObject partyMenuMgr;
+    //[SerializeField] GameObject actionMenu;
+    [SerializeField] GameObject skillMenu;
+    [SerializeField] GameObject partyMenuMgr;
 
     float basicAtkPower = 20;
     float randDamageMin = 80;
@@ -43,6 +45,7 @@ public class CombatMenu : MonoBehaviour
         fleeButton.onClick.AddListener(Flee);
         */
         partyMenuMgr.SetActive(true);
+        descriptionObject.SetActive(false);
     }
     
     private void Update()
@@ -55,11 +58,23 @@ public class CombatMenu : MonoBehaviour
             {
                 ChangeDescription(playerCreature.activeSkills[i].description);
                 Debug.Log("Changed Description");
+
+                skill_power.text = "Power: " + playerCreature.activeSkills[i].power.ToString();
+
+                if (playerCreature.activeSkills[i].damageType == enemyCreature.weakness)
+                {
+                    vulnerable.SetActive(true);
+                }
+                else
+                {
+                    vulnerable.SetActive(false);
+                }
                 break;
             }
             else
             {
                 ChangeDescription("");
+                skill_power.text = "";
             }
         }
     }

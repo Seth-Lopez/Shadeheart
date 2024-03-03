@@ -11,8 +11,8 @@ public enum BattleState { BattleStart, PlayerTurn, EnemyTurn, Win, Lose }
 public class BattleMgr : MonoBehaviour
 {
     //For loading scenes
-    string lastScene;
-    public SceneLoader loader;
+    [SerializeField] string lastScene;
+    [SerializeField] SceneLoader loader;
 
     //Array of GameObjects with a Shade component and the index of the player that should be used
     public GameObject[] playerShades;
@@ -22,36 +22,39 @@ public class BattleMgr : MonoBehaviour
     public GameObject[] enemies;
     public int enemyIndex;
 
-    public bool randomizeNumEnemies;
+    [SerializeField] bool randomizeNumEnemies;
 
-    int numEnemies = 1;
+    [SerializeField] int numEnemies = 1;
+    [SerializeField] int maxEnemies = 2;
     int previousEnemy = -1;
+
+    [SerializeField] int enemyLevelRange = 2;
 
     public BattleState state;
     //public bool playerTurn = false;
 
     //UI variables
-    public TextMeshProUGUI playerName, enemyName, playerLevel, enemyLevel, dialougeBox;
+    [SerializeField] TextMeshProUGUI playerName, enemyName, playerLevel, enemyLevel, dialougeBox;
     public GameObject player, enemy;
     public Shade playerCreature, enemyCreature;
-    public Meter playerHealth, playerEnergy, enemyHealth, enemyEnergy;
-    public GameObject playerHUD, enemyHUD;
+    [SerializeField] Meter playerHealth, playerEnergy, enemyHealth, enemyEnergy;
+    [SerializeField] GameObject playerHUD, enemyHUD;
 
-    public Button[] skillButtons;
+    [SerializeField] Button[] skillButtons;
 
     public GameObject combatSelectedButton, skillSelectedButton, skillCloseButton, partyOpenButton, partyCloseButton, skillMenu, combatMenu;
 
     //Array of background sprites
-    public GameObject[] backgrounds;
+    [SerializeField] GameObject[] backgrounds;
 
     //Position of Player and Enemy on screen
-    public Transform playerPosition;
-    public Transform enemyPosition;
+    [SerializeField] Transform playerPosition;
+    [SerializeField] Transform enemyPosition;
 
-    public CombatMenu combatMenuScript;
-    public PartyMenu partyMenuScript;
+    [SerializeField] CombatMenu combatMenuScript;
+    [SerializeField] PartyMenu partyMenuScript;
 
-    public GameObject combatMenuMgr;
+    [SerializeField] GameObject combatMenuMgr;
 
     private void Awake()
     {
@@ -71,7 +74,7 @@ public class BattleMgr : MonoBehaviour
         //randomly adds a second enemy to some battles
         if (randomizeNumEnemies)
         {
-            numEnemies = Random.Range(1, 3);
+            numEnemies = Random.Range(1, maxEnemies + 1);
             Debug.Log("numEnemies: " + numEnemies.ToString());
         }
 
@@ -316,6 +319,9 @@ public class BattleMgr : MonoBehaviour
         previousEnemy = enemyIndex;
         Debug.Log("Enemy index: " + enemyIndex.ToString());
         SetShade(ref enemy, enemies, enemyIndex, ref enemyCreature);
+
+        enemyCreature.level += (Random.Range(0, enemyLevelRange + 1));
+
         SetSkills(ref enemyCreature, false);
     }
 
@@ -393,7 +399,7 @@ public class BattleMgr : MonoBehaviour
     {
         playerHUD.SetActive(false);
         playerName.text = playerCreature.name;
-        playerLevel.text = "LV: " + playerCreature.Level.ToString();
+        playerLevel.text = "LV: " + playerCreature.level.ToString();
         combatMenuScript.playerCreature.SetupHealthBar();
         combatMenuScript.playerCreature.SetupEnergyBar();
         playerHUD.SetActive(true);
@@ -403,7 +409,7 @@ public class BattleMgr : MonoBehaviour
     {
         enemyHUD.SetActive(false);
         enemyName.text = enemyCreature.name;
-        enemyLevel.text = "LV: " + enemyCreature.Level.ToString();
+        enemyLevel.text = "LV: " + enemyCreature.level.ToString();
         combatMenuScript.enemyCreature.SetupHealthBar();
         combatMenuScript.enemyCreature.SetupEnergyBar();
         enemyHUD.SetActive(true);
