@@ -52,6 +52,7 @@ public class NPCStats : MonoBehaviour
     {
         DialogueMngr dMngr = GameObject.Find("DialogueMngr").GetComponent<DialogueMngr>();
         dialogueList = dMngr.getDialogueList();
+
         if(dialogueList == null)
         {
             Debug.Log("Dialogue script not found... :/");
@@ -83,6 +84,9 @@ public class NPCStats : MonoBehaviour
             {
                 foreach(string line in lines)
                 {
+                    
+                    //add counter -> retrieve number of lines? 
+                    //add some way to save who has how many number of lines, EX:  old lady has 7 Lines of Dialogue.
                     allDialogueOptions.Add(line);
                 }
             }
@@ -90,10 +94,12 @@ public class NPCStats : MonoBehaviour
             {
                 foreach(string line in lines)
                 {
+                    //add counter -> retrieve number of lines? 
                     allDialogueOptions.Add(line);
                 }
             }
         }
+        // save counter 
     }
     private void setSortedDialogueOptions()
     {

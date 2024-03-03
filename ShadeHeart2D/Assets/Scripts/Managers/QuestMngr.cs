@@ -31,8 +31,13 @@ public class QuestMngr: MonoBehaviour
                 100, //XP
                 new int[]{1, 2, 3}, //RewardRarity
                 new int[]{4, 5}), //RewardID
-
             // Add more quests here
+                new QuestMngr("Chicken Finder", 
+                "PLayer must find 5 chickens", 
+                "Help old lady find 5 chickens", 
+                100, //XP
+                new int[]{1, 2, 3}, //RewardRarity
+                new int[]{4, 5}), //RewardID
         };
         GameState GS = new GameState();
         GS.clearGameState(); 
