@@ -18,7 +18,7 @@ public class SpriteImageEditorMngr : MonoBehaviour
         // Construct the absolute paths
         string originalSpriteSheetPath = Path.Combine(Application.dataPath, originalSpriteSheetRelativePath);
         string newSpriteSheetPath = Path.Combine(Application.dataPath, newSpriteSheetRelativePath);
-
+        Debug.Log(Path.Combine(Application.dataPath, originalSpriteSheetRelativePath));
         // Load the original sprite sheet texture
         Texture2D originalTexture = LoadTexture(originalSpriteSheetPath);
         if (originalTexture == null)

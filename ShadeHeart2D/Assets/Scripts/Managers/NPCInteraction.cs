@@ -6,26 +6,30 @@ using TMPro;
 public class NPCInteraction : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI dialogueText;
+    private UIMenuMngr UIClass;
     private bool isPlayerInRange = false;
+    private void Start() 
+    {
+        UIClass = GameObject.FindGameObjectWithTag("UIMngr").GetComponent<UIMenuMngr>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("True 1");
             isPlayerInRange = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // Check if the exiting collider is the player
         if (other.CompareTag("Player"))
         {
-            //Debug.Log("True 2");
             isPlayerInRange = false;
             dialogueText.text = "";
         }
+        UIClass.openDialogueBox = false;
+        Debug.Log("GERERER");
     }
 
     public void ShowDialogue(string npcDialogue)

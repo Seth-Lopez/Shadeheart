@@ -14,9 +14,11 @@ public class NPCStats : MonoBehaviour
     private int type = -1;
     private NPCInteraction npcInter;
     private int numLines = 0;
+    private UIMenuMngr UIClass;
 
     private void Start() 
     {
+        UIClass = GameObject.FindGameObjectWithTag("UIMngr").GetComponent<UIMenuMngr>();
         npcInter = GetComponent<NPCInteraction>();
         instantiateVariables();
         if(type != 0)
@@ -31,6 +33,7 @@ public class NPCStats : MonoBehaviour
         if (npcInter.getIsPlayerInRange() && Input.GetKeyDown(KeyCode.E))
         {
             npcInter.ShowDialogue(nextDialogue());
+            UIClass.openDialogueBox = true;
         }
     }
     private void instantiateVariables()
@@ -58,7 +61,7 @@ public class NPCStats : MonoBehaviour
         if(dialogueList == null)
         {
             Debug.Log("Dialogue script not found... :/");
-        }
+        }/*
         else
         {
             foreach ((string title, List<string> lines) in dialogueList)
@@ -72,7 +75,7 @@ public class NPCStats : MonoBehaviour
 
                 Debug.Log("--------");
             }
-        }
+        }*/
     }
     private void addSpokenDialogue(string line)
     {
