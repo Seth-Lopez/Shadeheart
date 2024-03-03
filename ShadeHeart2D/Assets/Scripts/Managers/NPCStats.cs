@@ -12,7 +12,9 @@ public class NPCStats : MonoBehaviour
     private List<string> allDialogueOptions = new List<string>(); 
     private List<string> sortedDialogueOptions = new List<string>();
     private int type = -1;
-    private NPCInteraction npcInter; 
+    private NPCInteraction npcInter;
+    private int numLines = 0;
+
     private void Start() 
     {
         npcInter = GetComponent<NPCInteraction>();
@@ -78,15 +80,15 @@ public class NPCStats : MonoBehaviour
     }
     private void setAllDialogueOptions()
     {
+        numLines = 0; //reset numLines counter
         foreach ((string title, List<string> lines) in dialogueList)
         {
             if(title == this.transform.name)
             {
                 foreach(string line in lines)
                 {
-                    
-                    //add counter -> retrieve number of lines? 
-                    //add some way to save who has how many number of lines, EX:  old lady has 7 Lines of Dialogue.
+
+                    numLines++;
                     allDialogueOptions.Add(line);
                 }
             }
@@ -94,7 +96,7 @@ public class NPCStats : MonoBehaviour
             {
                 foreach(string line in lines)
                 {
-                    //add counter -> retrieve number of lines? 
+                    numLines++;
                     allDialogueOptions.Add(line);
                 }
             }
