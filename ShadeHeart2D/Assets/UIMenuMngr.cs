@@ -31,17 +31,18 @@ public class UIMenuMngr : MonoBehaviour
     }
     private void cameraMngr()
     {
+        CinemachineCameraOffset offset = cineCam.GetComponent<CinemachineCameraOffset>();
         if(openDialogueBox)
         {
-            movementTimer -= Time.deltaTime * /*Speed*/ .5f;
-            movementTimer = Mathf.Clamp(movementTimer, -0.05f, 0f);
-            cineCam.m_Lens.LensShift = new Vector2(0f, movementTimer);
+            movementTimer -= Time.deltaTime * /*Speed*/ 2f;
+            movementTimer = Mathf.Clamp(movementTimer, -0.7f, 0f);
+            offset.m_Offset = new Vector2(0f, movementTimer);
         }
         else
         {
             movementTimer += Time.deltaTime * /*Speed*/ .5f;
-            movementTimer = Mathf.Clamp(movementTimer, -0.05f, 0f);
-            cineCam.m_Lens.LensShift = new Vector2(0f, movementTimer);
+            movementTimer = Mathf.Clamp(movementTimer, -0.7f, 0f);
+            offset.m_Offset = new Vector2(0f, movementTimer);
         }
     }
     private void setUp()

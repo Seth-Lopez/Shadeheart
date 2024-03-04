@@ -29,11 +29,17 @@ public class NPCInteraction : MonoBehaviour
             dialogueText.text = "";
         }
         UIClass.openDialogueBox = false;
-        Debug.Log("GERERER");
     }
 
     public void ShowDialogue(string npcDialogue)
     {
+        if(UIClass.openDialogueBox == false)
+        {   
+            UIClass.openDialogueBox = true;
+            Debug.Log("Here");
+        }
+        Debug.Log("Here2");
+        Debug.Log(npcDialogue + "ass");
         dialogueText.text = npcDialogue;
     }
     public bool getIsPlayerInRange()

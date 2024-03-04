@@ -26,6 +26,7 @@ public class EnemyBehavior : MonoBehaviour
     private GameObject player;
     private bool hasLOS = false;
     [SerializeField] private float LOSDist;
+    public int enemyID;
 
     //For loading into battle scene
     public int battleLocation = 0;
@@ -111,8 +112,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         for (int i = 0; i < parent.childCount; i++) SetOpacityToZeroRecursive(parent.GetChild(i));       
     }
-    // To load into battle
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -120,6 +120,7 @@ public class EnemyBehavior : MonoBehaviour
             //UnityEngine.SceneManagement.SceneManager.LoadScene("fadeToBlack");
             
             PlayerPrefs.SetInt("battleLocation", battleLocation);
+            PlayerPrefs.SetInt("enemyID", enemyID);
             string sceneLoadedFrom = SceneManager.GetActiveScene().name;
             PlayerPrefs.SetString("sceneLoadedFrom", sceneLoadedFrom);
             loader.LoadBattle("Battle");

@@ -313,7 +313,7 @@ public class BattleMgr : MonoBehaviour
         do
         {
             Debug.Log("enemies.Length: " + (enemies.Length).ToString());
-            enemyIndex = Random.Range(0, enemies.Length);
+            enemyIndex = PlayerPrefs.GetInt("enemyID");//Random.Range(0, enemies.Length);
         }
         while (enemyIndex == previousEnemy);
         previousEnemy = enemyIndex;

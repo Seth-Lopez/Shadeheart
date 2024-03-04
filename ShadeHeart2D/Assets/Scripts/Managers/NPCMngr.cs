@@ -30,8 +30,8 @@ public class NPCMngr: MonoBehaviour
     void Start()
     {
         setnpcNames();
-        GameObject npc;
-        Transform parent;
+        //GameObject npc;
+        //Transform parent;
         /*
         for(int i =0; i < npcNames.Count; i++)
         {

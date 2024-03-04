@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPCStats : MonoBehaviour
@@ -37,18 +36,26 @@ public class NPCStats : MonoBehaviour
     {
         if (npcInter.getIsPlayerInRange() && Input.GetKeyDown(KeyCode.E))
         {
-            npcInter.ShowDialogue(nextDialogue());
             UIClass.openDialogueBox = true;
+            if(npcInter == null)
+            {
+                Debug.Log("ads");
+            }
+            else
+            {
+                Debug.Log("ads2");
+            }
+            npcInter.ShowDialogue(nextDialogue());
         }
     }
     private void instantiateVariables()
     {
         gameState = GameObject.FindObjectOfType<GameState>();
         List<(int, bool)> GameStateVar = gameState.getGameStateVar();
-        foreach ((int intValue, bool boolValue) in GameStateVar)
+        /*foreach ((int intValue, bool boolValue) in GameStateVar)
         {
             Debug.Log($"Int Value: {intValue}, Bool Value: {boolValue}");
-        }
+        }*/
         string parentName = transform.parent.gameObject.name;
         
         if(parentName == "NPC - Monsters")
