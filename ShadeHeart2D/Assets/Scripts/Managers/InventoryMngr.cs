@@ -6,8 +6,14 @@ using System.Text.RegularExpressions;
 public class InventoryMngr : MonoBehaviour
 {
     // The list that stores the Items data:
+    private int numItems = 0;
     private List<(string, List<string>)> ItemsList = new List<(string, List<string>)>();
     private string filePath = Path.Combine(Application.dataPath, "Scripts/Managers/InventoryItems.txt");
+
+    public int NumItems
+    {
+        get { return numItems; }
+    }
 
     void Awake()
     {

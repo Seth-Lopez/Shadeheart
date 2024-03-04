@@ -13,8 +13,13 @@ public class NPCStats : MonoBehaviour
     private List<string> sortedDialogueOptions = new List<string>();
     private int type = -1;
     private NPCInteraction npcInter;
-    private int numLines = 0;
     private UIMenuMngr UIClass;
+
+    public int numLines = 0;
+    public List<string> AllDialogueOptions
+    {
+        get { return allDialogueOptions; }
+    }
 
     private void Start() 
     {

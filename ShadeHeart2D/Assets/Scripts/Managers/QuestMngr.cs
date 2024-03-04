@@ -17,8 +17,14 @@ public class QuestMngr: MonoBehaviour
     private int xpReward;
     private int[] rewardRarity;
     private int[] specificRewardId;
-    private List<QuestMngr> quests;
+    private List<QuestMngr> quests = new List<QuestMngr>();
     private QuestStatus status;
+    private static int numQuests = 0;
+
+    public QuestStatus Status
+    {
+        get { return status; }
+    }
 
     void Start()
     {
@@ -55,6 +61,7 @@ public class QuestMngr: MonoBehaviour
         rewardRarity = rarity;
         specificRewardId = specificIds;
         status = QuestStatus.Inactive;
+        numQuests++;
     }
 
     public void ActivateQuest(){status = QuestStatus.Active;}

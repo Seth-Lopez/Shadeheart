@@ -16,6 +16,7 @@ public class Shade : MonoBehaviour
     public float MaxHealth
     {
         get { return Mathf.Round(((maxHealth / 25) * level) + 20); }
+        set { maxHealth = value; }
     }
     public float MaxEnergy
     {
