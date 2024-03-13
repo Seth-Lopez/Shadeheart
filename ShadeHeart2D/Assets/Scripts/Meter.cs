@@ -22,7 +22,7 @@ public class Meter : MonoBehaviour
         meter.value = currentValue;
         meterText.text = meter.value.ToString("F0");
         */
-        StartCoroutine(ChangeingValue(currentValue));
+        StartCoroutine(ChangingValue(currentValue));
     }
 
     public void SetMaxValue(float maxValue)
@@ -45,9 +45,9 @@ public class Meter : MonoBehaviour
         meterText.text = meter.value.ToString("F0");
     }
 
-    IEnumerator ChangeingValue(float currentValue)
+    IEnumerator ChangingValue(float currentValue)
     {
-        float incrementor = meter.maxValue / 150;
+        float incrementor = Mathf.Abs(meter.value - currentValue) / 200;
 
         if (meter.value > currentValue)
         {

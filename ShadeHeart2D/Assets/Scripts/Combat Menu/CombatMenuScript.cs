@@ -22,6 +22,7 @@ public class CombatMenu : MonoBehaviour
     [SerializeField] GameObject[] skillButtonObjects;
     [SerializeField] GameObject vulnerable;
     [SerializeField] TextMeshProUGUI skill_power;
+    [SerializeField] TextMeshProUGUI skill_cost;
 
     public GameObject combatMenu;
     //[SerializeField] GameObject actionMenu;
@@ -52,14 +53,15 @@ public class CombatMenu : MonoBehaviour
     {
         for(int i = 0; i < playerCreature.activeSkills.Length; i++)
         {
-            Debug.Log(playerCreature.activeSkills.Length.ToString());
-            Debug.Log(EventSystem.current.currentSelectedGameObject);
+            //Debug.Log(playerCreature.activeSkills.Length.ToString());
+            //Debug.Log(EventSystem.current.currentSelectedGameObject);
             if (EventSystem.current.currentSelectedGameObject == skillButtonObjects[i])
             {
                 ChangeDescription(playerCreature.activeSkills[i].description);
-                Debug.Log("Changed Description");
+                //Debug.Log("Changed Description");
 
-                skill_power.text = "Power: " + playerCreature.activeSkills[i].power.ToString();
+                skill_power.text = "Power: " + Mathf.Abs(playerCreature.activeSkills[i].power).ToString();
+                skill_cost.text = "Cost: " + playerCreature.activeSkills[i].cost.ToString();
 
                 if (playerCreature.activeSkills[i].damageType == enemyCreature.weakness)
                 {
@@ -75,6 +77,7 @@ public class CombatMenu : MonoBehaviour
             {
                 ChangeDescription("");
                 skill_power.text = "";
+                skill_cost.text = "";
             }
         }
     }
@@ -293,8 +296,9 @@ public class CombatMenu : MonoBehaviour
             skill.user.isDefending = false;
 
             float damage = DamageCalc(skill.user, skill.target, skill.power, skill.damageType);
-            skill.target.UpdateHealth(damage);
+            Debug.Log(damage.ToString());
             skill.user.UpdateEnergy(skill.cost);
+            skill.target.UpdateHealth(damage);
 
             switch (skill.effect)
             {

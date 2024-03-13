@@ -519,6 +519,7 @@ RectTransform:
   m_Children:
   - {fileID: 2071269071}
   - {fileID: 343852580}
+  - {fileID: 1062828282}
   - {fileID: 666758070}
   m_Father: {fileID: 914185910}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2628,7 +2629,7 @@ MonoBehaviour:
   isTargetSelf: 0
   effectTargetSelf: 0
   effect: 0
-  animationType: 4
+  animationType: 6
   description: A fire attack.
 --- !u!1 &215744776
 GameObject:
@@ -4366,9 +4367,10 @@ MonoBehaviour:
   - {fileID: 1734055916}
   enemyIndex: 0
   randomizeNumEnemies: 0
+  randomizeEnemy: 1
   numEnemies: 1
   maxEnemies: 2
-  enemyLevelRange: 3
+  enemyLevelRange: 4
   state: 0
   playerName: {fileID: 1908336787}
   enemyName: {fileID: 840498122}
@@ -4441,7 +4443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -42.65, y: 38.899998}
+  m_AnchoredPosition: {x: -42.65, y: 49.322}
   m_SizeDelta: {x: 95, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &343852581
@@ -5381,6 +5383,7 @@ MonoBehaviour:
   - {fileID: 688346741}
   vulnerable: {fileID: 666758069}
   skill_power: {fileID: 343852581}
+  skill_cost: {fileID: 1062828283}
   combatMenu: {fileID: 14358161}
   skillMenu: {fileID: 945891608}
   partyMenuMgr: {fileID: 1881271606}
@@ -6143,6 +6146,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1738642956}
+  - {fileID: 683714687}
   - {fileID: 273721326}
   - {fileID: 576685915}
   - {fileID: 882513352}
@@ -7615,7 +7619,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8127,7 +8131,7 @@ MonoBehaviour:
   isTargetSelf: 1
   effectTargetSelf: 1
   effect: 2
-  animationType: 5
+  animationType: 8
   description: Charges power to make the next skill used more powerfull.
 --- !u!1 &598058583
 GameObject:
@@ -9344,6 +9348,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674158352}
   m_CullTransparentMesh: 1
+--- !u!1 &683714686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 683714687}
+  - component: {fileID: 683714688}
+  m_Layer: 0
+  m_Name: Heal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &683714687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683714686}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 434224994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &683714688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683714686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c689ae8fd2183ea4fa955f5b0debc2ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Heal
+  power: -15
+  cost: 7
+  damageType: 8
+  target: {fileID: 0}
+  user: {fileID: 0}
+  effectTarget: {fileID: 0}
+  isTargetSelf: 1
+  effectTargetSelf: 1
+  effect: 0
+  animationType: 9
+  description: Heals the user slightly.
 --- !u!1 &686031291
 GameObject:
   m_ObjectHideFlags: 0
@@ -14682,7 +14742,7 @@ MonoBehaviour:
   isTargetSelf: 0
   effectTargetSelf: 0
   effect: 0
-  animationType: 3
+  animationType: 5
   description: An attack with an icicle.
 --- !u!1 &1046949932
 GameObject:
@@ -14803,6 +14863,140 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1062828281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1062828282}
+  - component: {fileID: 1062828284}
+  - component: {fileID: 1062828283}
+  m_Layer: 5
+  m_Name: EnergyCost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1062828282
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062828281}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15239104}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -25.15, y: 29.322}
+  m_SizeDelta: {x: 130, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1062828283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062828281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Cost: 00'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 18
+  m_fontSizeBase: 18
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1062828284
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062828281}
+  m_CullTransparentMesh: 1
 --- !u!1 &1072857294
 GameObject:
   m_ObjectHideFlags: 0
@@ -21076,7 +21270,7 @@ MonoBehaviour:
   name: Doubleye
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  level: 5
+  level: 6
   maxHealth: 40
   maxEnergy: 25
   health: 40
@@ -24190,7 +24384,7 @@ MonoBehaviour:
   name: Stalker
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  level: 7
+  level: 6
   maxHealth: 40
   maxEnergy: 25
   health: 40
@@ -27693,7 +27887,7 @@ MonoBehaviour:
   - {fileID: 882513353}
   - {fileID: 608773819}
   - {fileID: 1041862502}
-  - {fileID: 145704811}
+  - {fileID: 683714688}
 --- !u!1 &1934316915
 GameObject:
   m_ObjectHideFlags: 0
@@ -29653,7 +29847,7 @@ MonoBehaviour:
   name: Oculink
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
-  level: 4
+  level: 6
   maxHealth: 40
   maxEnergy: 25
   health: 40

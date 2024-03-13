@@ -23,6 +23,7 @@ public class BattleMgr : MonoBehaviour
     public int enemyIndex;
 
     [SerializeField] bool randomizeNumEnemies;
+    [SerializeField] bool randomizeEnemy;
 
     [SerializeField] int numEnemies = 1;
     [SerializeField] int maxEnemies = 2;
@@ -58,6 +59,11 @@ public class BattleMgr : MonoBehaviour
 
     private void Awake()
     {
+        
+    }
+
+    public void Start()
+    {
         //Start with HUDs disabled
         playerHUD.SetActive(false);
         enemyHUD.SetActive(false);
@@ -78,19 +84,16 @@ public class BattleMgr : MonoBehaviour
             Debug.Log("numEnemies: " + numEnemies.ToString());
         }
 
-        //Randomly select enemy
-        RandomizeEnemy();
-        SetSkills(ref playerCreature, true);//set player skills after enemy is randomized to the skills target properly
+        //selects enemy
+        selectEnemy();
+        SetSkills(ref playerCreature, true);//set player skills after enemy is randomized so the skills target properly
         combatMenuScript.SetEnemy();
         //Start Battle
         state = BattleState.BattleStart;
         StartCoroutine(SetupBattle());
 
         combatMenuMgr.SetActive(true);
-    }
 
-    public void Start()
-    {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(combatSelectedButton);
     }
@@ -313,7 +316,7 @@ public class BattleMgr : MonoBehaviour
         do
         {
             Debug.Log("enemies.Length: " + (enemies.Length).ToString());
-            enemyIndex = PlayerPrefs.GetInt("enemyID");//Random.Range(0, enemies.Length);
+            enemyIndex = Random.Range(0, enemies.Length);
         }
         while (enemyIndex == previousEnemy);
         previousEnemy = enemyIndex;
@@ -323,6 +326,24 @@ public class BattleMgr : MonoBehaviour
         enemyCreature.level += (Random.Range(0, enemyLevelRange + 1));
 
         SetSkills(ref enemyCreature, false);
+    }
+
+    public void selectEnemy()
+    {
+        if (randomizeEnemy)
+        {
+            RandomizeEnemy();
+        }
+        else
+        {
+            enemyIndex = PlayerPrefs.GetInt("enemyID");
+            Debug.Log("Enemy index: " + enemyIndex.ToString());
+            SetShade(ref enemy, enemies, enemyIndex, ref enemyCreature);
+
+            enemyCreature.level += (Random.Range(0, enemyLevelRange + 1));
+
+            SetSkills(ref enemyCreature, false);
+        }
     }
 
     public void SetShade(ref GameObject shadeLocation, GameObject[]shades, int shadeIndex, ref Shade activeShade)
@@ -403,6 +424,8 @@ public class BattleMgr : MonoBehaviour
         combatMenuScript.playerCreature.SetupHealthBar();
         combatMenuScript.playerCreature.SetupEnergyBar();
         playerHUD.SetActive(true);
+        playerCreature.UpdateHealth(0);
+        playerCreature.UpdateEnergy(0);
     }
 
     public void SetupEnemy()
@@ -413,6 +436,8 @@ public class BattleMgr : MonoBehaviour
         combatMenuScript.enemyCreature.SetupHealthBar();
         combatMenuScript.enemyCreature.SetupEnergyBar();
         enemyHUD.SetActive(true);
+        enemyCreature.UpdateHealth(0);
+        enemyCreature.UpdateEnergy(0);
     }
 
     public void OpenCombatMenu()
