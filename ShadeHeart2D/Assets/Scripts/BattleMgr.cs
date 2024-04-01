@@ -24,6 +24,7 @@ public class BattleMgr : MonoBehaviour
 
     [SerializeField] bool randomizeNumEnemies;
     [SerializeField] bool randomizeEnemy;
+    [SerializeField] bool intelegentEnemy;
 
     [SerializeField] int numEnemies = 1;
     [SerializeField] int maxEnemies = 2;
@@ -31,17 +32,20 @@ public class BattleMgr : MonoBehaviour
 
     [SerializeField] int enemyLevelRange = 2;
 
+    public int battleTextSpeed;
+    public float textStop;
+
     public BattleState state;
     //public bool playerTurn = false;
 
     //UI variables
-    [SerializeField] TextMeshProUGUI playerName, enemyName, playerLevel, enemyLevel, dialougeBox;
+    [SerializeField] TextMeshProUGUI playerName, enemyName, playerLevel, enemyLevel, dialogueBox;
     public GameObject player, enemy;
     public Shade playerCreature, enemyCreature;
     [SerializeField] Meter playerHealth, playerEnergy, enemyHealth, enemyEnergy;
     [SerializeField] GameObject playerHUD, enemyHUD;
 
-    [SerializeField] Button[] skillButtons;
+    public Button[] skillButtons;
 
     public GameObject combatSelectedButton, skillSelectedButton, skillCloseButton, partyOpenButton, partyCloseButton, skillMenu, combatMenu;
 
@@ -56,11 +60,6 @@ public class BattleMgr : MonoBehaviour
     [SerializeField] PartyMenu partyMenuScript;
 
     [SerializeField] GameObject combatMenuMgr;
-
-    private void Awake()
-    {
-        
-    }
 
     public void Start()
     {
@@ -85,7 +84,7 @@ public class BattleMgr : MonoBehaviour
         }
 
         //selects enemy
-        selectEnemy();
+        SelectEnemy();
         SetSkills(ref playerCreature, true);//set player skills after enemy is randomized so the skills target properly
         combatMenuScript.SetEnemy();
         //Start Battle
@@ -109,17 +108,22 @@ public class BattleMgr : MonoBehaviour
         //GameObject playerGO = Instantiate(player, playerPosition);
         //GameObject enemyGO = Instantiate(enemy, enemyPosition);
 
-        
-        dialougeBox.text = "Enemy " + enemyCreature.name + " appears!";
+        yield return (DisplayingDialogue($"Enemy {enemyCreature.name} appears!"));
+
+        yield return new WaitForSeconds(textStop);
+
+        yield return (DisplayingDialogue($"The Battle Begins..."));
+        /*
+        dialogueBox.text = "Enemy " + enemyCreature.name + " appears!";
         yield return new WaitForSeconds(2f);
 
-        dialougeBox.text = "The Battle Begins...";
-
+        dialogueBox.text = "The Battle Begins...";
+        */
         //Seting up HUDs
         SetupPlayer();
         SetupEnemy();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(textStop);
 
         TurnOrder();
     }
@@ -132,15 +136,22 @@ public class BattleMgr : MonoBehaviour
             playerCreature.wasStunned = false;
         }
 
-        //checks if enemy is stunned
-        if (enemyCreature.isStunned)
+        //checking secondary effects
+
+        if (playerCreature.isFrozen)
         {
-            enemyCreature.isStunned = false;
-            enemyCreature.wasStunned = true;
+            skillButtons[playerCreature.freezeIndex].interactable = false;
+        }
+
+        if (playerCreature.isStunned)
+        {
+            playerCreature.isStunned = false;
+            playerCreature.wasStunned = true;
 
             Debug.Log("Player Turn");
-            dialougeBox.text = playerCreature.name + " is stunned...";
-            yield return new WaitForSeconds(1f);
+            yield return (DisplayingDialogue($"{playerCreature.name} is stunned..."));
+            //dialogueBox.text = playerCreature.name + " is stunned...";
+            yield return new WaitForSeconds(textStop);
 
             state = BattleState.EnemyTurn;
             StartEnemyTurn();
@@ -153,9 +164,10 @@ public class BattleMgr : MonoBehaviour
             OpenCombatMenu();
 
             Debug.Log("Player Turn");
-            dialougeBox.text = "Player's turn";
+            yield return (DisplayingDialogue($"Player's turn"));
+            //dialogueBox.text = "Player's turn";
 
-            yield return null;
+            yield return new WaitForSeconds(textStop);
         }
     }
 
@@ -171,8 +183,9 @@ public class BattleMgr : MonoBehaviour
         {
             if (numEnemies > 1)
             {
-                dialougeBox.text = "Enemy " + enemyCreature.name + " was defeated";
-                yield return new WaitForSeconds(1f);
+                yield return (DisplayingDialogue($"Enemy {enemyCreature.name} was defeated"));
+                //dialogueBox.text = "Enemy " + enemyCreature.name + " was defeated";
+                yield return new WaitForSeconds(textStop);
 
                 enemies[enemyIndex].SetActive(false);
                 RandomizeEnemy();
@@ -180,8 +193,9 @@ public class BattleMgr : MonoBehaviour
                 combatMenuScript.SetEnemy();
                 SetupEnemy();
 
-                dialougeBox.text = "Enemy " + enemyCreature.name + " appears!";
-                yield return new WaitForSeconds(1f);
+                yield return (DisplayingDialogue($"Enemy {enemyCreature.name} appears!"));
+                //dialogueBox.text = "Enemy " + enemyCreature.name + " appears!";
+                yield return new WaitForSeconds(textStop);
 
                 numEnemies -= 1;
                 Debug.Log("Enemies remaining: " + numEnemies.ToString());
@@ -192,17 +206,18 @@ public class BattleMgr : MonoBehaviour
             {
                 yield return null;
                 state = BattleState.Win;
-                StartCoroutine(BattleWin());
+                yield return (BattleWin());
             }
         }
         else
         {
             Debug.Log("Enemy Turn");
-            dialougeBox.text = "Enemy's turn";
+            yield return (DisplayingDialogue($"Enemy's turn"));
+            //dialogueBox.text = "Enemy's turn";
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(textStop);
 
-            int enemyAction;
+            int enemyAction = 0;
             bool acted = false;
 
             //checks if enemy can be stunned
@@ -218,12 +233,39 @@ public class BattleMgr : MonoBehaviour
                 enemyCreature.isStunned = false;
                 enemyCreature.wasStunned = true;
 
-                dialougeBox.text = enemyCreature.name + " is stunned...";
+                yield return (DisplayingDialogue($"Enemy {enemyCreature.name} is stunned..."));
+                //dialogueBox.text = enemyCreature.name + " is stunned...";
+            }
+
+            bool temp = false;
+            if (intelegentEnemy) 
+            {
+                for (int i = 0; i < skillButtons.Length; i++)
+                {
+                    if ((enemyCreature.activeSkills[i].damageType == playerCreature.weakness) && (enemyCreature.activeSkills[i].power >= enemyCreature.activeSkills[enemyAction].power) && (enemyCreature.activeSkills[i].cost <= enemyCreature.energy))
+                    {
+                        enemyAction = i;
+                        temp = true;
+                    }
+                }
+                if (temp)
+                {
+                    acted = combatMenuScript.UseSkill(enemyCreature.activeSkills[enemyAction]);
+                }
             }
 
             while (!acted) 
             {
-                enemyAction = Random.Range(0, skillButtons.Length +2);//2 is added to give a higher chance of enemies doing a basic attack
+                enemyAction = Random.Range(0, skillButtons.Length +2);
+
+                if (enemyCreature.isFrozen && enemyAction == enemyCreature.freezeIndex)
+                {
+                    while (enemyAction == enemyCreature.freezeIndex)
+                    {
+                        enemyAction = Random.Range(0, skillButtons.Length + 2);
+                    }
+                }
+
                 switch (enemyAction)
                 {
                     case 0:
@@ -244,27 +286,29 @@ public class BattleMgr : MonoBehaviour
             {
                 yield return new WaitForSeconds(1f);
                 state = BattleState.Lose;
-                StartCoroutine(BattleLoss());
+                yield return (BattleLoss());
             }
             else
             {
                 yield return new WaitForSeconds(1f);
                 state = BattleState.PlayerTurn;
-                StartCoroutine(PlayerTurn());
+                yield return (PlayerTurn());
             }
         }
     }
 
     IEnumerator BattleWin()
     {
-        dialougeBox.text = "Enemy " + enemyCreature.name + " was defeated";
+        yield return (DisplayingDialogue($"Enemy {enemyCreature.name} was defeated"));
+        //dialogueBox.text = "Enemy " + enemyCreature.name + " was defeated";
         yield return new WaitForSeconds(3f);
         EndBattle();
     }
 
     IEnumerator BattleLoss()
     {
-        dialougeBox.text = "You were defeated";
+        yield return (DisplayingDialogue($"You were defeated"));
+        //dialogueBox.text = "You were defeated";
         yield return new WaitForSeconds(3f);
         EndBattle();
     }
@@ -328,7 +372,7 @@ public class BattleMgr : MonoBehaviour
         SetSkills(ref enemyCreature, false);
     }
 
-    public void selectEnemy()
+    public void SelectEnemy()
     {
         if (randomizeEnemy)
         {
@@ -467,5 +511,17 @@ public class BattleMgr : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(partyCloseButton);
+    }
+
+    public IEnumerator DisplayingDialogue(string text)
+    {
+        dialogueBox.text = "";
+        
+        foreach (var letter in text.ToCharArray())
+        {
+            dialogueBox.text += letter;
+
+            yield return new WaitForSeconds(1f / battleTextSpeed);
+        }
     }
 }

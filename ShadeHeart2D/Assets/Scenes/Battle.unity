@@ -815,6 +815,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -1009,6 +1013,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -1768,7 +1776,9 @@ MonoBehaviour:
   effectTargetSelf: 0
   effect: 3
   animationType: 4
-  description: Shoots an electric blast that Stuns the target.
+  description: 'Shoots an electric blast.
+
+    Stuns the target.'
 --- !u!1 &148998953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,6 +2308,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -2620,7 +2634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Scorch
-  power: 25
+  power: 30
   cost: 6
   damageType: 3
   target: {fileID: 0}
@@ -4368,15 +4382,18 @@ MonoBehaviour:
   enemyIndex: 0
   randomizeNumEnemies: 0
   randomizeEnemy: 1
+  intelegentEnemy: 0
   numEnemies: 1
   maxEnemies: 2
   enemyLevelRange: 4
+  battleTextSpeed: 30
+  textStop: 1
   state: 0
   playerName: {fileID: 1908336787}
   enemyName: {fileID: 840498122}
   playerLevel: {fileID: 152073920}
   enemyLevel: {fileID: 179524453}
-  dialougeBox: {fileID: 839381185}
+  dialogueBox: {fileID: 839381185}
   player: {fileID: 1931494242}
   enemy: {fileID: 2019570048}
   playerCreature: {fileID: 1931494246}
@@ -5260,11 +5277,15 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
-  - {fileID: 882513353}
   - {fileID: 199916028}
-  - {fileID: 576685916}
-  - {fileID: 145704811}
+  - {fileID: 1314635772}
+  - {fileID: 1041862502}
+  - {fileID: 608773819}
 --- !u!212 &374237068
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5371,7 +5392,7 @@ MonoBehaviour:
   defendButton: {fileID: 0}
   chargeButton: {fileID: 0}
   battle: {fileID: 336799311}
-  dialougeBox: {fileID: 839381185}
+  dialogueBox: {fileID: 839381185}
   playerCreature: {fileID: 1931494246}
   enemyCreature: {fileID: 730161651}
   descriptionBox: {fileID: 2071269072}
@@ -6022,6 +6043,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -6153,7 +6178,9 @@ Transform:
   - {fileID: 608773818}
   - {fileID: 145704810}
   - {fileID: 199916027}
+  - {fileID: 1314635771}
   - {fileID: 1041862501}
+  - {fileID: 592778882}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &455462149
@@ -6775,6 +6802,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -8133,6 +8164,62 @@ MonoBehaviour:
   effect: 2
   animationType: 8
   description: Charges power to make the next skill used more powerfull.
+--- !u!1 &592778881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 592778882}
+  - component: {fileID: 592778883}
+  m_Layer: 0
+  m_Name: Flurry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &592778882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592778881}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 434224994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &592778883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592778881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c689ae8fd2183ea4fa955f5b0debc2ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Icicle
+  power: 20
+  cost: 10
+  damageType: 5
+  target: {fileID: 0}
+  user: {fileID: 0}
+  effectTarget: {fileID: 0}
+  isTargetSelf: 0
+  effectTargetSelf: 0
+  effect: 6
+  animationType: 5
+  description: An attack with an icicle.
 --- !u!1 &598058583
 GameObject:
   m_ObjectHideFlags: 0
@@ -8195,6 +8282,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -8815,6 +8906,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -9711,6 +9806,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -10802,6 +10901,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -11019,6 +11122,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -13748,6 +13855,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -13867,6 +13978,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -14806,6 +14921,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -14852,7 +14971,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1583158466, guid: d324ba5767419b84ea62e9c3af904660, type: 3}
+  m_Sprite: {fileID: 1381105422, guid: d324ba5767419b84ea62e9c3af904660, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15402,6 +15521,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -16881,6 +17004,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -17314,6 +17441,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -18179,6 +18310,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -18474,6 +18609,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1314635770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1314635771}
+  - component: {fileID: 1314635772}
+  m_Layer: 0
+  m_Name: Sear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1314635771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314635770}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 434224994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1314635772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314635770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c689ae8fd2183ea4fa955f5b0debc2ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Sear
+  power: 20
+  cost: 6
+  damageType: 3
+  target: {fileID: 0}
+  user: {fileID: 0}
+  effectTarget: {fileID: 0}
+  isTargetSelf: 0
+  effectTargetSelf: 0
+  effect: 4
+  animationType: 10
+  description: 'A fire attack.
+
+    Burns the target.'
 --- !u!1 &1323123588
 GameObject:
   m_ObjectHideFlags: 0
@@ -18919,6 +19112,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -19467,6 +19664,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -20558,6 +20759,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -21284,11 +21489,15 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
-  - {fileID: 1738642957}
-  - {fileID: 1738642957}
+  - {fileID: 608773819}
+  - {fileID: 683714688}
 --- !u!212 &1471742349
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21537,6 +21746,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -22218,6 +22431,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -22264,7 +22481,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 260376361, guid: d324ba5767419b84ea62e9c3af904660, type: 3}
+  m_Sprite: {fileID: 46244120, guid: d324ba5767419b84ea62e9c3af904660, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -24398,11 +24615,15 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
-  - {fileID: 576685916}
-  - {fileID: 1738642957}
-  - {fileID: 1738642957}
+  - {fileID: 592778883}
+  - {fileID: 145704811}
+  - {fileID: 608773819}
 --- !u!212 &1734055919
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25399,6 +25620,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -27010,6 +27235,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -27340,6 +27569,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -27883,10 +28116,14 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 882513353}
-  - {fileID: 608773819}
-  - {fileID: 1041862502}
+  - {fileID: 145704811}
+  - {fileID: 592778883}
   - {fileID: 683714688}
 --- !u!1 &1934316915
 GameObject:
@@ -28492,6 +28729,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -28761,6 +29002,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -29105,6 +29350,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -29466,11 +29715,15 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
-  - {fileID: 273721327}
+  - {fileID: 683714688}
   - {fileID: 576685916}
-  - {fileID: 1738642957}
-  - {fileID: 1738642957}
+  - {fileID: 1041862502}
+  - {fileID: 592778883}
 --- !u!212 &2019570051
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29742,6 +29995,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -29861,11 +30118,15 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
-  - {fileID: 273721327}
-  - {fileID: 576685916}
+  - {fileID: 1314635772}
+  - {fileID: 199916028}
   - {fileID: 145704811}
-  - {fileID: 1738642957}
+  - {fileID: 608773819}
 --- !u!212 &2053389300
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30189,6 +30450,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -30442,6 +30707,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -30561,6 +30830,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}
@@ -31107,6 +31380,10 @@ MonoBehaviour:
   isDefending: 0
   isStunned: 0
   wasStunned: 0
+  isShocked: 0
+  isBurned: 0
+  isFrozen: 0
+  freezeIndex: 0
   activeSkills:
   - {fileID: 273721327}
   - {fileID: 576685916}

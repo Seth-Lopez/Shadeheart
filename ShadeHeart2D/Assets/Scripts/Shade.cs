@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 public enum DamageType { None, Strike, Slash, Fire, Electric, Ice, Light, Dark , Heal }
-public enum Effect { None, Defend, Charge, Stun, Burn, Blind, Freeze }
+public enum Effect { None, Defend, Charge, Stun, Burn, Blind, Freeze/*, Shock*/ }
 
 public class Shade : MonoBehaviour
 {
@@ -43,6 +43,10 @@ public class Shade : MonoBehaviour
     public bool isCharged = false;
     public bool isDefending = false;
     public bool isStunned = false, wasStunned = false;
+    public bool isShocked = false;
+    public bool isBurned = false;
+    public bool isFrozen = false;
+    public int freezeIndex;
     public Skill[] activeSkills;
 
     public void SetupHealthBar()

@@ -15,7 +15,7 @@ public class CombatMenu : MonoBehaviour
     [SerializeField] Button chargeButton;
 
     [SerializeField] BattleMgr battle;
-    [SerializeField] TextMeshProUGUI dialougeBox;
+    [SerializeField] TextMeshProUGUI dialogueBox;
     public Shade playerCreature, enemyCreature;
     [SerializeField] TextMeshProUGUI descriptionBox;
     public GameObject descriptionObject;
@@ -101,16 +101,20 @@ public class CombatMenu : MonoBehaviour
 
         if (playerCreature.energy < basicAttackCost)
         {
-            dialougeBox.text = playerCreature.name + " doesn't have enough energy.";
-            yield return new WaitForSeconds(2f);
+            yield return (battle.DisplayingDialogue($"{playerCreature.name} doesn't have enough energy."));
+            //dialogueBox.text = playerCreature.name + " doesn't have enough energy.";
+            yield return new WaitForSeconds(battle.textStop);
             combatMenu.SetActive(true);
             battle.OpenCombatMenu();
-            dialougeBox.text = "Player's turn";
+
+            yield return (battle.DisplayingDialogue($"Player's turn"));
+            //dialogueBox.text = "Player's turn";
         }
 
         else
         {
-            dialougeBox.text = playerCreature.name + " attacks!";
+            yield return (battle.DisplayingDialogue($"{playerCreature.name} attacks!"));
+            //dialogueBox.text = playerCreature.name + " attacks!";
 
             playerAttackingAnim.SetBool("isAttacking", true);
 
@@ -122,6 +126,12 @@ public class CombatMenu : MonoBehaviour
             yield return new WaitForSeconds(1f);
 
             playerAttackingAnim.SetBool("isAttacking", false);
+
+            if (playerCreature.isFrozen)
+            {
+                playerCreature.isFrozen = false;
+                battle.skillButtons[playerCreature.freezeIndex].interactable = true;
+            }
 
             battle.StartEnemyTurn();
         }
@@ -138,7 +148,8 @@ public class CombatMenu : MonoBehaviour
 
         enemyCreature.isDefending = false;
 
-        dialougeBox.text = enemyCreature.name + " attacks!";
+        yield return (battle.DisplayingDialogue($"{enemyCreature.name} attacks!"));
+        //dialogueBox.text = enemyCreature.name + " attacks!";
 
         enemyAttackingAnim.SetBool("isAttacking", true);
         yield return new WaitForSeconds(1f);
@@ -149,6 +160,11 @@ public class CombatMenu : MonoBehaviour
         playerCreature.UpdateHealth(damage);
         enemyCreature.UpdateEnergy(basicAttackCost);
 
+        if (enemyCreature.isFrozen)
+        {
+            enemyCreature.isFrozen = false;
+        }
+
         playerAttackingAnim.SetBool("isAttacking", false);
         yield return null;
     }
@@ -158,20 +174,6 @@ public class CombatMenu : MonoBehaviour
         Debug.Log("Open Party Menu");
 
         battle.OpenParty();
-        //StartCoroutine(Party());
-    }
-
-    IEnumerator Party()
-    {
-        playerCreature.isDefending = false;
-
-        dialougeBox.text = "No party...";
-
-        yield return new WaitForSeconds(1f);
-
-        dialougeBox.text = "Player's turn";
-
-        yield return null;
     }
 
     public void UseItem()
@@ -185,12 +187,14 @@ public class CombatMenu : MonoBehaviour
     {
         playerCreature.isDefending = false;
 
-        dialougeBox.text = "No items to use...";
+        yield return (battle.DisplayingDialogue($"No items to use..."));
+        //dialogueBox.text = "No items to use...";
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(battle.textStop);
 
-        dialougeBox.text = "Player's turn";
-        yield return null;
+        yield return (battle.DisplayingDialogue($"Player's turn"));
+        //dialogueBox.text = "Player's turn";
+        //yield return null;
     }
 
     public void Flee()
@@ -208,16 +212,19 @@ public class CombatMenu : MonoBehaviour
         Debug.Log(fleeResult.ToString());
         if (fleeResult <= 4)
         {
-            dialougeBox.text = "You failed to escape!";
-            yield return new WaitForSeconds(1f);
+            yield return (battle.DisplayingDialogue($"You failed to escape!"));
+            //dialogueBox.text = "You failed to escape!";
+            yield return new WaitForSeconds(battle.textStop);
             battle.StartEnemyTurn();
         }
         else
         {
-            dialougeBox.text = "You escaped!";
+            yield return (battle.DisplayingDialogue($"You escaped!"));
+            //dialogueBox.text = "You escaped!";
             yield return new WaitForSeconds(1f);
             battle.EndBattle();
         }
+        yield return null;
     }
 
     public float DamageCalc(Shade attackingCreature, Shade defendingCreature, float power, DamageType damageType)
@@ -231,6 +238,10 @@ public class CombatMenu : MonoBehaviour
         else if (defendingCreature.isDefending)
         {
             damage /= 2;
+        }
+        if (defendingCreature.isBurned && damageType == DamageType.Fire)
+        {
+            damage += damage / 4;
         }
         if (defendingCreature.weakness == damageType)
         {
@@ -260,7 +271,8 @@ public class CombatMenu : MonoBehaviour
         {
             if (battle.state == BattleState.PlayerTurn)
             {
-                dialougeBox.text = skill.user.ToString() + "doesn't have enough energy...";
+                StartCoroutine(battle.DisplayingDialogue($"{skill.user} doesn't have enough energy..."));
+                //dialogueBox.text = skill.user.ToString() + "doesn't have enough energy...";
                 battle.skillMenu.SetActive(true);
                 battle.OpenSkillMenu();
             }
@@ -302,20 +314,24 @@ public class CombatMenu : MonoBehaviour
 
             switch (skill.effect)
             {
-                case Effect.Stun:
+                case Effect.Stun://skip an enemy turn
                     if (!skill.effectTarget.wasStunned)
                     {
                         skill.effectTarget.isStunned = true;
                     }
                     break;
-                case Effect.Burn:
-                case Effect.Blind:
-                case Effect.Freeze:
+                //case Effect.Shock:
+                case Effect.Burn://additional damage on next fire attack
+                    skill.effectTarget.isBurned = true;
                     break;
-                case Effect.Charge:
+                case Effect.Freeze://restrict usage of an enemy's skill
+                    skill.effectTarget.freezeIndex = Random.Range(0, battle.skillButtons.Length);
+                    skill.effectTarget.isFrozen = true;
+                    break;
+                case Effect.Charge://ignore defend skill and makes the next skill do 1.5x damage
                     skill.effectTarget.isCharged = true;
                     break;
-                case Effect.Defend:
+                case Effect.Defend://reduces the damage from the next enemy attack to 0.5x
                     skill.effectTarget.isDefending = true;
                     break;
                 case Effect.None:
@@ -323,13 +339,23 @@ public class CombatMenu : MonoBehaviour
                     break;
             }
 
-            dialougeBox.text = skill.user.name.ToString() + " used " + skill.name.ToString();
+            StartCoroutine(battle.DisplayingDialogue($"{skill.user.name} used {skill.name}"));
+            //dialogueBox.text = skill.user.name.ToString() + " used " + skill.name.ToString();
 
             StartCoroutine(Animate(skill.animationType, animator));
 
             if (battle.state == BattleState.PlayerTurn)
             {
                 battle.StartEnemyTurn();
+            }
+
+            if (skill.user.isFrozen)
+            {
+                skill.user.isFrozen = false;
+                if (battle.state == BattleState.PlayerTurn)
+                {
+                    battle.skillButtons[skill.user.freezeIndex].interactable = true;
+                }
             }
 
             return true;
