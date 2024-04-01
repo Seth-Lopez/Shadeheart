@@ -1,0 +1,6463 @@
+fileFormatVersion: 2
+guid: ab02cb2f115ec4cf4b5991d6e75bf039
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ece70782cd08430ea92d156afed6006
+      internalID: -1839106940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d064676bfb4e43018a8ba2dbbc2b290
+      internalID: -729599659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4170e3ee3de544111be4f0eaf5126c58
+      internalID: 967431245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e427e068f90224899ab84d9b315530e5
+      internalID: 267271775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a7adc37b373497396a2272c70eae03
+      internalID: 500495092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372df10f1defe4fe3a7b9c3436c76820
+      internalID: 1916482410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2097dcb060c354cdf9ab7cfb55270316
+      internalID: 8616834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1d586a9b23534dc9bdbce8c7e224ded
+      internalID: -1857363568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb9094272264a4f67ad4540a5a0e5d2a
+      internalID: 1707824536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0ae479be3674174a5406a24332ba03
+      internalID: -1520969314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0ed409dd0c04745ae79650a5ae5498
+      internalID: 1229502003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da968cf3912346d8a1b727e5b4ea9d8
+      internalID: -841125761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a73e93b9d8f4be4a77bcc3d903be51
+      internalID: 961953624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_13
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be57ab58ef03e4ce2a7217e02d0e4a7d
+      internalID: -977774047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_14
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e5a3dad17f148acb17529fd4a9289d
+      internalID: 2042707010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_15
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60dfca82cb268406088873aac5527225
+      internalID: -418805474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_16
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec4b28945626d4f1fb6aa9d38848407c
+      internalID: -2010294624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_17
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 201fec4c78246408bbb9572e4ac4d504
+      internalID: -1794374018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_18
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1519b9e18e6054d8daf975a19cf3202b
+      internalID: -1637612315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_19
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29c3d652f2be492c9e3b39fa2fac5ac
+      internalID: 769445323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_20
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2e67ed48cd64245b74e07246a3cecc
+      internalID: 1611128012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_21
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d6b2beaa0ae4b0586340a47f8ac086
+      internalID: 1484581928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_22
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e410a3dc13394d3aaa8aa403923f3fd
+      internalID: -905421307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_23
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e8a0433f9ed45b7af3d072d3dbe62d
+      internalID: 797901755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_24
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 605df6150b4364cdfa8e798910aeb233
+      internalID: -772762060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_25
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b60e744e9f0d243b1a7f979165526efb
+      internalID: 704772453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_26
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143707f225c8e4b359b60bb8f075b4ab
+      internalID: -2018476991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_27
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d681b7190e4b49768915a1edd5ef919
+      internalID: -692913393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_28
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f292a28b50024c068fca69bd830a331
+      internalID: 391042437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_29
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017f138c36aee4fdf8168b84d82866cc
+      internalID: -631384395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_30
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3e9af66e61b4006a313d26d632bb4e
+      internalID: -1062900537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_31
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4bc6dc12bbd4ca9bd7e4454857de9b
+      internalID: 924607577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_32
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08290b77859454693a2d77d2a87b749e
+      internalID: 985337237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_33
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1deac3e7dc955442db696bb15f572ba9
+      internalID: -639693508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_34
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b0fe3e12692440ee9e72126b583c782
+      internalID: -1355737281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_35
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa9b67845be04670b2e302063695d3b
+      internalID: -1630008468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_36
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0101bc39f2ece4e5aa943c2e71ba7aa2
+      internalID: -1693291630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_37
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97dfe86eb017c4af4b13422b1c53e394
+      internalID: -130474181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_38
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d394711942e460e862c877ef34b9a1
+      internalID: -2075099168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_39
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760d97c6f84e245b1bf00d37f0877f03
+      internalID: -558462818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_40
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76ebc6c55dab45b39b2fc939bbe7ddb
+      internalID: 1811953421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_41
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8509fb48006ab4ea089e8d2dabc21074
+      internalID: 1972669442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_42
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7010246195f26449da0981db048b5291
+      internalID: -428840437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_43
+      rect:
+        serializedVersion: 2
+        x: 2064
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf07cc3bdc9b48218904b06b465f881
+      internalID: -1307312189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_44
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e8c49e7754a41ee9e898aef90f486d
+      internalID: 1050099932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_45
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0000a2589b6f4caba0ee957cc67f8ae
+      internalID: 41432424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_46
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1dee32a0206c4259ab5be6d53ebf2e4
+      internalID: -2096540121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_47
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb4b3abddfb4443b8b6d892131858e4f
+      internalID: 613025512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_48
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebba48b2f74f4f92a15b46130cb963d
+      internalID: -2089414467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_49
+      rect:
+        serializedVersion: 2
+        x: 2352
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6678026bf56014807b8236cc38eaa73c
+      internalID: -1696991615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_50
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6912ba119ca8a4922be3fb5bb6d3c454
+      internalID: 135805038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_51
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b677eb3aa145485eb946ca3f82db971
+      internalID: -307487262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_52
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aded10f751bbb4adf97f6be9d1336abb
+      internalID: -837753751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_53
+      rect:
+        serializedVersion: 2
+        x: 2544
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b7ad044b6284321849cc462be05f95
+      internalID: 1723108088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_54
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f62b818fa6244637829baf111116b0f
+      internalID: -497605668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_55
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8862d161a760a4802acc3b27dacd9e8e
+      internalID: 778673797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_56
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a1759510673749e69ac236a9f6a23d1
+      internalID: -45587958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_57
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63280d464e47643c99d2d3193dcf04d1
+      internalID: 694261468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_58
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e51720ac40e64425aa641b7da6950ad
+      internalID: 2121787469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_59
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be284d830a0146ec92ecbd9e3fe8003
+      internalID: 275253995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_60
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180c2561018d34bd8b5a2bab53234d85
+      internalID: 573217784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_61
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe56973417c349c88dcf025ea6d4b16
+      internalID: -1291871808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_62
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446e0cf7a4a444c24a5f7cc0d3cbd7af
+      internalID: 1827142055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_63
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f47a286657a54949ac25bf59473f3a8
+      internalID: -723547549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_64
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a74c9a09bba40fea0b5f9a5e581ab7
+      internalID: -285107886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_65
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8706f78367d4368bf93a41aba0d31e
+      internalID: 1273785578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_66
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3d0443fee384c52aa372d9cd8b2900
+      internalID: -1403903091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_67
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb6a55ae266940e78b9de27917a427d
+      internalID: 295544528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_68
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b772069331a5c4e18acce64358b2def5
+      internalID: 662205313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_69
+      rect:
+        serializedVersion: 2
+        x: 3312
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea885c4612b684046a2defa6aca95b5d
+      internalID: 398880131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_70
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa385b42dd9f4a40880f46f01915aa9
+      internalID: -2088312650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_71
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9be02c5afdc549bcb8d0f96f2179b8d
+      internalID: 480773131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5eea89823fb409facebe228aaa9662
+      internalID: -1893864035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_73
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd02dd26f16b44b79b3c7fc90fccdbb
+      internalID: -784201627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_74
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0a980030a3a4cf89b4176976b81d53
+      internalID: 471059090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_75
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14dc8786f49b14a56b0317d698f92a2e
+      internalID: 1085973173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_76
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed21ad8ecd7794673850d6840349cb59
+      internalID: 228088749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_77
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fab3fb2dacaa4bfb85bc6a822edd891
+      internalID: 1863673042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_78
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b137977521242452fb63e0baa89520bd
+      internalID: 968027092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_79
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed76f75458ca14b8ba1779f7033e1416
+      internalID: 1608707948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_80
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79befa39bfbe04a909674bea273408d4
+      internalID: 49721714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_81
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfacdb349213643db959e5b84056d607
+      internalID: -217081275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_82
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0673afc00ff485491a7f43d9e9450c
+      internalID: 1137524695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_83
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2290c01411c5b48258c2715b00090ae7
+      internalID: -1375013470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_84
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235d5fa8f14964fb8b1e9ea326d372e7
+      internalID: -2114661513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_85
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c29a21f58f0f4c4284c737c7ae27d60
+      internalID: -560085185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_86
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35d07e55dd50a496e83e1671feb4311b
+      internalID: 587652883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_87
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af89bc826012e45adba295c7b60eab64
+      internalID: 3159086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_88
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4080458179d3848fdb38d3c4d619f2e7
+      internalID: -1647264673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_89
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca1b98cf20d7454ca3e4b77e988c161
+      internalID: 1706143916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_90
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65c598f9488b405da23c51f8dca7a25
+      internalID: -1939571119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_91
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2955dd72ec2f04b72ab6b1c592c038b4
+      internalID: -2099670697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_92
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786b8ca37d31e4b38be52df06fa72e6a
+      internalID: 677881762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_93
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd4f5b6bfcf344ddb95b50ac9882feb
+      internalID: -137947236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_94
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a0d7b06b1124779b050ff9365c85f1
+      internalID: -686849413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_95
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ed086a4cae04c429b08eb2ca462d93
+      internalID: -1857023276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_96
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdeb1b250e7674d02813860bfb31d7ac
+      internalID: 149884665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_97
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff04932dc4f74e3798f30440522059d
+      internalID: -1044030205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_98
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09342f40561a4754b0d3bd9729a58eb
+      internalID: -1016104582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_99
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f83b6abb43724bbcad7dfa8d3ec90f7
+      internalID: 94495169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_100
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02785f65117014ca093f59e368ac0476
+      internalID: -928886001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_101
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d22c8d225fb14c28b5902fa73010b11
+      internalID: 1968090841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_102
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb84121df0d724c4c806e42fe9cfdfb5
+      internalID: -23116014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_103
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d166ac40a72349d1af5345e695bacc2
+      internalID: 1356307469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_104
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0289c94ef7dc142fc9c9c79619b6d6f2
+      internalID: -1003709422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_105
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4cc9d171cff846289737b04daf1b912
+      internalID: 46727198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_106
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9f38fe6af5a4e6e9e9b82386148e1d
+      internalID: -298165874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_107
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0330938e38da642ca96c7d0d4eb72188
+      internalID: -23033203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_108
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3195aa2a2e09f40cf96b1a02bab2401c
+      internalID: -1620779875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_109
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4f1dccb5d534c6bab50fd49602000d
+      internalID: 484506825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_110
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1000a245a0e084feeb80673198d767e1
+      internalID: -1111575896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_111
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b5046f217954b4eaa71378df64cb31
+      internalID: 1819486632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_112
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a703c735af654aecaa2db37ca92dffd
+      internalID: -1281083867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_113
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 110ff364a773b419585e04cbbe3d10ad
+      internalID: -1294308851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_114
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b505dd5f85bb24e8494b68c728c9f035
+      internalID: -2052638399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_115
+      rect:
+        serializedVersion: 2
+        x: 2064
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04544fefde87b427da0907fe500195bb
+      internalID: 1591753105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_116
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a38f8dd5fbc44018aaf89cf244dbe4
+      internalID: 630004777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_117
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7bd2292b2124d48ab3d54eb2814784
+      internalID: -540894464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_118
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cbd60cc9e6a44776a13bd64cc61f80a
+      internalID: 868779932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_119
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3ac8fc3b9e94eeb958ffaf512fd687
+      internalID: -1941680134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_120
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63fb14dc059a14379b128d6677b1b2b8
+      internalID: 1944034068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_121
+      rect:
+        serializedVersion: 2
+        x: 2352
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d912f47060d643ba9f2da4b4f23f65b
+      internalID: 1755776342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_122
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f8fb5f311bf47219ccd71bd69e4337
+      internalID: -1353214748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_123
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a69489fd7089c4318bedd9fa05524c79
+      internalID: -121711467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_124
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11e6cb7ff0af4574890b7677ae9cdb1
+      internalID: -1872604022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_125
+      rect:
+        serializedVersion: 2
+        x: 2544
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d89136924c2c46f787f1cbab23ecb5e
+      internalID: 1208319303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_126
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19c6ff80b85346f89749306ba104e02
+      internalID: -1230440305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_127
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a09459e50fb41ffb11147ff4e1fbe1
+      internalID: 1083925482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_128
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aade69b042cf4d80aa65502b67dbdf2
+      internalID: 207704833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_129
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cccdc6bd7ac446ab557a6ed2e291d4
+      internalID: 943016202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_130
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c743e0d8d5fce4dba9123dea3bd6cfea
+      internalID: -2066280152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_131
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5301676d768a3413d9dc249c12d68846
+      internalID: 1784913222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_132
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2279945144c764733abc28aa5246da93
+      internalID: -478335452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_133
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603209d89f6904acd9f5a076d35f1c10
+      internalID: -996247965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_134
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663c0973439804ab1b6ec56a278b8b0b
+      internalID: 942940789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_135
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390df8b103ca74a4d8a7c4bab4101273
+      internalID: 1073019477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_136
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6853b23262cf4d8eb834a65286e885d
+      internalID: 838152917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_137
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab83d88d5a6d4473bd18baeb3fede49
+      internalID: -1865290616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_138
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bde9d63b3f404ba7ba3a288b3d2857c
+      internalID: 2095897482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_139
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6352fc8d6022644f89d05d1997a5307e
+      internalID: 429014457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_140
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4215e1869cf2c4eac9a81122ec120bcc
+      internalID: -1550669713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_141
+      rect:
+        serializedVersion: 2
+        x: 3312
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f2f315a43c141bab0cdb518d54b446
+      internalID: 1943881477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_142
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17b9bf959798645f0a43b42658cabb7c
+      internalID: 110285889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_143
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360fbfe2a45274de9afeb677d9ae5172
+      internalID: 1186048989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b29ea5395a1a4562a859abae24e6c62
+      internalID: -423159034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_145
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17d018558996437a84af9899dc2f94c
+      internalID: 1078712801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_146
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eebd1eb7f22f430d958d091f6cb02e6
+      internalID: -1460108719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_147
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d3ce101cc6e343e485648403efe9774
+      internalID: 1750183455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_148
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f33a5a5489b4c35985ca2d40011743
+      internalID: 233683283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_149
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f3b524c6a0145ecbd3bbf36e5e8878
+      internalID: 1667351793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_150
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d5e4fe9c844418d9402646da883b6b
+      internalID: -1187238291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_151
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc856b5a7c1b4a1fa553920931b5533
+      internalID: 894320868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_152
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54026a03e96854ee48b103894e821ac1
+      internalID: -813039793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_153
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f432c357b764713a28d8b35bddcf96
+      internalID: -2060884713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_154
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b8809e6ea974cf8af51bee5930fbe7
+      internalID: -1837253033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_155
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102c9a5e822f74d4c9c629e1efe9fe3b
+      internalID: -486357209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_156
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732b9998ec39c4ee3a341be2b697985c
+      internalID: -1675736559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_157
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e27a65df5eb6042fbb7d2b842c9e1348
+      internalID: -89852674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_158
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ad1da8f246c455cb8c7aabcfc67884
+      internalID: -1381144916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_159
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489a96771b97d4480b160b85efcf27fc
+      internalID: 1607403971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_160
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb056b694aef14d5c85dcc9c8ef8b2e8
+      internalID: 904938515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_161
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a49706315cc4e37961bd209df551ef
+      internalID: 473558272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_162
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6c46e66c761e407290e1a96ab67174a
+      internalID: 1411171355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_163
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f1ba6b513c1487591c7219116b840b
+      internalID: -641547321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_164
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54131e009f98945318cb701dcfedb139
+      internalID: 1847762233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_165
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dfafcbc4e84e4962851a40749fe8644
+      internalID: -1590698822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_166
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f4cbe7346af2461b9913fe95e182a26
+      internalID: 1291249166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_167
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec9e5754e96b48cbadf59599992d7b3
+      internalID: 1123097016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_168
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817b1f012808640feaad7d59311a30b6
+      internalID: 1821668927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_169
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ac5038463ab4b54aa0da1a9f2533ab
+      internalID: 1668397347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_170
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2816acb8a904331bbd692dcf70ae16
+      internalID: -1627498327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_171
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089d92959fa9b48459f03a983b5f4e77
+      internalID: 205996227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_172
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e3671da9301d4796b32c4fb91dba522
+      internalID: 734345801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_173
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd83ae4575bd47f9b72a7d686938186
+      internalID: -467823144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_174
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4290d34468d3f48c7be26af0a26c8684
+      internalID: -528155821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_175
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec84105922104c40b416a5e640b7683
+      internalID: 1636833842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_176
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d103927a833496283db00052a4d68c
+      internalID: 1550614396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_177
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ca4cdb2c416405b84076179b15d4cf
+      internalID: -109071617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_178
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3df833470374058a820bdca09a57b8
+      internalID: -1674752593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_179
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa4cafae768b476e9e99f13af36cbf1
+      internalID: 2077737456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_180
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24774efc502c14d2d9a2bf5882581efd
+      internalID: -284214690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_181
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbe72c2ea5b242049b2609bcda27d89
+      internalID: -102347412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_182
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c34f5183d9b4d16a80301d10dfa2b3
+      internalID: 711843309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_183
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eabf9ca0c9d234b9a8cc6526893b0a72
+      internalID: 2132104496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_184
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38af6633a381458f864358d08061b8c
+      internalID: -1368444089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_185
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c68f02116fac4c699ec0de42a85110f
+      internalID: -346425314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_186
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2aeacf6606f64090b797523bc92630e
+      internalID: 1701873631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_187
+      rect:
+        serializedVersion: 2
+        x: 2064
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29117046912eb419abd99591d70842ca
+      internalID: -583569932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_188
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e7c40a343824eedae3a661b575a7bc
+      internalID: 1839388587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_189
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b6ab6b3fb654f7580c7a0ec06bf71b
+      internalID: 155439697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_190
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5891f627305140128589d3a29065329
+      internalID: -1947264970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_191
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64df312aeae594dff83c4fe45245d6cf
+      internalID: -1593857082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_192
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd325a0e2110a4bd7a99b65355a798df
+      internalID: -1050653257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_193
+      rect:
+        serializedVersion: 2
+        x: 2352
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a1ffb19fa8b4980a92223e9798fbc5
+      internalID: 1233303791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_194
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45e6acb94da0446897faaa225a1e6bf
+      internalID: -1106360256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_195
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e39957e38f4c4513a1d454d07a25a23
+      internalID: 1854228815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_196
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f07be2fd13c407f8001df202cb85b6
+      internalID: 2098032646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_197
+      rect:
+        serializedVersion: 2
+        x: 2544
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef3b05539b3b42939fe751bbffda6f9
+      internalID: -1902500783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_198
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2410b9d1f5ea94af69a105a7739529d9
+      internalID: 57623004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_199
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e3cde5dedf444d990638d27a8aaeeb
+      internalID: -1337717728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_200
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa4e4cf513ef47368ea4e4163356f01
+      internalID: -1933377365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_201
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4d23e5d3858401dbe93a7632f89156
+      internalID: 1939783374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_202
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9508dc9a3dab34f02824a595c98accbc
+      internalID: -1449157840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_203
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28efdd9e69de6435183c7c3165149320
+      internalID: -1219047761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_204
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c014420a076e41008c297cd9ca2776e
+      internalID: 822447591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_205
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269b6fa47faf74bdc92d74fefabdf95f
+      internalID: 841372446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_206
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d89cc93da1a4f8baa937c224275f6a
+      internalID: 757481786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_207
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a7953531c9d4ba7aca418e60a6fb39
+      internalID: -586247136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_208
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c31ba87316014251be695283179fcdd
+      internalID: 539032029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_209
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9098864774cec455d9bc341a2fe8810b
+      internalID: -617096743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_210
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c1570519248a48ba96ab4d1ff40bd5c
+      internalID: -711111150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_211
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebf54c75f6b24b95b19ecab9dd2cd4e
+      internalID: -1957973918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_212
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2dc70ab01c649409e7c8a0adad678c
+      internalID: 34773080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_213
+      rect:
+        serializedVersion: 2
+        x: 3312
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7399d7272bc82419cb8661462bef69b0
+      internalID: -770511881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_214
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4d8825668e164faa8505b4acb3275d8
+      internalID: 256760142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_215
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4256aaf5ff1524ed981bc96d9e865754
+      internalID: -1562320889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_216
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98bbc4c65ec5e452da41fc3e66d27ce4
+      internalID: -613422273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_217
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06fce57b24df647b9bf1d0ee9e0372f0
+      internalID: 108860878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_218
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 849b8f1d916d847f6ba82c789ed923a2
+      internalID: 329102630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_219
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e1294715c25451aaf7cf747a61e2ea
+      internalID: -1538868898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_220
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c844e3d53c8e144eeb850a4d38ecf22b
+      internalID: -619614838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_221
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abba0146983c24b368885c626972e911
+      internalID: -759851917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_222
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928ca93ca97754e32affcf5ed62a91dc
+      internalID: 468072064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_223
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a55a0ce9e31429085c7c93500a63fd
+      internalID: 820374188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_224
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06b1992a11194d98b2885254fdd86ad
+      internalID: -1580946195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_225
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c24079e341fa476f80d2f7b761fdb22
+      internalID: -1105595153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_226
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5388afd707244858a386199ab4ffb7
+      internalID: -875576565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_227
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50cf7bcc27ac438ba4c6f241a8da310
+      internalID: 1496062600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_228
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33490c1ba2f824f3f931df6b12ed7b16
+      internalID: -1127870353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_229
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb942865146a4990ae05368e83c3491
+      internalID: 694343555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_230
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1df3b93e7dd4496ae1d7b7b98b6c15
+      internalID: 217561123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_231
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217bc3a49d09c4b79ab61a98bcc710a6
+      internalID: -1927911315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_232
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37a6c65082284355817e4a464af8af5
+      internalID: 198173955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_233
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c2799cbc60e4b7e933d9486288244d
+      internalID: 2003985805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_234
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694c3cc8e69a84a91935b04c841a71a8
+      internalID: -341666075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_235
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3c77ea31e2e40eebb6bb9fc644954b
+      internalID: -93359088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_236
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc5651146dab42dcb672f4bb047d8b5
+      internalID: -473928752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_237
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e297739a44487485b9f3c4fd2ed9eb8f
+      internalID: 83347167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_238
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b46869510493240f89c35bf8c0941c1a
+      internalID: -1859224429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_239
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e9c4665a68f74a22b76ba9dac5e99a3
+      internalID: 689492895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_240
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5120182bb561a44228c30942f20db376
+      internalID: 1354141423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_241
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0454120a159594845ab7eb13a162ec91
+      internalID: 91655810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_242
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec4f9cc50206143a3a5ad6a42d65737f
+      internalID: 452455307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_243
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c48d1cbaa534ee7963cf3780023563
+      internalID: -1927496164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_244
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ce3195dc3b44b3d96526b4efa24fe7
+      internalID: 1509933652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_245
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a1855a350a664fdc9e0d05aaf97772a
+      internalID: -1669071756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_246
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd76bad5566a8468d933e116be75772a
+      internalID: -398874781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_247
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4abc52a6742674ca0afdefcab5612a64
+      internalID: -2113489360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_248
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89edbdd0008be4537bd5c4171d14904c
+      internalID: 1520186482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_249
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f4b1128db8c469cbb976937ef49d69
+      internalID: -449448348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_250
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1b4cb2c19bf478588f528bfec7c55e
+      internalID: 1952874622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_251
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea3bfea31ac54f438e4ba1c49971ff7
+      internalID: 1408670305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_252
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5669348bda44d466f870d46e99595a17
+      internalID: 363300334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_253
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940d197d3250a460e9596226814baac2
+      internalID: 2073008536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_254
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68f83c608d8a418a9559f116cf2a94c
+      internalID: -1881058446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_255
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb00447de0e54de783b0164f305bfd7
+      internalID: -260777246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_256
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a799be36d324b59bbfa2dcfa925f63
+      internalID: -618433169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_257
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6999512a891fc4552922ce79088a7ba0
+      internalID: -1458394964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_258
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e5c471cc3398412abce9c0c64725cb8
+      internalID: -888435200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_259
+      rect:
+        serializedVersion: 2
+        x: 2064
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2847762d36a4e8d8e0fa9cb25b7a48
+      internalID: -39447669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_260
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88cb88c4e59894505b500c07fbf14bf7
+      internalID: -1740748752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_261
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168fce5f0f27c48d6abac92a563427e0
+      internalID: 1767095990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_262
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29aad6ae874cc4e858f5f53454c66e24
+      internalID: -1047819162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_263
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d7a99729df844fbbc0f0cfc4d5085d
+      internalID: 838799445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_264
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1254f13dbc1484a808debb3fc88ed167
+      internalID: -515377190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_265
+      rect:
+        serializedVersion: 2
+        x: 2352
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2527a6ffd3ea47f0a64a84ab5468a20
+      internalID: 251960702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_266
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf3437ec80d743b2a0a53e8211bbe52
+      internalID: 1008085845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_267
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ed9b407334a442183c63c11f6469d3
+      internalID: 717716926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_268
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25df10496d1244bfd9c69d6666d611b1
+      internalID: -682920453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_269
+      rect:
+        serializedVersion: 2
+        x: 2544
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c2734a25b14456cba257fdb34e6231
+      internalID: -1842515244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_270
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb28b01cbe7b4f0ea50a11d87f50e6f
+      internalID: 447657582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_271
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c164c3edc8ad4be39f18afbf623e3c1
+      internalID: 799813477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_272
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fcf55eee31e243f4a9aff31256429be
+      internalID: 1102269624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_273
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b340a09a2b44af7b1a7dcf16b169fb
+      internalID: -66732445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_274
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f144b841082a4e90bc764946575d4d3
+      internalID: -2025131995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_275
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57b0f7705aaa4cea8054951b4a98c89
+      internalID: -1630828670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_276
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788dcb653cfda42b8b579dd69d46660e
+      internalID: -1121769255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_277
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960c76fd514eb4a9ab4e2869567a0d19
+      internalID: -1188916393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_278
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404b98789a0dc4979b33a17c8fb99991
+      internalID: -1808376776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_279
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19015fe0b350a4dc8b0d42a67b30eca7
+      internalID: -1487298391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_280
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7fd91889fd8b42398bcac782c5f4912
+      internalID: 1073599002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_281
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfaeb90c126694540b1ba6e6550f8418
+      internalID: -1672818723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_282
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aed81c9265714a9199543f204189948
+      internalID: -2002887915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_283
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04915567b5d38443ba992c471605bf29
+      internalID: 287025797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_284
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804ae109aa08643a198c7fb301d0bc3e
+      internalID: 2071848287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_285
+      rect:
+        serializedVersion: 2
+        x: 3312
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f2b26bd04a842ca8cf7cb2d41388e1
+      internalID: -1628083063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_286
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0911ca46e3fe54cbc8332d17aa61f3d6
+      internalID: 2079573240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sea_Water_Tileset_48x48_287
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14af1eb3d35cc4e29a626a9b65ddcfb4
+      internalID: 2047494931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Sea_Water_Tileset_48x48_0: -1839106940
+      Sea_Water_Tileset_48x48_1: -729599659
+      Sea_Water_Tileset_48x48_10: 1229502003
+      Sea_Water_Tileset_48x48_100: -928886001
+      Sea_Water_Tileset_48x48_101: 1968090841
+      Sea_Water_Tileset_48x48_102: -23116014
+      Sea_Water_Tileset_48x48_103: 1356307469
+      Sea_Water_Tileset_48x48_104: -1003709422
+      Sea_Water_Tileset_48x48_105: 46727198
+      Sea_Water_Tileset_48x48_106: -298165874
+      Sea_Water_Tileset_48x48_107: -23033203
+      Sea_Water_Tileset_48x48_108: -1620779875
+      Sea_Water_Tileset_48x48_109: 484506825
+      Sea_Water_Tileset_48x48_11: -841125761
+      Sea_Water_Tileset_48x48_110: -1111575896
+      Sea_Water_Tileset_48x48_111: 1819486632
+      Sea_Water_Tileset_48x48_112: -1281083867
+      Sea_Water_Tileset_48x48_113: -1294308851
+      Sea_Water_Tileset_48x48_114: -2052638399
+      Sea_Water_Tileset_48x48_115: 1591753105
+      Sea_Water_Tileset_48x48_116: 630004777
+      Sea_Water_Tileset_48x48_117: -540894464
+      Sea_Water_Tileset_48x48_118: 868779932
+      Sea_Water_Tileset_48x48_119: -1941680134
+      Sea_Water_Tileset_48x48_12: 961953624
+      Sea_Water_Tileset_48x48_120: 1944034068
+      Sea_Water_Tileset_48x48_121: 1755776342
+      Sea_Water_Tileset_48x48_122: -1353214748
+      Sea_Water_Tileset_48x48_123: -121711467
+      Sea_Water_Tileset_48x48_124: -1872604022
+      Sea_Water_Tileset_48x48_125: 1208319303
+      Sea_Water_Tileset_48x48_126: -1230440305
+      Sea_Water_Tileset_48x48_127: 1083925482
+      Sea_Water_Tileset_48x48_128: 207704833
+      Sea_Water_Tileset_48x48_129: 943016202
+      Sea_Water_Tileset_48x48_13: -977774047
+      Sea_Water_Tileset_48x48_130: -2066280152
+      Sea_Water_Tileset_48x48_131: 1784913222
+      Sea_Water_Tileset_48x48_132: -478335452
+      Sea_Water_Tileset_48x48_133: -996247965
+      Sea_Water_Tileset_48x48_134: 942940789
+      Sea_Water_Tileset_48x48_135: 1073019477
+      Sea_Water_Tileset_48x48_136: 838152917
+      Sea_Water_Tileset_48x48_137: -1865290616
+      Sea_Water_Tileset_48x48_138: 2095897482
+      Sea_Water_Tileset_48x48_139: 429014457
+      Sea_Water_Tileset_48x48_14: 2042707010
+      Sea_Water_Tileset_48x48_140: -1550669713
+      Sea_Water_Tileset_48x48_141: 1943881477
+      Sea_Water_Tileset_48x48_142: 110285889
+      Sea_Water_Tileset_48x48_143: 1186048989
+      Sea_Water_Tileset_48x48_144: -423159034
+      Sea_Water_Tileset_48x48_145: 1078712801
+      Sea_Water_Tileset_48x48_146: -1460108719
+      Sea_Water_Tileset_48x48_147: 1750183455
+      Sea_Water_Tileset_48x48_148: 233683283
+      Sea_Water_Tileset_48x48_149: 1667351793
+      Sea_Water_Tileset_48x48_15: -418805474
+      Sea_Water_Tileset_48x48_150: -1187238291
+      Sea_Water_Tileset_48x48_151: 894320868
+      Sea_Water_Tileset_48x48_152: -813039793
+      Sea_Water_Tileset_48x48_153: -2060884713
+      Sea_Water_Tileset_48x48_154: -1837253033
+      Sea_Water_Tileset_48x48_155: -486357209
+      Sea_Water_Tileset_48x48_156: -1675736559
+      Sea_Water_Tileset_48x48_157: -89852674
+      Sea_Water_Tileset_48x48_158: -1381144916
+      Sea_Water_Tileset_48x48_159: 1607403971
+      Sea_Water_Tileset_48x48_16: -2010294624
+      Sea_Water_Tileset_48x48_160: 904938515
+      Sea_Water_Tileset_48x48_161: 473558272
+      Sea_Water_Tileset_48x48_162: 1411171355
+      Sea_Water_Tileset_48x48_163: -641547321
+      Sea_Water_Tileset_48x48_164: 1847762233
+      Sea_Water_Tileset_48x48_165: -1590698822
+      Sea_Water_Tileset_48x48_166: 1291249166
+      Sea_Water_Tileset_48x48_167: 1123097016
+      Sea_Water_Tileset_48x48_168: 1821668927
+      Sea_Water_Tileset_48x48_169: 1668397347
+      Sea_Water_Tileset_48x48_17: -1794374018
+      Sea_Water_Tileset_48x48_170: -1627498327
+      Sea_Water_Tileset_48x48_171: 205996227
+      Sea_Water_Tileset_48x48_172: 734345801
+      Sea_Water_Tileset_48x48_173: -467823144
+      Sea_Water_Tileset_48x48_174: -528155821
+      Sea_Water_Tileset_48x48_175: 1636833842
+      Sea_Water_Tileset_48x48_176: 1550614396
+      Sea_Water_Tileset_48x48_177: -109071617
+      Sea_Water_Tileset_48x48_178: -1674752593
+      Sea_Water_Tileset_48x48_179: 2077737456
+      Sea_Water_Tileset_48x48_18: -1637612315
+      Sea_Water_Tileset_48x48_180: -284214690
+      Sea_Water_Tileset_48x48_181: -102347412
+      Sea_Water_Tileset_48x48_182: 711843309
+      Sea_Water_Tileset_48x48_183: 2132104496
+      Sea_Water_Tileset_48x48_184: -1368444089
+      Sea_Water_Tileset_48x48_185: -346425314
+      Sea_Water_Tileset_48x48_186: 1701873631
+      Sea_Water_Tileset_48x48_187: -583569932
+      Sea_Water_Tileset_48x48_188: 1839388587
+      Sea_Water_Tileset_48x48_189: 155439697
+      Sea_Water_Tileset_48x48_19: 769445323
+      Sea_Water_Tileset_48x48_190: -1947264970
+      Sea_Water_Tileset_48x48_191: -1593857082
+      Sea_Water_Tileset_48x48_192: -1050653257
+      Sea_Water_Tileset_48x48_193: 1233303791
+      Sea_Water_Tileset_48x48_194: -1106360256
+      Sea_Water_Tileset_48x48_195: 1854228815
+      Sea_Water_Tileset_48x48_196: 2098032646
+      Sea_Water_Tileset_48x48_197: -1902500783
+      Sea_Water_Tileset_48x48_198: 57623004
+      Sea_Water_Tileset_48x48_199: -1337717728
+      Sea_Water_Tileset_48x48_2: 967431245
+      Sea_Water_Tileset_48x48_20: 1611128012
+      Sea_Water_Tileset_48x48_200: -1933377365
+      Sea_Water_Tileset_48x48_201: 1939783374
+      Sea_Water_Tileset_48x48_202: -1449157840
+      Sea_Water_Tileset_48x48_203: -1219047761
+      Sea_Water_Tileset_48x48_204: 822447591
+      Sea_Water_Tileset_48x48_205: 841372446
+      Sea_Water_Tileset_48x48_206: 757481786
+      Sea_Water_Tileset_48x48_207: -586247136
+      Sea_Water_Tileset_48x48_208: 539032029
+      Sea_Water_Tileset_48x48_209: -617096743
+      Sea_Water_Tileset_48x48_21: 1484581928
+      Sea_Water_Tileset_48x48_210: -711111150
+      Sea_Water_Tileset_48x48_211: -1957973918
+      Sea_Water_Tileset_48x48_212: 34773080
+      Sea_Water_Tileset_48x48_213: -770511881
+      Sea_Water_Tileset_48x48_214: 256760142
+      Sea_Water_Tileset_48x48_215: -1562320889
+      Sea_Water_Tileset_48x48_216: -613422273
+      Sea_Water_Tileset_48x48_217: 108860878
+      Sea_Water_Tileset_48x48_218: 329102630
+      Sea_Water_Tileset_48x48_219: -1538868898
+      Sea_Water_Tileset_48x48_22: -905421307
+      Sea_Water_Tileset_48x48_220: -619614838
+      Sea_Water_Tileset_48x48_221: -759851917
+      Sea_Water_Tileset_48x48_222: 468072064
+      Sea_Water_Tileset_48x48_223: 820374188
+      Sea_Water_Tileset_48x48_224: -1580946195
+      Sea_Water_Tileset_48x48_225: -1105595153
+      Sea_Water_Tileset_48x48_226: -875576565
+      Sea_Water_Tileset_48x48_227: 1496062600
+      Sea_Water_Tileset_48x48_228: -1127870353
+      Sea_Water_Tileset_48x48_229: 694343555
+      Sea_Water_Tileset_48x48_23: 797901755
+      Sea_Water_Tileset_48x48_230: 217561123
+      Sea_Water_Tileset_48x48_231: -1927911315
+      Sea_Water_Tileset_48x48_232: 198173955
+      Sea_Water_Tileset_48x48_233: 2003985805
+      Sea_Water_Tileset_48x48_234: -341666075
+      Sea_Water_Tileset_48x48_235: -93359088
+      Sea_Water_Tileset_48x48_236: -473928752
+      Sea_Water_Tileset_48x48_237: 83347167
+      Sea_Water_Tileset_48x48_238: -1859224429
+      Sea_Water_Tileset_48x48_239: 689492895
+      Sea_Water_Tileset_48x48_24: -772762060
+      Sea_Water_Tileset_48x48_240: 1354141423
+      Sea_Water_Tileset_48x48_241: 91655810
+      Sea_Water_Tileset_48x48_242: 452455307
+      Sea_Water_Tileset_48x48_243: -1927496164
+      Sea_Water_Tileset_48x48_244: 1509933652
+      Sea_Water_Tileset_48x48_245: -1669071756
+      Sea_Water_Tileset_48x48_246: -398874781
+      Sea_Water_Tileset_48x48_247: -2113489360
+      Sea_Water_Tileset_48x48_248: 1520186482
+      Sea_Water_Tileset_48x48_249: -449448348
+      Sea_Water_Tileset_48x48_25: 704772453
+      Sea_Water_Tileset_48x48_250: 1952874622
+      Sea_Water_Tileset_48x48_251: 1408670305
+      Sea_Water_Tileset_48x48_252: 363300334
+      Sea_Water_Tileset_48x48_253: 2073008536
+      Sea_Water_Tileset_48x48_254: -1881058446
+      Sea_Water_Tileset_48x48_255: -260777246
+      Sea_Water_Tileset_48x48_256: -618433169
+      Sea_Water_Tileset_48x48_257: -1458394964
+      Sea_Water_Tileset_48x48_258: -888435200
+      Sea_Water_Tileset_48x48_259: -39447669
+      Sea_Water_Tileset_48x48_26: -2018476991
+      Sea_Water_Tileset_48x48_260: -1740748752
+      Sea_Water_Tileset_48x48_261: 1767095990
+      Sea_Water_Tileset_48x48_262: -1047819162
+      Sea_Water_Tileset_48x48_263: 838799445
+      Sea_Water_Tileset_48x48_264: -515377190
+      Sea_Water_Tileset_48x48_265: 251960702
+      Sea_Water_Tileset_48x48_266: 1008085845
+      Sea_Water_Tileset_48x48_267: 717716926
+      Sea_Water_Tileset_48x48_268: -682920453
+      Sea_Water_Tileset_48x48_269: -1842515244
+      Sea_Water_Tileset_48x48_27: -692913393
+      Sea_Water_Tileset_48x48_270: 447657582
+      Sea_Water_Tileset_48x48_271: 799813477
+      Sea_Water_Tileset_48x48_272: 1102269624
+      Sea_Water_Tileset_48x48_273: -66732445
+      Sea_Water_Tileset_48x48_274: -2025131995
+      Sea_Water_Tileset_48x48_275: -1630828670
+      Sea_Water_Tileset_48x48_276: -1121769255
+      Sea_Water_Tileset_48x48_277: -1188916393
+      Sea_Water_Tileset_48x48_278: -1808376776
+      Sea_Water_Tileset_48x48_279: -1487298391
+      Sea_Water_Tileset_48x48_28: 391042437
+      Sea_Water_Tileset_48x48_280: 1073599002
+      Sea_Water_Tileset_48x48_281: -1672818723
+      Sea_Water_Tileset_48x48_282: -2002887915
+      Sea_Water_Tileset_48x48_283: 287025797
+      Sea_Water_Tileset_48x48_284: 2071848287
+      Sea_Water_Tileset_48x48_285: -1628083063
+      Sea_Water_Tileset_48x48_286: 2079573240
+      Sea_Water_Tileset_48x48_287: 2047494931
+      Sea_Water_Tileset_48x48_29: -631384395
+      Sea_Water_Tileset_48x48_3: 267271775
+      Sea_Water_Tileset_48x48_30: -1062900537
+      Sea_Water_Tileset_48x48_31: 924607577
+      Sea_Water_Tileset_48x48_32: 985337237
+      Sea_Water_Tileset_48x48_33: -639693508
+      Sea_Water_Tileset_48x48_34: -1355737281
+      Sea_Water_Tileset_48x48_35: -1630008468
+      Sea_Water_Tileset_48x48_36: -1693291630
+      Sea_Water_Tileset_48x48_37: -130474181
+      Sea_Water_Tileset_48x48_38: -2075099168
+      Sea_Water_Tileset_48x48_39: -558462818
+      Sea_Water_Tileset_48x48_4: 500495092
+      Sea_Water_Tileset_48x48_40: 1811953421
+      Sea_Water_Tileset_48x48_41: 1972669442
+      Sea_Water_Tileset_48x48_42: -428840437
+      Sea_Water_Tileset_48x48_43: -1307312189
+      Sea_Water_Tileset_48x48_44: 1050099932
+      Sea_Water_Tileset_48x48_45: 41432424
+      Sea_Water_Tileset_48x48_46: -2096540121
+      Sea_Water_Tileset_48x48_47: 613025512
+      Sea_Water_Tileset_48x48_48: -2089414467
+      Sea_Water_Tileset_48x48_49: -1696991615
+      Sea_Water_Tileset_48x48_5: 1916482410
+      Sea_Water_Tileset_48x48_50: 135805038
+      Sea_Water_Tileset_48x48_51: -307487262
+      Sea_Water_Tileset_48x48_52: -837753751
+      Sea_Water_Tileset_48x48_53: 1723108088
+      Sea_Water_Tileset_48x48_54: -497605668
+      Sea_Water_Tileset_48x48_55: 778673797
+      Sea_Water_Tileset_48x48_56: -45587958
+      Sea_Water_Tileset_48x48_57: 694261468
+      Sea_Water_Tileset_48x48_58: 2121787469
+      Sea_Water_Tileset_48x48_59: 275253995
+      Sea_Water_Tileset_48x48_6: 8616834
+      Sea_Water_Tileset_48x48_60: 573217784
+      Sea_Water_Tileset_48x48_61: -1291871808
+      Sea_Water_Tileset_48x48_62: 1827142055
+      Sea_Water_Tileset_48x48_63: -723547549
+      Sea_Water_Tileset_48x48_64: -285107886
+      Sea_Water_Tileset_48x48_65: 1273785578
+      Sea_Water_Tileset_48x48_66: -1403903091
+      Sea_Water_Tileset_48x48_67: 295544528
+      Sea_Water_Tileset_48x48_68: 662205313
+      Sea_Water_Tileset_48x48_69: 398880131
+      Sea_Water_Tileset_48x48_7: -1857363568
+      Sea_Water_Tileset_48x48_70: -2088312650
+      Sea_Water_Tileset_48x48_71: 480773131
+      Sea_Water_Tileset_48x48_72: -1893864035
+      Sea_Water_Tileset_48x48_73: -784201627
+      Sea_Water_Tileset_48x48_74: 471059090
+      Sea_Water_Tileset_48x48_75: 1085973173
+      Sea_Water_Tileset_48x48_76: 228088749
+      Sea_Water_Tileset_48x48_77: 1863673042
+      Sea_Water_Tileset_48x48_78: 968027092
+      Sea_Water_Tileset_48x48_79: 1608707948
+      Sea_Water_Tileset_48x48_8: 1707824536
+      Sea_Water_Tileset_48x48_80: 49721714
+      Sea_Water_Tileset_48x48_81: -217081275
+      Sea_Water_Tileset_48x48_82: 1137524695
+      Sea_Water_Tileset_48x48_83: -1375013470
+      Sea_Water_Tileset_48x48_84: -2114661513
+      Sea_Water_Tileset_48x48_85: -560085185
+      Sea_Water_Tileset_48x48_86: 587652883
+      Sea_Water_Tileset_48x48_87: 3159086
+      Sea_Water_Tileset_48x48_88: -1647264673
+      Sea_Water_Tileset_48x48_89: 1706143916
+      Sea_Water_Tileset_48x48_9: -1520969314
+      Sea_Water_Tileset_48x48_90: -1939571119
+      Sea_Water_Tileset_48x48_91: -2099670697
+      Sea_Water_Tileset_48x48_92: 677881762
+      Sea_Water_Tileset_48x48_93: -137947236
+      Sea_Water_Tileset_48x48_94: -686849413
+      Sea_Water_Tileset_48x48_95: -1857023276
+      Sea_Water_Tileset_48x48_96: 149884665
+      Sea_Water_Tileset_48x48_97: -1044030205
+      Sea_Water_Tileset_48x48_98: -1016104582
+      Sea_Water_Tileset_48x48_99: 94495169
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

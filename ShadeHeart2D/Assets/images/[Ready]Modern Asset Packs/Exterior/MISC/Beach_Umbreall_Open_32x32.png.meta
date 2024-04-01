@@ -1,0 +1,4307 @@
+fileFormatVersion: 2
+guid: 3785204e818984eae87f507745d1fc6b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c1b6401c663477b859b32efb424ab8
+      internalID: 1075301433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907ca3474c8e0474ca22801f23738c2b
+      internalID: -1149000273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5a20e9790034fe7a3e3e5978fb270f
+      internalID: -1483400570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c6457154127c4acdba65334cc0ebd08
+      internalID: -1904275940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3016be08e05d4b06be0a4aa5b2e250d
+      internalID: 1485067322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6588f6e00ec4625aaef6d8cf1efc18
+      internalID: -1860883763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0360b0af51fac4a61b17170c3e64148a
+      internalID: -68030413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39bb95791c8a14cd6a19bc697a831777
+      internalID: 878698911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0364503cbe31485ab57490e04c82ad2
+      internalID: -1894953079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3bd8fb76aa64ad686d2c76678c7cfb
+      internalID: 1206636368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15089629c0e094333a680f28eae933a1
+      internalID: -256876856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c88c72c42f943f18eee9c80a4f2a3e
+      internalID: 1884789612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17b0a6b0cd5fa4e09a5520d74ee23da1
+      internalID: -162438768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eeb16664a6744c119a35ce56f999088
+      internalID: -631471489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3043b18ba82ef47b9992fbf15e4b9432
+      internalID: -804624651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 560
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c210f15e9db447da19c4eb4d184d28
+      internalID: 2086716489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76383501bc0ea4c9ca5fbccb3924cf00
+      internalID: -858881025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a2b7474eafa426f97687dc9377f3b0
+      internalID: -395818868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f80fa2d6727b949f38c348ce415f446b
+      internalID: -1841482817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4638866d06d0546fa9db6d05399be531
+      internalID: 639134709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b56dfdc802ff491d9bca137c5c80fa7
+      internalID: 176532206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c4431b2a65f4ae3b1db6a30f3724d3
+      internalID: 365301291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cfeab2716df74d2e9fd4afba39237bf
+      internalID: -2115024903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7631a3301b0324e7fbb9e378e65ad9e1
+      internalID: 1672292855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151133581dd6a407ea475cd72090e9b9
+      internalID: -1287037496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 518c0bcc233784bd7836303a91af17e8
+      internalID: -2087493287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee19a093eed9b4e74bbae26c12c44644
+      internalID: -561447907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6edb884e21f4aeeb43e4a80b18a502
+      internalID: 836238742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a17acdc12bcc4287a05d75a01e58dcf
+      internalID: 2081231543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0943e91433b8a48de9159e4ad8b40eff
+      internalID: -302023352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28069a560c1684ae9a714512af1fa054
+      internalID: -224895355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 512
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6686688622f2e413385094475e7a676f
+      internalID: -1451184650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab7108dc36e04481a820c7254822715
+      internalID: 2079849341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f6a2a9b07c942acac6b5bce9df9f60
+      internalID: -722248823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db01f27fb6b7343b3b6c5203068db337
+      internalID: 1433371589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: becb53ac3c3a6429e8f5e866c0eb03a6
+      internalID: 24573318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e66bf3b0fe7b49808ef7e5cd5c6eae6
+      internalID: -867886894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b61c128e85142e39bc1647e5dc2755
+      internalID: 1021979295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c836d397abb554a378af4dec75557f7a
+      internalID: -201077246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 920ec07966e2547589864c88fb6bd76e
+      internalID: -1392163524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9acf8769f87ab42bca872e74d9405ddc
+      internalID: -1826604293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ca1223d608343afa9a3142d2cdc385
+      internalID: -1342790065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2c0efe35d5c486bb947bbb60ddfd82
+      internalID: -1553744973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603c6cce4665341b8bd3182451ae3afe
+      internalID: -1327746361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02acb27a229dd491cbbcb6c5ba3784c7
+      internalID: 970598725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0b0675a8416462ba479d4c417d233e
+      internalID: -1600971242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d375747e4f04e3283d4dc1145688d6
+      internalID: 731676770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 464
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd84df236bd544f28b80f8b5ee222d9
+      internalID: -1572244151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d65b07fe93734665be245996cca53d5
+      internalID: 345454135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb3bb705d8e34d09a364ef49441cc3d
+      internalID: 2051964723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edaf6d8412aef4c588ba2d8b5d13532c
+      internalID: 666280642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6bf174f86f9a4b869d98e0c3c4d2489
+      internalID: 1893380650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f87a6ed01e4e4489987d8b60bc18e89
+      internalID: -910391752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d9056d48406467a9de2120ae3d141b
+      internalID: -583268250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ea538c8394a4c8d89b69090261c396
+      internalID: 357471175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4fba7ee8c2d4a52a97acd4edf2e210
+      internalID: 1465857131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63cf39a8898784385b6d818fd92f217a
+      internalID: 472196738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702e15086f35e4c059bb31801311dd5d
+      internalID: -1958245219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b2c716483754ea8b92ef6adca2e70e
+      internalID: 48076204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea345450f478848349cf6bc4a3d4de72
+      internalID: 1653723431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa81c7acab38249ad93e59ff9b612dde
+      internalID: 2138388097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3f052e49da8489d8872a4c75f81faa
+      internalID: -1938289778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a3054a301cb44919f8387c2530bb75
+      internalID: 1523456393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 416
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da42d4d672a3471394b9e083347b3e7
+      internalID: -178816779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03519e732ab314837a1c0a9d8556d3fc
+      internalID: 210128241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02923378a5e36436a8dd5aa6033ad1c4
+      internalID: 757319656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c771318d62b48da94bb963b87c7e33
+      internalID: 1522141750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79cb10c6a64d84ee5b80a7a53e7fab4d
+      internalID: -708726789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9808a122ea3374d72ae81ff5fa1a6cc6
+      internalID: -392003786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e57ec1fab8e34c21b09dddcebbd7b48
+      internalID: 2020724012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87036083456f5435b9cc4e41e907f47b
+      internalID: 906299269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c3b9bb821bd4423830dc22c6a47325
+      internalID: -1290525804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0164764c001c44558344c443b7b7fa2
+      internalID: -520417783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd65f955fb6f4f6f941076c00dca990
+      internalID: -552709368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd2bc6f46396440abee0ff4c09e715f
+      internalID: 184382288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4256ee50e0d94c07a30014e0b5d74a4
+      internalID: 169919903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d124e6c5e83f14e0d87956dc77850076
+      internalID: 2143876921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4907e14696c6048d0b8b7d0abfada107
+      internalID: 1160662686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65eee5b78645545c4a4ab8cdeceec6cd
+      internalID: -2003067748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 368
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1213fd688361447ab3ba5f093d8c7f8
+      internalID: -361414491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98ab9c20293641c4a279d919098f3e8
+      internalID: -223797218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d55f9f451624ca59d7e137007bc42c
+      internalID: -409363639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a1c965075272497f9e83418b0fd9ac5
+      internalID: -2115061063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d147c5223cdf4752acb1197c57a5a75
+      internalID: -1580875383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3514b43ede3b47d48f7cfd1e4ce037d
+      internalID: -469170920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85422b29e58343f3b02e1ba89d3c8ae
+      internalID: -1726757919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba58f406b24042cdb508d4a664b3f90
+      internalID: 1008329115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f9464975d414b4488676a88d182711
+      internalID: 1375867833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88deec231e78c4762ad1dcb317b4bc3c
+      internalID: 2145456538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_89
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c33fb3911c1439fa30d75021a887e5
+      internalID: -1124232054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_90
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98129323b82746b0a33b9d01c6e42af
+      internalID: 210990011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_91
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0873265a0e67f47899999dba83156e04
+      internalID: -28784483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_92
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03aedcea6dfa646fdb453d4cd4abcd61
+      internalID: -826398342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_93
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab384ad73fddd48b78abf3af336994d4
+      internalID: -964370383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_94
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47ecb17e648b4576af649ca682d3a34
+      internalID: -64248006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_95
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 320
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50fd8d59a73ce40948c51c23568f3278
+      internalID: -565983014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c92f473e9fa84fe39de3fbcc3ad5907
+      internalID: 541256496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_97
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6227e39a6fe3e47e0991f655105721c9
+      internalID: 307548041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_98
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6803b8420c1f48e0990d90edecc4659
+      internalID: 1331591773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_99
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ea7f367c6454995bf25443846a13d9
+      internalID: 1854006258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_100
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5731388b22c4990b8515dc1756db6f
+      internalID: -1019838819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_101
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a78570bee021456e88271bd9f08d148
+      internalID: 1241688364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_102
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e382a7954d77453f8e1760c4b51f4af
+      internalID: 1638234991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_103
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c81fd836c172411fa3dee5a5db5e8bc
+      internalID: 841995727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_104
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 534a5095490bb4b1eb62d5583490e40e
+      internalID: -1423959280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_105
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afde8ab53bb414bb49afbda2bfb0e9b4
+      internalID: 1271127870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_106
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c36d755fb16242cd96e2bb49e07bc00
+      internalID: 916694236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_107
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1cb916bbf9e344108774646074554dd
+      internalID: 1716777055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_108
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc44409399f4c4eadaa99fc846fae768
+      internalID: 2033315763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_109
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12cccae5df9284b61ba1946a64471a2b
+      internalID: 916955499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_110
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d313c3b2a0a494da1240acfa640a52
+      internalID: 744529636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_111
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a2837d455bb49e592cd46be65e6d16
+      internalID: 537651810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ae4867ab9f54debb4d597865a44ef2
+      internalID: -1871259690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_113
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ef1c5848f21441bb044f3e0a22dd4b
+      internalID: 1378131605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_114
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e95bdefbc3e3410e91a385c85ba912d
+      internalID: -1183130529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_115
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184776979f5dc4ad6981a06b457abf1b
+      internalID: -801508066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_116
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29df5f7a99f434942906556a53e2a3b9
+      internalID: 836393268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_117
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9070cc1bbc004ce0bf8b4319ba29305
+      internalID: -1475437140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_118
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085e426aa86d64f96b9d11e80f36e1ea
+      internalID: 1276953172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_119
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4329b88317b4e19afc360328f76b8a
+      internalID: -834511152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_120
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66bc1f56ed7a2474781b7f2c8a1cba54
+      internalID: 562116451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_121
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efaea1e6a63774a9293d2a2096bff027
+      internalID: 630017375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_122
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7a776219a814a54a04130db43d0adb
+      internalID: -2017964410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_123
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97217fb8964664380913ef33f9ffc449
+      internalID: 1670736835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_124
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e746abf8dce4f40995564a7586329d
+      internalID: -2047152848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_125
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7ac9187be5c49aebfb2d5482dcb4a0
+      internalID: 81131304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_126
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0264f5ccea1d744e1a6dca3012384cb7
+      internalID: 320044938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_127
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 224
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63fb404d0ab874832a9589c5d8106dbd
+      internalID: -1982665639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_128
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc404fbd491314ac582c75943eb226d3
+      internalID: 2133450319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_129
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90685e0d47e744808061563bc6291ca
+      internalID: -1432002104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_130
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96b1e66532724ef9916697630723f42
+      internalID: -466861255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_131
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4895a8aef9ed14aa8be1d8886f5412d1
+      internalID: -424097955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_132
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 972c6cfc5300a4e969816eb09344b365
+      internalID: -226902217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_133
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e702554b9fe54e51ba27c657fe301a6
+      internalID: 898386474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_134
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc4fc0fa13264156a460dd8ba355ab1
+      internalID: -1222677456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_135
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f6b9c13ce2f84c428078018fc0b340a
+      internalID: -1943088342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_136
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa04cdffee9cf47af9385edb9388cbc8
+      internalID: -1078138914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_137
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9464625fb2264f8b8bb37099ac21f45
+      internalID: -890659352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_138
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216e653de1c5843aa871f0edaa9a30f0
+      internalID: -250088260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_139
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e71649c8305d946d5b731e67dca6a954
+      internalID: 2009615305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_140
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279ed6da26f3f4c57bfb3e70da460228
+      internalID: -342691298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_141
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ca8076e25bd4c9faa5cd8c435aff87
+      internalID: -624838354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_142
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb7183592be740a8a05e0345d066752
+      internalID: 2090713383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_143
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 176
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e9033bcd246d49f19bed4599747585c
+      internalID: 936041291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cdcd6c720c2642dcb298ab1f776f7bb
+      internalID: 1540914932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_145
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fe01addf0a4444b687585f81c6ab2a1
+      internalID: 569201319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_146
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe77785f9b8384ccc8fd55e693cfe105
+      internalID: 264153727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_147
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814b07e212745461ca492e60a78b327f
+      internalID: -537202001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_148
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc88f6c3519644899dbe974f67ddb37
+      internalID: 159576194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_149
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fed8996bdce44179b25b93ad89ba8c6
+      internalID: -104613293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_150
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d572434aa16f84647add9c020d54983f
+      internalID: -598884176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_151
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef9cf74f0fa64713991da291e6455ff
+      internalID: -559909666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_152
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6bfb5f68dc34a7cb88c347b0670791
+      internalID: 1669106597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_153
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f44c79954a9424093a853f3982929a
+      internalID: 1458883659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_154
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3822af12a3e24d739090824efb15127
+      internalID: 954732677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_155
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357f4a6917a8a4f98ad03b4ab1c1847d
+      internalID: -1779763595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_156
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eee3366321e44fc8abe7bc7ffba6104
+      internalID: 2118835105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_157
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffbaa17c55a0349b787e7b76344d60c5
+      internalID: -1305256042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_158
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5922bf71f3847496c92cef9a3f605fc6
+      internalID: -485623375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_159
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 128
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: befdd8f1354604a64874ff0cef856cdd
+      internalID: -1534850794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_160
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45057017e64de46e0a57c4bfb1093be7
+      internalID: 1850321793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_161
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e13e32e9e9e4d40b0b8ed9c252bf27
+      internalID: 266979656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_162
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb47bee30f83424cb018309ddecd500
+      internalID: -1324207335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_163
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44cd48f0fdec44f997d1e211cb05e7f
+      internalID: -460465427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_164
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9d0e4608263497b957698bb5c5df1b
+      internalID: -999826646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_165
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fab725bb24904c28b1f68b59feb39b7
+      internalID: 650105537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_166
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586843e9774244143adf3d3d14c44052
+      internalID: 558876344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_167
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7300231088fb84cad88a27837f49867a
+      internalID: -223717867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_168
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcf880b44edf4550a60c98984e7fdbd
+      internalID: 2132969027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_169
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59756ea2219254ee1a2f8c5bfeba9807
+      internalID: -152949343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_170
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 291902be368cc48f6976cb6744b950b9
+      internalID: -998205501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_171
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83830594c7da74aa2a0011d54cba20a8
+      internalID: 336688570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_172
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1592f0903106142de885f8764ef064bc
+      internalID: -1057420100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_173
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d42f5375fd134f93b52f6124fc6d571
+      internalID: -2117027436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_174
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b559f9d084b194fae9a54b8270044364
+      internalID: 916811382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_175
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 80
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e179cbc97656847c3873abb78cc12f80
+      internalID: 1481367902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_176
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524633f73195b415ab466ef3d951b11d
+      internalID: -614062035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_177
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e98101bc6634e0d8ea2cc21f3445ed
+      internalID: 1060295636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_178
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da790fcbf842a44d6b701193fb194de0
+      internalID: 494663655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_179
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b078d33b0924dbe98f64aa7397c18e
+      internalID: -926182938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_180
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d354b26817d14213a99070725ad8476
+      internalID: 1925122961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_181
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77eb5b73ea38a46b0996b0bba83ee2ce
+      internalID: 367933239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_182
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf267902804748d082c3aeabc64f882
+      internalID: 1089533193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_183
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee2bf57aa574451899633c0e55f21c1
+      internalID: 113039703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_184
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a09fe5f86edb4d66bc4775cb8906892
+      internalID: 1008300762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_185
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f70bd5bc5759c4aaab0b3c5396f46c67
+      internalID: -1172914035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_186
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abecd9904b85449659fed0b0c9eb2a01
+      internalID: -279723837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_187
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc03445bf2c6b40c98ad0b0fb0061208
+      internalID: -1173716915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_188
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a12951bb2334c06bbdf521d155bd7b
+      internalID: 1017708692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beach_Umbreall_Open_32x32_189
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 32
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee49c541f5a824aebba0c2f1487c9e33
+      internalID: -189155918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Beach_Umbreall_Open_32x32_0: 1075301433
+      Beach_Umbreall_Open_32x32_1: -1149000273
+      Beach_Umbreall_Open_32x32_10: -256876856
+      Beach_Umbreall_Open_32x32_100: -1019838819
+      Beach_Umbreall_Open_32x32_101: 1241688364
+      Beach_Umbreall_Open_32x32_102: 1638234991
+      Beach_Umbreall_Open_32x32_103: 841995727
+      Beach_Umbreall_Open_32x32_104: -1423959280
+      Beach_Umbreall_Open_32x32_105: 1271127870
+      Beach_Umbreall_Open_32x32_106: 916694236
+      Beach_Umbreall_Open_32x32_107: 1716777055
+      Beach_Umbreall_Open_32x32_108: 2033315763
+      Beach_Umbreall_Open_32x32_109: 916955499
+      Beach_Umbreall_Open_32x32_11: 1884789612
+      Beach_Umbreall_Open_32x32_110: 744529636
+      Beach_Umbreall_Open_32x32_111: 537651810
+      Beach_Umbreall_Open_32x32_112: -1871259690
+      Beach_Umbreall_Open_32x32_113: 1378131605
+      Beach_Umbreall_Open_32x32_114: -1183130529
+      Beach_Umbreall_Open_32x32_115: -801508066
+      Beach_Umbreall_Open_32x32_116: 836393268
+      Beach_Umbreall_Open_32x32_117: -1475437140
+      Beach_Umbreall_Open_32x32_118: 1276953172
+      Beach_Umbreall_Open_32x32_119: -834511152
+      Beach_Umbreall_Open_32x32_12: -162438768
+      Beach_Umbreall_Open_32x32_120: 562116451
+      Beach_Umbreall_Open_32x32_121: 630017375
+      Beach_Umbreall_Open_32x32_122: -2017964410
+      Beach_Umbreall_Open_32x32_123: 1670736835
+      Beach_Umbreall_Open_32x32_124: -2047152848
+      Beach_Umbreall_Open_32x32_125: 81131304
+      Beach_Umbreall_Open_32x32_126: 320044938
+      Beach_Umbreall_Open_32x32_127: -1982665639
+      Beach_Umbreall_Open_32x32_128: 2133450319
+      Beach_Umbreall_Open_32x32_129: -1432002104
+      Beach_Umbreall_Open_32x32_13: -631471489
+      Beach_Umbreall_Open_32x32_130: -466861255
+      Beach_Umbreall_Open_32x32_131: -424097955
+      Beach_Umbreall_Open_32x32_132: -226902217
+      Beach_Umbreall_Open_32x32_133: 898386474
+      Beach_Umbreall_Open_32x32_134: -1222677456
+      Beach_Umbreall_Open_32x32_135: -1943088342
+      Beach_Umbreall_Open_32x32_136: -1078138914
+      Beach_Umbreall_Open_32x32_137: -890659352
+      Beach_Umbreall_Open_32x32_138: -250088260
+      Beach_Umbreall_Open_32x32_139: 2009615305
+      Beach_Umbreall_Open_32x32_14: -804624651
+      Beach_Umbreall_Open_32x32_140: -342691298
+      Beach_Umbreall_Open_32x32_141: -624838354
+      Beach_Umbreall_Open_32x32_142: 2090713383
+      Beach_Umbreall_Open_32x32_143: 936041291
+      Beach_Umbreall_Open_32x32_144: 1540914932
+      Beach_Umbreall_Open_32x32_145: 569201319
+      Beach_Umbreall_Open_32x32_146: 264153727
+      Beach_Umbreall_Open_32x32_147: -537202001
+      Beach_Umbreall_Open_32x32_148: 159576194
+      Beach_Umbreall_Open_32x32_149: -104613293
+      Beach_Umbreall_Open_32x32_15: 2086716489
+      Beach_Umbreall_Open_32x32_150: -598884176
+      Beach_Umbreall_Open_32x32_151: -559909666
+      Beach_Umbreall_Open_32x32_152: 1669106597
+      Beach_Umbreall_Open_32x32_153: 1458883659
+      Beach_Umbreall_Open_32x32_154: 954732677
+      Beach_Umbreall_Open_32x32_155: -1779763595
+      Beach_Umbreall_Open_32x32_156: 2118835105
+      Beach_Umbreall_Open_32x32_157: -1305256042
+      Beach_Umbreall_Open_32x32_158: -485623375
+      Beach_Umbreall_Open_32x32_159: -1534850794
+      Beach_Umbreall_Open_32x32_16: -858881025
+      Beach_Umbreall_Open_32x32_160: 1850321793
+      Beach_Umbreall_Open_32x32_161: 266979656
+      Beach_Umbreall_Open_32x32_162: -1324207335
+      Beach_Umbreall_Open_32x32_163: -460465427
+      Beach_Umbreall_Open_32x32_164: -999826646
+      Beach_Umbreall_Open_32x32_165: 650105537
+      Beach_Umbreall_Open_32x32_166: 558876344
+      Beach_Umbreall_Open_32x32_167: -223717867
+      Beach_Umbreall_Open_32x32_168: 2132969027
+      Beach_Umbreall_Open_32x32_169: -152949343
+      Beach_Umbreall_Open_32x32_17: -395818868
+      Beach_Umbreall_Open_32x32_170: -998205501
+      Beach_Umbreall_Open_32x32_171: 336688570
+      Beach_Umbreall_Open_32x32_172: -1057420100
+      Beach_Umbreall_Open_32x32_173: -2117027436
+      Beach_Umbreall_Open_32x32_174: 916811382
+      Beach_Umbreall_Open_32x32_175: 1481367902
+      Beach_Umbreall_Open_32x32_176: -614062035
+      Beach_Umbreall_Open_32x32_177: 1060295636
+      Beach_Umbreall_Open_32x32_178: 494663655
+      Beach_Umbreall_Open_32x32_179: -926182938
+      Beach_Umbreall_Open_32x32_18: -1841482817
+      Beach_Umbreall_Open_32x32_180: 1925122961
+      Beach_Umbreall_Open_32x32_181: 367933239
+      Beach_Umbreall_Open_32x32_182: 1089533193
+      Beach_Umbreall_Open_32x32_183: 113039703
+      Beach_Umbreall_Open_32x32_184: 1008300762
+      Beach_Umbreall_Open_32x32_185: -1172914035
+      Beach_Umbreall_Open_32x32_186: -279723837
+      Beach_Umbreall_Open_32x32_187: -1173716915
+      Beach_Umbreall_Open_32x32_188: 1017708692
+      Beach_Umbreall_Open_32x32_189: -189155918
+      Beach_Umbreall_Open_32x32_19: 639134709
+      Beach_Umbreall_Open_32x32_2: -1483400570
+      Beach_Umbreall_Open_32x32_20: 176532206
+      Beach_Umbreall_Open_32x32_21: 365301291
+      Beach_Umbreall_Open_32x32_22: -2115024903
+      Beach_Umbreall_Open_32x32_23: 1672292855
+      Beach_Umbreall_Open_32x32_24: -1287037496
+      Beach_Umbreall_Open_32x32_25: -2087493287
+      Beach_Umbreall_Open_32x32_26: -561447907
+      Beach_Umbreall_Open_32x32_27: 836238742
+      Beach_Umbreall_Open_32x32_28: 2081231543
+      Beach_Umbreall_Open_32x32_29: -302023352
+      Beach_Umbreall_Open_32x32_3: -1904275940
+      Beach_Umbreall_Open_32x32_30: -224895355
+      Beach_Umbreall_Open_32x32_31: -1451184650
+      Beach_Umbreall_Open_32x32_32: 2079849341
+      Beach_Umbreall_Open_32x32_33: -722248823
+      Beach_Umbreall_Open_32x32_34: 1433371589
+      Beach_Umbreall_Open_32x32_35: 24573318
+      Beach_Umbreall_Open_32x32_36: -867886894
+      Beach_Umbreall_Open_32x32_37: 1021979295
+      Beach_Umbreall_Open_32x32_38: -201077246
+      Beach_Umbreall_Open_32x32_39: -1392163524
+      Beach_Umbreall_Open_32x32_4: 1485067322
+      Beach_Umbreall_Open_32x32_40: -1826604293
+      Beach_Umbreall_Open_32x32_41: -1342790065
+      Beach_Umbreall_Open_32x32_42: -1553744973
+      Beach_Umbreall_Open_32x32_43: -1327746361
+      Beach_Umbreall_Open_32x32_44: 970598725
+      Beach_Umbreall_Open_32x32_45: -1600971242
+      Beach_Umbreall_Open_32x32_46: 731676770
+      Beach_Umbreall_Open_32x32_47: -1572244151
+      Beach_Umbreall_Open_32x32_48: 345454135
+      Beach_Umbreall_Open_32x32_49: 2051964723
+      Beach_Umbreall_Open_32x32_5: -1860883763
+      Beach_Umbreall_Open_32x32_50: 666280642
+      Beach_Umbreall_Open_32x32_51: 1893380650
+      Beach_Umbreall_Open_32x32_52: -910391752
+      Beach_Umbreall_Open_32x32_53: -583268250
+      Beach_Umbreall_Open_32x32_54: 357471175
+      Beach_Umbreall_Open_32x32_55: 1465857131
+      Beach_Umbreall_Open_32x32_56: 472196738
+      Beach_Umbreall_Open_32x32_57: -1958245219
+      Beach_Umbreall_Open_32x32_58: 48076204
+      Beach_Umbreall_Open_32x32_59: 1653723431
+      Beach_Umbreall_Open_32x32_6: -68030413
+      Beach_Umbreall_Open_32x32_60: 2138388097
+      Beach_Umbreall_Open_32x32_61: -1938289778
+      Beach_Umbreall_Open_32x32_62: 1523456393
+      Beach_Umbreall_Open_32x32_63: -178816779
+      Beach_Umbreall_Open_32x32_64: 210128241
+      Beach_Umbreall_Open_32x32_65: 757319656
+      Beach_Umbreall_Open_32x32_66: 1522141750
+      Beach_Umbreall_Open_32x32_67: -708726789
+      Beach_Umbreall_Open_32x32_68: -392003786
+      Beach_Umbreall_Open_32x32_69: 2020724012
+      Beach_Umbreall_Open_32x32_7: 878698911
+      Beach_Umbreall_Open_32x32_70: 906299269
+      Beach_Umbreall_Open_32x32_71: -1290525804
+      Beach_Umbreall_Open_32x32_72: -520417783
+      Beach_Umbreall_Open_32x32_73: -552709368
+      Beach_Umbreall_Open_32x32_74: 184382288
+      Beach_Umbreall_Open_32x32_75: 169919903
+      Beach_Umbreall_Open_32x32_76: 2143876921
+      Beach_Umbreall_Open_32x32_77: 1160662686
+      Beach_Umbreall_Open_32x32_78: -2003067748
+      Beach_Umbreall_Open_32x32_79: -361414491
+      Beach_Umbreall_Open_32x32_8: -1894953079
+      Beach_Umbreall_Open_32x32_80: -223797218
+      Beach_Umbreall_Open_32x32_81: -409363639
+      Beach_Umbreall_Open_32x32_82: -2115061063
+      Beach_Umbreall_Open_32x32_83: -1580875383
+      Beach_Umbreall_Open_32x32_84: -469170920
+      Beach_Umbreall_Open_32x32_85: -1726757919
+      Beach_Umbreall_Open_32x32_86: 1008329115
+      Beach_Umbreall_Open_32x32_87: 1375867833
+      Beach_Umbreall_Open_32x32_88: 2145456538
+      Beach_Umbreall_Open_32x32_89: -1124232054
+      Beach_Umbreall_Open_32x32_9: 1206636368
+      Beach_Umbreall_Open_32x32_90: 210990011
+      Beach_Umbreall_Open_32x32_91: -28784483
+      Beach_Umbreall_Open_32x32_92: -826398342
+      Beach_Umbreall_Open_32x32_93: -964370383
+      Beach_Umbreall_Open_32x32_94: -64248006
+      Beach_Umbreall_Open_32x32_95: -565983014
+      Beach_Umbreall_Open_32x32_96: 541256496
+      Beach_Umbreall_Open_32x32_97: 307548041
+      Beach_Umbreall_Open_32x32_98: 1331591773
+      Beach_Umbreall_Open_32x32_99: 1854006258
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
