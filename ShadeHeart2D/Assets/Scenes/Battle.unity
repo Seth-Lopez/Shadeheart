@@ -4381,7 +4381,7 @@ MonoBehaviour:
   - {fileID: 1734055916}
   enemyIndex: 0
   randomizeNumEnemies: 0
-  randomizeEnemy: 1
+  randomizeEnemy: 0
   intelegentEnemy: 0
   numEnemies: 1
   maxEnemies: 2
@@ -5264,12 +5264,12 @@ MonoBehaviour:
   hpBar: {fileID: 1114623174}
   energyBar: {fileID: 563342891}
   level: 9
-  maxHealth: 53
+  maxHealth: 78
   maxEnergy: 34
   health: 53
   energy: 34
   attack: 25
-  defense: 20
+  defense: 40
   speed: 30
   basicAttackType: 0
   weakness: 3
@@ -8208,7 +8208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c689ae8fd2183ea4fa955f5b0debc2ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Icicle
+  name: Flurry
   power: 20
   cost: 10
   damageType: 5
@@ -8218,8 +8218,10 @@ MonoBehaviour:
   isTargetSelf: 0
   effectTargetSelf: 0
   effect: 6
-  animationType: 5
-  description: An attack with an icicle.
+  animationType: 11
+  description: 'Shoots a gust of snow.
+
+    Freezes the target.'
 --- !u!1 &598058583
 GameObject:
   m_ObjectHideFlags: 0
@@ -12294,7 +12296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text Here
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -21476,12 +21478,12 @@ MonoBehaviour:
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
   level: 6
-  maxHealth: 40
+  maxHealth: 65
   maxEnergy: 25
   health: 40
   energy: 25
   attack: 25
-  defense: 25
+  defense: 50
   speed: 25
   basicAttackType: 6
   weakness: 5
@@ -24602,12 +24604,12 @@ MonoBehaviour:
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
   level: 6
-  maxHealth: 40
+  maxHealth: 65
   maxEnergy: 25
   health: 40
   energy: 25
   attack: 25
-  defense: 25
+  defense: 50
   speed: 25
   basicAttackType: 6
   weakness: 2
@@ -28103,12 +28105,12 @@ MonoBehaviour:
   hpBar: {fileID: 1114623174}
   energyBar: {fileID: 563342891}
   level: 10
-  maxHealth: 50
+  maxHealth: 75
   maxEnergy: 34
   health: 50
   energy: 34
   attack: 25
-  defense: 24
+  defense: 48
   speed: 25
   basicAttackType: 6
   weakness: 5
@@ -29702,12 +29704,12 @@ MonoBehaviour:
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
   level: 6
-  maxHealth: 40
+  maxHealth: 65
   maxEnergy: 25
   health: 40
   energy: 25
   attack: 25
-  defense: 25
+  defense: 50
   speed: 25
   basicAttackType: 5
   weakness: 3
@@ -30105,12 +30107,12 @@ MonoBehaviour:
   hpBar: {fileID: 1834046085}
   energyBar: {fileID: 715998073}
   level: 6
-  maxHealth: 40
+  maxHealth: 65
   maxEnergy: 25
   health: 40
   energy: 25
   attack: 25
-  defense: 25
+  defense: 50
   speed: 25
   basicAttackType: 4
   weakness: 5

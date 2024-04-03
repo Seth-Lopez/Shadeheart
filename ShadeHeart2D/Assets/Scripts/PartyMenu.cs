@@ -94,5 +94,6 @@ public class PartyMenu : MonoBehaviour
         //call SetSkills function so skills target the correct shades
         battle.SetSkills(ref battle.enemyCreature, false);
         battle.SetSkills(ref battle.playerCreature, true);
+        battle.TurnOrder();
     }
 }

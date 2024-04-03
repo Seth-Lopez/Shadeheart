@@ -305,6 +305,8 @@ public class CombatMenu : MonoBehaviour
                 }
             }
 
+            StartCoroutine(Animate(skill.animationType, animator));
+
             skill.user.isDefending = false;
 
             float damage = DamageCalc(skill.user, skill.target, skill.power, skill.damageType);
@@ -342,8 +344,6 @@ public class CombatMenu : MonoBehaviour
             StartCoroutine(battle.DisplayingDialogue($"{skill.user.name} used {skill.name}"));
             //dialogueBox.text = skill.user.name.ToString() + " used " + skill.name.ToString();
 
-            StartCoroutine(Animate(skill.animationType, animator));
-
             if (battle.state == BattleState.PlayerTurn)
             {
                 battle.StartEnemyTurn();
@@ -371,7 +371,7 @@ public class CombatMenu : MonoBehaviour
                 break;
             default:
                 animator.SetBool(animationType.ToString(), true);
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(2f);
                 animator.SetBool(animationType.ToString(), false);
                 yield return null;
                 break;

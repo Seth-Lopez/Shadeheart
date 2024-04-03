@@ -515,6 +515,7 @@ public class BattleMgr : MonoBehaviour
 
     public IEnumerator DisplayingDialogue(string text)
     {
+        yield return new WaitForSeconds(1f);
         dialogueBox.text = "";
         
         foreach (var letter in text.ToCharArray())

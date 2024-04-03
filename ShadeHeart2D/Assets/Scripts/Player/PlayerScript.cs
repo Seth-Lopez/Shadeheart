@@ -25,6 +25,9 @@ public class PlayerScript : MonoBehaviour
     private float maxEnergy = 50;
 
     private Animator animator;
+    //temporary variables
+    public float horizontal;
+    public float vertical;
 
     private void Start()
     {
@@ -50,6 +53,8 @@ public class PlayerScript : MonoBehaviour
     {
         updatingMovement();
         updatingHealthAndEnergy();
+        animator.SetFloat("horizontal", movementDirection.x);
+        animator.SetFloat("vertical", movementDirection.y);
     }
     private void FixedUpdate()
     {

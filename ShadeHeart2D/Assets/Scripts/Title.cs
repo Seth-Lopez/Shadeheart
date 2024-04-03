@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Title : MonoBehaviour
 {
@@ -11,11 +12,17 @@ public class Title : MonoBehaviour
 
     [SerializeField] int battleLocation = 0;
 
-    public GameObject title, shadeSelect, options, battleSelect;
+    public GameObject title, shadeSelect, options, battleSelect, loadingScreen;
 
     public SceneLoader loader;
 
     public GameObject titleOpenButton, selectOpenButton, selectCloseButton, optionsOpenButton, optionsCloseButton, locationOpenButton, locationCloseButton;
+
+    public Slider loadingBar;
+
+    public GameObject[] TitleBackgrounds;
+    int backgroundIndex = 0;
+    int timer = 0;
 
     public void Start()
     {
@@ -23,12 +30,59 @@ public class Title : MonoBehaviour
         shadeSelect.SetActive(false);
         options.SetActive(false);
         battleSelect.SetActive(false);
+        loadingScreen.SetActive(false);
         OpenTitleMenu();
+        backgroundIndex = Random.Range(0, 7);
+        TitleBackgrounds[backgroundIndex].SetActive(true);
+        StartCoroutine(ChangeBackground());
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene(overworldSceneName);
+    }
+
+    public void StartLoadingGame()
+    {
+        StartCoroutine(LoadScene(overworldSceneName));
+    }
+
+    IEnumerator LoadScene(string sceneName)
+    {
+        AsyncOperation loading = SceneManager.LoadSceneAsync(sceneName);
+        /*
+        float loadingProgress = 0;
+
+        while (!loading.isDone)
+        {
+            Debug.Log("test");
+            loadingProgress += (Random.Range(70, 95)/100f);
+            loadingBar.value = loadingProgress;
+            Debug.Log(loadingProgress);
+            
+
+            yield return null;
+        }*/
+
+        yield return null;
+    }
+
+    IEnumerator ChangeBackground()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5f);
+            TitleBackgrounds[backgroundIndex].SetActive(false);
+            backgroundIndex++;
+            if (backgroundIndex > 6)
+            {
+                backgroundIndex = 0;
+            }
+            TitleBackgrounds[backgroundIndex].SetActive(true);
+
+
+            yield return null;
+        }
     }
 
     public void ExitGame()

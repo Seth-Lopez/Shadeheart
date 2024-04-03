@@ -56,6 +56,8 @@ public class Pause : MonoBehaviour
 
     public void LoadTitle()
     {
+        Time.timeScale = 1f;
+        paused = false;
         SceneManager.LoadScene("Title");
     }
 }
