@@ -92,7 +92,8 @@ public class PlayerScript : MonoBehaviour
             energyBar.fillAmount = Mathf.Clamp(currentEnergy / maxEnergy, 0, 50);
         }
     }
-    
+    public Vector2 getMovDir(){ return movementDirection; }
+    public bool getIsMoving(){ return movementDirection.magnitude <= 0.0f;}
 
     private void OnTriggerStay2D(Collider2D collision)
     {
