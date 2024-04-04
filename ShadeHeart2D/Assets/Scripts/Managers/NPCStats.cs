@@ -36,7 +36,10 @@ public class NPCStats : MonoBehaviour
     {
         if (npcInter.getIsPlayerInRange() && Input.GetKeyDown(KeyCode.E))
         {
-            UIClass.openDialogueBox = true;
+            if(UIClass != null)
+                UIClass.openDialogueBox = true;
+            else
+                Debug.Log("Dialogue Box Missing");
             if(npcInter == null)
             {
                 Debug.Log("ads");
