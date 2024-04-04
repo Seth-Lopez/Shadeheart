@@ -207,4 +207,8 @@ public class UltAnimatorScript : MonoBehaviour
         }
         return animationDict;
     }
+    public List<Sprite> getThrowAwayAnims()
+    {
+        return animationDict["ThrowAways"];
+    }
 }

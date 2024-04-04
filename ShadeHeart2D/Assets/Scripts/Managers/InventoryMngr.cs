@@ -200,7 +200,6 @@ public class InventoryMngr : MonoBehaviour
             ItemsList = new List<(string, List<string>)>{(title, lines)};
             // Write to file
             File.WriteAllText(filePath, newItems);
-            Debug.Log("First: " + newItems);
         }
         else
         {
@@ -217,7 +216,6 @@ public class InventoryMngr : MonoBehaviour
             ItemsList.Add((title, lines));
             // Write to file
             File.WriteAllText(filePath, updatedContent);
-            Debug.Log("Others: " + newItems);
         }
     }
 

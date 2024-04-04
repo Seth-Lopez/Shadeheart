@@ -53,8 +53,8 @@ public class PlayerScript : MonoBehaviour
     {
         updatingMovement();
         updatingHealthAndEnergy();
-        animator.SetFloat("horizontal", movementDirection.x);
-        animator.SetFloat("vertical", movementDirection.y);
+        //animator.SetFloat("horizontal", movementDirection.x);
+        //animator.SetFloat("vertical", movementDirection.y);
     }
     private void FixedUpdate()
     {

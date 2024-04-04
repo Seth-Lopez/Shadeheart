@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 //Types of quests statuses Inactive -> need to find npc; Active -> player got quest; Complete -> player completed it
 public enum QuestStatus
@@ -20,7 +22,10 @@ public class QuestMngr: MonoBehaviour
     private List<QuestMngr> quests = new List<QuestMngr>();
     private QuestStatus status;
     private static int numQuests = 0;
-
+    private Dictionary<string, GameObject> menuDictionary = new Dictionary<string, GameObject>();
+    private GameObject questTitle;
+    private GameObject questInCompleted;
+    private GameObject questCompleted;
     public QuestStatus Status
     {
         get { return status; }
@@ -51,6 +56,29 @@ public class QuestMngr: MonoBehaviour
         {
             GS.addQuestToGameState(que.getQuestName());
         }
+        GameObject[] menus = GameObject.FindGameObjectsWithTag("QuestMenus");
+        foreach (GameObject menu in menus)
+        {
+            if(menu.name == "Target Quest")
+                questTitle = menu;
+            if(menu.name == "QinCom")
+                questInCompleted = menu;
+            if(menu.name == "QFin")
+                questCompleted = menu;
+        }
+        List<QuestMngr> activeNotCompletedQuests = quests.Where(quest => quest.Status == QuestStatus.Active).ToList();
+        if(questInCompleted != null)
+        {
+            int count = 0;
+            foreach (QuestMngr quest in activeNotCompletedQuests)
+            {
+                count ++;
+                questInCompleted.GetComponent<TextMeshProUGUI>().text += quest.questDesc;
+            }
+            Debug.Log("count: " + count);
+        }
+        else
+            Debug.Log("BOo");
     }
     public QuestMngr(string name, string devDescription, string questDescription, int xp, int[] rarity, int[] specificIds)
     {
