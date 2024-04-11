@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class NPCStats : MonoBehaviour
 {
-    private GameState gameState;
     private List<string> dialogueSpoken = new List<string>();
     private List<(string, List<string>)> dialogueList = new List<(string, List<string>)>();
     private NPCMngr nPC;
@@ -53,14 +52,7 @@ public class NPCStats : MonoBehaviour
     }
     private void instantiateVariables()
     {
-        gameState = GameObject.FindObjectOfType<GameState>();
-        List<(int, bool)> GameStateVar = gameState.getGameStateVar();
-        /*foreach ((int intValue, bool boolValue) in GameStateVar)
-        {
-            Debug.Log($"Int Value: {intValue}, Bool Value: {boolValue}");
-        }*/
-        string parentName = transform.parent.gameObject.name;
-        
+        string parentName = transform.parent.gameObject.name;   
         if(parentName == "NPC - Monsters")
             type = 0;
         else if(parentName == "NPC - Quest Givers")

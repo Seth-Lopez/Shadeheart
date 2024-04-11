@@ -1,12 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.RegularExpressions;
 using TMPro;
 using System.Linq;
-using UnityEngine.UIElements;
-using System.Threading;
-using System.Linq.Expressions;
 
 public class InventoryMngr : MonoBehaviour
 {
@@ -26,35 +22,9 @@ public class InventoryMngr : MonoBehaviour
     {
         inventoryList = content.GetComponent<TextMeshProUGUI>();
         ReadItemsFromFile(filePath);
-        // Debug Purposes:
-        /*
-        foreach ((string title, List<string> lines) in ItemsList)
-        {
-            Debug.Log("Title: " + title);
-            foreach (string line in lines)
-            {
-                Debug.Log("Line: " + line);
-            }
-        }*/
-        //write to TextMeshPro
         updateInventory();
     }
-    //TEMPORARY -> use this as basis for other script
-    void Start()
-    {
-       /* AddItemsToFile
-            (
-                //Title:
-                "newTitle", 
-                //Lines of Items seperated by ","
-                new List<string> 
-                    { 
-                        "New line 1", 
-                        "New line 2" 
-                    }
-            );
-        */
-    }
+
     //This function helps update the Inventory every time it wakes up to display correct items in inventory.
     private void updateInventory()
     {

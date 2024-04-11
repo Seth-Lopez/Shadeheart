@@ -1,8 +1,4 @@
 using System.Collections.Generic;
-using System.Threading;
-using Codice.Client.BaseCommands;
-using TMPro.Examples;
-using UnityEditor.Profiling;
 using UnityEngine;
 
 
@@ -18,9 +14,19 @@ public class UltAnimatorScript : MonoBehaviour
     private float frames = .1f;
     private int count = 0;
     private int crntAnim = 7;
+
     void Start()
     {
-        animationDict = new Dictionary<string, List<Sprite>>();
+        setUp();
+    }
+    
+    void Update()
+    {
+        Conditions();
+    }
+    // Sets Variables && animation sheet
+    private void setUp()
+    {
         spriteRenderer = transform.gameObject.GetComponent<SpriteRenderer>();
         Dictionary<string, List<Sprite>> spriteSheet = LoadSprites();
         if(transform.name == "Player"){player = transform.gameObject.GetComponent<PlayerScript>();} else {NPC = transform.gameObject.GetComponent<NPCMovement>();}
@@ -33,10 +39,7 @@ public class UltAnimatorScript : MonoBehaviour
             }
         }
     }
-    void Update()
-    {
-        Conditions();
-    }
+    //Plays Animation for character
     private void PlayAnimation(List<Sprite> sprites)
     {
         frames -= Time.deltaTime;
@@ -47,6 +50,7 @@ public class UltAnimatorScript : MonoBehaviour
             frames = frameRate;
         }
     }
+    // Player Movement Controls
     private void Conditions()
     {
         Vector2 movementDirection;
@@ -125,7 +129,7 @@ public class UltAnimatorScript : MonoBehaviour
         animationDict.Add("SittingLeft", new List<Sprite>());       10
         */
     }
-
+    // Setting Animations : 
     public static Dictionary<string, List<Sprite>> LoadSprites()
     {
         Dictionary<string, List<Sprite>> spriteLists = new Dictionary<string, List<Sprite>>();
@@ -209,6 +213,7 @@ public class UltAnimatorScript : MonoBehaviour
     }
     public List<Sprite> getThrowAwayAnims()
     {
+        setUp();
         return animationDict["ThrowAways"];
     }
 }
