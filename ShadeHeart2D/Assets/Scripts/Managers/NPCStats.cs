@@ -39,14 +39,6 @@ public class NPCStats : MonoBehaviour
                 UIClass.openDialogueBox = true;
             else
                 Debug.Log("Dialogue Box Missing");
-            if(npcInter == null)
-            {
-                Debug.Log("ads");
-            }
-            else
-            {
-                Debug.Log("ads2");
-            }
             npcInter.ShowDialogue(nextDialogue());
         }
     }
