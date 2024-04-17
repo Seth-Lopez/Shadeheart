@@ -12,7 +12,7 @@ public class NPCStats : MonoBehaviour
     private int type = -1;
     private NPCInteraction npcInter;
     private UIMenuMngr UIClass;
-
+    private bool isPauseMenuOpen = false;
     public int numLines = 0;
     public List<string> AllDialogueOptions
     {
@@ -33,14 +33,22 @@ public class NPCStats : MonoBehaviour
     
     void Update()
     {
-        if (npcInter.getIsPlayerInRange() && Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.Escape))
+            isPauseMenuOpen = !isPauseMenuOpen;
+        if(UIClass.getIsMenuOpen())
         {
-            if(UIClass != null)
-                UIClass.openDialogueBox = true;
-            else
-                Debug.Log("Dialogue Box Missing");
-            npcInter.ShowDialogue(nextDialogue());
+            npcInter.emptyDialogueText();
+            UIClass.openDialogueBox = false;
         }
+        else
+            if (npcInter.getIsPlayerInRange() && Input.GetKeyDown(KeyCode.E) && !UIClass.getIsPauseMenuOpen())
+            {
+                if(UIClass != null)
+                    UIClass.openDialogueBox = true;
+                else
+                    Debug.Log("Dialogue Box Missing");
+                npcInter.ShowDialogue(nextDialogue());
+            }
     }
     private void instantiateVariables()
     {

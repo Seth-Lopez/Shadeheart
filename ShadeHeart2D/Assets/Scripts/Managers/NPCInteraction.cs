@@ -46,5 +46,9 @@ public class NPCInteraction : MonoBehaviour
     {
         return isPlayerInRange;
     }
+    public void emptyDialogueText()
+    {
+        dialogueText.text = "";
+    }
 }
 

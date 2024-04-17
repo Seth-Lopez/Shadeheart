@@ -3,6 +3,8 @@ using UnityEngine;
 using Cinemachine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.Plastic.Antlr3.Runtime;
+using System.Runtime.CompilerServices;
 
 public class UIMenuMngr : MonoBehaviour
 {
@@ -11,28 +13,74 @@ public class UIMenuMngr : MonoBehaviour
     [SerializeField] private GameObject playersName;
     [SerializeField] private GameObject characterIcons;
     [SerializeField] private GameObject headIcons;
+
     public bool openDialogueBox = false;
     private float movementTimer = 0;
-    private Dictionary<string, GameObject> menuDictionary = new Dictionary<string, GameObject>();
     private List<Sprite> throwAwayAnims = new List<Sprite>();
-
-    
-    // Quest Menus
-    GameObject questTitle;
-    GameObject questsActive;
-    GameObject questsCompleted;
-
+    //Dialogue Box
+    [SerializeField] private GameObject dialogueBox;
+    // Quest TextBoxes
+    [SerializeField] private GameObject questTitle;
+    [SerializeField] private GameObject questsActive;
+    [SerializeField] private GameObject questsCompleted;
+    // Menus
+    [SerializeField] private GameObject MainBackground;
+    [SerializeField] private GameObject Inventory;
+    [SerializeField] private GameObject Stats;
+    [SerializeField] private GameObject Monsters;
+    [SerializeField] private GameObject currentMenuOpen;
+    [SerializeField] private bool isMenuOpen = false;
+    [SerializeField] private bool isPauseMenuOpen = false;
     [SerializeField] private QuestMngrV2 questMngrV2;
 
     void Start()
     {
         setUp();
-        setQuests();
     }
-
+    void openMenu(GameObject menu, GameObject close)
+    {
+        if(menu != close)
+        {
+            closeMenu(close);
+            MainBackground.transform.Find("Canvas").gameObject.SetActive(true);
+            menu.transform.Find("Canvas").gameObject.SetActive(true);
+            currentMenuOpen = menu;
+            isMenuOpen = true;
+        }
+        else
+            closeMenu(close);
+    }
+    void closeMenu(GameObject menu)
+    {
+        if (menu != cam)
+        {
+            MainBackground.transform.Find("Canvas").gameObject.SetActive(false);
+            menu.transform.Find("Canvas").gameObject.SetActive(false);
+            currentMenuOpen = cam;
+            isMenuOpen = false;
+        }
+    }
     void Update()
     {
         cameraMngr();
+        if(!isPauseMenuOpen)
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                openMenu(Stats, currentMenuOpen);
+                setQuests();
+            }
+            if (Input.GetKeyDown(KeyCode.Q))
+                openMenu(Inventory, currentMenuOpen);
+            if (Input.GetKeyDown(KeyCode.M))
+                openMenu(Monsters, currentMenuOpen);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {   
+            closeMenu(currentMenuOpen);
+            isPauseMenuOpen = !isPauseMenuOpen;
+        }
+
     }
     private void cameraMngr()
     {
@@ -42,12 +90,15 @@ public class UIMenuMngr : MonoBehaviour
             movementTimer -= Time.deltaTime * /*Speed*/ 2f;
             movementTimer = Mathf.Clamp(movementTimer, -0.7f, 0f);
             offset.m_Offset = new Vector2(0f, movementTimer);
+            closeMenu(currentMenuOpen);
+            dialogueBox.transform.Find("Canvas").gameObject.SetActive(true);
         }
         else
         {
             movementTimer += Time.deltaTime * /*Speed*/ .5f;
             movementTimer = Mathf.Clamp(movementTimer, -0.7f, 0f);
             offset.m_Offset = new Vector2(0f, movementTimer);
+            dialogueBox.transform.Find("Canvas").gameObject.SetActive(false);
         }
     }
 
@@ -56,19 +107,27 @@ public class UIMenuMngr : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("Camera");
         cineCam = cam.GetComponentInChildren<CinemachineVirtualCamera>();
         GameObject[] menus = GameObject.FindGameObjectsWithTag("Menus");
-        GameObject[] QuestMenus = GameObject.FindGameObjectsWithTag("QuestMenus");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         questMngrV2 = FindObjectOfType<QuestMngrV2>().GetComponent<QuestMngrV2>();
-
+        currentMenuOpen = cam;
         foreach (GameObject menu in menus)
         {
-            menuDictionary[menu.name] = menu;
             if(menu.name == "Player's Name")
                 playersName = menu;
             if(menu.name == "Charater Sprites")
                 characterIcons = menu;
             if(menu.name == "Head Sprites")
                 headIcons = menu;
+            if(menu.name == "MainBackground")
+                MainBackground = menu;
+            if(menu.name == "Inventory")
+                Inventory = menu;
+            if(menu.name == "Stats")
+                Stats = menu;
+            if(menu.name == "Monsters")
+                Monsters = menu;
+            if(menu.name == "DialogueBox")
+                dialogueBox = menu;
         }
         if(player != null)
         {
@@ -85,16 +144,6 @@ public class UIMenuMngr : MonoBehaviour
             Sprite headSprite = Sprite.Create(throwAwayAnims[3].texture, rect, new Vector2(0.5f, 0.5f), throwAwayAnims[3].pixelsPerUnit);
             headIcons.gameObject.GetComponent<Image>().sprite = headSprite;
             headIcons.gameObject.GetComponent<Image>().color = Color.white;
-        }
-        
-        foreach (GameObject menu in QuestMenus)
-        {
-            if(menu.name == "QueTar")
-                questTitle = menu;
-            if(menu.name == "QueAct")
-                questsActive = menu;
-            if(menu.name == "QueCom")
-                questsCompleted = menu;
         }
     }
 
@@ -116,39 +165,42 @@ public class UIMenuMngr : MonoBehaviour
             questsCompleted.GetComponent<TextMeshProUGUI>().text += "\n - " + quest.playerDescription;
         }
     }
-
-    public void setMenuActive(string menuName)
+    public bool getIsPauseMenuOpen()
     {
-        foreach (var kvp in menuDictionary)
+        return isPauseMenuOpen;
+    }
+    public bool getIsMenuOpen()
+    {
+        return isMenuOpen;
+    }
+    public void setIsPauseMenuOpen()
+    {
+        isPauseMenuOpen = false;
+    }
+    public void buttonPressing(string Menu)
+    {
+        if(Menu == "Inv")
+            openMenu(Inventory, currentMenuOpen);
+        if(Menu == "Stats")
+            openMenu(Stats, currentMenuOpen);
+        if(Menu == "Monsters")
+            openMenu(Monsters, currentMenuOpen);
+        if(Menu == "Discord")
+            return;  //<<<<------------------------------------ PUT DISCORD LINK SERVER HERE!--------------------------------------
+        if(Menu == "Pause")
         {
-            if (kvp.Key != menuName)
+            closeMenu(currentMenuOpen);
+            Pause pauseMgr = GameObject.Find("PauseMgr").GetComponent<Pause>();
+            if(pauseMgr.getPaused())
             {
-                disableEnableCanvas(kvp.Value, false);
+                pauseMgr.Resume();
+                isPauseMenuOpen = false;
             }
-        }
-
-        if (menuDictionary.ContainsKey(menuName))
-        {
-            disableEnableCanvas(menuDictionary[menuName], true);
-        }
-    }
-
-    public void SetMenuDeactive(string menuName)
-    {
-        if (menuDictionary.ContainsKey(menuName))
-        {
-            disableEnableCanvas(menuDictionary[menuName], false);
-        }
-    }
-    private void disableEnableCanvas(GameObject parentGameObject, bool turnOn)
-    {
-        GameObject canvasGO = parentGameObject.transform.Find("Canvas").gameObject;
-        if (canvasGO != null)
-        {
-            if(turnOn)
-                canvasGO.SetActive(true);
             else
-                canvasGO.SetActive(false);
+            {
+                pauseMgr.PauseGame();
+                isPauseMenuOpen = true;
+            }
         }
     }
 }
