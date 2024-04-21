@@ -9,7 +9,7 @@ public class CombatMenu : MonoBehaviour
     // Buttons on the UI
     //public Button actionButton;
     [SerializeField] private Button useItemButton;
-    [SerializeField] Button fleeButton;
+    public Button fleeButton;
     [SerializeField] Button attackButton;
     [SerializeField] Button defendButton;
     [SerializeField] Button chargeButton;
@@ -51,7 +51,7 @@ public class CombatMenu : MonoBehaviour
     
     private void Update()
     {
-        for(int i = 0; i < playerCreature.activeSkills.Length; i++)
+        for(int i = 0; i < playerCreature.activeSkills.Count; i++)
         {
             //Debug.Log(playerCreature.activeSkills.Length.ToString());
             //Debug.Log(EventSystem.current.currentSelectedGameObject);
@@ -135,6 +135,7 @@ public class CombatMenu : MonoBehaviour
 
             battle.StartEnemyTurn();
         }
+        yield return null;
     }
 
     public void EnemyAttack()
@@ -180,7 +181,7 @@ public class CombatMenu : MonoBehaviour
     {
         Debug.Log("Use Item selected.");
         // Add your item use logic here
-
+        combatMenu.SetActive(false);
         StartCoroutine(Item());
     }
     IEnumerator Item()
@@ -192,6 +193,7 @@ public class CombatMenu : MonoBehaviour
 
         yield return new WaitForSeconds(battle.textStop);
 
+        combatMenu.SetActive(true);
         yield return (battle.DisplayingDialogue($"Player's turn"));
         //dialogueBox.text = "Player's turn";
         //yield return null;
@@ -204,26 +206,134 @@ public class CombatMenu : MonoBehaviour
     IEnumerator Escape()
     {
         Debug.Log("Flee selected.");
-        // Add your flee logic here
-
-        playerCreature.isDefending = false;
-
-        int fleeResult = Random.Range(1, 21);
-        Debug.Log(fleeResult.ToString());
-        if (fleeResult <= 4)
+        if (battle.sparePossible)
         {
-            yield return (battle.DisplayingDialogue($"You failed to escape!"));
-            //dialogueBox.text = "You failed to escape!";
+            battle.enemySpared = true;
+            Debug.Log("test a");
+            yield return (battle.DisplayingDialogue($"Enemy {enemyCreature.name} has left the battle."));
+            Debug.Log("test b");
             yield return new WaitForSeconds(battle.textStop);
+            Debug.Log("test c");
+            battle.StartEnemyTurn();
+            Debug.Log("test d");
+            yield return null;
+        }
+        else
+        {
+            // Add your flee logic here
+
+            playerCreature.isDefending = false;
+
+            int fleeResult = Random.Range(1, 21);
+            Debug.Log(fleeResult.ToString());
+            if (fleeResult <= 4)
+            {
+                yield return (battle.DisplayingDialogue($"You failed to escape!"));
+                //dialogueBox.text = "You failed to escape!";
+                yield return new WaitForSeconds(battle.textStop);
+                battle.StartEnemyTurn();
+            }
+            else
+            {
+                yield return (battle.DisplayingDialogue($"You escaped!"));
+                //dialogueBox.text = "You escaped!";
+                yield return new WaitForSeconds(1f);
+                battle.EndBattle();
+            }
+        }
+        yield return null;
+    }
+
+    public void SpareEnemy()
+    {
+        Debug.Log("Spare Enemy");
+        //StartCoroutine(Spare());
+        battle.enemySpared = true;
+        Debug.Log("Test");
+        playerCreature.UpdateEXP(playerCreature.expCalc(enemyCreature.baseExpYield, enemyCreature.level));
+        Debug.Log("Test");
+    }
+
+    IEnumerator Spare()
+    {
+        battle.enemies[battle.enemyIndex].SetActive(false);
+
+        battle.numEnemies -= 1;
+
+        yield return (battle.DisplayingDialogue($"Enemy {enemyCreature.name} has left the battle."));
+        yield return new WaitForSeconds(battle.textStop);
+        /*
+        if (battle.numEnemies > 1)
+        {
+            battle.enemies[battle.enemyIndex].SetActive(false);
+            battle.RandomizeEnemy();
+            battle.SetSkills(ref playerCreature, true);//set player skills after enemy is randomized to the skills target properly
+            battle.combatMenuScript.SetEnemy();
+            battle.SetupEnemy();
+
+            yield return (battle.DisplayingDialogue($"Enemy {enemyCreature.name} appears!"));
+            //dialogueBox.text = "Enemy " + enemyCreature.name + " appears!";
+            yield return new WaitForSeconds(battle.textStop);
+
+            battle.numEnemies -= 1;
+            Debug.Log("Enemies remaining: " + battle.numEnemies.ToString());
+            battle.TurnOrder();
+            yield return new WaitForSeconds(1f);
+        }
+        else
+        {
+            yield return null;
+            battle.state = BattleState.Win;
+            yield return (battle.BattleWin());
+        }*/
+    }
+
+    public void CaptureEnemy()
+    {
+        combatMenu.SetActive(false);
+        StartCoroutine(CapturingEnemy());
+    }
+
+    IEnumerator CapturingEnemy()
+    {
+        if (battle.numPlayerShades >= 9)
+        {
+            yield return (battle.DisplayingDialogue($"Capture Failed.\nYour party is full."));
+
+            yield return new WaitForSeconds(battle.textStop);
+
+            combatMenu.SetActive(true);
+            yield return (battle.DisplayingDialogue($"Player's turn"));
+        }
+        else if (battle.sparePossible || Random.Range(0, 4) != 0)
+        {
+            yield return (battle.DisplayingDialogue($"Captured {enemyCreature.name}."));
+            yield return new WaitForSeconds(battle.textStop);
+
+            int exp = (playerCreature.expCalc(enemyCreature.baseExpYield, enemyCreature.level));
+            yield return (battle.DisplayingDialogue($"{playerCreature.name} gains {exp} exp"));
+
+            battle.enemyCaptured = true;
+
+            battle.playerShades.Add(battle.enemies[battle.enemyIndex]);
+            battle.numPlayerShades++;
+            battle.numEnemies--;
+
+            battle.enemies[battle.enemyIndex].SetActive(false);
+
+            yield return new WaitForSeconds(battle.textStop);
+
             battle.StartEnemyTurn();
         }
         else
         {
-            yield return (battle.DisplayingDialogue($"You escaped!"));
-            //dialogueBox.text = "You escaped!";
-            yield return new WaitForSeconds(1f);
-            battle.EndBattle();
+            yield return (battle.DisplayingDialogue($"Failed to capture {enemyCreature.name}."));
+
+            yield return new WaitForSeconds(battle.textStop);
+
+            battle.StartEnemyTurn();
         }
+
         yield return null;
     }
 
@@ -245,7 +355,7 @@ public class CombatMenu : MonoBehaviour
         }
         if (defendingCreature.weakness == damageType)
         {
-            damage *= 2;
+            damage += damage/3;
         }
         damage = Mathf.Round(damage);
         return damage;
@@ -271,7 +381,7 @@ public class CombatMenu : MonoBehaviour
         {
             if (battle.state == BattleState.PlayerTurn)
             {
-                StartCoroutine(battle.DisplayingDialogue($"{skill.user} doesn't have enough energy..."));
+                StartCoroutine(battle.DisplayingDialogue($"{skill.user.name} doesn't have enough energy..."));
                 //dialogueBox.text = skill.user.ToString() + "doesn't have enough energy...";
                 battle.skillMenu.SetActive(true);
                 battle.OpenSkillMenu();

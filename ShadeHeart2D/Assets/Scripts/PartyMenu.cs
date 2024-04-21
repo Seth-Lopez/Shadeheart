@@ -45,7 +45,7 @@ public class PartyMenu : MonoBehaviour
         }
         //Debug.Log("Test2");
 
-        for (int i = 0; i < battle.playerShades.Length; i++)
+        for (int i = 0; i < battle.playerShades.Count; i++)
         {
             //Debug.Log("inteactable " + i.ToString() + ": " + partyButtons[i].interactable.ToString());
             partyButtons[i].interactable = true;
@@ -55,7 +55,7 @@ public class PartyMenu : MonoBehaviour
             healthMeters[i].SetMaxValueMenu(battle.playerShades[i].GetComponent<Shade>().MaxHealth);
             energyMeters[i].SetMaxValueMenu(battle.playerShades[i].GetComponent<Shade>().MaxEnergy);
 
-            for (int j = 0; j < battle.playerShades[i].GetComponent<Shade>().activeSkills.Length; j++)
+            for (int j = 0; j < battle.playerShades[i].GetComponent<Shade>().activeSkills.Count; j++)
             {
                 if (battle.playerShades[i].GetComponent<Shade>().activeSkills[j].damageType == battle.enemyCreature.weakness)
                 {
@@ -73,7 +73,7 @@ public class PartyMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(party[activeIndex]);
 
-        for (int i = 0; i < battle.playerShades.Length; i++)
+        for (int i = 0; i < battle.playerShades.Count; i++)
         {
             healthMeters[i].SetValueMenu(battle.playerShades[i].GetComponent<Shade>().health);
             energyMeters[i].SetValueMenu(battle.playerShades[i].GetComponent<Shade>().energy);
@@ -82,18 +82,29 @@ public class PartyMenu : MonoBehaviour
 
     public void SwitchActive(int newIndex)
     {
-        //turn off active shade
-        battle.playerShades[activeIndex].SetActive(false);
-        //set activeIndex to newIndex
-        activeIndex = newIndex;
-        battle.playerIndex = newIndex;
-        //set new active shade
-        battle.SetShade(ref battle.player, battle.playerShades, newIndex, ref battle.playerCreature);
-        combatMenuScript.SetPlayer();
-        battle.SetupPlayer();
-        //call SetSkills function so skills target the correct shades
-        battle.SetSkills(ref battle.enemyCreature, false);
-        battle.SetSkills(ref battle.playerCreature, true);
-        battle.TurnOrder();
+        if (battle.playerShades[newIndex].GetComponent<Shade>().health <= 0)
+        {
+            battle.combatMenu.SetActive(false);
+            StartCoroutine(battle.DisplayingDialogue($"Unable to switch.\n{battle.playerShades[newIndex].GetComponent<Shade>().name} is KOd..."));
+            battle.partyMenu.SetActive(true);
+            battle.combatMenuScript.OpenPartyMenu();
+            battle.combatMenu.SetActive(true);
+        }
+        else
+        {
+            //turn off active shade
+            battle.playerShades[activeIndex].SetActive(false);
+            //set activeIndex to newIndex
+            activeIndex = newIndex;
+            battle.playerIndex = newIndex;
+            //set new active shade
+            battle.SetShade(ref battle.player, battle.playerShades, newIndex, ref battle.playerCreature);
+            combatMenuScript.SetPlayer();
+            battle.SetupPlayer();
+            //call SetSkills function so skills target the correct shades
+            battle.SetSkills(ref battle.enemyCreature, false);
+            battle.SetSkills(ref battle.playerCreature, true);
+            battle.TurnOrder();
+        }
     }
 }
