@@ -96,7 +96,7 @@ public class Title : MonoBehaviour
         string sceneLoadedFrom = SceneManager.GetActiveScene().name;
         PlayerPrefs.SetString("sceneLoadedFrom", sceneLoadedFrom);
         loader.LoadBattle(battleSceneName);
-        //SceneManager.LoadScene(sceneName);
+        //SceneManager.LoadScene(battleSceneName);
     }
 
     public void ForrestSelect()

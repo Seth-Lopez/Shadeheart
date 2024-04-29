@@ -315,8 +315,17 @@ public class CombatMenu : MonoBehaviour
 
             battle.enemyCaptured = true;
 
-            battle.playerShades.Add(battle.enemies[battle.enemyIndex]);
+            Debug.Log($"enemy index: {battle.enemyIndex}");
+            battle.shades[battle.enemyIndex+1].GetComponent<Shade>().name = battle.enemies[battle.enemyIndex].GetComponent<Shade>().name;
+            battle.shades[battle.enemyIndex+1].GetComponent<Shade>().level = battle.enemies[battle.enemyIndex].GetComponent<Shade>().level;
+            battle.shades[battle.enemyIndex+1].GetComponent<Shade>().MaxHealth = battle.enemies[battle.enemyIndex].GetComponent<Shade>().MaxHealth;
+            battle.shades[battle.enemyIndex+1].GetComponent<Shade>().MaxEnergy = battle.enemies[battle.enemyIndex].GetComponent<Shade>().MaxEnergy;
+            battle.shades[battle.enemyIndex+1].GetComponent<Shade>().health = battle.enemies[battle.enemyIndex].GetComponent<Shade>().health;
+            battle.shades[battle.enemyIndex+1].GetComponent<Shade>().energy = battle.enemies[battle.enemyIndex].GetComponent<Shade>().energy;
+
+            battle.playerShades.Add(battle.shades[battle.enemyIndex+1]);
             battle.numPlayerShades++;
+            PartyData.partySize++;
             battle.numEnemies--;
 
             battle.enemies[battle.enemyIndex].SetActive(false);

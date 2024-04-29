@@ -86,12 +86,16 @@ public class BattleMgr : MonoBehaviour
         playerIndex = PlayerPrefs.GetInt("playerShadeIndex");
         Debug.Log("playerIndex: " + playerIndex.ToString());
 
-        //---------------------------------------------------------------------------------------------------------------------------------------
+        /*if (PartyData.saved)
+        {
+            LoadPartyData();
+        }*/
+        /*//---------------------------------------------------------------------------------------------------------------------------------------
         string saveDataPath = Application.persistentDataPath + "/party.sav";
         Debug.Log(saveDataPath);
         if (File.Exists(saveDataPath))
         {
-            //LoadPartyData(party, playerShades);
+            LoadPartyData();
             //load party
             for (int i = 0; i < party.Length; i++)
             {
@@ -484,6 +488,17 @@ public class BattleMgr : MonoBehaviour
         yield return null;
     }
 
+    public void partySaveTest()
+    {
+        for (int i = 0; i < playerShades.Count; i++)
+        {
+            Debug.Log($"{PartyData.party[i].GetComponent<Shade>().name}");
+            Debug.Log($"{PartyData.party[i].GetComponent<Shade>().level}");
+            Debug.Log($"{PartyData.party[i].GetComponent<Shade>().exp}");
+            Debug.Log($"party size: {PartyData.partySize}");
+        }
+    }
+
     public IEnumerator BattleWin()
     {
         Debug.Log("start battleWin");
@@ -492,7 +507,8 @@ public class BattleMgr : MonoBehaviour
         yield return new WaitForSeconds(3f);
         PlayerPrefs.SetInt("playerShadeIndex", playerIndex);
         Debug.Log("before save");
-        //SavePartyData(party);
+        SavePartyData();
+        partySaveTest();
         Debug.Log("after save");
         EndBattle();
     }
@@ -502,7 +518,8 @@ public class BattleMgr : MonoBehaviour
         yield return (DisplayingDialogue($"You were defeated"));
         //dialogueBox.text = "You were defeated";
         yield return new WaitForSeconds(3f);
-        //SavePartyData(party);
+        SavePartyData();
+        partySaveTest();
         EndBattle();
     }
 
@@ -546,6 +563,7 @@ public class BattleMgr : MonoBehaviour
     {
         lastScene = PlayerPrefs.GetString("sceneLoadedFrom");
         loader.LoadScene(lastScene);
+        //SceneManager.LoadScene(lastScene);
     }
 
     public void RandomizeEnemy()
@@ -700,6 +718,24 @@ public class BattleMgr : MonoBehaviour
         enemyCreature.UpdateEnergy(0);
         enemyCreature.SetupSkills();
         enemyCreature.SetupInitialEXP();
+    }
+
+    public void SavePartyData()
+    {
+        for (int i = 0; i < playerShades.Count; i++)
+        {
+            PartyData.party[i] = playerShades[i];
+        }
+        PartyData.partySize = playerShades.Count;
+        PartyData.saved = true;
+    }
+
+   public void LoadPartyData()
+    {
+        for (int i = 0; i < PartyData.partySize; i++)
+        {
+            playerShades[i] = PartyData.party[i];
+        }
     }
 
     /*
