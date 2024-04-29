@@ -12,6 +12,7 @@ public class Shade : MonoBehaviour
     new public string name;
     public Meter hpBar, energyBar;
     public int level;
+    public int index;
     public Sprite sprite;
 
     [SerializeField] float maxHealth, maxEnergy;
@@ -146,11 +147,14 @@ public class Shade : MonoBehaviour
         levelExp += Mathf.Abs(expGain);
 
         bool leveled = false;
-        while (levelExp >= (requiredEXP * level))
+        bool levelUP = (levelExp >= (requiredEXP * level));
+        while (levelUP)
         {
             levelExp -= (requiredEXP * level);
+            Debug.Log(levelExp);
             LevelUp();
             leveled = true;
+            levelUP = (levelExp >= (requiredEXP * level));
         }
 
         if (leveled)
@@ -171,6 +175,7 @@ public class Shade : MonoBehaviour
                 }
             }
         }
+        Debug.Log("exp test");
         return leveled;
     }
 

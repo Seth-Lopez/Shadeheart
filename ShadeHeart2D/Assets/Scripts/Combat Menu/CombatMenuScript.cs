@@ -148,18 +148,18 @@ public class CombatMenu : MonoBehaviour
         Debug.Log("Enemy Attacks");
 
         enemyCreature.isDefending = false;
+        float damage = DamageCalc(enemyCreature, playerCreature, basicAtkPower, enemyCreature.basicAttackType);
+        Debug.Log("Enemy Damage: " + damage.ToString());
 
+        playerCreature.UpdateHealth(damage);
+        enemyCreature.UpdateEnergy(basicAttackCost);
         yield return (battle.DisplayingDialogue($"{enemyCreature.name} attacks!"));
         //dialogueBox.text = enemyCreature.name + " attacks!";
 
         enemyAttackingAnim.SetBool("isAttacking", true);
         yield return new WaitForSeconds(1f);
 
-        float damage = DamageCalc(enemyCreature, playerCreature, basicAtkPower, enemyCreature.basicAttackType);
-        Debug.Log("Enemy Damage: " + damage.ToString());
-
-        playerCreature.UpdateHealth(damage);
-        enemyCreature.UpdateEnergy(basicAttackCost);
+        
 
         if (enemyCreature.isFrozen)
         {
@@ -391,6 +391,11 @@ public class CombatMenu : MonoBehaviour
         }
         else
         {
+            float damage = DamageCalc(skill.user, skill.target, skill.power, skill.damageType);
+            Debug.Log(damage.ToString());
+            skill.user.UpdateEnergy(skill.cost);
+            skill.target.UpdateHealth(damage);
+
             Animator animator;
             if (battle.state == BattleState.PlayerTurn)
             {
@@ -418,11 +423,6 @@ public class CombatMenu : MonoBehaviour
             StartCoroutine(Animate(skill.animationType, animator));
 
             skill.user.isDefending = false;
-
-            float damage = DamageCalc(skill.user, skill.target, skill.power, skill.damageType);
-            Debug.Log(damage.ToString());
-            skill.user.UpdateEnergy(skill.cost);
-            skill.target.UpdateHealth(damage);
 
             switch (skill.effect)
             {

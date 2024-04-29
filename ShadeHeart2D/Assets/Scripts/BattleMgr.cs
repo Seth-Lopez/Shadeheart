@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using System.IO;
 
 public enum BattleState { BattleStart, PlayerTurn, EnemyTurn, Win, Lose }
 
@@ -16,6 +17,7 @@ public class BattleMgr : MonoBehaviour
 
     //Array of GameObjects with a Shade component and the index of the player that should be used
     public List<GameObject> playerShades;
+    public GameObject[] shades;
     public Shade[] party;
     public int playerIndex;
 
@@ -83,10 +85,38 @@ public class BattleMgr : MonoBehaviour
         playerIndex = PlayerPrefs.GetInt("playerShadeIndex");
         Debug.Log("playerIndex: " + playerIndex.ToString());
 
-        /*//---------------------------------------------------------------------------------------------------------------------------------------
-        if ()
+        //---------------------------------------------------------------------------------------------------------------------------------------
+        string saveDataPath = Application.persistentDataPath + "/party.sav";
+        Debug.Log(saveDataPath);
+        if (File.Exists(saveDataPath))
         {
+            LoadPartyData(party, playerShades);
+            //load party
+            for (int i = 0; i < party.Length; i++)
+            {
+                playerShades[i] = shades[party[i].index];
 
+                playerShades[i].GetComponent<Shade>().name = party[i].name;
+                playerShades[i].GetComponent<Shade>().level = party[i].level;
+                playerShades[i].GetComponent<Shade>().baseMaxHealth = party[i].baseMaxHealth;
+                playerShades[i].GetComponent<Shade>().baseMaxEnergy = party[i].baseMaxEnergy;
+                playerShades[i].GetComponent<Shade>().baseAttack = party[i].baseAttack;
+                playerShades[i].GetComponent<Shade>().baseDefense = party[i].baseDefense;
+                playerShades[i].GetComponent<Shade>().baseSpeed = party[i].baseSpeed;
+                playerShades[i].GetComponent<Shade>().index = party[i].index;
+                playerShades[i].GetComponent<Shade>().exp = party[i].exp;
+                playerShades[i].GetComponent<Shade>().lightLevels = party[i].lightLevels;
+                playerShades[i].GetComponent<Shade>().darkLevels = party[i].darkLevels;
+                playerShades[i].GetComponent<Shade>().levelExp = party[i].levelExp;
+                playerShades[i].GetComponent<Shade>().totalExp = party[i].totalExp;
+                playerShades[i].GetComponent<Shade>().requiredEXP = party[i].requiredEXP;
+                playerShades[i].GetComponent<Shade>().baseRequiredExp = party[i].baseRequiredExp;
+                playerShades[i].GetComponent<Shade>().weakness = party[i].weakness;
+                for (int j = 0; j < party[i].activeSkills.Count; j++)
+                {
+                    playerShades[i].GetComponent<Shade>().activeSkills.Add(party[i].activeSkills[j]);
+                }
+            }
         }
         //---------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -117,6 +147,8 @@ public class BattleMgr : MonoBehaviour
         //Start Battle
         state = BattleState.BattleStart;
         StartCoroutine(SetupBattle());
+        SetSkills(ref playerCreature, true);
+        SetSkills(ref enemyCreature, false);
 
         combatMenuMgr.SetActive(true);
 
@@ -239,6 +271,7 @@ public class BattleMgr : MonoBehaviour
             }
             else
             {
+                enemies[enemyIndex].SetActive(false);
                 Debug.Log("test e");
                 yield return null;
                 state = BattleState.Win;
@@ -271,6 +304,7 @@ public class BattleMgr : MonoBehaviour
                 }
                 else
                 {
+                    enemies[enemyIndex].SetActive(false);
                     yield return null;
                     state = BattleState.Win;
                     yield return (BattleWin());
@@ -302,12 +336,17 @@ public class BattleMgr : MonoBehaviour
                     }*/
                     int exp = (playerCreature.expCalc(enemyCreature.baseExpYield, enemyCreature.level));
                     yield return (DisplayingDialogue($"{playerCreature.name} gains {exp} exp"));
+                    Debug.Log("After exp gain");
                     yield return new WaitForSeconds(textStop);
+                    Debug.Log("After first wait");
+                    yield return null;
+                    Debug.Log("After second wait");
 
                     if (playerCreature.UpdateEXP(-exp))
                     {
-                        playerCreature.LearnSkill();
+                        //playerCreature.LearnSkill();
                     }
+                    Debug.Log("After exp");
 
                     if (numEnemies > 1)
                     {
@@ -328,6 +367,7 @@ public class BattleMgr : MonoBehaviour
                     }
                     else
                     {
+                        enemies[enemyIndex].SetActive(false);
                         yield return null;
                         state = BattleState.Win;
                         yield return (BattleWin());
@@ -412,11 +452,13 @@ public class BattleMgr : MonoBehaviour
                     }
 
                     //checks if player was defeted
+                    Debug.Log($"{playerCreature.health}");
                     if (playerCreature.health <= 0)
                     {
                         numPlayerShades--;
                         if (numPlayerShades <= 0)
                         {
+                            playerShades[playerIndex].SetActive(false);
                             yield return new WaitForSeconds(1f);
                             state = BattleState.Lose;
                             yield return (BattleLoss());
@@ -437,6 +479,7 @@ public class BattleMgr : MonoBehaviour
                 }
             }
         }
+        yield return null;
     }
 
     public IEnumerator BattleWin()
@@ -444,6 +487,8 @@ public class BattleMgr : MonoBehaviour
         yield return (DisplayingDialogue($"You've won the Battle!"));
         //dialogueBox.text = "Enemy " + enemyCreature.name + " was defeated";
         yield return new WaitForSeconds(3f);
+        PlayerPrefs.SetInt("playerShadeIndex", playerIndex);
+        SavePartyData(party);
         EndBattle();
     }
 
@@ -452,6 +497,7 @@ public class BattleMgr : MonoBehaviour
         yield return (DisplayingDialogue($"You were defeated"));
         //dialogueBox.text = "You were defeated";
         yield return new WaitForSeconds(3f);
+        SavePartyData(party);
         EndBattle();
     }
 
@@ -509,7 +555,8 @@ public class BattleMgr : MonoBehaviour
         Debug.Log("Enemy index: " + enemyIndex.ToString());
         SetShade(ref enemy, enemies, enemyIndex, ref enemyCreature);
 
-        enemyCreature.level += (Random.Range(0, enemyLevelRange + 1));
+        //enemyCreature.level += (Random.Range(0, enemyLevelRange + 1));
+        enemyCreature.level = 10;
 
         SetSkills(ref enemyCreature, false);
     }
@@ -526,8 +573,8 @@ public class BattleMgr : MonoBehaviour
             Debug.Log("Enemy index: " + enemyIndex.ToString());
             SetShade(ref enemy, enemies, enemyIndex, ref enemyCreature);
 
-            enemyCreature.level += (Random.Range(0, enemyLevelRange + 1));
-
+            //enemyCreature.level += (Random.Range(0, enemyLevelRange + 1));
+            enemyCreature.level = 10;
             SetSkills(ref enemyCreature, false);
         }
     }
@@ -650,6 +697,81 @@ public class BattleMgr : MonoBehaviour
         enemyCreature.SetupInitialEXP();
     }
 
+    public void SavePartyData(Shade[] playerParty)
+    {
+        for (int i = 0; i < playerShades.Count; i++)
+        {
+            playerParty[i] = playerShades[i].GetComponent<Shade>();
+        }
+
+        PartySaveMgr.SaveParty(playerParty);
+    }
+
+    public void LoadPartyData(Shade[] playerParty, List<GameObject> partyShades)
+    {
+        PartyData partyData = PartySaveMgr.LoadParty();
+
+        for (int i = 0; i < partyData.level.Length; i++)
+        {
+            playerParty[i].name = partyData.name[i];
+            playerParty[i].level = partyData.level[i];
+
+            playerParty[i].baseMaxHealth = partyData.baseMaxHealth[i];
+            playerParty[i].baseMaxEnergy = partyData.baseMaxEnergy[i];
+            playerParty[i].baseAttack = partyData.baseAttack[i];
+            playerParty[i].baseDefense = partyData.baseDefense[i];
+            playerParty[i].baseSpeed = partyData.baseSpeed[i];
+            playerParty[i].index = partyData.spriteIndex[i];
+            playerParty[i].exp = partyData.exp[i];
+            playerParty[i].lightLevels = partyData.lightLevels[i];
+            playerParty[i].darkLevels = partyData.darkLevels[i];
+            playerParty[i].levelExp = partyData.levelExp[i];
+            playerParty[i].totalExp = partyData.totalExp[i];
+            playerParty[i].requiredEXP = partyData.requiredEXP[i];
+            playerParty[i].baseRequiredExp = partyData.baseRequiredExp[i];
+            playerParty[i].weakness = ((DamageType)partyData.weakness[i]);
+
+            for (int j = 0; j < partyData.skillNames[i].Length; j++)
+            {
+                playerParty[i].activeSkills[j].name = partyData.skillNames[i][j];
+                playerParty[i].activeSkills[j].power = partyData.skillPowers[i][j];
+                playerParty[i].activeSkills[j].cost = partyData.skillCosts[i][j];
+                playerParty[i].activeSkills[j].damageType = ((DamageType)partyData.skillDamageTypes[i][j]);
+                playerParty[i].activeSkills[j].isTargetSelf = partyData.skillIsTargetSelf[i][j];
+                playerParty[i].activeSkills[j].effectTargetSelf = partyData.skillEffectTargetSelf[i][j];
+                playerParty[i].activeSkills[j].effect = ((Effect)partyData.skillEffects[i][j]);
+                playerParty[i].activeSkills[j].animationType = ((AnimationType)partyData.skillAnimationTypes[i][j]);
+                playerParty[i].activeSkills[j].description = partyData.skillDescriptions[i][j];                
+            }
+        }
+
+        for (int i = 0; i < party.Length; i++)
+        {
+            partyShades[i] = shades[playerParty[i].index];
+
+            partyShades[i].GetComponent<Shade>().name = playerParty[i].name;
+            partyShades[i].GetComponent<Shade>().level = playerParty[i].level;
+            partyShades[i].GetComponent<Shade>().baseMaxHealth = playerParty[i].baseMaxHealth;
+            partyShades[i].GetComponent<Shade>().baseMaxEnergy = playerParty[i].baseMaxEnergy;
+            partyShades[i].GetComponent<Shade>().baseAttack = playerParty[i].baseAttack;
+            partyShades[i].GetComponent<Shade>().baseDefense = playerParty[i].baseDefense;
+            partyShades[i].GetComponent<Shade>().baseSpeed = playerParty[i].baseSpeed;
+            partyShades[i].GetComponent<Shade>().index = playerParty[i].index;
+            partyShades[i].GetComponent<Shade>().exp = playerParty[i].exp;
+            partyShades[i].GetComponent<Shade>().lightLevels = playerParty[i].lightLevels;
+            partyShades[i].GetComponent<Shade>().darkLevels = playerParty[i].darkLevels;
+            partyShades[i].GetComponent<Shade>().levelExp = playerParty[i].levelExp;
+            partyShades[i].GetComponent<Shade>().totalExp = playerParty[i].totalExp;
+            partyShades[i].GetComponent<Shade>().requiredEXP = playerParty[i].requiredEXP;
+            partyShades[i].GetComponent<Shade>().baseRequiredExp = playerParty[i].baseRequiredExp;
+            partyShades[i].GetComponent<Shade>().weakness = playerParty[i].weakness;
+            for (int j = 0; j < playerParty[i].activeSkills.Count; j++)
+            {
+                partyShades[i].GetComponent<Shade>().activeSkills.Add(playerParty[i].activeSkills[j]);
+            }
+        }
+    }
+
     public void OpenCombatMenu()
     {
         EventSystem.current.SetSelectedGameObject(null);
@@ -680,24 +802,15 @@ public class BattleMgr : MonoBehaviour
     }
 
     public IEnumerator DisplayingDialogue(string text)
-    {
+    {        
+        dialogueBox.text = text;
         yield return new WaitForSeconds(1f);
-        dialogueBox.text = "";
-        
-        foreach (var letter in text.ToCharArray())
+
+        /*foreach (var letter in text.ToCharArray())
         {
             dialogueBox.text += letter;
 
             yield return new WaitForSeconds(1f / battleTextSpeed);
-        }
-    }
-
-    public void SaveParty()
-    {
-        for (int i = 0; i < playerShades.Count; i++)
-        {
-            party[i] = playerShades[i].GetComponent<Shade>();
-        }
-        PartySaveMgr.SaveParty(party);
+        }*/
     }
 }
