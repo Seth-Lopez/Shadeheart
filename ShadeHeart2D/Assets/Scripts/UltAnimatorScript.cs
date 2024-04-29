@@ -216,4 +216,8 @@ public class UltAnimatorScript : MonoBehaviour
         setUp();
         return animationDict["ThrowAways"];
     }
+    public void setCrntAnim(int value)
+    {
+        crntAnim = value;
+    }
 }

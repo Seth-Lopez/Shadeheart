@@ -9,7 +9,7 @@ public class InventoryMngr : MonoBehaviour
     // The list that stores the Items data:
     private int numItems = 0;
     private List<(string, List<string>)> ItemsList = new List<(string, List<string>)>();
-    private string filePath = Path.Combine(Application.dataPath, "Scripts/Managers/InventoryItems.txt");
+    private string filePath = Path.Combine(Application.streamingAssetsPath, "Managers/InventoryItems.txt");
     [SerializeField] private GameObject content;
     private TextMeshProUGUI inventoryList;
 
@@ -26,9 +26,9 @@ public class InventoryMngr : MonoBehaviour
     }
 
     //This function helps update the Inventory every time it wakes up to display correct items in inventory.
-    private void updateInventory()
+    public void updateInventory()
     {
-        failChecker();
+        //failChecker();
         inventoryList.text = "";
         foreach ((string title, List<string> lines) in ItemsList)
             foreach (string line in lines)
@@ -156,7 +156,7 @@ public class InventoryMngr : MonoBehaviour
         updateInventory();
     }
     //This function is used for adding items to file
-    void AddItemsToFile(string title, List<string> lines, bool reWriting)
+    public void AddItemsToFile(string title, List<string> lines, bool reWriting)
     {
         if(reWriting)
         {
