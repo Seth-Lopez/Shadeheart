@@ -3,8 +3,6 @@ using UnityEngine;
 using Cinemachine;
 using TMPro;
 using UnityEngine.UI;
-using Unity.Plastic.Antlr3.Runtime;
-using System.Runtime.CompilerServices;
 
 public class UIMenuMngrV2 : MonoBehaviour
 {
