@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using System.IO;
 
 public enum BattleState { BattleStart, PlayerTurn, EnemyTurn, Win, Lose }
 
@@ -15,22 +16,27 @@ public class BattleMgr : MonoBehaviour
     [SerializeField] SceneLoader loader;
 
     //Array of GameObjects with a Shade component and the index of the player that should be used
-    public GameObject[] playerShades;
+    public List<GameObject> playerShades;
+    public GameObject[] shades;
+    public Shade[] party;
     public int playerIndex;
 
+    public int numPlayerShades;
+
     //Array of GameObjects with a Shade component and the index of the enemy that should be used
-    public GameObject[] enemies;
+    public List<GameObject> enemies;
     public int enemyIndex;
 
     [SerializeField] bool randomizeNumEnemies;
     [SerializeField] bool randomizeEnemy;
     [SerializeField] bool intelegentEnemy;
 
-    [SerializeField] int numEnemies = 1;
+    public int numEnemies = 1;
     [SerializeField] int maxEnemies = 2;
     int previousEnemy = -1;
 
-    [SerializeField] int enemyLevelRange = 2;
+    [SerializeField] int enemyLevelMin = 6;
+    [SerializeField] int enemyLevelMax = 10;
 
     public int battleTextSpeed;
     public float textStop;
@@ -56,10 +62,17 @@ public class BattleMgr : MonoBehaviour
     [SerializeField] Transform playerPosition;
     [SerializeField] Transform enemyPosition;
 
-    [SerializeField] CombatMenu combatMenuScript;
+    public CombatMenu combatMenuScript;
     [SerializeField] PartyMenu partyMenuScript;
 
     [SerializeField] GameObject combatMenuMgr;
+    public GameObject partyMenu;
+
+    //public SkillMgr skillMgr;
+
+    public bool sparePossible = false;
+    public bool enemySpared = false;
+    public bool enemyCaptured = false;
 
     public void Start()
     {
@@ -72,6 +85,50 @@ public class BattleMgr : MonoBehaviour
 
         playerIndex = PlayerPrefs.GetInt("playerShadeIndex");
         Debug.Log("playerIndex: " + playerIndex.ToString());
+
+        //---------------------------------------------------------------------------------------------------------------------------------------
+        string saveDataPath = Application.persistentDataPath + "/party.sav";
+        Debug.Log(saveDataPath);
+        if (File.Exists(saveDataPath))
+        {
+            //LoadPartyData(party, playerShades);
+            //load party
+            for (int i = 0; i < party.Length; i++)
+            {
+                playerShades[i] = shades[party[i].index];
+
+                playerShades[i].GetComponent<Shade>().name = party[i].name;
+                playerShades[i].GetComponent<Shade>().level = party[i].level;
+                playerShades[i].GetComponent<Shade>().baseMaxHealth = party[i].baseMaxHealth;
+                playerShades[i].GetComponent<Shade>().baseMaxEnergy = party[i].baseMaxEnergy;
+                playerShades[i].GetComponent<Shade>().baseAttack = party[i].baseAttack;
+                playerShades[i].GetComponent<Shade>().baseDefense = party[i].baseDefense;
+                playerShades[i].GetComponent<Shade>().baseSpeed = party[i].baseSpeed;
+                playerShades[i].GetComponent<Shade>().index = party[i].index;
+                playerShades[i].GetComponent<Shade>().exp = party[i].exp;
+                playerShades[i].GetComponent<Shade>().lightLevels = party[i].lightLevels;
+                playerShades[i].GetComponent<Shade>().darkLevels = party[i].darkLevels;
+                playerShades[i].GetComponent<Shade>().levelExp = party[i].levelExp;
+                playerShades[i].GetComponent<Shade>().totalExp = party[i].totalExp;
+                playerShades[i].GetComponent<Shade>().requiredEXP = party[i].requiredEXP;
+                playerShades[i].GetComponent<Shade>().baseRequiredExp = party[i].baseRequiredExp;
+                playerShades[i].GetComponent<Shade>().weakness = party[i].weakness;
+                for (int j = 0; j < party[i].activeSkills.Count; j++)
+                {
+                    playerShades[i].GetComponent<Shade>().activeSkills.Add(party[i].activeSkills[j]);
+                }
+            }
+        }
+        //---------------------------------------------------------------------------------------------------------------------------------------*/
+
+        numPlayerShades = playerShades.Count;
+        for (int i = 0; i < playerShades.Count; i++)
+        {
+            if (playerShades[i].GetComponent<Shade>().health <= 0)
+            {
+                numPlayerShades--;
+            }
+        }
 
         SetShade(ref player, playerShades, playerIndex, ref playerCreature);
         combatMenuScript.SetPlayer();
@@ -87,9 +144,12 @@ public class BattleMgr : MonoBehaviour
         SelectEnemy();
         SetSkills(ref playerCreature, true);//set player skills after enemy is randomized so the skills target properly
         combatMenuScript.SetEnemy();
+        SetSkills(ref enemyCreature, false);
         //Start Battle
         state = BattleState.BattleStart;
         StartCoroutine(SetupBattle());
+        SetSkills(ref playerCreature, true);
+        SetSkills(ref enemyCreature, false);
 
         combatMenuMgr.SetActive(true);
 
@@ -159,13 +219,13 @@ public class BattleMgr : MonoBehaviour
         }
         else
         {
-            //activates player's buttons
-            combatMenu.SetActive(true);
-            OpenCombatMenu();
-
             Debug.Log("Player Turn");
             yield return (DisplayingDialogue($"Player's turn"));
             //dialogueBox.text = "Player's turn";
+
+            //activates player's buttons
+            combatMenu.SetActive(true);
+            OpenCombatMenu();
 
             yield return new WaitForSeconds(textStop);
         }
@@ -174,24 +234,31 @@ public class BattleMgr : MonoBehaviour
     //Determines enemy behavior
     IEnumerator EnemyTurn()
     {
-        yield return new WaitForSeconds(1f);
-        
+        combatMenu.SetActive(false);
+
         combatMenuScript.descriptionObject.SetActive(false);
 
-        //checks if enemy was defeted
-        if (enemyCreature.health <= 0)
+        if (enemySpared)
         {
-            if (numEnemies > 1)
-            {
-                yield return (DisplayingDialogue($"Enemy {enemyCreature.name} was defeated"));
-                //dialogueBox.text = "Enemy " + enemyCreature.name + " was defeated";
-                yield return new WaitForSeconds(textStop);
+            Debug.Log("enemy spared");
 
+            int exp = (playerCreature.expCalc(enemyCreature.baseExpYield, enemyCreature.level));
+            yield return (DisplayingDialogue($"{playerCreature.name} gains {exp} exp"));
+            Debug.Log("test e");
+            yield return new WaitForSeconds(textStop);
+
+            Debug.Log("test f");
+
+            playerCreature.UpdateEXP(exp);
+
+            if (numEnemies >= 1)
+            {
                 enemies[enemyIndex].SetActive(false);
                 RandomizeEnemy();
                 SetSkills(ref playerCreature, true);//set player skills after enemy is randomized to the skills target properly
                 combatMenuScript.SetEnemy();
                 SetupEnemy();
+                SetSkills(ref enemyCreature, false);
 
                 yield return (DisplayingDialogue($"Enemy {enemyCreature.name} appears!"));
                 //dialogueBox.text = "Enemy " + enemyCreature.name + " appears!";
@@ -200,108 +267,233 @@ public class BattleMgr : MonoBehaviour
                 numEnemies -= 1;
                 Debug.Log("Enemies remaining: " + numEnemies.ToString());
                 TurnOrder();
+                enemySpared = false;
                 yield return new WaitForSeconds(1f);
             }
             else
             {
+                enemies[enemyIndex].SetActive(false);
+                Debug.Log("test e");
                 yield return null;
                 state = BattleState.Win;
+                enemySpared = false;
                 yield return (BattleWin());
             }
         }
         else
         {
-            Debug.Log("Enemy Turn");
-            yield return (DisplayingDialogue($"Enemy's turn"));
-            //dialogueBox.text = "Enemy's turn";
-
-            yield return new WaitForSeconds(textStop);
-
-            int enemyAction = 0;
-            bool acted = false;
-
-            //checks if enemy can be stunned
-            if (enemyCreature.wasStunned)
+            if (enemyCaptured)
             {
-                enemyCreature.wasStunned = false;
-            }
+                enemyCaptured = false;
 
-            //checks if enemy is stunned
-            if (enemyCreature.isStunned)
-            {
-                acted = true;
-                enemyCreature.isStunned = false;
-                enemyCreature.wasStunned = true;
-
-                yield return (DisplayingDialogue($"Enemy {enemyCreature.name} is stunned..."));
-                //dialogueBox.text = enemyCreature.name + " is stunned...";
-            }
-
-            bool temp = false;
-            if (intelegentEnemy) 
-            {
-                for (int i = 0; i < skillButtons.Length; i++)
+                if (numEnemies > 0)
                 {
-                    if ((enemyCreature.activeSkills[i].damageType == playerCreature.weakness) && (enemyCreature.activeSkills[i].power >= enemyCreature.activeSkills[enemyAction].power) && (enemyCreature.activeSkills[i].cost <= enemyCreature.energy))
-                    {
-                        enemyAction = i;
-                        temp = true;
-                    }
+                    enemies[enemyIndex].SetActive(false);
+                    RandomizeEnemy();
+                    SetSkills(ref playerCreature, true);//set player skills after enemy is randomized to the skills target properly
+                    combatMenuScript.SetEnemy();
+                    SetupEnemy();
+                    SetSkills(ref enemyCreature, false);
+
+                    yield return (DisplayingDialogue($"Enemy {enemyCreature.name} appears!"));
+                    yield return new WaitForSeconds(textStop);
+
+                    numEnemies -= 1;
+                    Debug.Log("Enemies remaining: " + numEnemies.ToString());
+                    TurnOrder();
+                    yield return new WaitForSeconds(1f);
                 }
-                if (temp)
+                else
                 {
-                    acted = combatMenuScript.UseSkill(enemyCreature.activeSkills[enemyAction]);
+                    enemies[enemyIndex].SetActive(false);
+                    yield return null;
+                    state = BattleState.Win;
+                    yield return (BattleWin());
                 }
-            }
-
-            while (!acted) 
-            {
-                enemyAction = Random.Range(0, skillButtons.Length +2);
-
-                if (enemyCreature.isFrozen && enemyAction == enemyCreature.freezeIndex)
-                {
-                    while (enemyAction == enemyCreature.freezeIndex)
-                    {
-                        enemyAction = Random.Range(0, skillButtons.Length + 2);
-                    }
-                }
-
-                switch (enemyAction)
-                {
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                        acted = combatMenuScript.UseSkill(enemyCreature.activeSkills[enemyAction]);
-                        break;
-                    default:
-                        combatMenuScript.EnemyAttack();
-                        acted = true;
-                        break;
-                }
-            }
-
-            //checks if player was defeted
-            if (playerCreature.health <= 0)
-            {
-                yield return new WaitForSeconds(1f);
-                state = BattleState.Lose;
-                yield return (BattleLoss());
             }
             else
             {
-                yield return new WaitForSeconds(1f);
-                state = BattleState.PlayerTurn;
-                yield return (PlayerTurn());
+                if ((enemyCreature.health / enemyCreature.MaxHealth) < 0f)
+                {
+                    SetToSpare(ref combatMenuScript.fleeButton);
+                }
+                else
+                {
+                    SetToFlee(ref combatMenuScript.fleeButton);
+                }
+
+                //checks if enemy was defeted
+                if (enemyCreature.health <= 0)
+                {
+                    yield return (DisplayingDialogue($"Enemy {enemyCreature.name} was defeated"));
+                    yield return new WaitForSeconds(textStop);
+                    /*if (playerCreature.UpdateEXP(-(playerCreature.expCalc(enemyCreature.baseExpYield, enemyCreature.level))))
+                    {
+                        Skill temp = playerCreature.GetPotentialSkill();
+                        if (temp.name != "")
+                        {
+                            skillMgr.CheckSkills(playerCreature, temp);
+                        }
+                    }*/
+                    int exp = (playerCreature.expCalc(enemyCreature.baseExpYield, enemyCreature.level));
+                    yield return (DisplayingDialogue($"{playerCreature.name} gains {exp} exp"));
+                    //Debug.Log("After exp gain");
+                    yield return new WaitForSeconds(textStop);
+                    //Debug.Log("After first wait");
+                    yield return null;
+                    //Debug.Log("After second wait");
+
+                    if (playerCreature.UpdateEXP(-exp))
+                    {
+                        //playerCreature.LearnSkill();
+                    }
+                    Debug.Log("After exp");
+
+                    if (numEnemies > 1)
+                    {
+                        enemies[enemyIndex].SetActive(false);
+                        RandomizeEnemy();
+                        SetSkills(ref playerCreature, true);//set player skills after enemy is randomized to the skills target properly
+                        combatMenuScript.SetEnemy();
+                        SetupEnemy();
+
+                        yield return (DisplayingDialogue($"Enemy {enemyCreature.name} appears!"));
+                        //dialogueBox.text = "Enemy " + enemyCreature.name + " appears!";
+                        yield return new WaitForSeconds(textStop);
+
+                        numEnemies -= 1;
+                        Debug.Log("Enemies remaining: " + numEnemies.ToString());
+                        TurnOrder();
+                        yield return new WaitForSeconds(1f);
+                    }
+                    else
+                    {
+                        enemies[enemyIndex].SetActive(false);
+                        yield return null;
+                        Debug.Log("before battleWin");
+                        state = BattleState.Win;
+                        yield return (BattleWin());
+                    }
+                }
+                else
+                {
+                    Debug.Log("Enemy Turn");
+                    yield return (DisplayingDialogue($"Enemy's turn"));
+                    //dialogueBox.text = "Enemy's turn";
+
+                    yield return new WaitForSeconds(textStop);
+
+                    int enemyAction = 0;
+                    bool acted = false;
+
+                    //checks if enemy can be stunned
+                    if (enemyCreature.wasStunned)
+                    {
+                        enemyCreature.wasStunned = false;
+                    }
+
+                    //checks if enemy is stunned
+                    if (enemyCreature.isStunned)
+                    {
+                        acted = true;
+                        enemyCreature.isStunned = false;
+                        enemyCreature.wasStunned = true;
+
+                        yield return (DisplayingDialogue($"Enemy {enemyCreature.name} is stunned..."));
+                        //dialogueBox.text = enemyCreature.name + " is stunned...";
+                    }
+
+                    bool temp = false;
+                    if (intelegentEnemy)
+                    {
+                        for (int i = 0; i < skillButtons.Length; i++)
+                        {
+                            if ((enemyCreature.activeSkills[i].damageType == playerCreature.weakness) && (enemyCreature.activeSkills[i].power >= enemyCreature.activeSkills[enemyAction].power) && (enemyCreature.activeSkills[i].cost <= enemyCreature.energy))
+                            {
+                                enemyAction = i;
+                                temp = true;
+                            }
+                        }
+                        if (temp)
+                        {
+                            acted = combatMenuScript.UseSkill(enemyCreature.activeSkills[enemyAction]);
+                        }
+                    }
+
+                    while (!acted)
+                    {
+                        enemyAction = Random.Range(0, skillButtons.Length + 2);
+
+                        if (enemyCreature.isFrozen && enemyAction == enemyCreature.freezeIndex)
+                        {
+                            while (enemyAction == enemyCreature.freezeIndex)
+                            {
+                                enemyAction = Random.Range(0, skillButtons.Length + 2);
+                            }
+                        }
+
+                        Debug.Log("Enemy Action" + enemyAction.ToString());
+                        if (enemyAction >= enemyCreature.activeSkills.Count && enemyAction < skillButtons.Length)
+                        {
+                            enemyAction = 4;
+                        }
+
+                        switch (enemyAction)
+                        {
+                            case 0:
+                            case 1:
+                            case 2:
+                            case 3:
+                                acted = combatMenuScript.UseSkill(enemyCreature.activeSkills[enemyAction]);
+                                break;
+                            default:
+                                combatMenuScript.EnemyAttack();
+                                acted = true;
+                                break;
+                        }
+                    }
+
+                    //checks if player was defeted
+                    Debug.Log($"{playerCreature.health}");
+                    if (playerCreature.health <= 0)
+                    {
+                        numPlayerShades--;
+                        if (numPlayerShades <= 0)
+                        {
+                            playerShades[playerIndex].SetActive(false);
+                            yield return new WaitForSeconds(1f);
+                            state = BattleState.Lose;
+                            yield return (BattleLoss());
+                        }
+                        else
+                        {
+                            yield return (DisplayingDialogue($"{playerCreature.name} was defeated"));
+                            partyMenu.SetActive(true);
+                            combatMenuScript.OpenPartyMenu();
+                        }
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(1f);
+                        state = BattleState.PlayerTurn;
+                        yield return (PlayerTurn());
+                    }
+                }
             }
         }
+        yield return null;
     }
 
-    IEnumerator BattleWin()
+    public IEnumerator BattleWin()
     {
-        yield return (DisplayingDialogue($"Enemy {enemyCreature.name} was defeated"));
+        Debug.Log("start battleWin");
+        yield return (DisplayingDialogue($"You've won the Battle!"));
         //dialogueBox.text = "Enemy " + enemyCreature.name + " was defeated";
         yield return new WaitForSeconds(3f);
+        PlayerPrefs.SetInt("playerShadeIndex", playerIndex);
+        Debug.Log("before save");
+        //SavePartyData(party);
+        Debug.Log("after save");
         EndBattle();
     }
 
@@ -310,6 +502,7 @@ public class BattleMgr : MonoBehaviour
         yield return (DisplayingDialogue($"You were defeated"));
         //dialogueBox.text = "You were defeated";
         yield return new WaitForSeconds(3f);
+        //SavePartyData(party);
         EndBattle();
     }
 
@@ -359,15 +552,16 @@ public class BattleMgr : MonoBehaviour
     {
         do
         {
-            Debug.Log("enemies.Length: " + (enemies.Length).ToString());
-            enemyIndex = Random.Range(0, enemies.Length);
+            Debug.Log("enemies.Length: " + (enemies.Count).ToString());
+            enemyIndex = Random.Range(0, enemies.Count);
         }
         while (enemyIndex == previousEnemy);
         previousEnemy = enemyIndex;
         Debug.Log("Enemy index: " + enemyIndex.ToString());
         SetShade(ref enemy, enemies, enemyIndex, ref enemyCreature);
 
-        enemyCreature.level += (Random.Range(0, enemyLevelRange + 1));
+        enemyCreature.level = (Random.Range(enemyLevelMin, enemyLevelMax + 1));
+        //enemyCreature.level = 10;
 
         SetSkills(ref enemyCreature, false);
     }
@@ -384,13 +578,13 @@ public class BattleMgr : MonoBehaviour
             Debug.Log("Enemy index: " + enemyIndex.ToString());
             SetShade(ref enemy, enemies, enemyIndex, ref enemyCreature);
 
-            enemyCreature.level += (Random.Range(0, enemyLevelRange + 1));
-
+            enemyCreature.level = (Random.Range(enemyLevelMin, enemyLevelMax + 1));
+            //enemyCreature.level = 10;
             SetSkills(ref enemyCreature, false);
         }
     }
 
-    public void SetShade(ref GameObject shadeLocation, GameObject[]shades, int shadeIndex, ref Shade activeShade)
+    public void SetShade(ref GameObject shadeLocation, List<GameObject>shades, int shadeIndex, ref Shade activeShade)
     {   
         shadeLocation = shades[shadeIndex];
         shades[shadeIndex].SetActive(true);
@@ -401,7 +595,8 @@ public class BattleMgr : MonoBehaviour
     {
         for (int i = 0; i < skillButtons.Length; i++)
         {
-            SetupSkill(ref activeShade.activeSkills[i], isPlayer, activeShade);
+            Skill temp = activeShade.activeSkills[i];
+            SetupSkill(ref temp, isPlayer, activeShade);
             if (isPlayer)
             {
                 SetupSkillButton(ref skillButtons[i], i, activeShade);
@@ -417,7 +612,7 @@ public class BattleMgr : MonoBehaviour
         {
             skillButton.interactable = false;
         }
-        else
+        else//
         {
             skillButton.interactable = true;
             skillButton.onClick.RemoveAllListeners();
@@ -428,6 +623,27 @@ public class BattleMgr : MonoBehaviour
             skillButton.onClick.AddListener(delegate { combatMenuScript.descriptionObject.SetActive(false); });
         }
     }
+
+    public void SetToSpare(ref Button button)
+    {
+        sparePossible = true;
+        button.GetComponentInChildren<TextMeshProUGUI>().text = "Spare";
+        Color c = new Color(0.8823529f, 0.8823529f, 0.1960784f);
+        button.GetComponentInChildren<TextMeshProUGUI>().color = c;
+        //button.onClick.RemoveAllListeners();
+        //button.onClick.AddListener(delegate { combatMenuScript.SpareEnemy(); });
+    }
+
+    public void SetToFlee(ref Button button)
+    {
+        sparePossible = false;
+        button.GetComponentInChildren<TextMeshProUGUI>().text = "Flee";
+        Color c = new Color(0.1960784f, 0.1960784f, 0.1960784f);
+        button.GetComponentInChildren<TextMeshProUGUI>().color = c;
+        //button.onClick.RemoveAllListeners();
+        //button.onClick.AddListener(delegate { combatMenuScript.Flee(); });
+    }
+
 // figure out how to setup targeting for skills
     public void SetupSkill(ref Skill skill, bool isPlayer, Shade user)
     {
@@ -482,7 +698,86 @@ public class BattleMgr : MonoBehaviour
         enemyHUD.SetActive(true);
         enemyCreature.UpdateHealth(0);
         enemyCreature.UpdateEnergy(0);
+        enemyCreature.SetupSkills();
+        enemyCreature.SetupInitialEXP();
     }
+
+    /*
+    public void SavePartyData(Shade[] playerParty)
+    {
+        for (int i = 0; i < playerShades.Count; i++)
+        {
+            playerParty[i] = playerShades[i].GetComponent<Shade>();
+        }
+
+        PartySaveMgr.SaveParty(playerParty);
+    }
+
+    public void LoadPartyData(Shade[] playerParty, List<GameObject> partyShades)
+    {
+        PartyData partyData = PartySaveMgr.LoadParty();
+
+        for (int i = 0; i < partyData.level.Length; i++)
+        {
+            playerParty[i].name = partyData.name[i];
+            playerParty[i].level = partyData.level[i];
+
+            playerParty[i].baseMaxHealth = partyData.baseMaxHealth[i];
+            playerParty[i].baseMaxEnergy = partyData.baseMaxEnergy[i];
+            playerParty[i].baseAttack = partyData.baseAttack[i];
+            playerParty[i].baseDefense = partyData.baseDefense[i];
+            playerParty[i].baseSpeed = partyData.baseSpeed[i];
+            playerParty[i].index = partyData.spriteIndex[i];
+            playerParty[i].exp = partyData.exp[i];
+            playerParty[i].lightLevels = partyData.lightLevels[i];
+            playerParty[i].darkLevels = partyData.darkLevels[i];
+            playerParty[i].levelExp = partyData.levelExp[i];
+            playerParty[i].totalExp = partyData.totalExp[i];
+            playerParty[i].requiredEXP = partyData.requiredEXP[i];
+            playerParty[i].baseRequiredExp = partyData.baseRequiredExp[i];
+            playerParty[i].weakness = ((DamageType)partyData.weakness[i]);
+
+            for (int j = 0; j < partyData.skillNames[i].Length; j++)
+            {
+                playerParty[i].activeSkills[j].name = partyData.skillNames[i][j];
+                playerParty[i].activeSkills[j].power = partyData.skillPowers[i][j];
+                playerParty[i].activeSkills[j].cost = partyData.skillCosts[i][j];
+                playerParty[i].activeSkills[j].damageType = ((DamageType)partyData.skillDamageTypes[i][j]);
+                playerParty[i].activeSkills[j].isTargetSelf = partyData.skillIsTargetSelf[i][j];
+                playerParty[i].activeSkills[j].effectTargetSelf = partyData.skillEffectTargetSelf[i][j];
+                playerParty[i].activeSkills[j].effect = ((Effect)partyData.skillEffects[i][j]);
+                playerParty[i].activeSkills[j].animationType = ((AnimationType)partyData.skillAnimationTypes[i][j]);
+                playerParty[i].activeSkills[j].description = partyData.skillDescriptions[i][j];                
+            }
+        }
+
+        for (int i = 0; i < party.Length; i++)
+        {
+            partyShades[i] = shades[playerParty[i].index];
+
+            partyShades[i].GetComponent<Shade>().name = playerParty[i].name;
+            partyShades[i].GetComponent<Shade>().level = playerParty[i].level;
+            partyShades[i].GetComponent<Shade>().baseMaxHealth = playerParty[i].baseMaxHealth;
+            partyShades[i].GetComponent<Shade>().baseMaxEnergy = playerParty[i].baseMaxEnergy;
+            partyShades[i].GetComponent<Shade>().baseAttack = playerParty[i].baseAttack;
+            partyShades[i].GetComponent<Shade>().baseDefense = playerParty[i].baseDefense;
+            partyShades[i].GetComponent<Shade>().baseSpeed = playerParty[i].baseSpeed;
+            partyShades[i].GetComponent<Shade>().index = playerParty[i].index;
+            partyShades[i].GetComponent<Shade>().exp = playerParty[i].exp;
+            partyShades[i].GetComponent<Shade>().lightLevels = playerParty[i].lightLevels;
+            partyShades[i].GetComponent<Shade>().darkLevels = playerParty[i].darkLevels;
+            partyShades[i].GetComponent<Shade>().levelExp = playerParty[i].levelExp;
+            partyShades[i].GetComponent<Shade>().totalExp = playerParty[i].totalExp;
+            partyShades[i].GetComponent<Shade>().requiredEXP = playerParty[i].requiredEXP;
+            partyShades[i].GetComponent<Shade>().baseRequiredExp = playerParty[i].baseRequiredExp;
+            partyShades[i].GetComponent<Shade>().weakness = playerParty[i].weakness;
+            for (int j = 0; j < playerParty[i].activeSkills.Count; j++)
+            {
+                partyShades[i].GetComponent<Shade>().activeSkills.Add(playerParty[i].activeSkills[j]);
+            }
+        }
+    }
+    */
 
     public void OpenCombatMenu()
     {
@@ -514,15 +809,15 @@ public class BattleMgr : MonoBehaviour
     }
 
     public IEnumerator DisplayingDialogue(string text)
-    {
+    {        
+        dialogueBox.text = text;
         yield return new WaitForSeconds(1f);
-        dialogueBox.text = "";
-        
-        foreach (var letter in text.ToCharArray())
+
+        /*foreach (var letter in text.ToCharArray())
         {
             dialogueBox.text += letter;
 
             yield return new WaitForSeconds(1f / battleTextSpeed);
-        }
+        }*/
     }
 }

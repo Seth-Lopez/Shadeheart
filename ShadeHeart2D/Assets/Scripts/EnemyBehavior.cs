@@ -32,6 +32,10 @@ public class EnemyBehavior : MonoBehaviour
     public int battleLocation = 0;
     public SceneLoader loader;
 
+    private void Awake()
+    {
+        loader = GameObject.FindAnyObjectByType<SceneLoader>();
+    }
     private void Start()
     {
         //Set RigidBody:
@@ -124,6 +128,7 @@ public class EnemyBehavior : MonoBehaviour
             string sceneLoadedFrom = SceneManager.GetActiveScene().name;
             PlayerPrefs.SetString("sceneLoadedFrom", sceneLoadedFrom);
             loader.LoadBattle("Battle");
+            this.gameObject.SetActive(false);
             //SceneManager.LoadScene("Battle");
         }
     }

@@ -22,7 +22,6 @@ public class Title : MonoBehaviour
 
     public GameObject[] TitleBackgrounds;
     int backgroundIndex = 0;
-    int timer = 0;
 
     public void Start()
     {

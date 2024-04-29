@@ -6,7 +6,7 @@ public enum AnimationType { None, Slash, Electric, Electric2, Electric3, Icicle,
 
 public class Skill : MonoBehaviour
 {
-    public string name;
+    new public string name;
     public float power;
     public int cost;
     public DamageType damageType;
@@ -16,4 +16,6 @@ public class Skill : MonoBehaviour
     public AnimationType animationType;
     [TextArea]
     public string description;
+
+
 }
