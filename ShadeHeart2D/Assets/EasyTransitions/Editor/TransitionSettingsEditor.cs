@@ -1,4 +1,5 @@
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 
 namespace EasyTransition
@@ -35,3 +36,4 @@ namespace EasyTransition
 
 }
 
+#endif

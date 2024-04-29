@@ -22,7 +22,6 @@ public class NPCMovement : MonoBehaviour
 
     private bool isTalking = false;
     private int debugCounter = 0;
-    private int debugCounter2 = 0;
     int crntAnim = -1;
     //NavMesh:
     UnityEngine.AI.NavMeshAgent agent;
@@ -44,7 +43,6 @@ public class NPCMovement : MonoBehaviour
                 debugCounter = 0;
                 timer = 0;
                 timer2 = 0;
-                debugCounter2 = 1;
             }
             if(agent != null)
             {
