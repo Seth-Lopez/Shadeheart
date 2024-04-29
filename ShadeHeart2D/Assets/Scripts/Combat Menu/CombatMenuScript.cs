@@ -352,6 +352,7 @@ public class CombatMenu : MonoBehaviour
         if (defendingCreature.isBurned && damageType == DamageType.Fire)
         {
             damage += damage / 4;
+            defendingCreature.isBurned = false;
         }
         if (defendingCreature.weakness == damageType)
         {

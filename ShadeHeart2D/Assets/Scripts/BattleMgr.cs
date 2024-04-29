@@ -35,7 +35,8 @@ public class BattleMgr : MonoBehaviour
     [SerializeField] int maxEnemies = 2;
     int previousEnemy = -1;
 
-    [SerializeField] int enemyLevelRange = 2;
+    [SerializeField] int enemyLevelMin = 6;
+    [SerializeField] int enemyLevelMax = 10;
 
     public int battleTextSpeed;
     public float textStop;
@@ -555,8 +556,8 @@ public class BattleMgr : MonoBehaviour
         Debug.Log("Enemy index: " + enemyIndex.ToString());
         SetShade(ref enemy, enemies, enemyIndex, ref enemyCreature);
 
-        //enemyCreature.level += (Random.Range(0, enemyLevelRange + 1));
-        enemyCreature.level = 10;
+        enemyCreature.level = (Random.Range(enemyLevelMin, enemyLevelMax + 1));
+        //enemyCreature.level = 10;
 
         SetSkills(ref enemyCreature, false);
     }
@@ -573,8 +574,8 @@ public class BattleMgr : MonoBehaviour
             Debug.Log("Enemy index: " + enemyIndex.ToString());
             SetShade(ref enemy, enemies, enemyIndex, ref enemyCreature);
 
-            //enemyCreature.level += (Random.Range(0, enemyLevelRange + 1));
-            enemyCreature.level = 10;
+            enemyCreature.level = (Random.Range(enemyLevelMin, enemyLevelMax + 1));
+            //enemyCreature.level = 10;
             SetSkills(ref enemyCreature, false);
         }
     }
