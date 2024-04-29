@@ -6,7 +6,8 @@ public class QuestMngrV2 : MonoBehaviour
 {
     private string filePath = Path.Combine(Application.streamingAssetsPath, "Managers/GameState.txt");
     private List<Quest> quests = new List<Quest>();
-
+    [SerializeField] private GameObject queObj;
+    private int spawnOne = 0;
     public class Quest
     {
         public string title;
@@ -22,6 +23,17 @@ public class QuestMngrV2 : MonoBehaviour
     {
         setQuests();
         addNewQuest();
+    }
+    void Update() 
+    {
+        foreach(Quest que in quests)
+        {
+            if(que.isActive && spawnOne == 0)
+            {
+                spawnOne += 1;
+                Instantiate(queObj);
+            }
+        }
     }
 
     // Reads from file and then sets the List<Quest> quests variable 
