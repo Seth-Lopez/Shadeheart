@@ -1,70 +1,52 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using System.Data.Common;
-using System.Globalization;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading;
-using TMPro;
 using UnityEngine;
 
 public class NPCStats : MonoBehaviour
 {
     private List<string> dialogueSpoken = new List<string>();
-    private List<(string, List<string>, List<(int, string, bool, string)>, List<(int, string, bool, string)>)> dialogueList = new List<(string, List<string>, List<(int, string, bool, string)>, List<(int, string, bool, string)>)>();
-    private NPCMngr nPC;
+    private List<(string, List<string>, List<(string, bool, bool)>)> dialogueList = new List<(string, List<string>, List<(string, bool, bool)>)>();
+    private List<(string, List<string>, List<(string, bool, bool)>)> questDialogueList = new List<(string, List<string>, List<(string, bool, bool)>)>();
     private List<string> allDialogueOptions = new List<string>(); 
-    private List<(string, bool)> allQuestDialogueOptions = new List<(string, bool)>();
-    private List<(string, bool)> spokenQuestDialogueOptions = new List<(string, bool)>();
-    private List<(string, bool)> resetQuestDialogueOptions = new List<(string, bool)>(); 
+    private List<(string, bool)> allQuestDialogueOptions = new List<(string, bool)>(); 
     private List<string> sortedDialogueOptions = new List<string>();
     private int type = -1;
     private NPCInteraction npcInter;
     private UIMenuMngr UIClass;
+    private QuestMngrV2 queMngr;
     private bool isPauseMenuOpen = false;
     public int numLines = 0;
+    private int runOnce = 0;
+    private bool hasQuest = false;
+    private List<(string, bool)> nextQuestLine = new List<(string, bool)>();
     public List<string> getAllDialogueOptions
     {
         get { return allDialogueOptions; }
     }
-    public List<(string, bool)> getAllQuestDialogueOptions
-    {
-        get { return allQuestDialogueOptions; }
-    }
-    private bool hasQuest = false;
-    private bool hasSelectedNewQuest = false;
-    private int numOfLinesSaid = 0;
 
     private void Start() 
     {
         UIClass = GameObject.FindGameObjectWithTag("UIMngr").GetComponent<UIMenuMngr>();
         npcInter = GetComponent<NPCInteraction>();
+        queMngr = GameObject.FindGameObjectWithTag("QuestMngrV2").GetComponent<QuestMngrV2>();
         instantiateVariables();
         if(type != 0)
         {
-            retreiveDialogueOptions();
-            setAllDialogueOptions();
-            
+            retreiveDialogueOptions(false, 0);
         }
-        checkedHasQuests();
     }
     
     void Update()
     {
-        if(UIClass.getShouldResetQuest())
-        {
-            UIClass.setShouldResetQuest(false);
-            allQuestDialogueOptions = resetQuestDialogueOptions;
-            numOfLinesSaid = 0;
-        }
         if(Input.GetKeyDown(KeyCode.Escape))
             isPauseMenuOpen = !isPauseMenuOpen;
         if(UIClass.getIsMenuOpen())
         {
             npcInter.emptyDialogueText();
             UIClass.openDialogueBox = false;
-            UIClass.setCurrentNPC("");
-            hasSelectedNewQuest = false;
+            UIClass.setCurrentNPC(null);
+            UIClass.isTalking(false);
+            runOnce = 0;
         }
         else
             if (npcInter.getIsPlayerInRange() && Input.GetKeyDown(KeyCode.E) && !UIClass.getIsPauseMenuOpen())
@@ -72,105 +54,63 @@ public class NPCStats : MonoBehaviour
                 if(UIClass != null)
                 {
                     UIClass.openDialogueBox = true;
-                    UIClass.setCurrentNPC(npcInter.getCurrentNPC());
-                    hasSelectedNewQuest = UIClass.getHasSelectedNewQuest();
-                    if(hasSelectedNewQuest)
-                        showNextText();
+                    if(allQuestDialogueOptions != null)
+                    {
+                        foreach((string lines, bool hasOptions) in allQuestDialogueOptions)
+                        {
+                            if (lines == "" || lines == null)
+                            {
+                                hasQuest = false;
+                            }
+                            else
+                            {
+                                hasQuest = true;
+                            }
+                        }
+                    } else {hasQuest = false;}
+                    if(!hasQuest)
+                    {
+                        List<(string, bool)> parameter = new List<(string, bool)> { (new List<string> { nextDialogue(allDialogueOptions) }[0], false) };
+                        npcInter.ShowDialogue(parameter);
+                    }
+                    else
+                    {
+                        bool isQuestCompleted = false;
+                        foreach(QuestMngrV2.Quest quest in queMngr.getQuests())
+                        {
+                            if(quest.npcID == this.gameObject.name)
+                            {
+                                    isQuestCompleted = quest.isCompleted;
+                            }
+                        }
+                        if(!isQuestCompleted)
+                        {
+                            (string text, bool option) = allQuestDialogueOptions[0];
+                            List<(string, bool)> parameter = new List<(string, bool)> {(text, option)};
+                            try
+                            {
+                                (text, option) = allQuestDialogueOptions[1];
+                                nextQuestLine = new List<(string, bool)> {(text, option)};
+                            }
+                            catch{}
+                            npcInter.ShowDialogue(parameter);
+                        }
+                        else if(isQuestCompleted)
+                        {
+                            GameObject.FindAnyObjectByType<DialogueMngr>().writeToQuestFile(this.gameObject, 1); //HERE IS A TERRIBLE THING!
+                            retreiveDialogueOptions(true, 1);
+                            npcInter.ShowDialogue(allQuestDialogueOptions);
+                        }
+                    }
+                    if(runOnce == 0)
+                    {
+                        UIClass.setCurrentNPC(this.gameObject);
+                        UIClass.isTalking(true);
+                    }
                 }
                 else
                     Debug.Log("Dialogue Box Missing");
-                if(hasQuest)
-                {
-                    npcInter.ShowDialogue(nextQuestDialogue(allQuestDialogueOptions));
-                }
-                else
-                {
-                    List<(string, bool)> parameter = new List<(string, bool)> { (new List<string> { nextDialogue(allDialogueOptions) }[0], false) };
-                    npcInter.ShowDialogue(parameter);
-                }
             }
-            else if(npcInter.getIsPlayerInRange() == false && UIClass.getHasSelectedNewQuest() == false && hasQuest)
-            {
-                Debug.Log("HEEEEE");
-                numOfLinesSaid -= 1;
-            }
-    }
-    private List<(string, bool)> nextQuestDialogue(List<(string, bool)> dialogue)
-    {
-        string [] arrLines = new string[dialogue.Count]; 
-        bool [] arrBools = new bool[dialogue.Count]; 
-        if(allDialogueOptions.Count != 0)
-        {
-            int count = 0;
-            foreach ((string line, bool hasOptions) in dialogue)
-            {
-                arrLines[count] = line;
-                arrBools[count] = hasOptions;
-                count++;
-            }
-
-            bool skip = false;
-            count = 0;
-            hasSelectedNewQuest = UIClass.getHasSelectedNewQuest();
-            if(hasSelectedNewQuest)
-                skip = true;
-            if(numOfLinesSaid >= dialogue.Count)
-            {
-                numOfLinesSaid = dialogue.Count-1;
-            }
-            if(numOfLinesSaid < 0)
-                numOfLinesSaid = 0;
-            if(hasSelectedNewQuest || arrBools[numOfLinesSaid])
-            {
-                hasSelectedNewQuest = false;
-                UIClass.setHasSelectedNewQuest(false);
-            }       
-            numOfLinesSaid+=1;
-            if(!skip)
-            {
-                return new List<(string, bool)> { (arrLines[numOfLinesSaid-1], arrBools[numOfLinesSaid-1]) };
-            }
-
-        }
-        else
-        {
-            hasQuest = false;
-            return new List<(string, bool)> { ("", false) };
-        }
-        try
-        {
-            numOfLinesSaid += 1;
-            return new List<(string, bool)> { (arrLines[numOfLinesSaid], arrBools[numOfLinesSaid]) };
-        }
-        catch
-        {
-            return new List<(string, bool)> { (new List<string> { nextDialogue(allDialogueOptions) }[0], false) };
-        }
-    }
-    private void checkedHasQuests()
-    {
-        int count = 0;
-        foreach ((string title, List<string> lines, List<(int, string, bool, string)> preQuestLines, List<(int, string, bool, string)> postQuestLines) in dialogueList)
-        {
-            if(title == this.transform.name)
-            {
-                foreach ((int number, string option, bool hasOptions, string text) line in preQuestLines)
-                {
-                    count++;
-                    allQuestDialogueOptions.Add((line.text, line.hasOptions));
-                }
-                foreach ((int number, string option, bool hasOptions, string text) line in preQuestLines)
-                {
-                    count++;
-                    allQuestDialogueOptions.Add((line.text, line.hasOptions));
-                }
-            }
-        }
-        if(count != 0)
-        {
-            hasQuest = true;
-            resetQuestDialogueOptions = allQuestDialogueOptions;
-        }
     }
     private void instantiateVariables()
     {
@@ -182,13 +122,26 @@ public class NPCStats : MonoBehaviour
         else if(parentName == "NPC - Citizens")
             type = 2;
     }
-    private void retreiveDialogueOptions()
+    public void retreiveDialogueOptions(bool removeLines, int repeat)
     {
         DialogueMngr dMngr = GameObject.Find("DialogueMngr").GetComponent<DialogueMngr>();
         dialogueList = dMngr.getDialogueList();
+        questDialogueList = dMngr.getQuestDialogueList();
         if(dialogueList == null)
         {
             Debug.Log("Dialogue script not found... :/");
+        }
+        if(questDialogueList == null)
+        {
+            Debug.Log("QuestDialogue script not found... :/");
+        }
+        setAllDialogueOptions();
+        for( int i = 0; i < repeat; i++)
+        {
+            if(removeLines)
+            {
+                allQuestDialogueOptions.RemoveAt(0);
+            }
         }
     }
     private void addSpokenDialogue(string line)
@@ -199,7 +152,9 @@ public class NPCStats : MonoBehaviour
     {
         //List<(string, List<string>, List<(int, string, bool, string)>, List<(int, string, bool, string)>)>
         numLines = 0; //reset numLines counter
-        foreach ((string title, List<string> lines, List<(int, string, bool, string)> preQuestLines, List<(int, string, bool, string)> postQuestLines) in dialogueList)
+        allDialogueOptions = new List<string>(); 
+        allQuestDialogueOptions = new List<(string, bool)>(); 
+        foreach ((string title, List<string> lines, List<(string, bool, bool)> trash) in dialogueList)
         {
             if(title == this.transform.name)
             {
@@ -219,7 +174,20 @@ public class NPCStats : MonoBehaviour
                 }
             }
         }
-        // save counter 
+        foreach ((string title, List<string> trash, List<(string, bool, bool)> lines) in questDialogueList)
+        {
+            if(title == this.transform.name)
+            {
+                foreach((string line, bool options, bool hasBeenRead) in lines)
+                {
+                    numLines++;
+                    if(!hasBeenRead)
+                    {
+                        allQuestDialogueOptions.Add((line, options));
+                    }
+                }
+            }
+        }
     }
     private void setSortedDialogueOptions(List<string> dialogue)
     {
@@ -241,7 +209,7 @@ public class NPCStats : MonoBehaviour
         setSortedDialogueOptions(dialogue);
         if (sortedDialogueOptions.Count > 0)
         {
-            int randomIndex = Random.Range(0, sortedDialogueOptions.Count);
+            int randomIndex = UnityEngine.Random.Range(0, sortedDialogueOptions.Count);
             addSpokenDialogue(sortedDialogueOptions[randomIndex]);
             return sortedDialogueOptions[randomIndex];
         }
@@ -250,8 +218,6 @@ public class NPCStats : MonoBehaviour
             return "I already told you all I know.";
         }
     }
-    public void showNextText()
-    {
-        npcInter.ShowDialogue(nextQuestDialogue(allQuestDialogueOptions));
-    }
+    public void resetRunOnce(){ runOnce = 0;}
+    public List<(string, bool)> getNextLine(){return nextQuestLine;}
 }

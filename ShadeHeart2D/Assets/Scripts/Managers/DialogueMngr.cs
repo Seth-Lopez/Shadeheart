@@ -6,113 +6,106 @@ using System.Linq;
 public class DialogueMngr : MonoBehaviour
 {
     // The list that stores the dialogue data:
-    private List<(string, List<string>, List<(int, string, bool, string)>, List<(int, string, bool, string)>)> dialogueList = new List<(string, List<string>, List<(int, string, bool, string)>, List<(int, string, bool, string)>)>();
+    private List<(string, List<string>, List<(string, bool, bool)>)> dialogueList = new List<(string, List<string>, List<(string, bool, bool)>)>();
+    private List<(string, List<string>, List<(string, bool, bool)>)> QuestdialogueList = new List<(string, List<string>, List<(string, bool, bool)>)>();
     private string filePath = Path.Combine(Application.streamingAssetsPath, "Managers/DialogueOptions.txt");
+    private string filePath2 = Path.Combine(Application.streamingAssetsPath, "Managers/QuestDialogueOptions.txt");
     private QuestMngrV2 queMng;
     void Awake()
     {
-        ReadDialogueFromFile(filePath);
-        // Debug Purposes:
-        /*
-        foreach ((string title, List<string> lines) in dialogueList)
-        {
-            Debug.Log("Title: " + title);
-            foreach (string line in lines)
-            {
-                Debug.Log("Line: " + line);
-            }
-        }*/
+        dialogueList = ReadDialogueFromFile(filePath);
+        QuestdialogueList = ReadDialogueFromFile(filePath2);
     }
-    //TEMPORARY -> use this as basis for other script
     void Start()
     {
         queMng = GameObject.FindGameObjectWithTag("QuestMngrV2").GetComponent<QuestMngrV2>();
-       /* AddDialogueToFile
-            (
-                //Title:
-                "newTitle", 
-                //Lines of dialogue seperated by ","
-                new List<string> 
-                    { 
-                        "New line 1", 
-                        "New line 2" 
-                    }
-            );
-        */
     }
-    void ReadDialogueFromFile(string path)
+    
+    public void writeToQuestFile(GameObject npc, int counter = 0)
     {
+        string[] lines = File.ReadAllLines(filePath2);
+        int index = -1;
+        for (int i = 0; i < lines.Length; i++)
+        {
+            if (lines[i].Contains("**" + npc.gameObject.name + "**"))
+            {
+                index = i;
+            }
+        }
+        if (index != -1)
+        {
+            // Modify the next two lines
+            lines[index + 1 + counter] = "1" + lines[index + 1 + counter].Substring(1);
+            lines[index + 2 + counter] = "1" + lines[index + 2 + counter].Substring(1);
+        }
+        else
+        {
+            Debug.LogError("Title not found in file");
+            return;
+        }
+        // Write the modified lines back to the file
+        File.WriteAllLines(filePath2, lines);
+        ReadDialogueFromFile(filePath2);
+    }
+    private List<(string, List<string>, List<(string, bool, bool)>)> ReadDialogueFromFile(string path)
+    {
+        List<(string, List<string>, List<(string, bool, bool)>)> dialogue = new List<(string, List<string>, List<(string, bool, bool)>)>();
         string[] lines = File.ReadAllLines(path);
         string currentTitle = "";
         List<string> nonQuestLines = new List<string>();
-        List<(int number, string option, bool hasOptions, string text)> preQuestLines = new List<(int, string, bool, string)>();
-        List<(int number, string option, bool hasOptions, string text)> postQuestLines = new List<(int, string, bool, string)>();
+        List<(string, bool, bool)> questLines = new List<(string, bool, bool)>();
+        bool hasBeenRead = false;
+        bool hasOptions = false;
+        string text = "";
+        string[] parts;
         foreach (string line in lines)
         {
             // Check if the line starts with "**" indicating a title:
             if (line.StartsWith("**") && line.EndsWith("**"))
             {
-                // If a title is already being processed, add it to the dialogueList:
+                // If a title is already being processed, add it to the dialogue:
                 if (!string.IsNullOrEmpty(currentTitle))
                 {
-                    dialogueList.Add((currentTitle, nonQuestLines, preQuestLines, postQuestLines));
+                    dialogue.Add((currentTitle, nonQuestLines, questLines));
                 }
 
                 // Extract the title from the line:
                 currentTitle = line.Substring(2, line.Length - 4);
                 nonQuestLines = new List<string>();
-                preQuestLines = new List<(int, string, bool, string)>();
-                postQuestLines = new List<(int, string, bool, string)>();
+                questLines = new List<(string, bool, bool)>();
             }
             else
             {
-                // Add the line to the currentLines list:
-                if(!line.StartsWith("?") && !line.StartsWith("!"))
+                if (line.Contains("_0_") || line.Contains("_1_"))
+                {
+                    parts = line.Split('_');
+
+                    hasBeenRead = parts[0] == "1";
+                    hasOptions = parts[1] == "1";
+                    text = parts[2];
+                    questLines.Add((text, hasOptions, hasBeenRead));
+                }
+                else if (line.Contains("_"))
+                {
+                    parts = line.Split('_');
+                    hasBeenRead = parts[0] == "1";
+                    hasOptions = false;
+                    text = parts[1];
+                    questLines.Add((text, hasOptions, hasBeenRead));
+                }
+                else
                 {
                     nonQuestLines.Add(line);
                 }
-                if (line.StartsWith("?"))
-                {
-                    string[] parts = line.Split('_');
-                    int number = int.Parse(parts[0].Substring(1)); // Remove the leading '?'
-                    string option = parts.Length > 2 ? parts[1] : ""; // Check if there's an option
-                    bool hasOptions = parts.Length > 2; // Check if there are options
-                    string text = string.Join("_", parts.Skip(hasOptions ? 2 : 1)); // Join the remaining parts to get the text
-                    preQuestLines.Add((number, option, hasOptions, text));
-                }
-                if (line.StartsWith("!"))
-                {
-                    string[] parts = line.Split('_');
-                    int number = int.Parse(parts[0].Substring(1)); // Remove the leading '!'
-                    string text = string.Join("_", parts.Skip(1)); // Join the remaining parts to get the text
-                    postQuestLines.Add((number, "", false, text)); // Use 0 for number, "" for option, and false for hasOptions
-                }
-
             }
         }
-        // Add the last set of dialogue (if any) to the dialogueList:
+        // Add the last set of dialogue (if any) to the dialogue:
         if (!string.IsNullOrEmpty(currentTitle))
         {
-            dialogueList.Add((currentTitle, nonQuestLines, preQuestLines, postQuestLines));
+            dialogue.Add((currentTitle, nonQuestLines, questLines));
         }
+        return dialogue;
     }
-/* 
-    void AddDialogueToFile(string title, List<string> lines)
-    {
-        string existingContent = File.ReadAllText(filePath);
-        // Add title with format **title**
-        string newDialogue = $"\n**{title}**";
-        foreach (string line in lines)
-        {
-            newDialogue += $"\n{line}";
-        }
-        // Append new lines
-        string updatedContent = existingContent + newDialogue;
-        // Add to variable
-        dialogueList.Add((title, lines));
-        // Write to file
-        File.WriteAllText(filePath, updatedContent);
-    }
-*/ 
-    public List<(string, List<string>, List<(int, string, bool, string)>, List<(int, string, bool, string)>)> getDialogueList(){return dialogueList;}
+    public List<(string, List<string>, List<(string, bool, bool)>)> getDialogueList(){return dialogueList;}
+    public List<(string, List<string>, List<(string, bool, bool)>)> getQuestDialogueList(){return QuestdialogueList;}
 }

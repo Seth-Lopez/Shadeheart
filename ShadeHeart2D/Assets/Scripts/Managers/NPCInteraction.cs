@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -9,7 +8,6 @@ public class NPCInteraction : MonoBehaviour
     private UIMenuMngr UIClass;
     private bool isPlayerInRange = false;
     private bool isTextBoxSet = false;
-    private string currentNPC = "";
     private void Start() 
     {
         UIClass = GameObject.FindGameObjectWithTag("UIMngr").GetComponent<UIMenuMngr>();
@@ -38,7 +36,6 @@ public class NPCInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
-            currentNPC = this.transform.name;
         }
     }
 
@@ -48,7 +45,11 @@ public class NPCInteraction : MonoBehaviour
         {
             isPlayerInRange = false;
             dialogueText.text = "";
-            currentNPC = "";
+            UIClass.isTalking(false);
+            GameObject npc = UIClass.getCurrentNPC();
+            if(npc != null)
+                npc.GetComponent<NPCStats>().resetRunOnce();
+            UIClass.setCurrentNPC(null);
         }
         UIClass.openDialogueBox = false;
     }
@@ -58,23 +59,20 @@ public class NPCInteraction : MonoBehaviour
         foreach ((string line, bool hasOptions) in dialogue)
         {
             if(hasOptions)
-                UIClass.setHasOptions(true);
+                UIClass.hasDialogueOptions = true; 
             else
-                UIClass.setHasOptions(false);
+                UIClass.hasDialogueOptions = false;
             if(UIClass.openDialogueBox == false)
             {   
                 UIClass.openDialogueBox = true;
             }
-            dialogueText.text = line;
+            //dialogueText.text = line;
+            UIClass.setDialogueText(line);
         }
     }
     public bool getIsPlayerInRange()
     {
         return isPlayerInRange;
-    }
-    public string getCurrentNPC()
-    {
-        return currentNPC;
     }
     public void emptyDialogueText()
     {

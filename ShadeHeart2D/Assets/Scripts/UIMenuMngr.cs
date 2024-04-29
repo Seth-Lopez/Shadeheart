@@ -3,8 +3,9 @@ using UnityEngine;
 using Cinemachine;
 using TMPro;
 using UnityEngine.UI;
-using Unity.Plastic.Antlr3.Runtime;
-using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System;
+
 
 public class UIMenuMngr : MonoBehaviour
 {
@@ -32,11 +33,9 @@ public class UIMenuMngr : MonoBehaviour
     [SerializeField] private bool isMenuOpen = false;
     [SerializeField] private bool isPauseMenuOpen = false;
     [SerializeField] private QuestMngrV2 questMngrV2;
-    private bool hasOptions = false;
-    private string currentNPC = "";
-    private GameObject buttonsCanv;
-    private bool hasSelectedNewQuest = false;
-    private bool shouldReset = false;
+    [SerializeField] private NPCMovement [] npcMov;
+    [SerializeField] private GameObject currentNPC;
+    public bool hasDialogueOptions = false;
     void Start()
     {
         setUp();
@@ -67,6 +66,10 @@ public class UIMenuMngr : MonoBehaviour
     void Update()
     {
         cameraMngr();
+        checkForPauseMenu();
+    }
+    private void checkForPauseMenu()
+    {
         if(!isPauseMenuOpen)
         {
             if (Input.GetKeyDown(KeyCode.Tab))
@@ -84,7 +87,6 @@ public class UIMenuMngr : MonoBehaviour
             closeMenu(currentMenuOpen);
             isPauseMenuOpen = !isPauseMenuOpen;
         }
-
     }
     private void cameraMngr()
     {
@@ -97,15 +99,6 @@ public class UIMenuMngr : MonoBehaviour
             offset.m_Offset = new Vector2(0f, movementTimer);
             closeMenu(currentMenuOpen);
             dialogueBox.transform.Find("Canvas").gameObject.SetActive(true);
-            buttonsCanv.SetActive(true);
-            if(hasOptions)
-            {
-                buttonsCanv.SetActive(true);
-            }
-            else
-            {
-                buttonsCanv.SetActive(false);
-            }
         }
         else
         {
@@ -113,7 +106,7 @@ public class UIMenuMngr : MonoBehaviour
             movementTimer = Mathf.Clamp(movementTimer, -0.7f, 0f);
             offset.m_Offset = new Vector2(0f, movementTimer);
             dialogueBox.transform.Find("Canvas").gameObject.SetActive(false);
-            buttonsCanv.SetActive(false);
+            dialogueBox.transform.Find("CanvasOptions").gameObject.SetActive(false);
         }
     }
 
@@ -124,6 +117,7 @@ public class UIMenuMngr : MonoBehaviour
         GameObject[] menus = GameObject.FindGameObjectsWithTag("Menus");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         questMngrV2 = FindObjectOfType<QuestMngrV2>().GetComponent<QuestMngrV2>();
+        npcMov = FindObjectsOfType<NPCMovement>();
         currentMenuOpen = cam;
         foreach (GameObject menu in menus)
         {
@@ -144,8 +138,7 @@ public class UIMenuMngr : MonoBehaviour
             if(menu.name == "DialogueBox")
             {
                 dialogueBox = menu;
-                buttonsCanv = dialogueBox.transform.Find("CanvasOptions").gameObject;
-                buttonsCanv.SetActive(true);
+                dialogueBox.transform.Find("CanvasOptions").gameObject.SetActive(false);
             }
                 
         }
@@ -223,43 +216,57 @@ public class UIMenuMngr : MonoBehaviour
             }
         }
     }
-    
     public TextMeshProUGUI getDialogueText()
     {
-        return dialogueBox.gameObject.GetComponentInChildren<TextMeshProUGUI>();
-    }
-    public void setHasOptions(bool value)
-    {
-        hasOptions = value;
-    }
-    public void setCurrentNPC(string value)
-    {
-        currentNPC = value;
-    }
-    public void setHasSelectedNewQuest(bool value)
-    {   
-        hasSelectedNewQuest = value;
-    }
-    public bool getHasSelectedNewQuest()
-    {   
-        return hasSelectedNewQuest;
+        return dialogueBox.transform.Find("Canvas").gameObject.GetComponentInChildren<TextMeshProUGUI>();
     }
     public void setDialogueText(string value)
     {
         TextMeshProUGUI text = getDialogueText();
-        text.text = value;
+        if(value == "" || hasDialogueOptions == false)
+        {
+            hasDialogueOptions = false;
+            dialogueBox.transform.Find("CanvasOptions").gameObject.SetActive(false);
+            text.text = value;
+        }
+        else if(hasDialogueOptions)
+        {
+            GameObject optCanv = dialogueBox.transform.Find("CanvasOptions").gameObject;
+            optCanv.SetActive(true);
+            text.text = value; 
+            //currentNPC.GetComponent<NPCStats>().getNextLine()[0];
+        }
     }
-    public void setShouldResetQuest(bool value)
-    {   
-        shouldReset = value;
+    public void setCurrentNPC(GameObject value){currentNPC = value;}
+    public GameObject getCurrentNPC(){return currentNPC;}
+    public void isTalking(bool value)
+    {
+        if(currentNPC != null)
+        {
+            foreach (NPCMovement npc in npcMov)
+            {
+                if(npc.gameObject.name == currentNPC.name)
+                {
+                    npc.setIsTalking(value);
+                }
+            }
+        }
     }
-    public bool getShouldResetQuest()
-    {   
-        return shouldReset;
-    }
-    public void closeButtons()
-    {   
-        hasOptions = false;
-        buttonsCanv.SetActive(false);
+    public void getNextLine(bool yesNo)
+    {
+        string line;
+        (line, hasDialogueOptions) = currentNPC.GetComponent<NPCStats>().getNextLine()[0];
+        if(yesNo)
+        {
+            setDialogueText(line.Split(new string[] { "^#" }, StringSplitOptions.RemoveEmptyEntries)[0]);
+            GameObject.FindAnyObjectByType<DialogueMngr>().writeToQuestFile(currentNPC, 0);
+            currentNPC.GetComponent<NPCStats>().retreiveDialogueOptions(true, 2);
+            questMngrV2.setQuestsActiveComplete(currentNPC.name, true, false);
+        }
+        else
+        {
+            setDialogueText(line.Split(new string[] { "^#" }, StringSplitOptions.RemoveEmptyEntries)[1]);
+        }
+
     }
 }

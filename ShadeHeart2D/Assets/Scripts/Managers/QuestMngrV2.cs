@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 public class QuestMngrV2 : MonoBehaviour
 {
-    private string filePath = Path.Combine(Application.dataPath, "Scripts/Managers/GameState.txt");
-    //private string filePath = Path.Combine(Application.streamingAssetsPath, "Scripts/Managers/GameState.txt");
+    private string filePath = Path.Combine(Application.streamingAssetsPath, "Managers/GameState.txt");
     private List<Quest> quests = new List<Quest>();
 
     public class Quest
@@ -198,4 +197,24 @@ public class QuestMngrV2 : MonoBehaviour
     {
         return quests.Select(quest => quest.npcID).ToList();
     }
+    public void setQuestsActiveComplete(string npcName, bool active, bool complete)
+    {
+        foreach (Quest quest in quests)
+        {
+            if (quest.npcID == npcName)
+            {
+                if(quest.isActive && complete)
+                {
+                    quest.isActive = false;
+                    quest.isCompleted = true;
+                }
+                else if(quest.isActive == false && active)
+                {
+                    quest.isActive = true;
+                }
+            }
+        }
+        rewriteToFile();
+    }
+    public List<Quest> getQuests(){return quests;}
 }
