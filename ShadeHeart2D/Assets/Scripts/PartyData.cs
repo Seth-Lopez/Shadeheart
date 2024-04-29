@@ -5,7 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class PartyData
 {
-    public static GameObject[] party;
+    static GameObject temp;
+    public static int partySize;
+    public static GameObject[] party = { temp, temp, temp, temp, temp, temp, temp, temp, temp };
+    public static bool saved = false;
 
     /*
     public string[] name;

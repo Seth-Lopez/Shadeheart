@@ -29,21 +29,22 @@ public class PartyMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        OpenPartyMenu();
+        //Debug.Log("Test3");
+    }
+
+    public void OpenPartyMenu()
+    {
         activeIndex = PlayerPrefs.GetInt("playerShadeIndex");
-        //Debug.Log("Test1");
 
         for (int i = 0; i < partyMenuHUDs.Length; i++)
         {
-            //Debug.Log("Test A-"+i.ToString());
             partyButtons[i].interactable = false;
-            //Debug.Log("inteactable " + i.ToString() + ": " + partyButtons[i].interactable.ToString());
-            //Debug.Log("PartyMenuHUDs Length: " + partyMenuHUDs.Length.ToString());
 
             partyMenuHUDs[i].SetActive(false);
 
             suggested[i].SetActive(false);
         }
-        //Debug.Log("Test2");
 
         for (int i = 0; i < battle.playerShades.Count; i++)
         {
@@ -64,11 +65,6 @@ public class PartyMenu : MonoBehaviour
                 }
             }
         }
-        //Debug.Log("Test3");
-    }
-
-    public void OpenPartyMenu()
-    {
         //sets currently active shade's button to selected
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(party[activeIndex]);

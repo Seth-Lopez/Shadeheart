@@ -2159,8 +2159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Oculink
-  hpBar: {fileID: 1834046085}
-  energyBar: {fileID: 715998073}
+  hpBar: {fileID: 1114623174}
+  energyBar: {fileID: 563342891}
   level: 6
   index: 3
   sprite: {fileID: 0}
@@ -4246,8 +4246,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Stalker
-  hpBar: {fileID: 1834046085}
-  energyBar: {fileID: 715998073}
+  hpBar: {fileID: 1114623174}
+  energyBar: {fileID: 563342891}
   level: 6
   index: 4
   sprite: {fileID: 0}
@@ -4282,25 +4282,25 @@ MonoBehaviour:
   baseRequiredExp: 300
   baseExpYield: 50
   activeSkills:
-  - {fileID: 960357019}
-  - {fileID: 1127147651}
-  - {fileID: 55066803}
-  - {fileID: 1680700303}
+  - {fileID: 273721327}
+  - {fileID: 592778883}
+  - {fileID: 145704811}
+  - {fileID: 608773819}
   lightSkills: []
   darkSkills:
-  - baseSkill: {fileID: 960357019}
+  - baseSkill: {fileID: 273721327}
     level: 1
     learned: 0
     skillPoints: 0
-  - baseSkill: {fileID: 1127147651}
+  - baseSkill: {fileID: 592778883}
     level: 3
     learned: 0
     skillPoints: 0
-  - baseSkill: {fileID: 55066803}
+  - baseSkill: {fileID: 145704811}
     level: 5
     learned: 0
     skillPoints: 0
-  - baseSkill: {fileID: 1680700303}
+  - baseSkill: {fileID: 608773819}
     level: 7
     learned: 0
     skillPoints: 0
@@ -8837,8 +8837,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Doubleye
-  hpBar: {fileID: 1834046085}
-  energyBar: {fileID: 715998073}
+  hpBar: {fileID: 1114623174}
+  energyBar: {fileID: 563342891}
   level: 6
   index: 1
   sprite: {fileID: 0}
@@ -8873,25 +8873,25 @@ MonoBehaviour:
   baseRequiredExp: 300
   baseExpYield: 50
   activeSkills:
-  - {fileID: 960357019}
-  - {fileID: 2024892664}
-  - {fileID: 1680700303}
-  - {fileID: 906190634}
+  - {fileID: 273721327}
+  - {fileID: 576685916}
+  - {fileID: 608773819}
+  - {fileID: 683714688}
   lightSkills: []
   darkSkills:
-  - baseSkill: {fileID: 1680700303}
+  - baseSkill: {fileID: 608773819}
     level: 1
     learned: 0
     skillPoints: 0
-  - baseSkill: {fileID: 960357019}
+  - baseSkill: {fileID: 273721327}
     level: 3
     learned: 0
     skillPoints: 0
-  - baseSkill: {fileID: 2024892664}
+  - baseSkill: {fileID: 576685916}
     level: 5
     learned: 0
     skillPoints: 0
-  - baseSkill: {fileID: 906190634}
+  - baseSkill: {fileID: 683714688}
     level: 7
     learned: 0
     skillPoints: 0
@@ -15817,7 +15817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Item
+  m_text: Capture
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19388,8 +19388,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 374489475}
-        m_TargetAssemblyTypeName: CombatMenu, Assembly-CSharp
-        m_MethodName: UseItem
+        m_TargetAssemblyTypeName: CombatMenu, GameAssembly
+        m_MethodName: CaptureEnemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22117,8 +22117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Eycelime
-  hpBar: {fileID: 1834046085}
-  energyBar: {fileID: 715998073}
+  hpBar: {fileID: 1114623174}
+  energyBar: {fileID: 563342891}
   level: 6
   index: 2
   sprite: {fileID: 0}
@@ -22153,25 +22153,25 @@ MonoBehaviour:
   baseRequiredExp: 300
   baseExpYield: 50
   activeSkills:
-  - {fileID: 906190634}
-  - {fileID: 2024892664}
-  - {fileID: 722043254}
-  - {fileID: 1127147651}
+  - {fileID: 683714688}
+  - {fileID: 576685916}
+  - {fileID: 1041862502}
+  - {fileID: 592778883}
   lightSkills: []
   darkSkills:
-  - baseSkill: {fileID: 906190634}
+  - baseSkill: {fileID: 683714688}
     level: 1
     learned: 0
     skillPoints: 0
-  - baseSkill: {fileID: 2024892664}
+  - baseSkill: {fileID: 576685916}
     level: 3
     learned: 0
     skillPoints: 0
-  - baseSkill: {fileID: 722043254}
+  - baseSkill: {fileID: 1041862502}
     level: 5
     learned: 0
     skillPoints: 0
-  - baseSkill: {fileID: 1127147651}
+  - baseSkill: {fileID: 592778883}
     level: 7
     learned: 0
     skillPoints: 0

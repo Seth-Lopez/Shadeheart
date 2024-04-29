@@ -8,8 +8,9 @@ using System.IO;
 
 public class PartyMenuOverworld : MonoBehaviour
 {
+    static GameObject temp;
     Shade[] playerShades;
-    GameObject[] party;
+    GameObject[] playerParty = { temp, temp, temp, temp, temp, temp, temp, temp, temp };
     int activeIndex;
     public GameObject[] shades;
 
@@ -33,6 +34,29 @@ public class PartyMenuOverworld : MonoBehaviour
         activeIndex = PlayerPrefs.GetInt("playerShadeIndex");
         string saveDataPath = Application.persistentDataPath + "/party.sav";
         Debug.Log(saveDataPath);
+        LoadPartyData();
+        for (int i = 0; i < partyMenuHUDs.Length; i++)
+        {
+            partyButtons[i].interactable = false;
+            partyMenuHUDs[i].SetActive(false);
+            activeIcon[i].SetActive(false);
+        }
+
+        activeIcon[activeIndex].SetActive(true);
+
+        for (int i = 0; i < PartyData.partySize; i++)
+        {
+            partyButtons[i].interactable = true;
+            partyMenuHUDs[i].SetActive(true);
+            partyImages[i].GetComponent<Image>().sprite = shades[i].GetComponent<SpriteRenderer>().sprite;
+            names[i].text = shades[i].name;
+            healthMeters[i].SetMaxValueMenu(shades[i].GetComponent<Shade>().MaxHealth);
+            energyMeters[i].SetMaxValueMenu(shades[i].GetComponent<Shade>().MaxEnergy);
+        }
+
+        //partyLoadTest();
+
+
         /*if (File.Exists(saveDataPath))
         {
             LoadPartyData(playerShades, party);
@@ -67,28 +91,62 @@ public class PartyMenuOverworld : MonoBehaviour
         }*/
     }
 
-    // Update is called once per frame
-    void Update()
+        // Update is called once per frame
+        void Update()
     {
         
     }
 
+    public void partyLoadTest()
+    {
+        for (int i = 0; i < playerParty.Length; i++)
+        {
+            Debug.Log($"{playerParty[i].GetComponent<Shade>().name}");
+            Debug.Log($"{playerParty[i].GetComponent<Shade>().level}");
+            Debug.Log($"{playerParty[i].GetComponent<Shade>().exp}");
+            Debug.Log($"party size: {PartyData.partySize}");
+        }
+    }
+
     public void OpenPartyMenu()
     {
+        activeIndex = PlayerPrefs.GetInt("playerShadeIndex");
+        string saveDataPath = Application.persistentDataPath + "/party.sav";
+        Debug.Log(saveDataPath);
+        LoadPartyData();
+        for (int i = 0; i < partyMenuHUDs.Length; i++)
+        {
+            partyButtons[i].interactable = false;
+            partyMenuHUDs[i].SetActive(false);
+            activeIcon[i].SetActive(false);
+        }
+
+        activeIcon[activeIndex].SetActive(true);
+
+        for (int i = 0; i < PartyData.partySize; i++)
+        {
+            partyButtons[i].interactable = true;
+            partyMenuHUDs[i].SetActive(true);
+            partyImages[i].GetComponent<Image>().sprite = shades[i].GetComponent<SpriteRenderer>().sprite;
+            names[i].text = shades[i].name;
+            healthMeters[i].SetMaxValueMenu(shades[i].GetComponent<Shade>().MaxHealth);
+            energyMeters[i].SetMaxValueMenu(shades[i].GetComponent<Shade>().MaxEnergy);
+        }
+
         //sets currently active shade's button to selected
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(party[activeIndex]);
+        EventSystem.current.SetSelectedGameObject(shades[activeIndex]);
 
-        for (int i = 0; i < party.Length; i++)
+        for (int i = 0; i < playerParty.Length; i++)
         {
-            healthMeters[i].SetValueMenu(party[i].GetComponent<Shade>().health);
-            energyMeters[i].SetValueMenu(party[i].GetComponent<Shade>().energy);
+            healthMeters[i].SetValueMenu(playerParty[i].GetComponent<Shade>().health);
+            energyMeters[i].SetValueMenu(playerParty[i].GetComponent<Shade>().energy);
         }
     }
 
     public void SwitchActive(int newIndex)
     {
-        if (party[newIndex].GetComponent<Shade>().health <= 0)
+        if (playerParty[newIndex].GetComponent<Shade>().health <= 0)
         {
             //StartCoroutine(battle.DisplayingDialogue($"Unable to switch.\n{battle.playerShades[newIndex].GetComponent<Shade>().name} is KOd..."));
             partyMenu.SetActive(true);
@@ -102,6 +160,24 @@ public class PartyMenuOverworld : MonoBehaviour
             PlayerPrefs.SetInt("playerShadeIndex", newIndex);
         }
     }
+
+    public void SavePartyData()
+    {
+        for (int i = 0; i < PartyData.partySize; i++)
+        {
+            PartyData.party[i] = playerParty[i];
+        }
+        PartyData.partySize = playerParty.Length;
+    }
+
+    public void LoadPartyData()
+    {
+        for (int i = 0; i < PartyData.partySize; i++)
+        {
+            playerParty[i] = PartyData.party[i];
+        }
+    }
+
     /*
     public void SavePartyData(Shade[] playerParty)
     {
