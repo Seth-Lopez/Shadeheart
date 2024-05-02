@@ -138,9 +138,9 @@ public class QuestMngrV2 : MonoBehaviour
                 isActive = false,
                 isCompleted = false,
                 developerDescription = "Investigate a 'haunted' classroom at the local school. Players find a small, scared Shadewalker, leading to a peaceful resolution or further chaos based on player actions.",
-                playerDescription = "The school is in uproar over a haunted classroom. Investigate and soothe the students' and the creature's fears.",
+                playerDescription = "The school is in uproar over sightings of ShadeWalkers. Help the students out by dealing with them.",
                 xpValue = 100,
-                npcID = ""
+                npcID = "jake"
             },
             new Quest
             {

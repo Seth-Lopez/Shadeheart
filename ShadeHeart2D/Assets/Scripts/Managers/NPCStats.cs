@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class NPCStats : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class NPCStats : MonoBehaviour
     private int runOnce = 0;
     private bool hasQuest = false;
     private List<(string, bool)> nextQuestLine = new List<(string, bool)>();
+    //***********QUESTS INSTANTIATED **********************
+    
+    SchoolStandoffQuest schoolQuest;
+    MarketMayhemQuest marketQuest;
+    CityInvasionQuest cityQuest;
+    private GameObject mayor;
     public List<string> getAllDialogueOptions
     {
         get { return allDialogueOptions; }
@@ -29,6 +36,13 @@ public class NPCStats : MonoBehaviour
         UIClass = GameObject.FindGameObjectWithTag("UIMngr").GetComponent<UIMenuMngr>();
         npcInter = GetComponent<NPCInteraction>();
         queMngr = GameObject.FindGameObjectWithTag("QuestMngrV2").GetComponent<QuestMngrV2>();
+        schoolQuest = GameObject.Find("SchoolQuest").GetComponent<SchoolStandoffQuest>();
+        marketQuest = GameObject.Find("MarketQuest").GetComponent<MarketMayhemQuest>();
+        cityQuest = GameObject.Find("CityInvasionQuest").GetComponent<CityInvasionQuest>();
+        mayor = GameObject.Find("citizen_5");
+        Color c = mayor.GetComponent<SpriteRenderer>().color;
+        c.a = 0;
+        mayor.GetComponent<SpriteRenderer>().color = c;
         instantiateVariables();
         if(type != 0)
         {
@@ -81,6 +95,54 @@ public class NPCStats : MonoBehaviour
                             if(quest.npcID == this.gameObject.name)
                             {
                                     isQuestCompleted = quest.isCompleted;
+                            }
+                            if(quest.isActive == true && !quest.isCompleted)
+                            {
+                                if(quest.npcID == "jake")
+                                {
+                                    if(schoolQuest != null)
+                                    {
+                                        if(schoolQuest.questStarted != true)
+                                            schoolQuest.questStarted = true;
+                                        else if(schoolQuest.questFinished == true)
+                                        {
+                                            quest.isCompleted = true;
+                                        }
+                                    }
+                                    else{print("ERROR: Can't read School Quest.");}
+                                }
+                                if(quest.npcID == "citizen_1")
+                                {
+                                    if(marketQuest != null)
+                                    {
+                                        if(marketQuest.questStarted != true)
+                                            marketQuest.questStarted = true;
+                                        else if(marketQuest.questFinished == true)
+                                        {
+                                            quest.isCompleted = true;
+                                        }
+                                    }
+                                    else{print("ERROR: Can't read Market Quest.");}
+                                }
+                            }
+                            if(schoolQuest.questFinished && marketQuest.questFinished)
+                            {
+                                Color c = mayor.GetComponent<SpriteRenderer>().color;
+                                c.a = 100;
+                                mayor.GetComponent<SpriteRenderer>().color = c;
+                                if(quest.npcID == "citizen_5")
+                                {
+                                    if(cityQuest != null)
+                                    {
+                                        if(cityQuest.questStarted != true)
+                                            cityQuest.questStarted = true;
+                                        else if(cityQuest.questFinished == true)
+                                        {
+                                            quest.isCompleted = true;
+                                        }
+                                    }
+                                    else{print("ERROR: Can't read City Quest.");}
+                                }
                             }
                         }
                         if(!isQuestCompleted)

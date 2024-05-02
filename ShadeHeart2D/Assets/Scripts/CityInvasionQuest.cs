@@ -88,8 +88,9 @@ public class CityInvasionQuest : MonoBehaviour
             }
             if (!spawnedBoss && !enemyBoss.GetComponent<CityInvasionTracker>().GetDefeated())
             {
-                Instantiate(enemyBoss);
+                GameObject s = Instantiate(enemyBoss);
                 spawnedBoss = true;
+                s.transform.localScale = new Vector3(10f, 10f, 1f);
             }
         }
         if (enemyBoss.GetComponent<CityInvasionTracker>().GetDefeated())
