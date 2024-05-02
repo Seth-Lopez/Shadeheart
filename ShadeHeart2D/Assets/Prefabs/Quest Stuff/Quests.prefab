@@ -1,0 +1,202 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &643244142499902419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 285546494393458346}
+  m_Layer: 0
+  m_Name: Quests
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &285546494393458346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643244142499902419}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 800119378655059154}
+  - {fileID: 2845593080679417818}
+  - {fileID: 6337175748710118912}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2052167914092895753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2845593080679417818}
+  - component: {fileID: 5123602857542482203}
+  m_Layer: 0
+  m_Name: MarketQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2845593080679417818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052167914092895753}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 285546494393458346}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5123602857542482203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052167914092895753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fd662d6cf5d544b95f8198e1b08685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questStarted: 0
+  questFinished: 0
+  enemy1: {fileID: 9147013281057641890, guid: dd72eb8b61ed06d47837bba2ec665058, type: 3}
+  enemy2: {fileID: 8655312024164367597, guid: 14b7436c61a4b004aa09db973b97a234, type: 3}
+  enemy3: {fileID: 2510210339076441274, guid: fdc368efb76254f439cf8ca8811e13a9, type: 3}
+  enemy4: {fileID: 8267279365882052639, guid: 12cd1e5150a705443a719e763e0ac771, type: 3}
+--- !u!1 &7950591959120690500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6337175748710118912}
+  - component: {fileID: 6554197423081956563}
+  m_Layer: 0
+  m_Name: CityInvasionQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6337175748710118912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950591959120690500}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 285546494393458346}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6554197423081956563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950591959120690500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867513f9e5d60484585c43487fcacbe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questStarted: 0
+  questFinished: 0
+  spawned1: 0
+  spawned2: 0
+  spawned3: 0
+  spawned4: 0
+  spawned5: 0
+  spawned6: 0
+  spawned7: 0
+  spawned8: 0
+  spawned9: 0
+  spawnedBoss: 0
+  enemy1: {fileID: 1856664343724566760, guid: 23b70840d944c504a93971aed268f377, type: 3}
+  enemy2: {fileID: 9212875945695383070, guid: da92f718df4e0c84190938600be4e11a, type: 3}
+  enemy3: {fileID: 7914888087994700382, guid: 11c8845092b6d3242ac7d79471b276b9, type: 3}
+  enemy4: {fileID: 6700849839539982676, guid: 2cf28db9173bc724690d098c968e3936, type: 3}
+  enemy5: {fileID: 7678333372363097562, guid: 3c1ed408a9595c2498da8a9e93782234, type: 3}
+  enemy6: {fileID: 1951358204786721605, guid: 10dda01d30701024898e23f9c2d75fa7, type: 3}
+  enemy7: {fileID: 6296160272772887617, guid: 0c4b0648e1aaf56478e83488af6047ac, type: 3}
+  enemy8: {fileID: 3684774331345700906, guid: a0d7ff63dcef0894a91117e9afbc80bf, type: 3}
+  enemy9: {fileID: 2053046141074111267, guid: 6bd4e87107eda1042b1585866192a41f, type: 3}
+  enemyBoss: {fileID: 6738137704926931790, guid: 6e56697482560aa47a2ca3de5ea12ea5, type: 3}
+--- !u!1 &8626842413054592632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800119378655059154}
+  - component: {fileID: 6644262432505934786}
+  m_Layer: 0
+  m_Name: SchoolQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &800119378655059154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626842413054592632}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 285546494393458346}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6644262432505934786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626842413054592632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f1f2e8e4c188d94abe284e5197f1c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questStarted: 0
+  questFinished: 0
+  questSetup: 0
+  enemy1: {fileID: 7432178752652946845, guid: 37de5bdf1ad08e44992dcd095b46f514, type: 3}
+  enemy2: {fileID: 5130252841501680528, guid: af4fcbbf5d4eef44ab337b24bc425d05, type: 3}
+  bossEnemy: {fileID: 6180808221142973339, guid: 834a9e229fb57d541b4bc9c4020c7351, type: 3}
