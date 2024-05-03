@@ -22,6 +22,9 @@ public class IntroScript : MonoBehaviour
     [SerializeField] private GameObject player;
     private bool timeStarts = false;
     private bool eventTriggered = false;
+    private int bullCount = 0;
+    private QuestMngrV2 queMngr;
+    bool isActive = false;
     void Awake()
     {
         rBus = GameObject.Find("RightBus");
@@ -34,10 +37,28 @@ public class IntroScript : MonoBehaviour
     int counter = 0;
     void Update()
     {
-        if(PlayerPrefs.GetInt("IntroPlayed") == 1)
+        queMngr = GameObject.Find("QuestMngr").GetComponent<QuestMngrV2>();
+        foreach(QuestMngrV2.Quest que in queMngr.getActiveQuests())
         {
-            print("Hi");
+            isActive = true;
+        }
+        foreach(QuestMngrV2.Quest que in queMngr.getCompletedQuests())
+        {
+            isActive = true;
+        }
+        if(!isActive)
+        {
             intro();
+        }
+        else if(bullCount == 0)
+        {
+            Color color = player.GetComponent<SpriteRenderer>().color;
+            color.a = 100;
+            player.GetComponent<SpriteRenderer>().color = color;
+            cinemachine.Follow = player.transform;
+            cinemachine.LookAt = player.transform;
+            bullCount += 1;
+            this.gameObject.SetActive(false);
         }
     }
     private void intro()
@@ -141,11 +162,9 @@ public class IntroScript : MonoBehaviour
                 
                 if(counter == 2 && slowingDown)
                 {
-                    Debug.Log("H");
                     trans.transitionSpeed = 1;
                     TransitionManager.Instance().Transition(trans, 0f);
                     timeStarts = true;
-                    Debug.Log("H");
                     counter+=1;
                 }
             }
@@ -167,6 +186,7 @@ public class IntroScript : MonoBehaviour
                     cinemachine.LookAt = player.transform;
                     counter += 1;
                     PlayerPrefs.SetInt("IntroPlayed", 2);
+                    this.gameObject.SetActive(false);
                 }
             }
             

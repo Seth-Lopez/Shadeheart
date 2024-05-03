@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Animations;
 using Unity.Mathematics;
+
+using Cinemachine;
 public class PlayerScript : MonoBehaviour
 {
     // For Movement: 
@@ -30,17 +32,10 @@ public class PlayerScript : MonoBehaviour
     public float vertical;
 
     public Transform playerPos;
+    [SerializeField] private CinemachineVirtualCamera cinemachine;
 
     private void Start()
     {
-        if (PlayerPrefs.GetInt("reset") == 1)
-        {
-            PlayerPositionTracker.saved = false;
-        }
-        if (PlayerPositionTracker.saved)
-        {
-            playerPos.position = PlayerPositionTracker.position;
-        }
         // Set RigidBody:
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -65,6 +60,11 @@ public class PlayerScript : MonoBehaviour
         updatingHealthAndEnergy();
         //animator.SetFloat("horizontal", movementDirection.x);
         //animator.SetFloat("vertical", movementDirection.y);
+        if(cinemachine.Follow == null)
+        {
+            cinemachine.Follow = this.gameObject.transform;
+            cinemachine.LookAt = this.gameObject.transform;
+        }
     }
     private void FixedUpdate()
     {
