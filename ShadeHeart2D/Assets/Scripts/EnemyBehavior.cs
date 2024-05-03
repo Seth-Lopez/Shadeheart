@@ -31,6 +31,7 @@ public class EnemyBehavior : MonoBehaviour
     //For loading into battle scene
     public int battleLocation = 0;
     public SceneLoader loader;
+    public int level = 0;
 
     private void Awake()
     {
@@ -127,6 +128,7 @@ public class EnemyBehavior : MonoBehaviour
             PlayerPrefs.SetInt("enemyID", enemyID);
             string sceneLoadedFrom = SceneManager.GetActiveScene().name;
             PlayerPrefs.SetString("sceneLoadedFrom", sceneLoadedFrom);
+            PlayerPrefs.SetInt("EnemyLevel", level);
             PlayerPositionTracker.position = player.transform.position;
             PlayerPositionTracker.saved = true;
             loader.LoadBattle("Battle");

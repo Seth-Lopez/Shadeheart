@@ -296,6 +296,52 @@ public class CombatMenu : MonoBehaviour
 
     IEnumerator CapturingEnemy()
     {
+        int temp = Random.Range(0, 11);
+        Debug.Log($"Spare Random Value: {temp}");
+        Debug.Log($"battle.sparePossible: {battle.sparePossible}");
+        int chance = 1;
+        float enemyHealthRatio = (enemyCreature.health / enemyCreature.MaxHealth);
+
+        if (enemyHealthRatio <= 0.75f)
+        {
+            chance = 2;
+        }
+        else if (enemyHealthRatio <= 0.5f)
+        {
+            chance = 3;
+        }
+        else if (enemyHealthRatio <= 0.3f)
+        {
+            chance = 5;
+        }
+
+        if (battle.sparePossible || temp <= chance)
+        {
+            yield return (battle.DisplayingDialogue($"{enemyCreature.name} is pacified and wanders away..."));
+            yield return new WaitForSeconds(battle.textStop);
+
+            int exp = (playerCreature.expCalc(enemyCreature.baseExpYield, enemyCreature.level));
+            yield return (battle.DisplayingDialogue($"{playerCreature.name} gains {exp} exp"));
+
+            battle.enemyCaptured = true;
+            
+            battle.numEnemies--;
+
+            battle.enemies[battle.enemyIndex].SetActive(false);
+
+            yield return new WaitForSeconds(battle.textStop);
+
+            battle.StartEnemyTurn();
+        }
+        else
+        {
+            yield return (battle.DisplayingDialogue($"Enemy {enemyCreature.name} still wants to fight!"));
+
+            yield return new WaitForSeconds(battle.textStop);
+
+            battle.StartEnemyTurn();
+        }
+        /*
         if (battle.numPlayerShades >= 9)
         {
             yield return (battle.DisplayingDialogue($"Capture Failed.\nYour party is full."));
@@ -342,7 +388,7 @@ public class CombatMenu : MonoBehaviour
 
             battle.StartEnemyTurn();
         }
-
+        */
         yield return null;
     }
 

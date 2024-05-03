@@ -318,7 +318,7 @@ public class BattleMgr : MonoBehaviour
             }
             else
             {
-                if ((enemyCreature.health / enemyCreature.MaxHealth) < 0f)
+                if ((enemyCreature.health / enemyCreature.MaxHealth) < 0.2f)
                 {
                     SetToSpare(ref combatMenuScript.fleeButton);
                 }
@@ -521,7 +521,7 @@ public class BattleMgr : MonoBehaviour
         yield return new WaitForSeconds(3f);
         SavePartyData();
         partySaveTest();
-        EndBattle();
+        EndBattleLoss();
     }
 
     public void StartEnemyTurn()
@@ -566,6 +566,11 @@ public class BattleMgr : MonoBehaviour
         loader.LoadScene(lastScene);
         //SceneManager.LoadScene(lastScene);
     }
+    public void EndBattleLoss()
+    {
+        loader.LoadScene("Credits");
+        //SceneManager.LoadScene(lastScene);
+    }
 
     public void RandomizeEnemy()
     {
@@ -597,7 +602,17 @@ public class BattleMgr : MonoBehaviour
             Debug.Log("Enemy index: " + enemyIndex.ToString());
             SetShade(ref enemy, enemies, enemyIndex, ref enemyCreature);
 
-            enemyCreature.level = (Random.Range(enemyLevelMin, enemyLevelMax + 1));
+            int temp = PlayerPrefs.GetInt("EnemyLevel");
+            if (temp == 0)
+            {
+                enemyCreature.level = (Random.Range(enemyLevelMin, enemyLevelMax + 1));
+            }
+            else
+            {
+                enemyCreature.level = temp;
+            }
+
+            SetupEnemy();
             //enemyCreature.level = 10;
             SetSkills(ref enemyCreature, false);
         }
@@ -646,9 +661,11 @@ public class BattleMgr : MonoBehaviour
     public void SetToSpare(ref Button button)
     {
         sparePossible = true;
+        /*
         button.GetComponentInChildren<TextMeshProUGUI>().text = "Spare";
         Color c = new Color(0.8823529f, 0.8823529f, 0.1960784f);
         button.GetComponentInChildren<TextMeshProUGUI>().color = c;
+        */
         //button.onClick.RemoveAllListeners();
         //button.onClick.AddListener(delegate { combatMenuScript.SpareEnemy(); });
     }
@@ -666,7 +683,7 @@ public class BattleMgr : MonoBehaviour
 // figure out how to setup targeting for skills
     public void SetupSkill(ref Skill skill, bool isPlayer, Shade user)
     {
-        Debug.Log("setup skill");
+        //Debug.Log("setup skill");
         skill.user = user;
         if (skill.isTargetSelf)
         {
