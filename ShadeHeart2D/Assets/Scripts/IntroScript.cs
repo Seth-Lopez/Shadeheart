@@ -1,5 +1,7 @@
 using UnityEngine;
 using Cinemachine;
+using EasyTransition;
+using UnityEngine.Experimental.Rendering.RenderGraphModule;
 
 public class IntroScript : MonoBehaviour
 {
@@ -16,6 +18,10 @@ public class IntroScript : MonoBehaviour
     [SerializeField] private float elapsedTime = 0f;
     [SerializeField] private float blinkInterval = 0.5f; // Blink interval in seconds
     [SerializeField] private CinemachineVirtualCamera cinemachine;
+    [SerializeField] private TransitionSettings trans;
+    [SerializeField] private GameObject player;
+    private bool timeStarts = false;
+    private bool eventTriggered = false;
     void Awake()
     {
         rBus = GameObject.Find("RightBus");
@@ -23,8 +29,9 @@ public class IntroScript : MonoBehaviour
         lBus = GameObject.Find("LeftBus");
         SetAlphaRecursively(dBus.transform, 0);
         SetAlphaRecursively(lBus.transform, 0);
+        trans.transitionSpeed = .4f;
     }
-
+    int counter = 0;
     void Update()
     {
         //******************************--- PHASE 1 ---*******************************************
@@ -52,6 +59,11 @@ public class IntroScript : MonoBehaviour
                     foreach(GameObject wheel in wheels)
                     {
                         wheel.gameObject.GetComponent<Wheels>().isSlowingDown = true;
+                    }
+                    if(counter == 0)
+                    {
+                        TransitionManager.Instance().Transition(trans, 4.5f);
+                        counter+=1;
                     }
                 }
                 if(speed == 0)
@@ -88,6 +100,12 @@ public class IntroScript : MonoBehaviour
                         blinker.GetComponent<SpriteRenderer>().color = color;
                     }
                 }
+
+                if(counter == 1)
+                {
+                    TransitionManager.Instance().Transition(trans, 4.5f);
+                    counter+=1;
+                }
             }
             if(speed == 0)
             {
@@ -110,24 +128,39 @@ public class IntroScript : MonoBehaviour
             else{timer += Time.deltaTime;}
             if(speed == 0)
             {
-                
                 //******************************--- PHASE 4 ---*******************************************
                 phase = 4;
+                
+                if(counter == 2 && slowingDown)
+                {
+                    Debug.Log("H");
+                    trans.transitionSpeed = 1;
+                    TransitionManager.Instance().Transition(trans, 0f);
+                    timeStarts = true;
+                    Debug.Log("H");
+                    counter+=1;
+                }
             }
         }
         if(phase == 4)
         {
             //ADD TRANSITION HERE
-            SetAlphaRecursively(rBus.transform, 0);
-            SetAlphaRecursively(lBus.transform, 100);
-            transform.position = new Vector3(-38.4f, -43.1f, 0);
-            GameObject player = GameObject.Find("Player");
-            cinemachine.Follow = player.transform;
-            cinemachine.LookAt = player.transform;
-            Color color = player.GetComponent<SpriteRenderer>().color;
-            color.a = 100;
-            player.GetComponent<SpriteRenderer>().color = color;
-            player.transform.position = new Vector3(-39.25573f, -40.45f, 0);
+             timer += Time.deltaTime;
+            if (timer >= 1f && !eventTriggered)
+            {
+                eventTriggered = true;
+                if(counter == 3)
+                {
+                    SetAlphaRecursively(rBus.transform, 0);
+                    Color color = player.GetComponent<SpriteRenderer>().color;
+                    color.a = 100;
+                    player.GetComponent<SpriteRenderer>().color = color;
+                    cinemachine.Follow = player.transform;
+                    cinemachine.LookAt = player.transform;
+                    counter += 1;
+                }
+            }
+            
         }
     }
 

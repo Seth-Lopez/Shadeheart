@@ -30,8 +30,8 @@ public class item : MonoBehaviour
     {
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E) && !UIClass.getIsPauseMenuOpen())
         {
-            List<string> lines = new List<string>{"10x Potions"};
-            InvMngr.interactions("Potion", lines);
+            List<string> lines = new List<string>{"First Item Achievement"};
+            InvMngr.interactions("Achiv_1", lines);
             this.gameObject.SetActive(false);
         }
     }
