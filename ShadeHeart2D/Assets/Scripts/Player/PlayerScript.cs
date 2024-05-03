@@ -29,8 +29,18 @@ public class PlayerScript : MonoBehaviour
     public float horizontal;
     public float vertical;
 
+    public Transform playerPos;
+
     private void Start()
     {
+        if (PlayerPrefs.GetInt("reset") == 1)
+        {
+            PlayerPositionTracker.saved = false;
+        }
+        if (PlayerPositionTracker.saved)
+        {
+            playerPos.position = PlayerPositionTracker.position;
+        }
         // Set RigidBody:
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

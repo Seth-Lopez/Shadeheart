@@ -16,4 +16,8 @@ public class tracker9 : MonoBehaviour
     {
         return defeated;
     }
+    public void SetDefeated(bool value)
+    {
+        defeated = value;
+    }
 }

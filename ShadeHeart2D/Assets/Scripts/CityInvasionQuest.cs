@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // 9 shades and a boss apear throughout the city, the boss in infront of the hospital, only the boss needs to be defeated to finish the quest
 
@@ -37,6 +38,34 @@ public class CityInvasionQuest : MonoBehaviour
     
     public GameObject enemyBoss;
 
+    public void Start()
+    {
+        if (PlayerPrefs.GetInt("reset") == 1)
+        {
+            questStarted = false;
+            questFinished = false;
+            enemyBoss.GetComponent<CityInvasionTracker>().SetDefeated(false);
+            enemy1.GetComponent<tracker1>().SetDefeated(false);
+            enemy2.GetComponent<tracker2>().SetDefeated(false);
+            enemy3.GetComponent<tracker3>().SetDefeated(false);
+            enemy4.GetComponent<tracker4>().SetDefeated(false);
+            enemy5.GetComponent<tracker5>().SetDefeated(false);
+            enemy6.GetComponent<tracker6>().SetDefeated(false);
+            enemy7.GetComponent<tracker7>().SetDefeated(false);
+            enemy8.GetComponent<tracker8>().SetDefeated(false);
+            enemy9.GetComponent<tracker9>().SetDefeated(false);
+
+        }
+        if (enemyBoss.GetComponent<CityInvasionTracker>().GetDefeated())
+        {
+            questFinished = true;
+        }
+        Debug.Log($"Boss Quest Finished: {questFinished}");
+        if (questFinished)
+        {
+            SceneManager.LoadScene("Credits");
+        }
+    }
     void Update()
     {
         if (questStarted && !questFinished && !enemyBoss.GetComponent<CityInvasionTracker>().GetDefeated())

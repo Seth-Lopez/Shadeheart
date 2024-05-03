@@ -16,4 +16,8 @@ public class CityInvasionTracker : MonoBehaviour
     {
         return defeated;
     }
+    public void SetDefeated(bool value)
+    {
+        defeated = value;
+    }
 }

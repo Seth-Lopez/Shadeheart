@@ -127,6 +127,8 @@ public class EnemyBehavior : MonoBehaviour
             PlayerPrefs.SetInt("enemyID", enemyID);
             string sceneLoadedFrom = SceneManager.GetActiveScene().name;
             PlayerPrefs.SetString("sceneLoadedFrom", sceneLoadedFrom);
+            PlayerPositionTracker.position = player.transform.position;
+            PlayerPositionTracker.saved = true;
             loader.LoadBattle("Battle");
             this.gameObject.SetActive(false);
             //SceneManager.LoadScene("Battle");

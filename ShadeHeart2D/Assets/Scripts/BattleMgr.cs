@@ -76,6 +76,7 @@ public class BattleMgr : MonoBehaviour
 
     public void Start()
     {
+        PlayerPrefs.SetInt("reset", 0);
         //Start with HUDs disabled
         playerHUD.SetActive(false);
         enemyHUD.SetActive(false);

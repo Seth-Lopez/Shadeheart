@@ -22,6 +22,12 @@ public class MarketMayhemQuest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.GetInt("reset") == 1)
+        {
+            questStarted = false;
+            questFinished = false;
+            enemy1.GetComponent<MarketMayhemTracker>().SetCount(0);
+        }
         spawned1 = false;
         spawned2 = false;
         spawned3 = false;

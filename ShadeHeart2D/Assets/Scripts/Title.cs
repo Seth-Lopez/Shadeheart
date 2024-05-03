@@ -38,6 +38,7 @@ public class Title : MonoBehaviour
 
     public void StartGame()
     {
+        PlayerPrefs.SetInt("reset", 1);
         SceneManager.LoadScene(overworldSceneName);
     }
 

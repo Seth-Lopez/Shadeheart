@@ -9,10 +9,9 @@ public class SchoolStandoffQuest : MonoBehaviour
     public bool questStarted;
     public bool questFinished;
 
-    public bool questSetup;
-
-    public static bool spawned = false;
-    public static int spawnCount = 0;
+    public static bool spawned1;
+    public static bool spawned2;
+    public static bool spawned3;
 
     public GameObject enemy1;
     public GameObject enemy2;
@@ -20,43 +19,62 @@ public class SchoolStandoffQuest : MonoBehaviour
 
     public void Start()
     {
-        spawned = false;
-
-        questSetup = false;
-        if (questStarted)
+        if (PlayerPrefs.GetInt("reset") == 1)
         {
-            SetupQuest();
+            questStarted = false;
+            questFinished = false;
+            enemy1.GetComponent<SchoolQuestTracker>().SetCount(0);
         }
+        spawned1 = false;
+        spawned2 = false;
+        spawned3 = false;
     }
     public void Update()
     {
-        if (questStarted && !questSetup)
+        if (questStarted && !questFinished)
         {
-            SetupQuest();
+            Debug.Log($"count: {enemy1.GetComponent<SchoolQuestTracker>().GetCount()}");
+            if (!spawned1 && enemy1.GetComponent<SchoolQuestTracker>().GetCount() == 0)
+            {
+                Instantiate(enemy1);
+                spawned1 = true;
+            }
+            if (!spawned2 && enemy2.GetComponent<SchoolQuestTracker>().GetCount() == 1)
+            {
+                Instantiate(enemy2);
+                spawned2 = true;
+            }
+            if (!spawned3 && bossEnemy.GetComponent<SchoolQuestTracker>().GetCount() == 2)
+            {
+                Instantiate(bossEnemy);
+                spawned3 = true;
+            }
+            if (!spawned3 && bossEnemy.GetComponent<SchoolQuestTracker>().GetCount() == 3)
+            {
+                questFinished = true;
+            }
         }
     }
 
     public void SetupQuest()
     {
-        if (!spawned && enemy1.GetComponent<SchoolQuestTracker>().GetCount() == 0)
+        Debug.Log($"count: {enemy1.GetComponent<SchoolQuestTracker>().GetCount()}");
+        if (!spawned1 && enemy1.GetComponent<SchoolQuestTracker>().GetCount() == 0)
         {
             Instantiate(enemy1);
-            spawned = true;
-            spawnCount++;
+            spawned1 = true;
         }
-        if (!spawned && enemy2.GetComponent<SchoolQuestTracker>().GetCount() == 1)
+        if (!spawned2 && enemy2.GetComponent<SchoolQuestTracker>().GetCount() == 1)
         {
             Instantiate(enemy2);
-            spawned = true;
-            spawnCount++;
+            spawned2 = true;
         }
-        if (!spawned && bossEnemy.GetComponent<SchoolQuestTracker>().GetCount() == 2)
+        if (!spawned3 && bossEnemy.GetComponent<SchoolQuestTracker>().GetCount() == 2)
         {
             Instantiate(bossEnemy);
-            spawned = true;
-            spawnCount++;
+            spawned3 = true;
         }
-        if (!spawned && enemy1.GetComponent<SchoolQuestTracker>().GetCount() == 3)
+        if (!spawned3 && bossEnemy.GetComponent<SchoolQuestTracker>().GetCount() == 3)
         {
             questFinished = true;
         }
@@ -79,6 +97,5 @@ public class SchoolStandoffQuest : MonoBehaviour
             Instantiate(enemy1);
             spawned1 = true;
         }*/
-        questSetup = true;
     }
 }

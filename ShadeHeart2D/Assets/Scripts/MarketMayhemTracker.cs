@@ -17,4 +17,8 @@ public class MarketMayhemTracker : MonoBehaviour
     {
         return count;
     }
+    public void SetCount(int value)
+    {
+        count = value;
+    }
 }
