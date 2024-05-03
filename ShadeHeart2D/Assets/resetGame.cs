@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-
 public class resetGame : MonoBehaviour
 {
     private string filePath = Path.Combine(Application.streamingAssetsPath, "Managers/DialogueOptions.txt");
@@ -13,20 +10,28 @@ public class resetGame : MonoBehaviour
 
     private string filePath5 = Path.Combine(Application.streamingAssetsPath, "Managers/InventoryItems.txt");
     private string filePath6 = Path.Combine(Application.streamingAssetsPath, "Managers/InventoryItemsCopy.txt");
-
     public void resetGameButton()
     {
+        
+        PlayerPrefs.SetInt("IntroPlayed", 1);
         string sourceFilePath = filePath3;
         string destinationFilePath = filePath;
-        string fileContents = File.ReadAllText(sourceFilePath);
-        File.WriteAllText(destinationFilePath, fileContents);
-        sourceFilePath = filePath4;
-        destinationFilePath = filePath2;
-        fileContents = File.ReadAllText(sourceFilePath);
-        File.WriteAllText(destinationFilePath, fileContents);
-        sourceFilePath = filePath6;
-        destinationFilePath = filePath5;
-        fileContents = File.ReadAllText(sourceFilePath);
-        File.WriteAllText(destinationFilePath, fileContents);
+        try
+        {
+            string fileContents = File.ReadAllText(sourceFilePath);
+            File.WriteAllText(destinationFilePath, fileContents);
+            sourceFilePath = filePath4;
+            destinationFilePath = filePath2;
+            fileContents = File.ReadAllText(sourceFilePath);
+            File.WriteAllText(destinationFilePath, fileContents);
+            sourceFilePath = filePath6;
+            destinationFilePath = filePath5;
+            fileContents = File.ReadAllText(sourceFilePath);
+            File.WriteAllText(destinationFilePath, fileContents);
+        }
+        catch
+        {
+            print("Hmm");
+        }
     }
 }

@@ -34,6 +34,14 @@ public class IntroScript : MonoBehaviour
     int counter = 0;
     void Update()
     {
+        if(PlayerPrefs.GetInt("IntroPlayed") == 1)
+        {
+            print("Hi");
+            intro();
+        }
+    }
+    private void intro()
+    {
         //******************************--- PHASE 1 ---*******************************************
         if(phase == 1)
         {
@@ -158,6 +166,7 @@ public class IntroScript : MonoBehaviour
                     cinemachine.Follow = player.transform;
                     cinemachine.LookAt = player.transform;
                     counter += 1;
+                    PlayerPrefs.SetInt("IntroPlayed", 2);
                 }
             }
             
