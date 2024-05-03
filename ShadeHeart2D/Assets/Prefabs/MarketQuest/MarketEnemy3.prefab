@@ -173,7 +173,8 @@ MonoBehaviour:
   LOSDist: 5
   enemyID: 2
   battleLocation: 0
-  loader: {fileID: 0}
+  loader: {fileID: 7097487260250719520, guid: 5aad971956f98ce4f8fed560b4249296, type: 3}
+  level: 0
 --- !u!195 &6178946094459673133
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -208,4 +209,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d7e1e87cb1fbf469042c34a3adedbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 2
